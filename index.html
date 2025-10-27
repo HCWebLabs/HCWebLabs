@@ -1,0 +1,2908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#161821">
+    
+    <!-- Primary Meta Tags -->
+    <title>Recent Web Design & Creative Projects - HC Web Labs Portfolio</title>
+    <meta name="title" content="Recent Web Design & Creative Projects - HC Web Labs Portfolio">
+    <meta name="description" content="Explore recent projects including web design, UX/UI, front-end development, vector illustration, and photo retouching by Heather Cooper. Browse case studies with process, tools, and measurable results.">
+    <meta name="keywords" content="web design, web development, portfolio, UX design, UI design, responsive design, accessible websites, Heather Cooper, HC Web Labs">
+    <meta name="author" content="Heather Cooper">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hcweblabs.com/portfolio">
+    <meta property="og:title" content="Recent Web Design & Creative Projects - HC Web Labs">
+    <meta property="og:description" content="Explore recent projects including web design, UX/UI, front-end development, vector illustration, and photo retouching.">
+    <meta property="og:image" content="https://hcweblabs.com/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://hcweblabs.com/portfolio">
+    <meta property="twitter:title" content="Recent Web Design & Creative Projects - HC Web Labs">
+    <meta property="twitter:description" content="Explore recent projects including web design, UX/UI, front-end development, vector illustration, and photo retouching.">
+    <meta property="twitter:image" content="https://hcweblabs.com/og-image.jpg">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://hcweblabs.com/portfolio">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    
+    <!-- DNS Prefetch for performance -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    
+    <!-- Fonts with display=swap for better performance -->
+    <link href="https://fonts.googleapis.com/css2?family=Sarpanch:wght@700;800&family=Saira:wght@400;500;600;700;800&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Heather Cooper",
+      "url": "https://hcweblabs.com",
+      "jobTitle": "Web Designer & Developer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "HC Web Labs"
+      },
+      "knowsAbout": [
+        "Web Design",
+        "Web Development",
+        "UX Design",
+        "UI Design",
+        "Front-End Development",
+        "Vector Illustration",
+        "Photo Retouching",
+        "Accessibility",
+        "Performance Optimization"
+      ],
+      "description": "Web designer and developer specializing in modern, accessible websites, UX/UI design, front-end development, vector illustration, and photo retouching.",
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Web Designer & Developer",
+        "skills": [
+          "HTML5", "CSS3", "JavaScript", "React", "WordPress", 
+          "Adobe Illustrator", "Adobe Photoshop", "Figma", "UX/UI Design"
+        ]
+      }
+    }
+    </script>
+    
+    <style>
+        /* =============================================================================
+           MODERN PORTFOLIO - HC WEB LABS v3.0
+           Mobile-first • Accessible • Performant • SEO-optimized
+           ============================================================================= */
+        
+        /* ========== RESET & BASE ========== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+            scroll-padding-top: 20px;
+        }
+        
+        /* Respect user's motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+        
+        body {
+            font-family: "Mulish", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            color: #EDEDED;
+            line-height: 1.6;
+            background: linear-gradient(180deg, #161821 0%, #12141b 55%, #0e1015 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Body states */
+        body.modal-open {
+            overflow: hidden;
+            padding-right: var(--scrollbar-width, 0);
+        }
+        
+        /* ========== DESIGN TOKENS ========== */
+        :root {
+            /* Colors */
+            --hc-aqua: #00FFFF;
+            --hc-violet: #A56CFF;
+            --hc-pink: #FF5AF1;
+            --hc-ink: #EDEDED;
+            --hc-muted: #A9B6CD;
+            --hc-line: rgba(255,255,255,.14);
+            
+            /* Glass morphism */
+            --hc-glass: rgba(255,255,255,.08);
+            --hc-glass-md: rgba(255,255,255,.06);
+            --hc-glass-brd: rgba(255,255,255,.20);
+            
+            /* Border radius - mobile first, smaller by default */
+            --hc-r-sm: 8px;
+            --hc-r-md: 12px;
+            --hc-r-lg: 16px;
+            --hc-r-xl: 20px;
+            
+            /* Shadows */
+            --hc-shadow-sm: 0 4px 12px rgba(0,0,0,.3);
+            --hc-shadow-md: 0 8px 24px rgba(0,0,0,.45);
+            --hc-shadow-lg: 0 12px 40px rgba(0,0,0,.45);
+            --hc-shadow-xl: 0 20px 60px rgba(0,0,0,.55);
+            
+            /* Blur */
+            --hc-blur-sm: 8px;
+            --hc-blur-md: 12px;
+            --hc-blur-lg: 16px;
+            
+            /* Transitions */
+            --hc-transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            --hc-transition-base: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            --hc-transition-slow: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            
+            /* Z-index layers */
+            --z-base: 1;
+            --z-dropdown: 1000;
+            --z-sticky: 1100;
+            --z-modal: 2000;
+            --z-lightbox: 3000;
+            --z-tooltip: 4000;
+        }
+        
+        /* Increase border radius on larger screens */
+        @media (min-width: 768px) {
+            :root {
+                --hc-r-sm: 10px;
+                --hc-r-md: 14px;
+                --hc-r-lg: 18px;
+                --hc-r-xl: 24px;
+            }
+        }
+        
+        /* ========== BACKGROUND EFFECTS ========== */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            pointer-events: none;
+            background: radial-gradient(90% 70% at 48% 30%, rgba(57,255,248,.28), rgba(165,108,255,.24) 45%, transparent 74%);
+            will-change: transform;
+        }
+        
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            background: 
+                repeating-linear-gradient(to right, rgba(255,255,255,.05) 0 1px, transparent 1px 60px),
+                repeating-linear-gradient(to bottom, rgba(255,255,255,.05) 0 1px, transparent 1px 60px);
+            mask: radial-gradient(60% 60% at 50% 20%, #000 0%, transparent 80%);
+            -webkit-mask: radial-gradient(60% 60% at 50% 20%, #000 0%, transparent 80%);
+        }
+        
+        /* ========== TYPOGRAPHY ========== */
+        h1, h2 {
+            font-family: "Sarpanch", system-ui, sans-serif;
+            font-weight: 800;
+            letter-spacing: .02em;
+            line-height: 1.1;
+            color: var(--hc-aqua);
+        }
+        
+        h1 {
+            font-size: clamp(28px, 5.5vw, 42px);
+            text-shadow: 0 0 20px rgba(0,255,255,0.4);
+        }
+        
+        h2 {
+            font-size: clamp(22px, 4.5vw, 32px);
+            text-shadow: 0 0 15px rgba(0,255,255,0.3);
+        }
+        
+        h3 {
+            font-family: "Saira", system-ui, sans-serif;
+            font-size: clamp(18px, 3.5vw, 24px);
+            font-weight: 700;
+            color: var(--hc-ink);
+            line-height: 1.3;
+        }
+        
+        p {
+            margin-bottom: 1em;
+        }
+        
+        a {
+            color: var(--hc-aqua);
+            text-decoration: none;
+            transition: color var(--hc-transition-fast);
+        }
+        
+        a:hover {
+            color: var(--hc-violet);
+        }
+        
+        /* ========== CONTAINER ========== */
+        .portfolio-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: clamp(60px, 8vw, 100px) clamp(20px, 4vw, 40px);
+        }
+        
+        /* ========== HEADER ========== */
+        .portfolio-header {
+            text-align: center;
+            margin-bottom: clamp(50px, 7vw, 80px);
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .portfolio-subtitle {
+            color: var(--hc-muted);
+            font-size: clamp(16px, 2.2vw, 18px);
+            margin-top: 12px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* ========== LOADING STATE ========== */
+        .loading-skeleton {
+            background: linear-gradient(90deg, 
+                var(--hc-glass) 0%, 
+                rgba(255,255,255,.12) 50%, 
+                var(--hc-glass) 100%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+            border-radius: var(--hc-r-md);
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        
+        /* ========== FILTER CONTROLS ========== */
+        .filter-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: clamp(40px, 6vw, 60px);
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+        }
+        
+        .filter-btn {
+            background: var(--hc-glass);
+            border: 1px solid var(--hc-glass-brd);
+            color: var(--hc-ink);
+            padding: 10px 20px;
+            border-radius: var(--hc-r-md);
+            font-family: "Mulish", sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--hc-transition-base);
+            backdrop-filter: blur(var(--hc-blur-sm));
+            -webkit-backdrop-filter: blur(var(--hc-blur-sm));
+            min-height: 44px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .filter-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(0,255,255,0.15), transparent 70%);
+            opacity: 0;
+            transition: opacity var(--hc-transition-base);
+        }
+        
+        .filter-btn:hover::before {
+            opacity: 1;
+        }
+        
+        .filter-btn:hover {
+            background: rgba(0,255,255,0.12);
+            border-color: rgba(0,255,255,0.4);
+            color: var(--hc-aqua);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0,255,255,0.2);
+        }
+        
+        .filter-btn.active {
+            background: rgba(0,255,255,0.15);
+            border-color: var(--hc-aqua);
+            color: var(--hc-aqua);
+            box-shadow: 0 0 20px rgba(0,255,255,0.3), 
+                        inset 0 0 20px rgba(0,255,255,0.1);
+        }
+        
+        .filter-btn:focus-visible {
+            outline: 2px solid var(--hc-aqua);
+            outline-offset: 3px;
+        }
+        
+        /* ========== PORTFOLIO GRID ========== */
+        /* Mobile first - single column by default */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: clamp(20px, 4vw, 32px);
+            margin-bottom: 60px;
+        }
+        
+        /* 390px - Small phones landscape */
+        @media (min-width: 390px) {
+            .portfolio-grid {
+                gap: clamp(22px, 4vw, 36px);
+            }
+        }
+        
+        /* 500px - Large phones */
+        @media (min-width: 500px) {
+            .portfolio-grid {
+                gap: 24px;
+            }
+        }
+        
+        /* 768px - Tablets portrait - 2 columns */
+        @media (min-width: 768px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 28px;
+            }
+        }
+        
+        /* 1024px - Tablets landscape / small desktop - 2 columns */
+        @media (min-width: 1024px) {
+            .portfolio-grid {
+                gap: 32px;
+            }
+        }
+        
+        /* 1280px - Desktop - 3 columns */
+        @media (min-width: 1280px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 36px;
+            }
+        }
+        
+        /* 1440px - Large desktop - 3 columns with max gap */
+        @media (min-width: 1440px) {
+            .portfolio-grid {
+                gap: 40px;
+            }
+        }
+        
+        /* ========== PORTFOLIO CARDS ========== */
+        .portfolio-card {
+            position: relative;
+            background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+            border: 1px solid var(--hc-glass-brd);
+            border-radius: var(--hc-r-lg);
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            backdrop-filter: blur(var(--hc-blur-md)) saturate(130%);
+            -webkit-backdrop-filter: blur(var(--hc-blur-md)) saturate(130%);
+            box-shadow: var(--hc-shadow-md);
+            display: flex;
+            flex-direction: column;
+            animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+            min-height: 400px; /* Ensures consistent card height */
+        }
+        
+        .portfolio-card:nth-child(1) { animation-delay: 0.1s; }
+        .portfolio-card:nth-child(2) { animation-delay: 0.15s; }
+        .portfolio-card:nth-child(3) { animation-delay: 0.2s; }
+        .portfolio-card:nth-child(4) { animation-delay: 0.25s; }
+        .portfolio-card:nth-child(5) { animation-delay: 0.3s; }
+        .portfolio-card:nth-child(6) { animation-delay: 0.35s; }
+        
+        .portfolio-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(0,255,255,0.4);
+        }
+        
+        .portfolio-card:focus-visible {
+            outline: 3px solid var(--hc-aqua);
+            outline-offset: 4px;
+        }
+        
+        .portfolio-card-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(0,255,255,0.1), rgba(165,108,255,0.1));
+        }
+        
+        .portfolio-card-image img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        /* Lazy loading placeholder */
+        .portfolio-card-image img[data-src] {
+            filter: blur(10px);
+            transform: scale(1.1);
+        }
+        
+        .portfolio-card-image img.loaded {
+            filter: blur(0);
+            transform: scale(1);
+        }
+        
+        .portfolio-card:hover .portfolio-card-image img {
+            transform: scale(1.06);
+        }
+        
+        /* Gradient overlay that reveals on hover */
+        .portfolio-card-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(0, 0, 0, 0.95) 0%,
+                rgba(0, 0, 0, 0.85) 30%,
+                rgba(0, 0, 0, 0.4) 60%,
+                transparent 100%
+            );
+            opacity: 0;
+            transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            pointer-events: none;
+        }
+        
+        .portfolio-card:hover .portfolio-card-image::after {
+            opacity: 1;
+        }
+        
+        /* Content positioned over image, reveals on hover */
+        .portfolio-card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: clamp(20px, 4vw, 32px);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            transform: translateY(calc(100% - 60px));
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 2;
+        }
+        
+        .portfolio-card:hover .portfolio-card-content {
+            transform: translateY(0);
+        }
+        
+        .portfolio-card-category {
+            display: inline-block;
+            color: var(--hc-aqua);
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.05s;
+        }
+        
+        .portfolio-card:hover .portfolio-card-category {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .portfolio-card-title {
+            font-family: "Saira", sans-serif;
+            font-size: clamp(18px, 3vw, 22px);
+            font-weight: 700;
+            color: var(--hc-ink);
+            line-height: 1.3;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+        }
+        
+        .portfolio-card-description {
+            color: var(--hc-muted);
+            font-size: clamp(13px, 2vw, 15px);
+            line-height: 1.6;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
+        }
+        
+        .portfolio-card:hover .portfolio-card-description {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .portfolio-card-footer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
+        }
+        
+        .portfolio-card:hover .portfolio-card-footer {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .portfolio-card-tech {
+            background: rgba(0,255,255,0.15);
+            color: var(--hc-aqua);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: var(--hc-r-sm);
+            border: 1px solid rgba(0,255,255,0.3);
+            text-shadow: 0 0 10px rgba(0,255,255,0.5);
+        }
+        
+        /* ========== SEE MORE TOGGLE ========== */
+        .portfolio-card.hidden {
+            display: none;
+        }
+        
+        .portfolio-load-more-container {
+            display: flex;
+            justify-content: center;
+            margin: clamp(40px, 6vw, 60px) auto;
+            padding: 0 clamp(20px, 4vw, 40px);
+        }
+        
+        .portfolio-load-more-btn {
+            background: var(--hc-glass);
+            border: 1px solid var(--hc-glass-brd);
+            color: var(--hc-ink);
+            padding: 14px 32px;
+            border-radius: var(--hc-r-md);
+            font-family: "Saira", sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all var(--hc-transition-base);
+            backdrop-filter: blur(var(--hc-blur-sm));
+            -webkit-backdrop-filter: blur(var(--hc-blur-sm));
+            min-height: 48px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .portfolio-load-more-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(0,255,255,0.15), transparent 70%);
+            opacity: 0;
+            transition: opacity var(--hc-transition-base);
+        }
+        
+        .portfolio-load-more-btn:hover::before {
+            opacity: 1;
+        }
+        
+        .portfolio-load-more-btn:hover {
+            background: rgba(0,255,255,0.12);
+            border-color: rgba(0,255,255,0.4);
+            color: var(--hc-aqua);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0,255,255,0.2);
+        }
+        
+        .portfolio-load-more-btn:focus-visible {
+            outline: 2px solid var(--hc-aqua);
+            outline-offset: 3px;
+        }
+        
+        .load-more-icon {
+            transition: transform var(--hc-transition-base);
+            font-size: 14px;
+        }
+        
+        .portfolio-load-more-btn[aria-expanded="true"] .load-more-icon {
+            transform: rotate(180deg);
+        }
+        
+        /* Hide button when all items shown or filtered to less than threshold */
+        .portfolio-load-more-container.hidden {
+            display: none;
+        }
+        
+        /* ========== MODAL ========== */
+        .portfolio-modal {
+            position: fixed;
+            inset: 0;
+            z-index: var(--z-modal);
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--hc-transition-base);
+            overflow-y: auto;
+        }
+        
+        .portfolio-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .portfolio-modal-wrapper {
+            position: relative;
+            background: #1a1d2e;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--hc-r-xl);
+            max-width: 1400px;
+            width: 100%;
+            max-height: 90vh;
+            overflow: hidden;
+            box-shadow: var(--hc-shadow-xl);
+            transform: scale(0.95) translateY(20px);
+            transition: transform var(--hc-transition-slow);
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+        }
+        
+        .portfolio-modal.active .portfolio-modal-wrapper {
+            transform: scale(1) translateY(0);
+        }
+        
+        /* Mobile modal adjustments - only below 768px */
+        @media (max-width: 767px) {
+            .portfolio-modal {
+                padding: 0;
+                align-items: flex-start;
+            }
+            
+            .portfolio-modal-wrapper {
+                max-height: 100vh;
+                height: 100vh;
+                border-radius: 0;
+                margin: 0;
+            }
+        }
+        
+        .portfolio-modal-close {
+            position: fixed;
+            /* Fluid positioning: scales from 16px to 20px */
+            top: clamp(16px, 2vw, 20px);
+            right: clamp(16px, 2vw, 20px);
+            /* Fluid sizing: scales from 40px to 48px */
+            width: clamp(40px, 5vw, 48px);
+            height: clamp(40px, 5vw, 48px);
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            color: #fff;
+            /* Fluid font size: scales from 16px to 20px */
+            font-size: clamp(16px, 2vw, 20px);
+            cursor: pointer;
+            transition: all var(--hc-transition-base);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+        
+        .portfolio-modal-close:hover {
+            background: rgba(255, 90, 241, 0.3);
+            border-color: var(--hc-pink);
+            color: var(--hc-pink);
+            transform: rotate(90deg);
+        }
+        
+        .portfolio-modal-close:focus-visible {
+            outline: 2px solid var(--hc-aqua);
+            outline-offset: 3px;
+        }
+        
+        /* Lighter background for larger screens */
+        @media (min-width: 768px) {
+            .portfolio-modal-close {
+                background: rgba(0, 0, 0, 0.6);
+            }
+        }
+        
+        /* ========== MODAL CONTAINER - MOBILE FIRST WITH CUSTOM BREAKPOINTS ========== */
+        /* Base mobile (< 390px) - single column, 45vh media */
+        .portfolio-modal-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 45vh auto;
+            gap: 0;
+            height: 100%;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        
+        .portfolio-modal-media {
+            background: #0f1219;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            min-height: 45vh;
+            max-height: 45vh;
+            min-width: 0; /* Critical: allows grid item to shrink below content size */
+        }
+        
+        .portfolio-modal-main-media {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 0;
+            min-width: 0; /* Critical: prevents content from expanding parent */
+            overflow: hidden;
+            max-height: calc(45vh - 110px); /* Account for thumbnail strip */
+        }
+        
+        .portfolio-modal-sidebar {
+            background: #1a1d2e;
+            overflow-y: visible;
+            overflow-x: hidden;
+            padding: 20px 16px 32px;
+            display: flex;
+            flex-direction: column;
+            min-width: 0; /* Critical: allows grid item to shrink below content size */
+        }
+        
+        /* 390px - Small phones landscape - better padding */
+        @media (min-width: 390px) {
+            .portfolio-modal-sidebar {
+                padding: 22px 18px 36px;
+            }
+        }
+        
+        /* 500px - Large phones - increase media to 50vh */
+        @media (min-width: 500px) {
+            .portfolio-modal-container {
+                grid-template-rows: 50vh auto;
+            }
+            
+            .portfolio-modal-media {
+                min-height: 50vh;
+                max-height: 50vh;
+            }
+            
+            .portfolio-modal-main-media {
+                max-height: calc(50vh - 115px);
+            }
+            
+            .portfolio-modal-sidebar {
+                padding: 24px 20px 40px;
+            }
+        }
+        
+        /* 768px - TWO COLUMN LAYOUT STARTS - 50/50 SPLIT */
+        @media (min-width: 768px) {
+            .portfolio-modal-container {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: none;
+                overflow: hidden;
+            }
+            
+            .portfolio-modal-media {
+                min-height: auto;
+                max-height: none;
+                height: 100%;
+                overflow: hidden; /* Prevent content from expanding the column */
+            }
+            
+            .portfolio-modal-main-media {
+                max-height: none;
+            }
+            
+            .portfolio-modal-sidebar {
+                overflow-y: auto;
+                padding: 28px 24px;
+            }
+        }
+        
+        /* 1024px - Tablets landscape / small laptops - better padding */
+        @media (min-width: 1024px) {
+            .portfolio-modal-sidebar {
+                padding: 32px 24px;
+            }
+        }
+        
+        /* 1280px - Large desktop - better padding */
+        @media (min-width: 1280px) {
+            .portfolio-modal-sidebar {
+                padding: 36px 28px;
+            }
+        }
+        
+        /* 1440px - Extra large desktop - generous padding */
+        @media (min-width: 1440px) {
+            .portfolio-modal-sidebar {
+                padding: 40px 32px;
+            }
+        }
+        
+        /* Smooth scrollbar for sidebar */
+        .portfolio-modal-sidebar::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .portfolio-modal-sidebar::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .portfolio-modal-sidebar::-webkit-scrollbar-thumb {
+            background: rgba(0, 255, 255, 0.3);
+            border-radius: 4px;
+        }
+        
+        .portfolio-modal-sidebar::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 255, 255, 0.5);
+        }
+        
+        .portfolio-modal-header {
+            margin-bottom: 24px;
+        }
+        
+        .portfolio-modal-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .portfolio-modal-tag {
+            background: rgba(0, 255, 255, 0.1);
+            color: var(--hc-aqua);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            text-transform: capitalize;
+        }
+        
+        .portfolio-modal-title {
+            margin-bottom: 16px;
+            font-size: clamp(24px, 3vw, 32px);
+        }
+        
+        .portfolio-modal-description {
+            color: var(--hc-muted);
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+        
+        /* Mobile adjustments for modal content */
+        @media (max-width: 640px) {
+            .portfolio-modal-header {
+                margin-bottom: 20px;
+            }
+            
+            .portfolio-modal-title {
+                font-size: 22px;
+                line-height: 1.2;
+                margin-bottom: 12px;
+            }
+            
+            .portfolio-modal-description {
+                font-size: 14px;
+                margin-bottom: 24px;
+            }
+            
+            .portfolio-modal-tag {
+                font-size: 11px;
+                padding: 5px 12px;
+            }
+            
+            .portfolio-modal-section {
+                margin-bottom: 24px;
+            }
+            
+            .portfolio-modal-section-title {
+                font-size: 13px;
+                margin-bottom: 10px;
+            }
+            
+            .portfolio-modal-section-content {
+                font-size: 13px;
+                line-height: 1.6;
+            }
+        }
+        
+        .portfolio-modal-section {
+            margin-bottom: 28px;
+        }
+        
+        .portfolio-modal-section-title {
+            color: #fff;
+            font-family: "Saira", sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 12px;
+            opacity: 0.7;
+        }
+        
+        .portfolio-modal-section-content {
+            color: var(--hc-muted);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+        
+        .portfolio-modal-section ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        
+        .portfolio-modal-section li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: var(--hc-muted);
+            font-size: 14px;
+        }
+        
+        .portfolio-modal-section li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--hc-aqua);
+            font-size: 11px;
+        }
+        
+        .portfolio-modal-tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .portfolio-modal-tech-item {
+            background: rgba(165, 108, 255, 0.1);
+            color: var(--hc-violet);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: var(--hc-r-sm);
+            border: 1px solid rgba(165, 108, 255, 0.3);
+        }
+        
+        .portfolio-modal-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .portfolio-modal-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 16px;
+            background: rgba(0, 255, 255, 0.08);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: var(--hc-r-md);
+            color: var(--hc-aqua);
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all var(--hc-transition-base);
+        }
+        
+        .portfolio-modal-link-btn:hover {
+            background: rgba(0, 255, 255, 0.15);
+            border-color: var(--hc-aqua);
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(0, 255, 255, 0.2);
+        }
+        
+        .portfolio-modal-link-btn i {
+            font-size: 16px;
+        }
+        
+        .portfolio-modal-results-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(0, 255, 255, 0.1);
+            color: var(--hc-aqua);
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        
+        /* ========== BEFORE/AFTER SLIDER ========== */
+        .before-after-container {
+            position: relative;
+            width: 100%;
+            max-width: 100%; /* Prevent overflow of grid column */
+            height: 100%;
+            background: #000;
+            user-select: none;
+            touch-action: none;
+        }
+        
+        .before-after-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .before-after-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .before-image {
+            z-index: 1;
+        }
+        
+        .after-image {
+            z-index: 2;
+            clip-path: inset(0 50% 0 0);
+        }
+        
+        .before-after-slider {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 3px;
+            height: 100%;
+            background: var(--hc-aqua);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+            cursor: ew-resize;
+            z-index: 3;
+            transform: translateX(-50%);
+        }
+        
+        .before-after-handle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 50px;
+            height: 50px;
+            background: var(--hc-aqua);
+            border: 3px solid #fff;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            cursor: ew-resize;
+            box-shadow: 0 4px 20px rgba(0, 255, 255, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--hc-transition-fast);
+        }
+        
+        .before-after-handle:hover {
+            transform: translate(-50%, -50%) scale(1.15);
+            box-shadow: 0 6px 30px rgba(0, 255, 255, 1);
+        }
+        
+        .before-after-handle i {
+            color: #fff;
+            font-size: 20px;
+        }
+        
+        .before-after-label {
+            position: absolute;
+            top: 24px;
+            padding: 8px 16px;
+            background: rgba(0, 0, 0, 0.75);
+            color: #fff;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            border-radius: var(--hc-r-sm);
+            z-index: 4;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .before-label {
+            left: 24px;
+        }
+        
+        .after-label {
+            right: 24px;
+        }
+        
+        /* ========== CAROUSEL ========== */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 100%; /* Prevent overflow of grid column */
+            height: 100%;
+            background: #000;
+        }
+        
+        .carousel-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .carousel-track {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform;
+        }
+        
+        .carousel-slide {
+            position: relative;
+            min-width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .carousel-slide img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        /* Navigation arrows - RESPONSIVE SIZING */
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            /* Fluid sizing: scales from 38px at 500px to 52px at 1440px+ */
+            width: clamp(38px, 4vw, 52px);
+            height: clamp(38px, 4vw, 52px);
+            background: rgba(0, 0, 0, 0.75);
+            border: 2px solid var(--hc-aqua);
+            border-radius: 50%;
+            color: var(--hc-aqua);
+            /* Fluid font size: scales from 15px to 20px */
+            font-size: clamp(15px, 1.8vw, 20px);
+            cursor: pointer;
+            z-index: 10;
+            display: none; /* Hidden below 500px */
+            align-items: center;
+            justify-content: center;
+            transition: all var(--hc-transition-base);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        /* Show arrows above 500px with responsive sizing */
+        @media (min-width: 500px) {
+            .carousel-nav {
+                display: flex;
+            }
+        }
+        
+        .carousel-nav:hover,
+        .carousel-nav:focus-visible {
+            background: rgba(0, 255, 255, 0.2);
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+        }
+        
+        .carousel-nav:focus-visible {
+            outline: 2px solid var(--hc-aqua);
+            outline-offset: 3px;
+        }
+        
+        .carousel-nav.prev {
+            /* Fluid positioning: scales from 8px to 24px */
+            left: clamp(8px, 2vw, 24px);
+        }
+        
+        .carousel-nav.next {
+            /* Fluid positioning: scales from 8px to 24px */
+            right: clamp(8px, 2vw, 24px);
+        }
+        
+        /* Indicators - always visible, essential for touch navigation feedback */
+        .carousel-indicators {
+            position: absolute;
+            bottom: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+        
+        .carousel-indicator {
+            width: 8px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all var(--hc-transition-base);
+        }
+        
+        .carousel-indicator:hover {
+            background: rgba(255, 255, 255, 0.7);
+            transform: scale(1.2);
+        }
+        
+        .carousel-indicator.active {
+            background: var(--hc-aqua);
+            border-color: var(--hc-aqua);
+            box-shadow: 0 0 10px var(--hc-aqua);
+        }
+        
+        .carousel-indicator:focus-visible {
+            outline: 2px solid var(--hc-aqua);
+            outline-offset: 3px;
+        }
+        
+        /* Larger indicators on tablet+ */
+        @media (min-width: 768px) {
+            .carousel-indicators {
+                bottom: 20px;
+                gap: 10px;
+            }
+            
+            .carousel-indicator {
+                width: 10px;
+                height: 10px;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .carousel-indicators {
+                bottom: 24px;
+            }
+        }
+        
+        /* ========== THUMBNAIL STRIP ========== */
+        .thumbnail-strip {
+            background: #0a0c13;
+            padding: 16px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            overflow-x: auto;
+            overflow-y: hidden;
+            flex-shrink: 0;
+        }
+        
+        .thumbnail-strip::-webkit-scrollbar {
+            height: 6px;
+        }
+        
+        .thumbnail-strip::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .thumbnail-strip::-webkit-scrollbar-thumb {
+            background: rgba(0, 255, 255, 0.3);
+            border-radius: 3px;
+        }
+        
+        .thumbnail-strip::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 255, 255, 0.5);
+        }
+        
+        .thumbnail-grid {
+            display: flex;
+            gap: 12px;
+            min-width: 0; /* Allow proper scrolling without forcing parent width */
+        }
+        
+        .thumbnail-item {
+            position: relative;
+            width: 120px;
+            height: 90px;
+            flex-shrink: 0;
+            border-radius: var(--hc-r-sm);
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all var(--hc-transition-base);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* Mobile thumbnail adjustments */
+        @media (max-width: 640px) {
+            .thumbnail-strip {
+                padding: 12px 16px;
+                max-height: 110px;
+            }
+            
+            .thumbnail-item {
+                width: 100px;
+                height: 75px;
+            }
+        }
+        
+        .thumbnail-item:hover {
+            border-color: var(--hc-aqua);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0, 255, 255, 0.4);
+        }
+        
+        .thumbnail-item:focus-visible {
+            outline: 2px solid var(--hc-aqua);
+            outline-offset: 3px;
+        }
+        
+        .thumbnail-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--hc-transition-base);
+        }
+        
+        .thumbnail-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .thumbnail-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            opacity: 0;
+            transition: opacity var(--hc-transition-base);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .thumbnail-item:hover .thumbnail-overlay {
+            opacity: 1;
+        }
+        
+        .thumbnail-zoom-icon {
+            color: var(--hc-aqua);
+            font-size: 20px;
+        }
+        
+        /* ========== LIGHTBOX ========== */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: var(--z-lightbox);
+            background: rgba(0, 0, 0, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--hc-transition-base);
+        }
+        
+        .lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .lightbox-content {
+            position: relative;
+            max-width: 95%;
+            max-height: 95vh;
+            transform: scale(0.9);
+            transition: transform var(--hc-transition-slow);
+        }
+        
+        .lightbox.active .lightbox-content {
+            transform: scale(1);
+        }
+        
+        .lightbox-image {
+            max-width: 100%;
+            max-height: 95vh;
+            object-fit: contain;
+            border-radius: var(--hc-r-md);
+            box-shadow: var(--hc-shadow-xl);
+        }
+        
+        .lightbox-close,
+        .lightbox-nav {
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid var(--hc-aqua);
+            border-radius: 50%;
+            color: var(--hc-aqua);
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--hc-transition-base);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .lightbox-close:hover,
+        .lightbox-nav:hover {
+            background: rgba(0, 255, 255, 0.2);
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+        }
+        
+        .lightbox-close:focus-visible,
+        .lightbox-nav:focus-visible {
+            outline: 2px solid var(--hc-aqua);
+            outline-offset: 3px;
+        }
+        
+        .lightbox-close {
+            top: 20px;
+            right: 20px;
+        }
+        
+        .lightbox-nav.prev {
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .lightbox-nav.next {
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .lightbox-nav:hover {
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .lightbox-counter {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: var(--hc-aqua);
+            padding: 10px 20px;
+            border-radius: var(--hc-r-md);
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        /* ========== ZOOM CONTROLS ========== */
+        .lightbox-zoom-controls {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .zoom-btn {
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid var(--hc-aqua);
+            border-radius: 50%;
+            color: var(--hc-aqua);
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--hc-transition-base);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .zoom-btn:hover {
+            background: rgba(0, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+        
+        .zoom-btn:focus-visible {
+            outline: 2px solid var(--hc-aqua);
+            outline-offset: 3px;
+        }
+        
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .carousel-nav,
+            .lightbox-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+            
+            .carousel-nav.prev,
+            .lightbox-nav.prev {
+                left: 10px;
+            }
+            
+            .carousel-nav.next,
+            .lightbox-nav.next {
+                right: 10px;
+            }
+            
+            .lightbox-close {
+                top: 10px;
+                right: 10px;
+                width: 40px;
+                height: 40px;
+            }
+            
+            .before-after-handle {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .before-after-handle i {
+                font-size: 16px;
+            }
+            
+            .before-after-label {
+                font-size: 11px;
+                padding: 6px 12px;
+                top: 12px;
+            }
+            
+            .before-label {
+                left: 12px;
+            }
+            
+            .after-label {
+                right: 12px;
+            }
+            
+            .lightbox-zoom-controls {
+                bottom: 20px;
+                right: 20px;
+                gap: 8px;
+            }
+            
+            .zoom-btn {
+                width: 36px;
+                height: 36px;
+                font-size: 14px;
+            }
+            
+            .carousel-indicators {
+                bottom: 16px;
+                gap: 8px;
+            }
+            
+            .carousel-indicator {
+                width: 8px;
+                height: 8px;
+            }
+        }
+        
+        /* ========== UTILITY CLASSES ========== */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+        
+        /* ========== PRINT STYLES ========== */
+        @media print {
+            body::before,
+            body::after {
+                display: none;
+            }
+            
+            .portfolio-modal,
+            .lightbox,
+            .filter-controls {
+                display: none;
+            }
+            
+            .portfolio-card {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main id="main-content" class="portfolio-container" role="main">
+        <!-- Header -->
+        <header class="portfolio-header">
+            <h1>Recent Web Design & Creative Projects – HC Web Labs Portfolio</h1>
+            <p class="portfolio-subtitle">
+                Explore recent projects including web design, UX/UI, front-end development, vector illustration, and photo retouching.
+                Browse by category below and open any case study to see the process, tools, and measurable results.
+            </p>
+        </header>
+        
+        <!-- Filter Controls -->
+        <nav class="filter-controls" role="navigation" aria-label="Portfolio filter">
+            <button class="filter-btn active" data-filter="all" aria-pressed="true">
+                All Projects
+            </button>
+            <button class="filter-btn" data-filter="web-design" aria-pressed="false">
+                Web Design
+            </button>
+            <button class="filter-btn" data-filter="development" aria-pressed="false">
+                Front-End Development
+            </button>
+            <button class="filter-btn" data-filter="branding" aria-pressed="false">
+                Photo Editing & Retouching
+            </button>
+            <button class="filter-btn" data-filter="ui-ux" aria-pressed="false">
+                Vector Illustration
+            </button>
+        </nav>
+        
+        <!-- Portfolio Grid -->
+        <div class="portfolio-grid" id="portfolioGrid" role="list"></div>
+        
+        <!-- See More Toggle Button -->
+        <div class="portfolio-load-more-container">
+            <button class="portfolio-load-more-btn" id="loadMoreBtn" aria-expanded="false">
+                <span class="load-more-text">See More Projects</span>
+                <i class="fas fa-chevron-down load-more-icon"></i>
+            </button>
+        </div>
+    </main>
+    
+    <!-- Modal -->
+    <div class="portfolio-modal" id="portfolioModal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="portfolio-modal-wrapper">
+            <!-- Content injected dynamically by JavaScript -->
+        </div>
+    </div>
+    
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox" aria-hidden="true">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">
+            <i class="fas fa-times"></i>
+        </button>
+        <button class="lightbox-nav prev" id="lightboxPrev" aria-label="Previous image">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="lightbox-nav next" id="lightboxNext" aria-label="Next image">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="lightbox-content">
+            <img id="lightboxImage" class="lightbox-image" src="" alt="" />
+        </div>
+        <div class="lightbox-counter" id="lightboxCounter" aria-live="polite" aria-atomic="true"></div>
+        <div class="lightbox-zoom-controls">
+            <button class="zoom-btn" id="zoomOut" aria-label="Zoom out">
+                <i class="fas fa-minus"></i>
+            </button>
+            <button class="zoom-btn" id="zoomReset" aria-label="Reset zoom">
+                <i class="fas fa-expand"></i>
+            </button>
+            <button class="zoom-btn" id="zoomIn" aria-label="Zoom in">
+                <i class="fas fa-plus"></i>
+            </button>
+        </div>
+    </div>
+    
+    <script>
+        /* =============================================================================
+           PORTFOLIO JAVASCRIPT - HC WEB LABS v3.0
+           Modern, accessible, performant
+           ============================================================================= */
+        
+        // ========== GLOBAL VARIABLES ==========
+        const portfolioGrid = document.getElementById('portfolioGrid');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const modal = document.getElementById('portfolioModal');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const lightboxPrev = document.getElementById('lightboxPrev');
+        const lightboxNext = document.getElementById('lightboxNext');
+        const lightboxCounter = document.getElementById('lightboxCounter');
+        const zoomIn = document.getElementById('zoomIn');
+        const zoomOut = document.getElementById('zoomOut');
+        const zoomReset = document.getElementById('zoomReset');
+        
+        let currentFilter = 'all';
+        let scrollPosition = 0;
+        let lightboxImages = [];
+        let currentLightboxIndex = 0;
+        let currentZoom = 1;
+        let isDragging = false;
+        let startX = 0;
+        let currentPosition = 0;
+        
+        // ========== PORTFOLIO DATA ==========
+        const portfolioData = [
+            {
+                id: 1,
+                title: 'Sweet Wheels Landing',
+                category: 'web-design',
+                description: 'Playful dessert-truck theme showcasing a conversion-ready hero with a custom discount spinner.',
+                image: 'https://i.imgur.com/zqhqiD6.jpg',
+                challenge: 'Dessert Truck business had issues informing customers of locations, dates, and times. Wanted to increase attention of business in a fun way.',
+                solution: 'Low-fi wireframes → visual system → CodePen build. Custom sweets icon set + fun, interactive discount spinner. Optimized landing page, SEO, live mini map, custom image grid gallery.',
+                results: [
+                    'Lighthouse Performance: 98',
+                    'CLS: 0.01',
+                    'Hero image: ~68 KB'
+                ],
+                technologies: ['CodePen', 'GitHub Pages', 'JavaScript', 'HTML5', 'CSS3'],
+                modalType: 'carousel',
+                carouselImages: [
+                    'https://i.imgur.com/zqhqiD6.jpg',
+                    'https://i.imgur.com/ffF2pbq.jpg',
+                    'https://i.imgur.com/u5Nu8wU.jpg',
+                    'https://i.imgur.com/Irf5Kx2.jpg'
+                ],
+                thumbnails: [
+                    'https://i.imgur.com/zqhqiD6.jpg',
+                    'https://i.imgur.com/ffF2pbq.jpg',
+                    'https://i.imgur.com/u5Nu8wU.jpg',
+                    'https://i.imgur.com/Irf5Kx2.jpg'
+                ],
+                links: {
+                    live: 'https://hcweblabs.github.io/sweet-wheels-landing/',
+                    demo: 'https://codepen.io/HCWebLabs/full/qEOLxzo',
+                    repo: 'https://github.com/HCWebLabs/sweet-wheels-landing'
+                }
+            },
+            {
+                id: 2,
+                title: 'Audio Engineer Portfolio',
+                category: 'development',
+                description: 'Motion background "sound wave" and audio-reactive UI.',
+                image: 'https://i.imgur.com/2avmE3R.jpg',
+                challenge: 'New to the industry—needed a credible home online to land early gigs. Wanted to showcase services and audio samples without a heavy, sluggish site.',
+                solution: 'Bluehost + WordPress + Elementor: lightweight theme with tokenized color/type/spacing for fast iteration. Subtle CSS/GSAP-style waveform background with prefers-reduced-motion fallback; lazy media and optimized assets. Accessible patterns throughout—keyboard nav, skip links, visible focus, semantic headings.',
+                results: [
+                    'TTI: <1.2s',
+                    'Bundle: ~120 KB',
+                    'Accessibility: Pass'
+                ],
+                technologies: ['WordPress', 'Elementor', 'Adobe Illustrator', 'GSAP', 'CSS3'],
+                modalType: 'carousel',
+                carouselImages: [
+                    'https://i.imgur.com/eeWrmL2.jpg',
+                    'https://i.imgur.com/qWnj36k.jpg',
+                    'https://i.imgur.com/Iafqv9i.jpg',
+                    'https://i.imgur.com/hjafAn0.jpg'
+                ],
+                thumbnails: [
+                    'https://i.imgur.com/eeWrmL2.jpg',
+                    'https://i.imgur.com/qWnj36k.jpg',
+                    'https://i.imgur.com/Iafqv9i.jpg',
+                    'https://i.imgur.com/hjafAn0.jpg'
+                ],
+                links: {
+                    live: 'https://leejameslawrence.com/staging/6336/'
+                }
+            },
+            {
+                id: 3,
+                title: 'Before & After Photoshop',
+                category: 'branding',
+                description: 'Restore true-to-eye color, contrast, and clarity.',
+                image: 'https://i.imgur.com/LAW3FUk.jpg',
+                challenge: 'Lens/sensor limits: white-balance drift, haze, muddy shadows, and soft micro-contrast. Details get lost on mobile and in grids; images feel "flat" next to polished listings.',
+                solution: 'Base corrections: WB/exposure, tone curve, HSL clean-up, subtle dehaze. Local edits: dodge & burn, selective clarity/sharpening, color separation—fully non-destructive. Batchable actions for consistency; export presets for web/social.',
+                results: [
+                    'Color cast: neutralized',
+                    'Texture: preserved',
+                    'Turnaround: same day'
+                ],
+                technologies: ['Adobe Photoshop', 'Image Retouching', 'Color Grading'],
+                modalType: 'before-after',
+                beforeImage: 'https://i.imgur.com/LAW3FUk.jpg',
+                afterImage: 'https://i.imgur.com/vtJd0Kz.jpg',
+                thumbnails: [
+                    'https://i.imgur.com/LAW3FUk.jpg',
+                    'https://i.imgur.com/vtJd0Kz.jpg',
+                    'https://i.imgur.com/uPJbb67.jpg',
+                    'https://i.imgur.com/ajeRwpG.jpg'
+                ]
+            },
+            {
+                id: 4,
+                title: 'Editorial Gameday Website',
+                category: 'development',
+                description: 'Scores, stats, and stories—fast, readable, and fan-forward.',
+                image: 'https://i.imgur.com/PbBNj9s.jpg',
+                challenge: 'Scattered info made it hard to follow the game flow and key plays on mobile. Needed live-ish updates without a heavy framework.',
+                solution: 'Card-based grid with priority slots for score box, headline, and big photo; scales down cleanly to one column. JSON-backed modules for scoreboard, top performers, and schedule; graceful fallbacks and loading states. Semantic markup and ARIA: landmarks, keyboard focus, reduced-motion media.',
+                results: [
+                    'First contentful paint: ~1.0s',
+                    'Bundle: ~45 KB',
+                    'Accessibility: Pass'
+                ],
+                technologies: ['JSON API', 'JavaScript', 'HTML5', 'CSS3', 'Vanilla JS'],
+                modalType: 'carousel',
+                carouselImages: [
+                    'https://i.imgur.com/PbBNj9s.jpg',
+                    'https://i.imgur.com/CC14wFh.jpg',
+                    'https://i.imgur.com/N5j9nHt.jpg',
+                    'https://i.imgur.com/kPtPYG5.jpg'
+                ],
+                thumbnails: [
+                    'https://i.imgur.com/PbBNj9s.jpg',
+                    'https://i.imgur.com/CC14wFh.jpg',
+                    'https://i.imgur.com/N5j9nHt.jpg',
+                    'https://i.imgur.com/kPtPYG5.jpg'
+                ],
+                links: {
+                    live: 'https://hcweblabs.github.io/editorial-sportspage/'
+                }
+            },
+            {
+                id: 5,
+                title: 'Photorealism: Great Smoky Mountains',
+                category: 'ui-ux',
+                description: 'Sunrise/sunset studies that read like photographs at first glance.',
+                image: 'https://i.imgur.com/iiwui2T.jpg',
+                challenge: 'Raw captures felt flat: compressed dynamic range, color cast, and lost edge detail in the haze. Needed pieces that hold up both as prints and in small social crops.',
+                solution: 'Vector base shapes in Illustrator for clean silhouettes and depth planes. Photoshop passes: gradient maps + soft light glows for golden/blue hour, selective dodge & burn, haze layers. Color separation via curves and HSL; gentle texture and grain to unify surfaces.',
+                results: [
+                    'Pieces: 4',
+                    'Time per piece: ~2–3h',
+                    'Output: Print & Web'
+                ],
+                technologies: ['Adobe Illustrator', 'Adobe Photoshop', 'Digital Art', 'Vector Graphics'],
+                modalType: 'carousel',
+                carouselImages: [
+                    'https://i.imgur.com/fcnsI6m.jpg',
+                    'https://i.imgur.com/iiwui2T.jpg',
+                    'https://i.imgur.com/tXmfASn.jpg',
+                    'https://i.imgur.com/jvO6gWR.jpg'
+                ],
+                thumbnails: [
+                    'https://i.imgur.com/fcnsI6m.jpg',
+                    'https://i.imgur.com/iiwui2T.jpg',
+                    'https://i.imgur.com/tXmfASn.jpg',
+                    'https://i.imgur.com/jvO6gWR.jpg'
+                ]
+            },
+            {
+                id: 6,
+                title: 'Brand Icon Mini-Pack',
+                category: 'ui-ux',
+                description: 'Two themed sets in two styles—ready for dark/light UIs.',
+                image: 'https://i.imgur.com/fCEykbG.jpg',
+                challenge: 'Mixed stroke weights and radii made old icons look mismatched in the UI. Needed sets that scale cleanly and still read at 24px on low-dpi screens.',
+                solution: 'Two styles: claymorphic (soft, pillowy depth) and papercut (layered, cut-paper look). Themes: veterinary/animal hospital + core media/navigation; plus a nature/earth-science papercut set. 24px base grid (48px large), 2px optical stroke, pixel-fit alignment; cleaned SVG paths (SVGO) and PNG @1x–4x.',
+                results: [
+                    'Icons: 24',
+                    'Grids: 24 & 48 px',
+                    'Stroke: 2 px (optical)'
+                ],
+                technologies: ['Adobe Illustrator', 'Iconography', 'SVG', 'Vector Design'],
+                modalType: 'carousel',
+                carouselImages: [
+                    'https://i.imgur.com/fCEykbG.jpg',
+                    'https://i.imgur.com/oHEmhQo.jpg',
+                    'https://i.imgur.com/Khssrgv.jpg',
+                    'https://i.imgur.com/foauzAz.jpg'
+                ],
+                thumbnails: [
+                    'https://i.imgur.com/fCEykbG.jpg',
+                    'https://i.imgur.com/oHEmhQo.jpg',
+                    'https://i.imgur.com/Khssrgv.jpg',
+                    'https://i.imgur.com/foauzAz.jpg'
+                ]
+            },
+            {
+                id: 7,
+                title: 'DDGHS Web Re-Design',
+                category: 'web-design',
+                description: 'Fresh brand look and a friction-free booking flow for a neighborhood salon.',
+                image: 'https://i.imgur.com/Zai6Zqh.jpg',
+                challenge: 'Important info (prices, hours, stylist availability) was hard to find on mobile, so visitors bounced instead of booking. Thin local SEO and no business schema meant weaker visibility in "near me" searches.',
+                solution: 'Clear IA with service categories, prices, stylist bios, FAQs, and a prominent "Book Now." Sticky call/booking bar on mobile. WordPress + Elementor with modular sections; WebP images, lazy-loading, caching; LocalBusiness schema and embedded Google Map. Photo-forward gallery and refreshed palette/type to match the brand vibe.',
+                results: [
+                    'Lighthouse Performance: 96',
+                    'CLS: 0.01',
+                    'Page weight: ~520 KB'
+                ],
+                technologies: ['WordPress', 'Elementor', 'JavaScript', 'UX/UI Components', 'Schema.org'],
+                modalType: 'carousel',
+                carouselImages: [
+                    'https://i.imgur.com/Zai6Zqh.jpg',
+                    'https://i.imgur.com/VvqfZ9Y.jpg',
+                    'https://i.imgur.com/iPk5UBn.jpg',
+                    'https://i.imgur.com/0gmu8yY.jpg'
+                ],
+                thumbnails: [
+                    'https://i.imgur.com/Zai6Zqh.jpg',
+                    'https://i.imgur.com/VvqfZ9Y.jpg',
+                    'https://i.imgur.com/iPk5UBn.jpg',
+                    'https://i.imgur.com/0gmu8yY.jpg'
+                ],
+                links: {
+                    live: 'https://hcweblabs.github.io/ddg-hair-studio/',
+                    repo: 'https://github.com/HCWebLabs/ddg-hair-studio'
+                }
+            },
+            {
+                id: 8,
+                title: 'UX/UI Component Library',
+                category: 'development',
+                description: 'A reusable set of UX/UI pieces you can drop in and ship.',
+                image: 'https://i.imgur.com/iPk5UBn.jpg',
+                challenge: 'Projects needed the same patterns (carousels, tabs, modals) but copying one-offs caused bugs and inconsistency. Off-the-shelf libraries were heavy, opinionated, or not screen-reader friendly.',
+                solution: 'Vanilla JS modules with progressive enhancement and tested ARIA patterns (focus traps, roving tabindex, aria-live). Design tokens for spacing/type/color; one place to flip dark mode or brand palettes. Clear usage snippets in CodePen—copy, paste, and customize without bundler drama.',
+                results: [
+                    'Components: 8',
+                    'Avg size/comp: ≈2–3 KB gz',
+                    'Accessibility: Pass'
+                ],
+                technologies: ['Vanilla JS', 'CodePen', 'HTML5', 'CSS3', 'ARIA'],
+                modalType: 'carousel',
+                carouselImages: [
+                    'https://i.imgur.com/LHIutIw.jpg',
+                    'https://i.imgur.com/iPk5UBn.jpg',
+                    'https://i.imgur.com/exTGZtn.jpg',
+                    'https://i.imgur.com/IOsKhRT.jpg'
+                ],
+                thumbnails: [
+                    'https://i.imgur.com/LHIutIw.jpg',
+                    'https://i.imgur.com/iPk5UBn.jpg',
+                    'https://i.imgur.com/exTGZtn.jpg',
+                    'https://i.imgur.com/IOsKhRT.jpg'
+                ],
+                links: {
+                    demos: [
+                        { label: 'Collection 1', href: 'https://codepen.io/collection/EPgeLb' },
+                        { label: 'Collection 2', href: 'https://codepen.io/collection/xeZgjj' }
+                    ]
+                }
+            }
+        ];
+        
+        // ========== UTILITY FUNCTIONS ==========
+        
+        // Get scrollbar width for modal scroll prevention
+        function getScrollbarWidth() {
+            const outer = document.createElement('div');
+            outer.style.visibility = 'hidden';
+            outer.style.overflow = 'scroll';
+            document.body.appendChild(outer);
+            const inner = document.createElement('div');
+            outer.appendChild(inner);
+            const scrollbarWidth = outer.offsetWidth - inner.offsetWidth;
+            outer.parentNode.removeChild(outer);
+            return scrollbarWidth;
+        }
+        
+        // Lazy load images with Intersection Observer
+        function lazyLoadImages() {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.add('loaded');
+                        observer.unobserve(img);
+                    }
+                });
+            }, {
+                rootMargin: '50px'
+            });
+            
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+        
+        // Announce to screen readers
+        function announceToScreenReader(message) {
+            const announcement = document.createElement('div');
+            announcement.setAttribute('role', 'status');
+            announcement.setAttribute('aria-live', 'polite');
+            announcement.className = 'sr-only';
+            announcement.textContent = message;
+            document.body.appendChild(announcement);
+            setTimeout(() => announcement.remove(), 1000);
+        }
+        
+        // ========== RENDER PORTFOLIO ==========
+        function renderPortfolio(filter = 'all') {
+            const filtered = filter === 'all' 
+                ? portfolioData 
+                : portfolioData.filter(item => item.category === filter);
+            
+            portfolioGrid.innerHTML = filtered.map((item, index) => `
+                <article class="portfolio-card" 
+                         role="listitem"
+                         tabindex="0"
+                         data-id="${item.id}"
+                         aria-label="${item.title} - ${item.category}"
+                         style="animation-delay: ${index * 0.05}s">
+                    <div class="portfolio-card-image">
+                        <img data-src="${item.image}" 
+                             alt="${item.title}"
+                             loading="lazy" />
+                    </div>
+                    <div class="portfolio-card-content">
+                        <div class="portfolio-card-category">${item.category.replace('-', ' ')}</div>
+                        <h3 class="portfolio-card-title">${item.title}</h3>
+                        <p class="portfolio-card-description">${item.description}</p>
+                        <div class="portfolio-card-footer">
+                            ${item.technologies.slice(0, 3).map(tech => 
+                                `<span class="portfolio-card-tech">${tech}</span>`
+                            ).join('')}
+                        </div>
+                    </div>
+                </article>
+            `).join('');
+            
+            // Initialize lazy loading for new images
+            lazyLoadImages();
+            
+            // Add event listeners
+            document.querySelectorAll('.portfolio-card').forEach(card => {
+                card.addEventListener('click', () => openModal(parseInt(card.dataset.id)));
+                card.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openModal(parseInt(card.dataset.id));
+                    }
+                });
+            });
+            
+            // Initialize See More/Less functionality
+            initLoadMore(filtered.length);
+            
+            announceToScreenReader(`Showing ${filtered.length} ${filter === 'all' ? '' : filter} projects`);
+        }
+        
+        // ========== SEE MORE/LESS FUNCTIONALITY ==========
+        let isExpanded = false;
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        const loadMoreContainer = document.querySelector('.portfolio-load-more-container');
+        const loadMoreText = document.querySelector('.load-more-text');
+        
+        function getInitialVisibleCount() {
+            const width = window.innerWidth;
+            if (width >= 1280) {
+                return 3; // Desktop (1280px+) - 3 column grid = show 3 cards
+            } else if (width >= 768) {
+                return 2; // Tablet (768px-1279px) - 2 column grid = show 2 cards
+            } else {
+                return 1; // Mobile (<768px) - 1 column grid = show 1 card
+            }
+        }
+        
+        function initLoadMore(totalCount) {
+            const visibleCount = getInitialVisibleCount();
+            const cards = document.querySelectorAll('.portfolio-card');
+            
+            // If total count is less than or equal to visible count, hide the button
+            if (totalCount <= visibleCount) {
+                loadMoreContainer.classList.add('hidden');
+                return;
+            }
+            
+            // Show the button
+            loadMoreContainer.classList.remove('hidden');
+            
+            // Reset state
+            isExpanded = false;
+            loadMoreBtn.setAttribute('aria-expanded', 'false');
+            loadMoreText.textContent = 'See More Projects';
+            
+            // Hide cards beyond initial visible count
+            cards.forEach((card, index) => {
+                if (index >= visibleCount) {
+                    card.classList.add('hidden');
+                } else {
+                    card.classList.remove('hidden');
+                }
+            });
+        }
+        
+        function toggleLoadMore() {
+            const cards = document.querySelectorAll('.portfolio-card');
+            const visibleCount = getInitialVisibleCount();
+            
+            isExpanded = !isExpanded;
+            loadMoreBtn.setAttribute('aria-expanded', isExpanded);
+            
+            if (isExpanded) {
+                // Show all cards
+                cards.forEach(card => card.classList.remove('hidden'));
+                loadMoreText.textContent = 'See Less';
+                announceToScreenReader('Showing all projects');
+            } else {
+                // Hide cards beyond initial visible count
+                cards.forEach((card, index) => {
+                    if (index >= visibleCount) {
+                        card.classList.add('hidden');
+                    }
+                });
+                loadMoreText.textContent = 'See More Projects';
+                announceToScreenReader(`Showing ${visibleCount} projects`);
+                
+                // Scroll to top of grid smoothly
+                portfolioGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+        
+        // Event listener for load more button
+        loadMoreBtn.addEventListener('click', toggleLoadMore);
+        
+        // Handle window resize to adjust visible count
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                if (!isExpanded) {
+                    // Re-initialize with new visible count if collapsed
+                    const cards = document.querySelectorAll('.portfolio-card');
+                    initLoadMore(cards.length);
+                }
+            }, 250);
+        });
+        
+        
+        // ========== BUILD MODAL CONTENT ==========
+        
+        // Build Before/After Slider
+        function buildBeforeAfter(item) {
+            return `
+                <div class="before-after-container" id="before-after-${item.id}" role="img" aria-label="Before and after comparison">
+                    <div class="before-after-wrapper">
+                        <img src="${item.beforeImage}" 
+                             alt="Before image" 
+                             class="before-after-image before-image" />
+                        <img src="${item.afterImage}" 
+                             alt="After image" 
+                             class="before-after-image after-image" 
+                             id="after-image-${item.id}" />
+                        <div class="before-after-slider" 
+                             id="slider-${item.id}"
+                             role="slider"
+                             aria-label="Adjust comparison slider"
+                             aria-valuemin="0"
+                             aria-valuemax="100"
+                             aria-valuenow="50"
+                             tabindex="0">
+                            <div class="before-after-handle">
+                                <i class="fas fa-arrows-left-right"></i>
+                            </div>
+                        </div>
+                        <div class="before-after-label before-label">Before</div>
+                        <div class="before-after-label after-label">After</div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Build Carousel
+        function buildCarousel(item) {
+            return `
+                <div class="carousel-container" id="carousel-${item.id}">
+                    <div class="carousel-wrapper">
+                        <div class="carousel-track" role="list" aria-label="Image carousel">
+                            ${item.carouselImages.map((img, idx) => `
+                                <div class="carousel-slide" role="listitem" aria-label="Slide ${idx + 1} of ${item.carouselImages.length}">
+                                    <img src="${img}" alt="Project image ${idx + 1}" loading="lazy" />
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                    <button class="carousel-nav prev" aria-label="Previous slide">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-nav next" aria-label="Next slide">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="carousel-indicators" role="tablist" aria-label="Carousel navigation">
+                        ${item.carouselImages.map((_, idx) => `
+                            <button class="carousel-indicator ${idx === 0 ? 'active' : ''}"
+                                    role="tab"
+                                    aria-label="Go to slide ${idx + 1}"
+                                    aria-selected="${idx === 0}"></button>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+        
+        // ========== BEFORE/AFTER SLIDER ==========
+        function initBeforeAfter(containerId) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            
+            const slider = container.querySelector('.before-after-slider');
+            const afterImage = container.querySelector('.after-image');
+            let isResizing = false;
+            
+            function updateSlider(clientX) {
+                const rect = container.getBoundingClientRect();
+                const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
+                const percentage = (x / rect.width) * 100;
+                
+                slider.style.left = percentage + '%';
+                afterImage.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+                slider.setAttribute('aria-valuenow', Math.round(percentage));
+            }
+            
+            // Mouse events
+            slider.addEventListener('mousedown', () => isResizing = true);
+            container.addEventListener('mousemove', (e) => {
+                if (isResizing) updateSlider(e.clientX);
+            });
+            document.addEventListener('mouseup', () => isResizing = false);
+            
+            // Touch events
+            slider.addEventListener('touchstart', (e) => {
+                isResizing = true;
+                e.preventDefault();
+            });
+            container.addEventListener('touchmove', (e) => {
+                if (isResizing) {
+                    updateSlider(e.touches[0].clientX);
+                    e.preventDefault();
+                }
+            });
+            document.addEventListener('touchend', () => isResizing = false);
+            
+            // Keyboard navigation
+            slider.addEventListener('keydown', (e) => {
+                const currentValue = parseInt(slider.getAttribute('aria-valuenow'));
+                let newValue = currentValue;
+                
+                if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') {
+                    newValue = Math.max(0, currentValue - 5);
+                    e.preventDefault();
+                } else if (e.key === 'ArrowRight' || e.key === 'ArrowUp') {
+                    newValue = Math.min(100, currentValue + 5);
+                    e.preventDefault();
+                } else if (e.key === 'Home') {
+                    newValue = 0;
+                    e.preventDefault();
+                } else if (e.key === 'End') {
+                    newValue = 100;
+                    e.preventDefault();
+                }
+                
+                if (newValue !== currentValue) {
+                    const rect = container.getBoundingClientRect();
+                    const x = (newValue / 100) * rect.width + rect.left;
+                    updateSlider(x);
+                }
+            });
+        }
+        
+        // ========== CAROUSEL WITH ENHANCED TOUCH/SWIPE ==========
+        function initCarousel(containerId) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            
+            const track = container.querySelector('.carousel-track');
+            const slides = container.querySelectorAll('.carousel-slide');
+            const prevBtn = container.querySelector('.carousel-nav.prev');
+            const nextBtn = container.querySelector('.carousel-nav.next');
+            const indicators = container.querySelectorAll('.carousel-indicator');
+            let currentIndex = 0;
+            
+            // Enhanced touch tracking
+            let startTouchX = 0;
+            let touchStartY = 0;
+            let currentTouchX = 0;
+            let touchEndX = 0;
+            let touchEndY = 0;
+            let isDragging = false;
+            let startTransform = 0;
+            const swipeThreshold = 50; // minimum distance for swipe
+            const velocityThreshold = 0.3; // minimum velocity for swipe
+            let touchStartTime = 0;
+            
+            function updateCarousel(index, announce = true) {
+                currentIndex = (index + slides.length) % slides.length;
+                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                
+                indicators.forEach((ind, idx) => {
+                    const isActive = idx === currentIndex;
+                    ind.classList.toggle('active', isActive);
+                    ind.setAttribute('aria-selected', isActive);
+                });
+                
+                if (announce) {
+                    announceToScreenReader(`Slide ${currentIndex + 1} of ${slides.length}`);
+                }
+            }
+            
+            // Button controls (desktop only)
+            prevBtn.addEventListener('click', () => updateCarousel(currentIndex - 1));
+            nextBtn.addEventListener('click', () => updateCarousel(currentIndex + 1));
+            
+            // Indicator controls
+            indicators.forEach((indicator, idx) => {
+                indicator.addEventListener('click', () => updateCarousel(idx));
+            });
+            
+            // Enhanced touch/swipe support with visual feedback
+            track.addEventListener('touchstart', (e) => {
+                startTouchX = e.touches[0].clientX;
+                touchStartY = e.touches[0].clientY;
+                touchStartTime = Date.now();
+                isDragging = true;
+                startTransform = currentIndex * 100;
+                
+                // Remove transition for smooth dragging
+                track.style.transition = 'none';
+            }, { passive: true });
+            
+            track.addEventListener('touchmove', (e) => {
+                if (!isDragging) return;
+                
+                currentTouchX = e.touches[0].clientX;
+                touchEndX = currentTouchX;
+                touchEndY = e.touches[0].clientY;
+                
+                const deltaX = touchEndX - startTouchX;
+                const deltaY = touchEndY - touchStartY;
+                
+                // Determine if horizontal swipe is dominant
+                if (Math.abs(deltaX) > Math.abs(deltaY)) {
+                    // Prevent vertical scrolling during horizontal swipe
+                    e.preventDefault();
+                    
+                    // Calculate drag offset as percentage
+                    const containerWidth = container.offsetWidth;
+                    const dragPercent = (deltaX / containerWidth) * 100;
+                    
+                    // Apply drag with rubber-band effect at edges
+                    let newTransform = startTransform - dragPercent;
+                    
+                    // Rubber-band resistance at edges
+                    if (currentIndex === 0 && deltaX > 0) {
+                        newTransform = startTransform - (dragPercent * 0.3); // resistance
+                    } else if (currentIndex === slides.length - 1 && deltaX < 0) {
+                        newTransform = startTransform - (dragPercent * 0.3); // resistance
+                    }
+                    
+                    track.style.transform = `translateX(-${newTransform}%)`;
+                }
+            }, { passive: false });
+            
+            track.addEventListener('touchend', () => {
+                if (!isDragging) return;
+                isDragging = false;
+                
+                // Restore transition
+                track.style.transition = '';
+                
+                const deltaX = touchEndX - startTouchX;
+                const deltaY = touchEndY - touchStartY;
+                const deltaTime = Date.now() - touchStartTime;
+                
+                // Calculate velocity (pixels per millisecond)
+                const velocity = Math.abs(deltaX) / deltaTime;
+                
+                // Determine if horizontal swipe is dominant
+                if (Math.abs(deltaX) > Math.abs(deltaY)) {
+                    // Check if swipe meets threshold (distance or velocity)
+                    if (Math.abs(deltaX) > swipeThreshold || velocity > velocityThreshold) {
+                        if (deltaX > 0) {
+                            // Swipe right - go to previous
+                            updateCarousel(currentIndex - 1);
+                        } else {
+                            // Swipe left - go to next
+                            updateCarousel(currentIndex + 1);
+                        }
+                    } else {
+                        // Didn't meet threshold, snap back
+                        updateCarousel(currentIndex, false);
+                    }
+                } else {
+                    // Vertical swipe dominant, just snap back
+                    updateCarousel(currentIndex, false);
+                }
+                
+                // Reset touch tracking
+                startTouchX = 0;
+                touchStartY = 0;
+                currentTouchX = 0;
+                touchEndX = 0;
+                touchEndY = 0;
+            }, { passive: true });
+            
+            track.addEventListener('touchcancel', () => {
+                if (isDragging) {
+                    isDragging = false;
+                    track.style.transition = '';
+                    updateCarousel(currentIndex, false);
+                }
+            }, { passive: true });
+            
+            // Mouse drag support (for testing/desktop)
+            let mouseDown = false;
+            let mouseStartX = 0;
+            
+            track.addEventListener('mousedown', (e) => {
+                mouseDown = true;
+                mouseStartX = e.clientX;
+                touchStartTime = Date.now();
+                startTransform = currentIndex * 100;
+                track.style.transition = 'none';
+                track.style.cursor = 'grabbing';
+            });
+            
+            track.addEventListener('mousemove', (e) => {
+                if (!mouseDown) return;
+                
+                const deltaX = e.clientX - mouseStartX;
+                const containerWidth = container.offsetWidth;
+                const dragPercent = (deltaX / containerWidth) * 100;
+                let newTransform = startTransform - dragPercent;
+                
+                // Rubber-band at edges
+                if (currentIndex === 0 && deltaX > 0) {
+                    newTransform = startTransform - (dragPercent * 0.3);
+                } else if (currentIndex === slides.length - 1 && deltaX < 0) {
+                    newTransform = startTransform - (dragPercent * 0.3);
+                }
+                
+                track.style.transform = `translateX(-${newTransform}%)`;
+            });
+            
+            const handleMouseUp = (e) => {
+                if (!mouseDown) return;
+                mouseDown = false;
+                track.style.transition = '';
+                track.style.cursor = '';
+                
+                const deltaX = e.clientX - mouseStartX;
+                const deltaTime = Date.now() - touchStartTime;
+                const velocity = Math.abs(deltaX) / deltaTime;
+                
+                if (Math.abs(deltaX) > swipeThreshold || velocity > velocityThreshold) {
+                    if (deltaX > 0) {
+                        updateCarousel(currentIndex - 1);
+                    } else {
+                        updateCarousel(currentIndex + 1);
+                    }
+                } else {
+                    updateCarousel(currentIndex, false);
+                }
+            };
+            
+            track.addEventListener('mouseup', handleMouseUp);
+            track.addEventListener('mouseleave', handleMouseUp);
+            
+            // Keyboard navigation
+            container.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') {
+                    updateCarousel(currentIndex - 1);
+                    e.preventDefault();
+                }
+                if (e.key === 'ArrowRight') {
+                    updateCarousel(currentIndex + 1);
+                    e.preventDefault();
+                }
+            });
+        }
+
+        
+        // ========== LIGHTBOX ==========
+        function initLightbox() {
+            const thumbnails = document.querySelectorAll('.thumbnail-item');
+            thumbnails.forEach(thumb => {
+                const clickHandler = () => {
+                    const img = thumb.dataset.lightboxImg;
+                    const idx = parseInt(thumb.dataset.idx);
+                    
+                    // Get all images in this gallery
+                    lightboxImages = Array.from(thumbnails).map(t => t.dataset.lightboxImg);
+                    currentLightboxIndex = idx;
+                    
+                    openLightbox(img);
+                };
+                
+                thumb.addEventListener('click', clickHandler);
+                thumb.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        clickHandler();
+                    }
+                });
+            });
+        }
+        
+        function openLightbox(imgSrc) {
+            lightboxImage.src = imgSrc;
+            lightbox.classList.add('active');
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            updateLightboxCounter();
+            currentZoom = 1;
+            lightboxImage.style.transform = 'scale(1)';
+            
+            announceToScreenReader(`Lightbox opened. Image ${currentLightboxIndex + 1} of ${lightboxImages.length}`);
+        }
+        
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+            currentZoom = 1;
+            lightboxImage.style.transform = 'scale(1)';
+            
+            announceToScreenReader('Lightbox closed');
+        }
+        
+        function navigateLightbox(direction) {
+            currentLightboxIndex = (currentLightboxIndex + direction + lightboxImages.length) % lightboxImages.length;
+            lightboxImage.src = lightboxImages[currentLightboxIndex];
+            updateLightboxCounter();
+            currentZoom = 1;
+            lightboxImage.style.transform = 'scale(1)';
+            
+            announceToScreenReader(`Image ${currentLightboxIndex + 1} of ${lightboxImages.length}`);
+        }
+        
+        function updateLightboxCounter() {
+            lightboxCounter.textContent = `${currentLightboxIndex + 1} / ${lightboxImages.length}`;
+        }
+        
+        // Zoom controls
+        function updateZoom(delta) {
+            currentZoom = Math.max(0.5, Math.min(3, currentZoom + delta));
+            lightboxImage.style.transform = `scale(${currentZoom})`;
+            announceToScreenReader(`Zoom ${Math.round(currentZoom * 100)}%`);
+        }
+        
+        zoomIn.addEventListener('click', () => updateZoom(0.25));
+        zoomOut.addEventListener('click', () => updateZoom(-0.25));
+        zoomReset.addEventListener('click', () => {
+            currentZoom = 1;
+            lightboxImage.style.transform = 'scale(1)';
+            announceToScreenReader('Zoom reset to 100%');
+        });
+        
+        // ========== MODAL ==========
+        function openModal(id) {
+            const item = portfolioData.find(p => p.id === id);
+            if (!item) return;
+            
+            // Store scroll position
+            scrollPosition = window.pageYOffset;
+            
+            // Prevent scroll jump
+            const scrollbarWidth = getScrollbarWidth();
+            document.body.style.setProperty('--scrollbar-width', scrollbarWidth + 'px');
+            document.body.classList.add('modal-open');
+            document.body.style.top = `-${scrollPosition}px`;
+            
+            // Build media section based on modal type
+            let mediaSection = '';
+            if (item.modalType === 'before-after') {
+                mediaSection = buildBeforeAfter(item);
+            } else if (item.modalType === 'carousel') {
+                mediaSection = buildCarousel(item);
+            }
+            
+            // Build thumbnail strip
+            const thumbnailStrip = `
+                <div class="thumbnail-strip">
+                    <div class="thumbnail-grid">
+                        ${item.thumbnails.map((thumb, idx) => `
+                            <div class="thumbnail-item" 
+                                 data-lightbox-img="${thumb}"
+                                 data-idx="${idx}"
+                                 role="button"
+                                 tabindex="0"
+                                 aria-label="View image ${idx + 1} in lightbox">
+                                <img src="${thumb}" alt="Thumbnail ${idx + 1}" loading="lazy" />
+                                <div class="thumbnail-overlay">
+                                    <i class="fas fa-search-plus thumbnail-zoom-icon"></i>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+            
+            // Build results badges
+            const resultsBadges = item.results.map(result => {
+                // Extract metric if it exists (like "42%", "156%", etc.)
+                const metricMatch = result.match(/(\d+%|\d+\/\d+|\d+\.\d+s|[\d,]+|<[\d.]+s|≈[\d–]+\sKB\sgz)/);
+                const metric = metricMatch ? metricMatch[0] : '';
+                const text = result.replace(metric, '').trim().replace(/^:\s*/, '');
+                
+                return `<span class="portfolio-modal-results-badge">
+                    ${metric ? `<i class="fas fa-chart-line"></i> ${metric}` : `<i class="fas fa-check"></i>`} ${text}
+                </span>`;
+            }).join('');
+            
+            // Build links section if links exist
+            let linksSection = '';
+            if (item.links) {
+                const linkButtons = [];
+                if (item.links.live) {
+                    linkButtons.push(`<a href="${item.links.live}" target="_blank" rel="noopener noreferrer" class="portfolio-modal-link-btn">
+                        <i class="fas fa-globe"></i> Live Site
+                    </a>`);
+                }
+                if (item.links.demo) {
+                    linkButtons.push(`<a href="${item.links.demo}" target="_blank" rel="noopener noreferrer" class="portfolio-modal-link-btn">
+                        <i class="fas fa-eye"></i> Demo
+                    </a>`);
+                }
+                if (item.links.repo) {
+                    linkButtons.push(`<a href="${item.links.repo}" target="_blank" rel="noopener noreferrer" class="portfolio-modal-link-btn">
+                        <i class="fab fa-github"></i> Repository
+                    </a>`);
+                }
+                if (item.links.demos && Array.isArray(item.links.demos)) {
+                    item.links.demos.forEach(demo => {
+                        linkButtons.push(`<a href="${demo.href}" target="_blank" rel="noopener noreferrer" class="portfolio-modal-link-btn">
+                            <i class="fas fa-external-link-alt"></i> ${demo.label}
+                        </a>`);
+                    });
+                }
+                
+                if (linkButtons.length > 0) {
+                    linksSection = `
+                        <div class="portfolio-modal-section">
+                            <div class="portfolio-modal-section-title"><i class="fas fa-link"></i> Links</div>
+                            <div class="portfolio-modal-links">
+                                ${linkButtons.join('')}
+                            </div>
+                        </div>
+                    `;
+                }
+            }
+            
+            // Build modal content with new two-column layout
+            const modalHTML = `
+                <button class="portfolio-modal-close" id="modalClose" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="portfolio-modal-container">
+                    <!-- Left Column: Media -->
+                    <div class="portfolio-modal-media">
+                        <div class="portfolio-modal-main-media">
+                            ${mediaSection}
+                        </div>
+                        ${thumbnailStrip}
+                    </div>
+                    
+                    <!-- Right Column: Details -->
+                    <div class="portfolio-modal-sidebar">
+                        <div class="portfolio-modal-header">
+                            <div class="portfolio-modal-tags">
+                                <span class="portfolio-modal-tag">${item.category.replace('-', ' ')}</span>
+                                ${item.technologies.slice(0, 2).map(tech => 
+                                    `<span class="portfolio-modal-tag">${tech}</span>`
+                                ).join('')}
+                            </div>
+                            <h2 class="portfolio-modal-title" id="modal-title">${item.title}</h2>
+                            <p class="portfolio-modal-description">${item.description}</p>
+                        </div>
+                        
+                        <div class="portfolio-modal-section">
+                            <div class="portfolio-modal-section-title"><i class="fas fa-exclamation-circle"></i> Problem</div>
+                            <div class="portfolio-modal-section-content">${item.challenge}</div>
+                        </div>
+                        
+                        <div class="portfolio-modal-section">
+                            <div class="portfolio-modal-section-title"><i class="fas fa-lightbulb"></i> Solution</div>
+                            <div class="portfolio-modal-section-content">${item.solution}</div>
+                        </div>
+                        
+                        <div class="portfolio-modal-section">
+                            <div class="portfolio-modal-section-title"><i class="fas fa-trophy"></i> Results</div>
+                            <div class="portfolio-modal-section-content">
+                                ${resultsBadges}
+                            </div>
+                        </div>
+                        
+                        <div class="portfolio-modal-section">
+                            <div class="portfolio-modal-section-title"><i class="fas fa-code"></i> Technologies</div>
+                            <div class="portfolio-modal-tech-list">
+                                ${item.technologies.map(tech => 
+                                    `<span class="portfolio-modal-tech-item">${tech}</span>`
+                                ).join('')}
+                            </div>
+                        </div>
+                        
+                        ${linksSection}
+                    </div>
+                </div>
+            `;
+            
+            // Insert content into modal wrapper
+            const modalWrapper = modal.querySelector('.portfolio-modal-wrapper');
+            modalWrapper.innerHTML = modalHTML;
+            
+            // Show modal
+            modal.classList.add('active');
+            modal.setAttribute('aria-hidden', 'false');
+            
+            // Re-bind modal close button
+            const newModalClose = document.getElementById('modalClose');
+            newModalClose.addEventListener('click', closeModal);
+            
+            // Initialize interactive components
+            if (item.modalType === 'before-after') {
+                initBeforeAfter(`before-after-${item.id}`);
+            } else if (item.modalType === 'carousel') {
+                initCarousel(`carousel-${item.id}`);
+            }
+            
+            // Initialize lightbox for thumbnails
+            initLightbox();
+            
+            // Focus management
+            setTimeout(() => {
+                newModalClose.focus();
+            }, 100);
+            
+            announceToScreenReader(`${item.title} modal opened`);
+        }
+        
+        function closeModal() {
+            modal.classList.remove('active');
+            modal.setAttribute('aria-hidden', 'true');
+            
+            // Restore scroll position
+            document.body.classList.remove('modal-open');
+            document.body.style.top = '';
+            window.scrollTo(0, scrollPosition);
+            
+            announceToScreenReader('Modal closed');
+        }
+        
+        // ========== EVENT HANDLERS ==========
+        
+        // Filter functionality
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active state and ARIA
+                filterBtns.forEach(b => {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-pressed', 'false');
+                });
+                btn.classList.add('active');
+                btn.setAttribute('aria-pressed', 'true');
+                
+                // Filter portfolio
+                currentFilter = btn.dataset.filter;
+                renderPortfolio(currentFilter);
+            });
+        });
+        
+        // Modal backdrop click to close
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+        
+        // Lightbox close handlers
+        lightboxClose.addEventListener('click', closeLightbox);
+        
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+        
+        lightboxPrev.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navigateLightbox(-1);
+        });
+        
+        lightboxNext.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navigateLightbox(1);
+        });
+        
+        // Keyboard handlers
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.classList.contains('active')) {
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') navigateLightbox(-1);
+                if (e.key === 'ArrowRight') navigateLightbox(1);
+                if (e.key === '+' || e.key === '=') updateZoom(0.25);
+                if (e.key === '-') updateZoom(-0.25);
+                if (e.key === '0') {
+                    currentZoom = 1;
+                    lightboxImage.style.transform = 'scale(1)';
+                }
+            } else if (modal.classList.contains('active') && e.key === 'Escape') {
+                closeModal();
+            }
+        });
+        
+        // ========== INITIALIZATION ==========
+        renderPortfolio();
+        
+        // Performance monitoring
+        if ('performance' in window) {
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    const perfData = performance.getEntriesByType('navigation')[0];
+                    console.log('✨ Portfolio Loaded');
+                    console.log(`📊 Performance: ${Math.round(perfData.loadEventEnd - perfData.fetchStart)}ms`);
+                }, 0);
+            });
+        }
+        
+        console.log('🚀 HC Web Labs Portfolio v3.0 - Enhanced Edition');
+        console.log('✅ Projects Loaded: 8');
+        console.log('✅ Accessibility: WCAG 2.1 AA Compliant');
+        console.log('✅ Performance: Optimized with lazy loading');
+        console.log('✅ Mobile: Touch gestures enabled');
+        console.log('✅ SEO: Structured data included');
+    </script>
+</body>
+</html>
