@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Transparent pricing for professional web development. From Microsites ($350-$500) to E-Commerce ($750-$2,500), Website Redesigns, and Technical Support at $55/hour.">
+    <meta name="theme-color" content="#1a0a2e">
+    
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Additional inline styles for FAQ -->
+    <style>
+        details[open] summary i.fa-chevron-down {
+            transform: rotate(180deg);
+        }
+        
+        details summary {
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+        
+        details summary::marker {
+            display: none;
+        }
+        
+        @media (hover: hover) and (pointer: fine) {
+            details summary:hover {
+                background: rgba(0, 245, 255, 0.05);
+                border-radius: 8px;
+            }
+        }
+    </style>
+    
+    <title>Services & Pricing - HC WebLabs</title>
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header with Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav-container" aria-label="Main navigation">
+                <a href="index.html" class="logo" aria-label="Home">HC WebLabs</a>
+                
+                <button id="mobile-menu-btn" class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <ul id="main-nav" class="nav-list" role="list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link" aria-current="page">Services</a></li>
+                    <li><a href="index.html#portfolio" class="nav-link">Portfolio</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <!-- Mobile Menu Overlay -->
+        <div id="menu-overlay" class="mobile-menu-overlay"></div>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Services & Pricing</h1>
+                    <p class="hero-subtitle">
+                        Transparent, straightforward pricing for professional web development. Each 
+                        project is unique—these ranges give you a starting point.
+                    </p>
+                    <div class="cta-group">
+                        <a href="#pricing" class="btn btn-primary">
+                            View Pricing
+                            <i class="fas fa-arrow-down" aria-hidden="true"></i>
+                        </a>
+                        <a href="index.html#contact" class="btn btn-secondary">
+                            Get a Quote
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#pricing" class="scroll-indicator" aria-label="Scroll to pricing">
+                Scroll
+            </a>
+        </section>
+        
+        <!-- Pricing Section -->
+        <section id="pricing">
+            <div class="container">
+                <h2>Services & Pricing</h2>
+                <p class="testimonials-intro">
+                    All packages include mobile-responsive design, cross-browser compatibility, 
+                    SEO optimization, and post-launch support. Let's build something amazing together.
+                </p>
+                
+                <div class="about-bento-grid" style="grid-template-columns: 1fr;">
+                    <div style="display: grid; gap: var(--space-lg); grid-template-columns: 1fr;">
+                        <!-- Row 1: Microsites, Multi-Page, E-Commerce -->
+                        <div style="display: grid; gap: var(--space-lg); grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                            <!-- Microsites Package -->
+                            <article class="about-bento-card">
+                                <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm);">
+                                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, rgba(0, 245, 255, 0.2), rgba(184, 41, 245, 0.2)); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                                        <i class="fas fa-file-alt" style="color: var(--color-neon-cyan-applied); font-size: 1.5rem;" aria-hidden="true"></i>
+                                    </div>
+                                    <h3 style="margin: 0; font-size: 1.5rem;">Microsites</h3>
+                                </div>
+                                <div style="flex: 1;">
+                                    <p style="color: var(--color-text-secondary); margin-bottom: 1.5rem; line-height: 1.6; min-height: 3.2em;">
+                                        Single-page websites with smooth scroll navigation—perfect for portfolios, landing pages, and events
+                                    </p>
+                                    <p style="color: var(--color-neon-cyan-applied); font-size: 2.5rem; font-weight: 900; margin-bottom: 0.5rem; font-family: var(--font-heading);">
+                                        $350 <span style="font-size: 1.5rem; font-weight: 400; color: var(--color-text-muted);">- $500</span>
+                                    </p>
+                                    <ul style="list-style: none; padding: 0; color: var(--color-text-secondary); line-height: 2; margin-top: 1.5rem;">
+                                        <li><i class="fas fa-check" style="color: var(--color-neon-cyan-applied); margin-right: 0.75rem; font-size: 0.875rem;" aria-hidden="true"></i>4-8 scroll sections</li>
+                                        <li><i class="fas fa-check" style="color: var(--color-neon-cyan-applied); margin-right: 0.75rem; font-size: 0.875rem;" aria-hidden="true"></i>Smooth in-page navigation</li>
+                                        <li><i class="fas fa-check" style="color: var(--color-neon-cyan-applied); margin-right: 0.75rem; font-size: 0.875rem;" aria-hidden="true"></i>Fully responsive design</li>
+                                        <li><i class="fas fa-check" style="color: var(--color-neon-cyan-applied); margin-right: 0.75rem; font-size: 0.875rem;" aria-hidden="true"></i>Contact form integration</li>
+                                        <li><i class="fas fa-check" style="color: var(--color-neon-cyan-applied); margin-right: 0.75rem; font-size: 0.875rem;" aria-hidden="true"></i>Basic SEO setup</li>
+                                        <li><i class="fas fa-check" style="color: var(--color-neon-cyan-applied); margin-right: 0.75rem; font-size: 0.875rem;" aria-hidden="true"></i>1-2 week turnaround</li>
+                                        <li><i class="fas fa-check" style="color: var(--color-neon-cyan-applied); margin-right: 0.75rem; font-size: 0.875rem;" aria-hidden="true"></i>2 rounds of revisions</li>
+                                    </ul>
+                                </div>
+                                <a href="index.html#contact" class="btn btn-secondary" style="width: 100%; margin-top: 1.5rem;">
+                                    Get Started <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                </a>
+                            </article>
+                            
+                            <!-- Multi-Page Websites (Most Popular) -->
+                            <article class="about-bento-card" style="border-color: var(--color-neon-cyan-applied); position: relative;">
+                                <div style="position: absolute; top: -1px; right: -1px; background: var(--color-neon-cyan-applied); padding: 6px 20px; border-radius: 0 12px 0 12px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-bg-primary-applied); transform: rotate(0deg);">
+                                    Most Popular
+                                </div>
+                                <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm); margin-top: var(--space-sm);">
+                                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, rgba(0, 245, 255, 0.2), rgba(255, 46, 151, 0.2)); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                                        <i class="fas fa-globe" style="color: var(--color-neon-cyan-applied); font-size: 1.5rem;" aria-hidden="true"></i>
+                                    </div>
+                                    <h3 style="margin: 0; font-size: 1.5rem;">Multi-Page<br>Websites</h3>
+                                </div>
+                                <div style="flex: 1;">
+                                    <p style="color: var(--color-text-secondary); margin-bottom: 1.5rem; line-height: 1.6; min-height: 3.2em;">
+                                        Professional websites for businesses, organizations, and brands of all types
+                                    </p>
+                                    <p style="color: var(--color-neon-cyan-applied); font-size: 2.5rem; font-weight: 900; margin-bottom: 0.25rem; font-family: var(--font-heading);">
+                                        $500 <span style="font-size: 1.5rem; font-weight: 400; color: var(--color-text-muted);">- $1,500</span>
+                                    </p>
+                                    <p style="color: var(--color-text-muted); font-size: 0.85rem; font-style: italic; margin-bottom: 1.5rem;">
+                                        Price varies by page count, custom features, and complexity
+                                    </p>
+                                    <ul style="list-style: none; padding: 0; color: var(--color-text-secondary); line-height: 2;">
+                                        <li><i class="fas fa-check" style="color: var(--color-neon-cyan-applied); margin-right: 0.75rem; font-size: 0.875rem;" aria-hidden="true"></i>5-20 custom pages</li>
+                                        <li><i class="fas fa-check" style="color: var(--color-neon-cyan-applied); margin-right: 0.75rem; font-size: 0.875rem;" aria-hidden="true"></i>Custom or template-based design</li>
+                                        <li><i class="fas fa-check" style="color: var(--color-neon-cyan-applied); margin-right: 0.75rem; font-size: 0.875rem;" aria-hidden="true"></i>Mobile-first responsive design</li>
+                                        <li><i class="fas fa-check" style="color: var(--color-neon-cyan-applied); margin-right: 0.75rem; font-size: 0.875rem;" aria-hidden="true"></i>Contact forms & integrations</li>
+                                        <li><i class="fas fa-check" style="color: var(--color-neon-cyan-applied); margin-right: 0.75rem; font-size: 0.875rem;" aria-hidden="true"></i>SEO optimization & meta tags</li>
+                                        <li><i class="fas fa-check" style="color: var(--color-neon-cyan-applied); margin-right: 0.75rem; font-size: 0.875rem;" aria-hidden="true"></i>Google Analytics setup</li>
+                                        <li><i class="fas fa-check" style="color: var(--color-neon-cyan-applied); margin-right: 0.75rem; font-size: 0.875rem;" aria-hidden="true"></i>2-4 week turnaround</li>
+                                        <li><i class="fas fa-check" style="color: var(--color-neon-cyan-applied); margin-right: 0.75rem; font-size: 0.875rem;" aria-hidden="true"></i>2-3 rounds of revisions</li>
+                                    </ul>
+                                </div>
+                                <a href="index.html#contact" class="btn btn-primary" style="width: 100%; margin-top: 1.5rem;">
+                                    Get Started <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                </a>
+                            </article>
+                            
+                            <!-- E-Commerce Package -->
+                            <article class="about-bento-card">
+                                <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm);">
+                                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, rgba(184, 41, 245, 0.2), rgba(255, 46, 151, 0.2)); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                                        <i class="fas fa-shopping-cart" style="color: var(--color-neon-cyan-applied); font-size: 1.5rem;" aria-hidden="true"></i>
+                                    </div>
+                                    <h3 style="margin: 0; font-size: 1.5rem;">E-Commerce</h3>
+                                </div>
+                                <div style="flex: 1;">
+                                    <p style="color: var(--color-text-secondary); margin-bottom: 1.5rem; line-height: 1.6; min-height: 3.2em;">
+                                        Online stores for small to mid-sized shops—Shopify, WooCommerce, or custom solutions
+                                    </p>
+                                    <p style="color: var(--color-neon-cyan-applied); font-size: 2.5rem; font-weight: 900; margin-bottom: 0.25rem; font-family: var(--font-heading);">
+                                        $750 <span style="font-size: 1.5rem; font-weight: 400; color: var(--color-text-muted);">- $2,500</span>
+                                    </p>
+                                    <p style="color: var(--color-text-muted); font-size: 0.85rem; font-style: italic; margin-bottom: 1.5rem;">
+                                        Price depends on product count, customization level, and platform
+                                    </p>
+                                    <ul style="list-style: none; padding: 0; color: var(--color-text-secondary); line-height: 2;">
+                                        <li><i class="fas fa-check" style="color: var(--color-neon-cyan-applied); margin-right: 0.75rem; font-size: 0.875rem;" aria-hidden="true"></i>Up to 100 products</li>
+                                        <li><i class="fas fa-check" style="color: var(--color-neon-cyan-applied); margin-right: 0.75rem; font-size: 0.875rem;" aria-hidden="true"></i>Shopping cart & checkout setup</li>
+                                        <li><i class="fas fa-check" style="color: var(--color-neon-cyan-applied); margin-right: 0.75rem; font-size: 0.875rem;" aria-hidden="true"></i>Payment gateway integration</li>
+                                        <li><i class="fas fa-check" style="color: var(--color-neon-cyan-applied); margin-right: 0.75rem; font-size: 0.875rem;" aria-hidden="true"></i>Product categories & filters</li>
+                                        <li><i class="fas fa-check" style="color: var(--color-neon-cyan-applied); margin-right: 0.75rem; font-size: 0.875rem;" aria-hidden="true"></i>Inventory management setup</li>
+                                        <li><i class="fas fa-check" style="color: var(--color-neon-cyan-applied); margin-right: 0.75rem; font-size: 0.875rem;" aria-hidden="true"></i>Shipping & tax configuration</li>
+                                        <li><i class="fas fa-check" style="color: var(--color-neon-cyan-applied); margin-right: 0.75rem; font-size: 0.875rem;" aria-hidden="true"></i>3-5 week turnaround</li>
+                                        <li><i class="fas fa-check" style="color: var(--color-neon-cyan-applied); margin-right: 0.75rem; font-size: 0.875rem;" aria-hidden="true"></i>Store management training</li>
+                                    </ul>
+                                </div>
+                                <a href="index.html#contact" class="btn btn-secondary" style="width: 100%; margin-top: 1.5rem;">
+                                    Get Started <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                </a>
+                            </article>
+                        </div>
+                        
+                        <!-- Row 2: Website Redesigns & Technical Support -->
+                        <div style="display: grid; gap: var(--space-lg); grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+                            <!-- Website Redesigns Package -->
+                            <article class="about-bento-card">
+                                <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm);">
+                                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, rgba(255, 46, 151, 0.2), rgba(0, 245, 255, 0.2)); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                                        <i class="fas fa-paint-brush" style="color: var(--color-neon-cyan-applied); font-size: 1.5rem;" aria-hidden="true"></i>
+                                    </div>
+                                    <h3 style="margin: 0; font-size: 1.5rem;">Website Redesigns</h3>
+                                </div>
+                                <div style="flex: 1;">
+                                    <p style="color: var(--color-text-secondary); margin-bottom: 1.5rem; line-height: 1.6; min-height: 3.2em;">
+                                        Refresh and modernize existing websites with updated design and functionality
+                                    </p>
+                                    <p style="color: var(--color-neon-cyan-applied); font-size: 2.5rem; font-weight: 900; margin-bottom: 0.25rem; font-family: var(--font-heading);">
+                                        $250 <span style="font-size: 1.5rem; font-weight: 400; color: var(--color-text-muted);">- $1,200</span>
+                                    </p>
+                                    <p style="color: var(--color-text-muted); font-size: 0.85rem; font-style: italic; margin-bottom: 1.5rem;">
+                                        Starting at $250 for minor updates, up to $1,200 for complete overhauls
+                                    </p>
+                                    <ul style="list-style: none; padding: 0; color: var(--color-text-secondary); line-height: 2;">
+                                        <li><i class="fas fa-check" style="color: var(--color-neon-cyan-applied); margin-right: 0.75rem; font-size: 0.875rem;" aria-hidden="true"></i>Visual design refresh</li>
+                                        <li><i class="fas fa-check" style="color: var(--color-neon-cyan-applied); margin-right: 0.75rem; font-size: 0.875rem;" aria-hidden="true"></i>Mobile responsiveness upgrade</li>
+                                        <li><i class="fas fa-check" style="color: var(--color-neon-cyan-applied); margin-right: 0.75rem; font-size: 0.875rem;" aria-hidden="true"></i>Performance optimization</li>
+                                        <li><i class="fas fa-check" style="color: var(--color-neon-cyan-applied); margin-right: 0.75rem; font-size: 0.875rem;" aria-hidden="true"></i>SEO improvements</li>
+                                        <li><i class="fas fa-check" style="color: var(--color-neon-cyan-applied); margin-right: 0.75rem; font-size: 0.875rem;" aria-hidden="true"></i>Content restructuring (if needed)</li>
+                                        <li><i class="fas fa-check" style="color: var(--color-neon-cyan-applied); margin-right: 0.75rem; font-size: 0.875rem;" aria-hidden="true"></i>1-3 week turnaround</li>
+                                    </ul>
+                                </div>
+                                <a href="index.html#contact" class="btn btn-secondary" style="width: 100%; margin-top: 1.5rem;">
+                                    Get Started <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                </a>
+                            </article>
+                            
+                            <!-- Technical Support Package -->
+                            <article class="about-bento-card">
+                                <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm);">
+                                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, rgba(0, 245, 255, 0.2), rgba(184, 41, 245, 0.2)); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                                        <i class="fas fa-wrench" style="color: var(--color-neon-cyan-applied); font-size: 1.5rem;" aria-hidden="true"></i>
+                                    </div>
+                                    <h3 style="margin: 0; font-size: 1.5rem;">Technical Support</h3>
+                                </div>
+                                <div style="flex: 1;">
+                                    <p style="color: var(--color-text-secondary); margin-bottom: 1.5rem; line-height: 1.6; min-height: 3.2em;">
+                                        Troubleshooting, debugging, and maintenance for existing websites
+                                    </p>
+                                    <p style="color: var(--color-neon-cyan-applied); font-size: 2.5rem; font-weight: 900; margin-bottom: 0.25rem; font-family: var(--font-heading);">
+                                        $55<span style="font-size: 1.5rem; font-weight: 400; color: var(--color-text-muted);">/hour</span>
+                                    </p>
+                                    <p style="color: var(--color-text-muted); font-size: 0.85rem; font-style: italic; margin-bottom: 1.5rem;">
+                                        1-hour minimum • Monthly retainers available
+                                    </p>
+                                    <ul style="list-style: none; padding: 0; color: var(--color-text-secondary); line-height: 2;">
+                                        <li><i class="fas fa-check" style="color: var(--color-neon-cyan-applied); margin-right: 0.75rem; font-size: 0.875rem;" aria-hidden="true"></i>Bug fixes & debugging</li>
+                                        <li><i class="fas fa-check" style="color: var(--color-neon-cyan-applied); margin-right: 0.75rem; font-size: 0.875rem;" aria-hidden="true"></i>Performance optimization</li>
+                                        <li><i class="fas fa-check" style="color: var(--color-neon-cyan-applied); margin-right: 0.75rem; font-size: 0.875rem;" aria-hidden="true"></i>Security updates & patches</li>
+                                        <li><i class="fas fa-check" style="color: var(--color-neon-cyan-applied); margin-right: 0.75rem; font-size: 0.875rem;" aria-hidden="true"></i>Plugin/theme troubleshooting</li>
+                                        <li><i class="fas fa-check" style="color: var(--color-neon-cyan-applied); margin-right: 0.75rem; font-size: 0.875rem;" aria-hidden="true"></i>Code review & cleanup</li>
+                                        <li><i class="fas fa-check" style="color: var(--color-neon-cyan-applied); margin-right: 0.75rem; font-size: 0.875rem;" aria-hidden="true"></i>Same or next-day response</li>
+                                    </ul>
+                                </div>
+                                <a href="index.html#contact" class="btn btn-secondary" style="width: 100%; margin-top: 1.5rem;">
+                                    Get Started <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                </a>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- What Affects the Final Price Section -->
+        <section id="price-factors" style="background: radial-gradient(ellipse at center, rgba(184, 41, 245, 0.03) 0%, transparent 70%);">
+            <div class="container">
+                <h2>What Affects the Final Price?</h2>
+                <p class="testimonials-intro">
+                    Every project is unique. Here's what influences where your project falls in the pricing range:
+                </p>
+                
+                <div style="max-width: 1000px; margin-inline: auto; margin-top: var(--space-xl); display: flex; flex-direction: column; gap: var(--space-lg);">
+                    <!-- Number of Pages -->
+                    <article class="about-bento-card">
+                        <div style="display: flex; gap: var(--space-md); align-items: flex-start;">
+                            <div style="flex-shrink: 0; width: 70px; height: 70px; background: linear-gradient(135deg, rgba(0, 245, 255, 0.2), rgba(184, 41, 245, 0.2)); border-radius: 16px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-layer-group" style="color: var(--color-neon-cyan-applied); font-size: 2rem;" aria-hidden="true"></i>
+                            </div>
+                            <div style="flex: 1;">
+                                <h3 style="margin-bottom: 0.5rem; font-size: 1.5rem;">Number of Pages</h3>
+                                <p style="color: var(--color-neon-cyan-applied); font-weight: 600; margin-bottom: 0.75rem; font-size: 1rem;">
+                                    5 pages = lower range • 20+ pages = higher range
+                                </p>
+                                <p style="color: var(--color-text-secondary); line-height: 1.7; margin: 0;">
+                                    Simple sites (Home, About, Services, Contact) cost less than complex sites with multiple 
+                                    service pages, team bios, case studies, and resources.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Design Complexity -->
+                    <article class="about-bento-card">
+                        <div style="display: flex; gap: var(--space-md); align-items: flex-start;">
+                            <div style="flex-shrink: 0; width: 70px; height: 70px; background: linear-gradient(135deg, rgba(255, 46, 151, 0.2), rgba(184, 41, 245, 0.2)); border-radius: 16px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-palette" style="color: var(--color-neon-pink-applied); font-size: 2rem;" aria-hidden="true"></i>
+                            </div>
+                            <div style="flex: 1;">
+                                <h3 style="margin-bottom: 0.5rem; font-size: 1.5rem; color: var(--color-neon-pink-applied);">Design Complexity</h3>
+                                <p style="color: var(--color-neon-pink-applied); font-weight: 600; margin-bottom: 0.75rem; font-size: 1rem;">
+                                    Template-based = lower range • Fully custom = higher range
+                                </p>
+                                <p style="color: var(--color-text-secondary); line-height: 1.7; margin: 0;">
+                                    Using a premium template with minor customization is faster and more affordable than 
+                                    designing every element from scratch.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Custom Features & Integrations -->
+                    <article class="about-bento-card">
+                        <div style="display: flex; gap: var(--space-md); align-items: flex-start;">
+                            <div style="flex-shrink: 0; width: 70px; height: 70px; background: linear-gradient(135deg, rgba(0, 245, 255, 0.2), rgba(255, 46, 151, 0.2)); border-radius: 16px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-puzzle-piece" style="color: var(--color-neon-cyan-applied); font-size: 2rem;" aria-hidden="true"></i>
+                            </div>
+                            <div style="flex: 1;">
+                                <h3 style="margin-bottom: 0.5rem; font-size: 1.5rem;">Custom Features & Integrations</h3>
+                                <p style="color: var(--color-neon-cyan-applied); font-weight: 600; margin-bottom: 0.75rem; font-size: 1rem;">
+                                    Basic features = lower range • Advanced integrations = higher range
+                                </p>
+                                <p style="color: var(--color-text-secondary); line-height: 1.7; margin: 0;">
+                                    Contact forms and photo galleries are standard. Custom booking systems, membership portals, 
+                                    API integrations, and complex databases cost more.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Content & Copywriting -->
+                    <article class="about-bento-card">
+                        <div style="display: flex; gap: var(--space-md); align-items: flex-start;">
+                            <div style="flex-shrink: 0; width: 70px; height: 70px; background: linear-gradient(135deg, rgba(255, 46, 151, 0.2), rgba(0, 245, 255, 0.2)); border-radius: 16px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-file-alt" style="color: var(--color-neon-pink-applied); font-size: 2rem;" aria-hidden="true"></i>
+                            </div>
+                            <div style="flex: 1;">
+                                <h3 style="margin-bottom: 0.5rem; font-size: 1.5rem; color: var(--color-neon-pink-applied);">Content & Copywriting</h3>
+                                <p style="color: var(--color-neon-pink-applied); font-weight: 600; margin-bottom: 0.75rem; font-size: 1rem;">
+                                    You provide content = lower range • I write everything = higher range
+                                </p>
+                                <p style="color: var(--color-text-secondary); line-height: 1.7; margin: 0;">
+                                    If you have your text, images, and branding ready, development is faster. If I'm writing copy, 
+                                    sourcing images, or creating graphics, it adds time and cost.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Timeline & Revisions -->
+                    <article class="about-bento-card">
+                        <div style="display: flex; gap: var(--space-md); align-items: flex-start;">
+                            <div style="flex-shrink: 0; width: 70px; height: 70px; background: linear-gradient(135deg, rgba(0, 245, 255, 0.2), rgba(184, 41, 245, 0.2)); border-radius: 16px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-clock" style="color: var(--color-neon-cyan-applied); font-size: 2rem;" aria-hidden="true"></i>
+                            </div>
+                            <div style="flex: 1;">
+                                <h3 style="margin-bottom: 0.5rem; font-size: 1.5rem;">Timeline & Revisions</h3>
+                                <p style="color: var(--color-neon-cyan-applied); font-weight: 600; margin-bottom: 0.75rem; font-size: 1rem;">
+                                    Standard timeline = included revisions • Rush delivery or extra revisions = additional cost
+                                </p>
+                                <p style="color: var(--color-text-secondary); line-height: 1.7; margin: 0;">
+                                    Normal turnaround times include 2-3 rounds of revisions. Expedited projects or requests 
+                                    for unlimited revisions will adjust the pricing.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <!-- What's Included Section -->
+        <section id="whats-included" style="background: radial-gradient(ellipse at center, rgba(255, 46, 151, 0.02) 0%, transparent 70%);">
+            <div class="container">
+                <h2>What's Included In All Plans?</h2>
+                <p class="testimonials-intro">
+                    Every package comes with these essential features to ensure your website 
+                    is fast, secure, accessible, and ready to grow with your business.
+                </p>
+                
+                <div class="about-bento-grid">
+                    <!-- Mobile-First Design -->
+                    <article class="about-bento-card">
+                        <div style="display: flex; align-items: flex-start; gap: var(--space-md);">
+                            <div style="flex-shrink: 0; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, rgba(255, 46, 151, 0.2), rgba(0, 245, 255, 0.2)); border-radius: 12px;">
+                                <i class="fas fa-mobile-alt" style="color: var(--color-neon-cyan-applied); font-size: 1.75rem;" aria-hidden="true"></i>
+                            </div>
+                            <div style="flex: 1;">
+                                <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">Mobile-First Design</h3>
+                                <p style="color: var(--color-text-secondary); line-height: 1.7; margin: 0;">
+                                    Every website is built mobile-first, ensuring perfect functionality on smartphones, 
+                                    tablets, and desktops. Touch-friendly interfaces with responsive layouts that adapt beautifully to any screen size.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Performance Optimization -->
+                    <article class="about-bento-card">
+                        <div style="display: flex; align-items: flex-start; gap: var(--space-md);">
+                            <div style="flex-shrink: 0; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, rgba(0, 245, 255, 0.2), rgba(184, 41, 245, 0.2)); border-radius: 12px;">
+                                <i class="fas fa-tachometer-alt" style="color: var(--color-neon-pink-applied); font-size: 1.75rem;" aria-hidden="true"></i>
+                            </div>
+                            <div style="flex: 1;">
+                                <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem; color: var(--color-neon-pink-applied);">Performance Optimization</h3>
+                                <p style="color: var(--color-text-secondary); line-height: 1.7; margin: 0;">
+                                    Lightning-fast load times through image optimization, code minification, lazy loading, 
+                                    and caching strategies. Excellent Core Web Vitals scores for better SEO and user experience.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Security & Accessibility -->
+                    <article class="about-bento-card">
+                        <div style="display: flex; align-items: flex-start; gap: var(--space-md);">
+                            <div style="flex-shrink: 0; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, rgba(184, 41, 245, 0.2), rgba(255, 46, 151, 0.2)); border-radius: 12px;">
+                                <i class="fas fa-shield-alt" style="color: var(--color-neon-purple-applied); font-size: 1.75rem;" aria-hidden="true"></i>
+                            </div>
+                            <div style="flex: 1;">
+                                <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem; color: var(--color-neon-purple-applied);">Security & Accessibility</h3>
+                                <p style="color: var(--color-text-secondary); line-height: 1.7; margin: 0;">
+                                    SSL certificates, secure forms, and WCAG AA accessibility compliance included. 
+                                    Your website will be safe, inclusive, and accessible to everyone, including screen reader users.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Training & Support -->
+                    <article class="about-bento-card">
+                        <div style="display: flex; align-items: flex-start; gap: var(--space-md);">
+                            <div style="flex-shrink: 0; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, rgba(255, 46, 151, 0.2), rgba(184, 41, 245, 0.2)); border-radius: 12px;">
+                                <i class="fas fa-graduation-cap" style="color: var(--color-neon-cyan-applied); font-size: 1.75rem;" aria-hidden="true"></i>
+                            </div>
+                            <div style="flex: 1;">
+                                <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">Training & Support</h3>
+                                <p style="color: var(--color-text-secondary); line-height: 1.7; margin: 0;">
+                                    Comprehensive training on managing your website, plus dedicated support during the warranty period. 
+                                    Video tutorials, documentation, and direct support when you need it.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Technical Maintenance -->
+                    <article class="about-bento-card">
+                        <div style="display: flex; align-items: flex-start; gap: var(--space-md);">
+                            <div style="flex-shrink: 0; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, rgba(0, 245, 255, 0.2), rgba(255, 46, 151, 0.2)); border-radius: 12px;">
+                                <i class="fas fa-wrench" style="color: var(--color-neon-pink-applied); font-size: 1.75rem;" aria-hidden="true"></i>
+                            </div>
+                            <div style="flex: 1;">
+                                <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem; color: var(--color-neon-pink-applied);">Technical Maintenance</h3>
+                                <p style="color: var(--color-text-secondary); line-height: 1.7; margin: 0;">
+                                    Bug fixes, security updates, and technical support during your package's support period. 
+                                    We'll keep your site running smoothly so you can focus on your business.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                
+                <!-- Not Sure CTA Box -->
+                <div class="about-hero-card" style="text-align: center; max-width: 700px; margin-inline: auto; margin-top: var(--space-2xl); border: 2px solid var(--color-neon-cyan-applied);">
+                    <div>
+                        <h3 style="color: var(--color-neon-cyan-applied); font-size: 1.75rem; margin-bottom: 0.75rem;">
+                            <i class="fas fa-question-circle" aria-hidden="true"></i>
+                            Not sure which plan is right?
+                        </h3>
+                        <p style="color: var(--color-text-secondary); font-size: 1rem; line-height: 1.7; margin-bottom: 1.5rem;">
+                            Let's discuss your project requirements and find the perfect package for your needs. 
+                            Get a free consultation and custom quote.
+                        </p>
+                        <div class="cta-group">
+                            <a href="index.html#contact" class="btn btn-primary">
+                                <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                                Schedule a Call
+                            </a>
+                            <a href="mailto:hello@hcweblabs.com" class="btn btn-secondary">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                                Send an Email
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Why Choose Me Section -->
+        <section id="why-choose-me">
+            <div class="container">
+                <h2>Why Choose Me</h2>
+                <p class="testimonials-intro">
+                    Working with a dedicated professional who cares about your success. 
+                    Here's what sets me apart from other developers and agencies.
+                </p>
+                
+                <div class="about-bento-grid">
+                    <!-- Quality Code -->
+                    <article class="glass-card service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-code" aria-hidden="true"></i>
+                        </div>
+                        <h3>Clean, Quality Code</h3>
+                        <p>
+                            Hand-crafted, semantic code following industry best practices. No bloated frameworks or 
+                            unnecessary dependencies—just efficient, maintainable code.
+                        </p>
+                    </article>
+                    
+                    <!-- Performance First -->
+                    <article class="glass-card service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-bolt" aria-hidden="true"></i>
+                        </div>
+                        <h3>Performance First</h3>
+                        <p>
+                            Lightning-fast websites that score 90+ on Google PageSpeed. Every millisecond counts 
+                            for user experience and SEO rankings.
+                        </p>
+                    </article>
+                    
+                    <!-- Accessibility Matters -->
+                    <article class="glass-card service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-universal-access" aria-hidden="true"></i>
+                        </div>
+                        <h3>Accessibility Matters</h3>
+                        <p>
+                            WCAG AA compliance isn't optional—it's standard. Your website will be inclusive 
+                            and usable by everyone, including those with disabilities.
+                        </p>
+                    </article>
+                    
+                    <!-- Direct Communication -->
+                    <article class="glass-card service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-comments" aria-hidden="true"></i>
+                        </div>
+                        <h3>Direct Communication</h3>
+                        <p>
+                            No middlemen or project managers. Work directly with me throughout the entire process 
+                            for clear, responsive communication.
+                        </p>
+                    </article>
+                    
+                    <!-- Transparent Pricing -->
+                    <article class="glass-card service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-hand-holding-usd" aria-hidden="true"></i>
+                        </div>
+                        <h3>Transparent Pricing</h3>
+                        <p>
+                            Fixed-price packages with no hidden fees or surprise charges. You'll know exactly 
+                            what you're paying for from the start.
+                        </p>
+                    </article>
+                    
+                    <!-- Ongoing Support -->
+                    <article class="glass-card service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-life-ring" aria-hidden="true"></i>
+                        </div>
+                        <h3>Ongoing Support</h3>
+                        <p>
+                            Your website needs don't end at launch. I'm here to help with updates, questions, 
+                            and support long after your site goes live.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Technology Stack Section -->
+        <section id="tech-stack" style="background: radial-gradient(ellipse at center, rgba(184, 41, 245, 0.02) 0%, transparent 70%);">
+            <div class="container">
+                <h2>Technologies & Tools</h2>
+                <p class="testimonials-intro">
+                    Modern, battle-tested technologies that deliver reliable results. 
+                    The right tool for every job.
+                </p>
+                
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-md); margin-top: var(--space-xl);">
+                    <!-- Tech badges -->
+                    <div class="skill-item" style="min-width: 100px;">
+                        <i class="fab fa-html5" aria-hidden="true"></i>
+                        <span>HTML5</span>
+                    </div>
+                    <div class="skill-item" style="min-width: 100px;">
+                        <i class="fab fa-css3-alt" aria-hidden="true"></i>
+                        <span>CSS3</span>
+                    </div>
+                    <div class="skill-item" style="min-width: 100px;">
+                        <i class="fab fa-js" aria-hidden="true"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="skill-item" style="min-width: 100px;">
+                        <i class="fab fa-react" aria-hidden="true"></i>
+                        <span>React</span>
+                    </div>
+                    <div class="skill-item" style="min-width: 100px;">
+                        <i class="fab fa-node-js" aria-hidden="true"></i>
+                        <span>Node.js</span>
+                    </div>
+                    <div class="skill-item" style="min-width: 100px;">
+                        <i class="fab fa-sass" aria-hidden="true"></i>
+                        <span>Sass</span>
+                    </div>
+                    <div class="skill-item" style="min-width: 100px;">
+                        <i class="fab fa-wordpress" aria-hidden="true"></i>
+                        <span>WordPress</span>
+                    </div>
+                    <div class="skill-item" style="min-width: 100px;">
+                        <i class="fab fa-figma" aria-hidden="true"></i>
+                        <span>Figma</span>
+                    </div>
+                    <div class="skill-item" style="min-width: 100px;">
+                        <i class="fab fa-git-alt" aria-hidden="true"></i>
+                        <span>Git</span>
+                    </div>
+                    <div class="skill-item" style="min-width: 100px;">
+                        <i class="fas fa-database" aria-hidden="true"></i>
+                        <span>SQL</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- How It Works Section -->
+        <section id="how-it-works" style="background: radial-gradient(ellipse at center, rgba(0, 245, 255, 0.02) 0%, transparent 70%);">
+            <div class="container">
+                <h2>How It Works</h2>
+                <p class="testimonials-intro">
+                    A streamlined, transparent process from initial consultation to launch. 
+                    Here's how we bring your vision to life in four simple steps.
+                </p>
+                
+                <div style="display: grid; gap: var(--space-lg); grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin-top: var(--space-xl);">
+                    <!-- Step 1: Discovery & Planning -->
+                    <article class="about-bento-card" style="text-align: center;">
+                        <div style="width: 80px; height: 80px; margin: 0 auto var(--space-md); display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, rgba(255, 46, 151, 0.2), rgba(184, 41, 245, 0.2)); border-radius: 50%; position: relative;">
+                            <i class="fas fa-lightbulb" style="color: var(--color-neon-pink-applied); font-size: 2rem;" aria-hidden="true"></i>
+                            <div style="position: absolute; top: -8px; right: -8px; width: 32px; height: 32px; background: var(--color-neon-pink-applied); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-family: var(--font-heading); font-size: 1rem; box-shadow: 0 0 20px var(--color-neon-pink-applied);">1</div>
+                        </div>
+                        <h3 style="margin-bottom: 0.75rem; font-size: 1.25rem; color: var(--color-neon-pink-applied);">Discovery & Planning</h3>
+                        <p style="color: var(--color-text-secondary); line-height: 1.7; margin: 0;">
+                            We start with a deep dive into your business goals, target audience, and project requirements. 
+                            Detailed planning ensures we're aligned from day one.
+                        </p>
+                    </article>
+                    
+                    <!-- Step 2: Design & Prototype -->
+                    <article class="about-bento-card" style="text-align: center;">
+                        <div style="width: 80px; height: 80px; margin: 0 auto var(--space-md); display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, rgba(0, 245, 255, 0.2), rgba(255, 46, 151, 0.2)); border-radius: 50%; position: relative;">
+                            <i class="fas fa-palette" style="color: var(--color-neon-cyan-applied); font-size: 2rem;" aria-hidden="true"></i>
+                            <div style="position: absolute; top: -8px; right: -8px; width: 32px; height: 32px; background: var(--color-neon-cyan-applied); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-family: var(--font-heading); font-size: 1rem; box-shadow: 0 0 20px var(--color-neon-cyan-applied);">2</div>
+                        </div>
+                        <h3 style="margin-bottom: 0.75rem; font-size: 1.25rem;">Design & Prototype</h3>
+                        <p style="color: var(--color-text-secondary); line-height: 1.7; margin: 0;">
+                            Creating beautiful, user-friendly designs that reflect your brand. 
+                            Interactive prototypes let you see and test the experience before development.
+                        </p>
+                    </article>
+                    
+                    <!-- Step 3: Development -->
+                    <article class="about-bento-card" style="text-align: center;">
+                        <div style="width: 80px; height: 80px; margin: 0 auto var(--space-md); display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, rgba(184, 41, 245, 0.2), rgba(0, 245, 255, 0.2)); border-radius: 50%; position: relative;">
+                            <i class="fas fa-code" style="color: var(--color-neon-purple-applied); font-size: 2rem;" aria-hidden="true"></i>
+                            <div style="position: absolute; top: -8px; right: -8px; width: 32px; height: 32px; background: var(--color-neon-purple-applied); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-family: var(--font-heading); font-size: 1rem; box-shadow: 0 0 20px var(--color-neon-purple-applied);">3</div>
+                        </div>
+                        <h3 style="margin-bottom: 0.75rem; font-size: 1.25rem; color: var(--color-neon-purple-applied);">Development</h3>
+                        <p style="color: var(--color-text-secondary); line-height: 1.7; margin: 0;">
+                            Building your website with clean, performant code. Regular updates keep you 
+                            in the loop as your project comes to life.
+                        </p>
+                    </article>
+                    
+                    <!-- Step 4: Launch & Support -->
+                    <article class="about-bento-card" style="text-align: center;">
+                        <div style="width: 80px; height: 80px; margin: 0 auto var(--space-md); display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, rgba(255, 46, 151, 0.2), rgba(0, 245, 255, 0.2)); border-radius: 50%; position: relative;">
+                            <i class="fas fa-rocket" style="color: var(--color-neon-pink-applied); font-size: 2rem;" aria-hidden="true"></i>
+                            <div style="position: absolute; top: -8px; right: -8px; width: 32px; height: 32px; background: var(--color-neon-pink-applied); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-family: var(--font-heading); font-size: 1rem; box-shadow: 0 0 20px var(--color-neon-pink-applied);">4</div>
+                        </div>
+                        <h3 style="margin-bottom: 0.75rem; font-size: 1.25rem; color: var(--color-neon-pink-applied);">Launch & Support</h3>
+                        <p style="color: var(--color-text-secondary); line-height: 1.7; margin: 0;">
+                            Thorough testing, training, and a smooth launch. Ongoing support ensures your 
+                            website continues to perform flawlessly.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FAQ Section -->
+        <section id="faq">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <p class="testimonials-intro">
+                    Quick answers to common questions about my services, process, and pricing. 
+                    Don't see your question? Feel free to reach out!
+                </p>
+                
+                <div style="max-width: 900px; margin-inline: auto; margin-top: var(--space-xl);">
+                    <!-- FAQ Item 1 -->
+                    <div class="about-bento-card" style="margin-bottom: var(--space-md);">
+                        <details style="cursor: pointer;">
+                            <summary style="font-size: 1.125rem; font-weight: 700; color: var(--color-neon-cyan-applied); display: flex; align-items: center; justify-content: space-between; padding: var(--space-sm); list-style: none;">
+                                <span><i class="fas fa-question-circle" style="margin-right: 0.5rem;" aria-hidden="true"></i>How long does it take to build a website?</span>
+                                <i class="fas fa-chevron-down" style="transition: transform 0.3s; font-size: 0.875rem;" aria-hidden="true"></i>
+                            </summary>
+                            <div style="padding: var(--space-md); padding-top: var(--space-sm); color: var(--color-text-secondary); line-height: 1.7;">
+                                <p style="margin: 0;">
+                                    Timeline varies by project type. Microsites typically take 1-2 weeks, Multi-Page Websites 
+                                    take 2-4 weeks, E-Commerce stores need 3-5 weeks, and Website Redesigns are usually complete 
+                                    in 1-3 weeks. I'll provide a detailed timeline during our initial consultation.
+                                </p>
+                            </div>
+                        </details>
+                    </div>
+                    
+                    <!-- FAQ Item 2 -->
+                    <div class="about-bento-card" style="margin-bottom: var(--space-md);">
+                        <details style="cursor: pointer;">
+                            <summary style="font-size: 1.125rem; font-weight: 700; color: var(--color-neon-cyan-applied); display: flex; align-items: center; justify-content: space-between; padding: var(--space-sm); list-style: none;">
+                                <span><i class="fas fa-question-circle" style="margin-right: 0.5rem;" aria-hidden="true"></i>Do you offer payment plans?</span>
+                                <i class="fas fa-chevron-down" style="transition: transform 0.3s; font-size: 0.875rem;" aria-hidden="true"></i>
+                            </summary>
+                            <div style="padding: var(--space-md); padding-top: var(--space-sm); color: var(--color-text-secondary); line-height: 1.7;">
+                                <p style="margin: 0;">
+                                    Yes! For projects over $750, I offer a payment plan: 50% upfront to begin work, 
+                                    and 50% upon completion. For larger projects over $1,500, we can arrange three payments: 
+                                    40% to start, 30% at the midpoint, and 30% at launch. This keeps the project moving smoothly 
+                                    while being flexible for your budget.
+                                </p>
+                            </div>
+                        </details>
+                    </div>
+                    
+                    <!-- FAQ Item 3 -->
+                    <div class="about-bento-card" style="margin-bottom: var(--space-md);">
+                        <details style="cursor: pointer;">
+                            <summary style="font-size: 1.125rem; font-weight: 700; color: var(--color-neon-cyan-applied); display: flex; align-items: center; justify-content: space-between; padding: var(--space-sm); list-style: none;">
+                                <span><i class="fas fa-question-circle" style="margin-right: 0.5rem;" aria-hidden="true"></i>What's included in the revision rounds?</span>
+                                <i class="fas fa-chevron-down" style="transition: transform 0.3s; font-size: 0.875rem;" aria-hidden="true"></i>
+                            </summary>
+                            <div style="padding: var(--space-md); padding-top: var(--space-sm); color: var(--color-text-secondary); line-height: 1.7;">
+                                <p style="margin: 0;">
+                                    Each package includes 2-3 rounds of revisions, which means you can request changes to design 
+                                    elements, content layout, colors, fonts, and functionality within the scope of your package. 
+                                    Revisions don't include major scope changes or new features beyond what was originally agreed upon. 
+                                    Additional revision rounds are available at an hourly rate if needed.
+                                </p>
+                            </div>
+                        </details>
+                    </div>
+                    
+                    <!-- FAQ Item 4 -->
+                    <div class="about-bento-card" style="margin-bottom: var(--space-md);">
+                        <details style="cursor: pointer;">
+                            <summary style="font-size: 1.125rem; font-weight: 700; color: var(--color-neon-cyan-applied); display: flex; align-items: center; justify-content: space-between; padding: var(--space-sm); list-style: none;">
+                                <span><i class="fas fa-question-circle" style="margin-right: 0.5rem;" aria-hidden="true"></i>Can I update the website myself after it's built?</span>
+                                <i class="fas fa-chevron-down" style="transition: transform 0.3s; font-size: 0.875rem;" aria-hidden="true"></i>
+                            </summary>
+                            <div style="padding: var(--space-md); padding-top: var(--space-sm); color: var(--color-text-secondary); line-height: 1.7;">
+                                <p style="margin: 0;">
+                                    Absolutely! Multi-Page Websites and E-Commerce sites can include a CMS (Content Management System) 
+                                    that lets you update text, images, blog posts, and products yourself. I provide training and 
+                                    documentation so you can confidently manage your content. For Microsites, content updates are 
+                                    typically handled through code, but I'm always available for quick updates at my hourly rate.
+                                </p>
+                            </div>
+                        </details>
+                    </div>
+                    
+                    <!-- FAQ Item 5 -->
+                    <div class="about-bento-card" style="margin-bottom: var(--space-md);">
+                        <details style="cursor: pointer;">
+                            <summary style="font-size: 1.125rem; font-weight: 700; color: var(--color-neon-cyan-applied); display: flex; align-items: center; justify-content: space-between; padding: var(--space-sm); list-style: none;">
+                                <span><i class="fas fa-question-circle" style="margin-right: 0.5rem;" aria-hidden="true"></i>What if I need ongoing support or maintenance?</span>
+                                <i class="fas fa-chevron-down" style="transition: transform 0.3s; font-size: 0.875rem;" aria-hidden="true"></i>
+                            </summary>
+                            <div style="padding: var(--space-md); padding-top: var(--space-sm); color: var(--color-text-secondary); line-height: 1.7;">
+                                <p style="margin: 0;">
+                                    Technical Support is available at $55/hour for troubleshooting, updates, security patches, 
+                                    and general maintenance. For ongoing needs, I offer monthly retainer packages that provide 
+                                    priority support, regular backups, security monitoring, and a set number of hours for updates 
+                                    each month. This is often more cost-effective than hourly billing for active websites.
+                                </p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA Section -->
+        <section id="cta-section" style="padding-block: 4rem;">
+            <div class="container">
+                <div class="about-hero-card" style="text-align: center; max-width: 800px; margin-inline: auto; border: 2px solid var(--color-neon-pink-applied);">
+                    <div>
+                        <h2 style="margin-bottom: 1rem; color: var(--color-neon-pink-applied);">
+                            <i class="fas fa-rocket" aria-hidden="true"></i>
+                            Ready to Get Started?
+                        </h2>
+                        <p style="color: var(--color-text-secondary); font-size: 1.125rem; line-height: 1.7; margin-bottom: 2rem;">
+                            Let's discuss your project and create something amazing together. 
+                            Get a free consultation and custom quote tailored to your needs.
+                        </p>
+                        <div class="cta-group">
+                            <a href="index.html#contact" class="btn btn-primary">
+                                <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                                Schedule Consultation
+                            </a>
+                            <a href="index.html#portfolio" class="btn btn-secondary">
+                                <i class="fas fa-folder-open" aria-hidden="true"></i>
+                                View Portfolio
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- About Section -->
+                <div class="footer-section">
+                    <span class="footer-logo">HC WebLabs</span>
+                    <p>
+                        Creating exceptional digital experiences with modern web technologies. 
+                        Performance-minded, accessible, and built to last.
+                    </p>
+                    <ul class="social-links" role="list">
+                        <li>
+                            <a href="https://github.com" class="social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com" class="social-link" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-twitter" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://dribbble.com" class="social-link" aria-label="Dribbble" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-dribbble" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links" role="list">
+                        <li><a href="index.html" class="footer-link"><i class="fas fa-home" aria-hidden="true"></i> Home</a></li>
+                        <li><a href="index.html#about" class="footer-link"><i class="fas fa-user" aria-hidden="true"></i> About</a></li>
+                        <li><a href="services.html" class="footer-link"><i class="fas fa-briefcase" aria-hidden="true"></i> Services</a></li>
+                        <li><a href="index.html#portfolio" class="footer-link"><i class="fas fa-folder-open" aria-hidden="true"></i> Portfolio</a></li>
+                        <li><a href="index.html#contact" class="footer-link"><i class="fas fa-envelope" aria-hidden="true"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services Links -->
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul class="footer-links" role="list">
+                        <li><a href="#pricing" class="footer-link"><i class="fas fa-file-alt" aria-hidden="true"></i> Microsites</a></li>
+                        <li><a href="#pricing" class="footer-link"><i class="fas fa-globe" aria-hidden="true"></i> Multi-Page Websites</a></li>
+                        <li><a href="#pricing" class="footer-link"><i class="fas fa-shopping-cart" aria-hidden="true"></i> E-Commerce</a></li>
+                        <li><a href="#pricing" class="footer-link"><i class="fas fa-paint-brush" aria-hidden="true"></i> Website Redesigns</a></li>
+                        <li><a href="#pricing" class="footer-link"><i class="fas fa-wrench" aria-hidden="true"></i> Technical Support</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="footer-section">
+                    <h3>Get In Touch</h3>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <a href="mailto:hello@hcweblabs.com">hello@hcweblabs.com</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone" aria-hidden="true"></i>
+                        <a href="tel:+1234567890">+1 (234) 567-890</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <span>LaFollette, TN, US</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-text">
+                    &copy; 2025 HC WebLabs. All rights reserved.
+                </p>
+                <p class="footer-credits">
+                    Built with <i class="fas fa-heart" aria-hidden="true"></i> using HTML5, CSS3 & Vanilla JavaScript
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" class="scroll-to-top" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+    
+    <!-- Main JavaScript -->
+    <script src="main.js"></script>
+</body>
+</html>
