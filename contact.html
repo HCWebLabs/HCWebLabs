@@ -38,11 +38,11 @@
                 </button>
                 
                 <ul id="main-nav" class="nav-list" role="list">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="./index.html" class="nav-link">Home</a></li>
                     <li><a href="./about.html" class="nav-link">About</a></li>
-                    <li><a href="./services.html" class="nav-link" aria-current="page">Services</a></li>
+                    <li><a href="./services.html" class="nav-link">Services</a></li>
                     <li><a href="./portfolio.html" class="nav-link">Portfolio</a></li>
-                    <li><a href="./contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="./contact.html" class="nav-link" aria-current="page">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -422,28 +422,119 @@
         <!-- Privacy Policy Section -->
         <section id="privacy-policy" style="background: radial-gradient(ellipse at center, rgba(0, 245, 255, 0.03) 0%, transparent 70%);">
             <div class="container">
-                <div class="about-hero-card" style="max-width: 900px; margin-inline: auto;">
-                    <h2><i class="fas fa-shield-alt" aria-hidden="true"></i> Privacy & Security</h2>
-                    <p style="color: var(--color-text-secondary); line-height: 1.7; margin-bottom: var(--space-md);">
-                        Your privacy is important to me. Here's how I handle your information:
-                    </p>
+                <div class="about-hero-card" style="max-width: 1000px; margin-inline: auto;">
+                    <div style="text-align: center; margin-block-end: var(--space-lg);">
+                        <h2 style="display: inline-flex; align-items: center; gap: var(--space-sm); margin: 0;">
+                            <i class="fas fa-shield-alt" aria-hidden="true"></i> 
+                            Privacy & Security
+                        </h2>
+                        <p style="color: var(--color-text-secondary); line-height: 1.7; margin-block-start: var(--space-sm); max-width: 700px; margin-inline: auto;">
+                            Your privacy is important to me. Here's how I handle your information:
+                        </p>
+                    </div>
                     
-                    <ul style="color: var(--color-text-secondary); line-height: 1.9; margin: 0; padding-left: 1.5rem;">
-                        <li><strong>Data Collection:</strong> I only collect information you provide through the contact form.</li>
-                        <li><strong>Use of Information:</strong> Your data is used solely to respond to your inquiry and provide requested services.</li>
-                        <li><strong>Data Storage:</strong> Information is stored securely and never sold or shared with third parties.</li>
-                        <li><strong>Security:</strong> I use industry-standard security measures to protect your data.</li>
-                        <li><strong>Your Rights:</strong> You can request deletion of your data at any time by contacting me.</li>
-                        <li><strong>Cookies:</strong> This website uses minimal cookies for functionality only.</li>
-                    </ul>
+                    <!-- Privacy Grid -->
+                    <div style="display: grid; gap: var(--space-md); grid-template-columns: 1fr;">
+                        <!-- Data Collection -->
+                        <div class="about-bento-card" style="margin: 0; text-align: left;">
+                            <h3 style="font-size: 1.125rem; color: var(--color-neon-cyan-applied); margin-block-end: var(--space-xs); display: flex; align-items: center; gap: var(--space-xs);">
+                                <i class="fas fa-database" aria-hidden="true" style="font-size: 1rem;"></i>
+                                Data Collection
+                            </h3>
+                            <p style="color: var(--color-text-secondary); line-height: 1.7; margin: 0;">
+                                I only collect information you provide through the contact form.
+                            </p>
+                        </div>
+                        
+                        <!-- Two Column Grid for Mobile -->
+                        <div style="display: grid; gap: var(--space-md); grid-template-columns: 1fr;">
+                            <!-- Use of Information -->
+                            <div class="about-bento-card" style="margin: 0; text-align: left;">
+                                <h3 style="font-size: 1.125rem; color: var(--color-neon-cyan-applied); margin-block-end: var(--space-xs); display: flex; align-items: center; gap: var(--space-xs);">
+                                    <i class="fas fa-tasks" aria-hidden="true" style="font-size: 1rem;"></i>
+                                    Use of Information
+                                </h3>
+                                <p style="color: var(--color-text-secondary); line-height: 1.7; margin: 0;">
+                                    Your data is used solely to respond to your inquiry and provide requested services.
+                                </p>
+                            </div>
+                            
+                            <!-- Data Storage -->
+                            <div class="about-bento-card" style="margin: 0; text-align: left;">
+                                <h3 style="font-size: 1.125rem; color: var(--color-neon-cyan-applied); margin-block-end: var(--space-xs); display: flex; align-items: center; gap: var(--space-xs);">
+                                    <i class="fas fa-lock" aria-hidden="true" style="font-size: 1rem;"></i>
+                                    Data Storage
+                                </h3>
+                                <p style="color: var(--color-text-secondary); line-height: 1.7; margin: 0;">
+                                    Information is stored securely and never sold or shared with third parties.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Three Column Grid for Desktop -->
+                        <div style="display: grid; gap: var(--space-md); grid-template-columns: 1fr;">
+                            <!-- Security -->
+                            <div class="about-bento-card" style="margin: 0; text-align: left;">
+                                <h3 style="font-size: 1.125rem; color: var(--color-neon-cyan-applied); margin-block-end: var(--space-xs); display: flex; align-items: center; gap: var(--space-xs);">
+                                    <i class="fas fa-shield-halved" aria-hidden="true" style="font-size: 1rem;"></i>
+                                    Security
+                                </h3>
+                                <p style="color: var(--color-text-secondary); line-height: 1.7; margin: 0;">
+                                    I use industry-standard security measures to protect your data.
+                                </p>
+                            </div>
+                            
+                            <!-- Your Rights -->
+                            <div class="about-bento-card" style="margin: 0; text-align: left;">
+                                <h3 style="font-size: 1.125rem; color: var(--color-neon-cyan-applied); margin-block-end: var(--space-xs); display: flex; align-items: center; gap: var(--space-xs);">
+                                    <i class="fas fa-user-shield" aria-hidden="true" style="font-size: 1rem;"></i>
+                                    Your Rights
+                                </h3>
+                                <p style="color: var(--color-text-secondary); line-height: 1.7; margin: 0;">
+                                    You can request deletion of your data at any time by contacting me.
+                                </p>
+                            </div>
+                            
+                            <!-- Cookies -->
+                            <div class="about-bento-card" style="margin: 0; text-align: left;">
+                                <h3 style="font-size: 1.125rem; color: var(--color-neon-cyan-applied); margin-block-end: var(--space-xs); display: flex; align-items: center; gap: var(--space-xs);">
+                                    <i class="fas fa-cookie-bite" aria-hidden="true" style="font-size: 1rem;"></i>
+                                    Cookies
+                                </h3>
+                                <p style="color: var(--color-text-secondary); line-height: 1.7; margin: 0;">
+                                    This website uses minimal cookies for functionality only.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                     
-                    <p style="color: var(--color-text-secondary); line-height: 1.7; margin-top: var(--space-md); margin-bottom: 0;">
-                        By submitting the contact form, you consent to these terms. For questions about privacy, 
-                        please email <a href="mailto:hello@hcweblabs.com" style="color: var(--color-neon-cyan-applied);">hello@hcweblabs.com</a>.
-                    </p>
+                    <!-- Footer Note -->
+                    <div style="margin-block-start: var(--space-xl); padding-block-start: var(--space-md); border-top: 1px solid var(--color-glass-border); text-align: center;">
+                        <p style="color: var(--color-text-secondary); line-height: 1.7; margin: 0;">
+                            By submitting the contact form, you consent to these terms. For questions about privacy, 
+                            please email <a href="mailto:hello@hcweblabs.com" style="color: var(--color-neon-cyan-applied); text-decoration: underline;">hello@hcweblabs.com</a>.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
+        
+        <!-- Add responsive styles for desktop layout -->
+        <style>
+            @media (min-width: 768px) {
+                #privacy-policy .about-bento-card:has(h3) {
+                    min-height: auto;
+                }
+                
+                #privacy-policy > .container > .about-hero-card > div:nth-child(2) > div:nth-child(2) {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                
+                #privacy-policy > .container > .about-hero-card > div:nth-child(2) > div:nth-child(3) {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+            }
+        </style>
     </main>
     
     <!-- Footer -->
