@@ -5,7 +5,7 @@
 ### Freelance Web Designer & Developer | Knoxville, TN
 **Passionate about creating responsive, user-friendly websites.**
 
-📧 [webtech.hc@gmail.com](mailto:webtech.hc@gmail.com) | 🌐 [hcweblabs.com](https://hcweblabs.com) | 📍 Knoxville, TN
+📧 [HCWebLabs@heather-cooper.com](mailto:HCWebLabs@heather-cooper.com) | 🌐 [heather-cooper.com](https://heather-cooper.com) | 📍 Knoxville, TN
 
 </div>
 
@@ -92,8 +92,8 @@ I build websites the way they should be built - with **clean, hand-coded HTML5, 
 
 I'm always excited to collaborate on new projects or discuss web development!
 
-**Portfolio:** [hcweblabs.com](https://hcweblabs.com)  
-**Email:** [webtech.hc@gmail.com](mailto:webtech.hc@gmail.com)
+**Portfolio:** [heather-cooper.com](https://heather-cooper.com)  
+**Email:** [HCWebLabs@heather-cooper.com](mailto:HCWebLabs@heather-cooper.com)
 
 ---
 
