@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Heather Cooper - Freelance Web Designer & Developer in Knoxville, TN. Hand-coded, responsive websites for small businesses.">
+    <meta name="author" content="Heather Cooper">
+    <title>Heather Cooper | Web Developer & Designer | HC Web Labs</title>
+    
+    <!-- Preconnect for fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* ============================================
+           VARIABLES & RESET
+        ============================================ */
+        :root {
+            /* 🌌🚀 AURORA SPACE PALETTE */
+            --color-1: #42047E;
+            --color-2: #07F49E;
+            --color-3: #AE00FF;
+            --color-4: #6C82C3;
+            --gradient-main: linear-gradient(135deg, #42047E 0%, #AE00FF 33%, #6C82C3 66%, #07F49E 100%);
+            --accent: #07F49E;
+            --accent-30: rgba(7, 244, 158, 0.3);
+            
+            --bg-dark: #030306;
+            --bg-glass: rgba(255, 255, 255, 0.08);
+            --bg-code: rgba(255, 255, 255, 0.03);
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.75);
+            --text-muted: rgba(255, 255, 255, 0.5);
+            --border-glass: rgba(255, 255, 255, 0.12);
+            --border-accent: rgba(7, 244, 158, 0.3);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Outfit', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-dark);
+            overflow-x: hidden;
+        }
+        
+        /* ============================================
+           ACCESSIBILITY
+        ============================================ */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        *:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* ============================================
+           GRID BACKGROUND
+        ============================================ */
+        .bg-grid {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background: var(--bg-dark);
+        }
+        
+        .bg-grid::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, 
+                rgba(66, 4, 126, 0.2) 0%, 
+                rgba(7, 244, 158, 0.15) 100%);
+        }
+        
+        .grid-lines {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridScroll 20s linear infinite;
+        }
+        
+        .grid-glow {
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle, var(--color-2) 0%, transparent 70%);
+            filter: blur(80px);
+            opacity: 0.2;
+            animation: gridPulse 4s ease-in-out infinite;
+        }
+        
+        @keyframes gridScroll {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+        
+        @keyframes gridPulse {
+            0%, 100% { opacity: 0.2; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 0.35; transform: translate(-50%, -50%) scale(1.1); }
+        }
+        
+        /* ============================================
+           LAYOUT
+        ============================================ */
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 clamp(1rem, 4vw, 2rem);
+            position: relative;
+            z-index: 1;
+        }
+        
+        section {
+            padding: clamp(3rem, 8vw, 6rem) 0;
+        }
+        
+        /* ============================================
+           TYPOGRAPHY
+        ============================================ */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        h1 {
+            font-size: clamp(2.5rem, 7vw, 4.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        
+        h2 {
+            font-size: clamp(1.75rem, 5vw, 2.5rem);
+            margin-bottom: clamp(1rem, 3vw, 1.5rem);
+        }
+        
+        h3 {
+            font-size: clamp(1.25rem, 3.5vw, 1.75rem);
+            margin-bottom: 0.75rem;
+        }
+
+      p {
+          line-height: 1.4;
+      }
+        
+        .gradient-text {
+            background: var(--gradient-main);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+        
+        /* ============================================
+           GLASS CARD
+        ============================================ */
+        .glass-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(10px) saturate(180%);
+            -webkit-backdrop-filter: blur(10px) saturate(180%);
+            border: 1px solid var(--border-glass);
+            border-radius: clamp(1rem, 3vw, 1.5rem);
+            padding: clamp(1.5rem, 4vw, 2.5rem);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        
+        .glass-card:hover {
+            border-color: var(--border-accent);
+            transform: translateY(-4px);
+        }
+        
+        /* ============================================
+           CODE BLOCKS
+        ============================================ */
+        code, pre {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9em;
+        }
+        
+        .code-block {
+            background: var(--bg-code);
+            border: 1px solid var(--border-glass);
+            border-radius: clamp(0.5rem, 2vw, 0.75rem);
+            padding: clamp(1rem, 3vw, 1.5rem);
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+        
+        .code-block pre {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: clamp(0.8rem, 2vw, 0.95rem);
+        }
+        
+        .code-comment { color: #6C82C3; }
+        .code-key { color: #AE00FF; }
+        .code-string { color: #07F49E; }
+        .code-value { color: #FF6B6B; }
+        
+        /* ============================================
+           HERO SECTION
+        ============================================ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: clamp(2rem, 5vw, 4rem) 0;
+        }
+        
+        .hero-emoji {
+            font-size: clamp(3rem, 10vw, 5rem);
+            margin-bottom: 1rem;
+            display: inline-block;
+            animation: wave 2s ease-in-out infinite;
+        }
+        
+        @keyframes wave {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(14deg); }
+            75% { transform: rotate(-14deg); }
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1rem, 3vw, 1.25rem);
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-location {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(7, 244, 158, 0.1);
+            border: 1px solid var(--border-accent);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--accent);
+            margin-bottom: 2rem;
+        }
+        
+        .hero-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 3vw, 2rem);
+            font-family: inherit;
+            font-size: clamp(0.9rem, 2.2vw, 1rem);
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: clamp(0.5rem, 2vw, 0.75rem);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            min-height: 44px;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-main);
+            color: #fff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(7, 244, 158, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(7, 244, 158, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border-glass);
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            background: rgba(7, 244, 158, 0.05);
+        }
+        
+        /* ============================================
+           ABOUT SECTION
+        ============================================ */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .about-content p {
+            font-size: clamp(1rem, 2.5vw, 1.125rem);
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        /* ============================================
+           SKILLS SECTION
+        ============================================ */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: clamp(1rem, 3vw, 1.5rem);
+            margin-top: 2rem;
+        }
+        
+        .skill-category h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--accent);
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            margin-bottom: 1rem;
+        }
+        
+        .skill-category h3 i {
+            font-size: 1.2em;
+        }
+        
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .skill-tag {
+            padding: 0.5rem 1rem;
+            background: var(--bg-code);
+            border: 1px solid var(--border-glass);
+            border-radius: 50px;
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
+            color: var(--text-secondary);
+            transition: border-color 0.2s ease, color 0.2s ease;
+        }
+        
+        .skill-tag:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+        
+        /* ============================================
+           APPROACH SECTION
+        ============================================ */
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: clamp(1rem, 3vw, 1.5rem);
+            margin-top: 2rem;
+        }
+        
+        .approach-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .approach-icon {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            background: var(--gradient-main);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        
+        .approach-text h4 {
+            font-size: clamp(0.95rem, 2.5vw, 1.125rem);
+            margin-bottom: 0.25rem;
+        }
+        
+        .approach-text p {
+            font-size: clamp(0.85rem, 2vw, 0.95rem);
+            color: var(--text-muted);
+        }
+        
+        /* ============================================
+           SERVICES TABLE
+        ============================================ */
+        .services-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 1rem;
+            margin-top: 2rem;
+        }
+        
+        .services-table tr {
+            background: var(--bg-glass);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .services-table td {
+            padding: clamp(1rem, 3vw, 1.5rem);
+            border: 1px solid var(--border-glass);
+            font-size: clamp(0.9rem, 2.2vw, 1rem);
+        }
+        
+        .services-table td:first-child {
+            border-radius: 12px 0 0 12px;
+            font-weight: 600;
+            color: var(--accent);
+            white-space: nowrap;
+        }
+        
+        .services-table td:last-child {
+            border-radius: 0 12px 12px 0;
+            color: var(--text-secondary);
+        }
+        
+        /* Mobile responsive table */
+        @media (max-width: 768px) {
+            .services-table, .services-table tbody, .services-table tr, .services-table td {
+                display: block;
+            }
+            
+            .services-table td {
+                border-radius: 0 !important;
+            }
+            
+            .services-table tr {
+                margin-bottom: 1rem;
+                border-radius: 12px;
+                overflow: hidden;
+            }
+            
+            .services-table td:first-child {
+                border-bottom: none;
+            }
+        }
+        
+        /* ============================================
+           FOOTER
+        ============================================ */
+        footer {
+            border-top: 1px solid var(--border-glass);
+            padding: clamp(2rem, 5vw, 3rem) 0;
+            text-align: center;
+        }
+        
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-link {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 12px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 1.25rem;
+            transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+        }
+        
+        .social-link:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        footer p {
+            color: var(--text-muted);
+            font-size: clamp(0.85rem, 2vw, 0.95rem);
+        }
+        
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* ============================================
+           SCROLL INDICATOR
+        ============================================ */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background -->
+    <div class="bg-grid" aria-hidden="true">
+        <div class="grid-glow"></div>
+        <div class="grid-lines"></div>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-emoji" aria-hidden="true">👋</div>
+            <h1>Hi, I'm <span class="gradient-text">Heather Cooper</span></h1>
+            <p class="hero-subtitle">
+                Freelance Web Designer & Developer<br>
+                Passionate about creating responsive, user-friendly websites.
+            </p>
+            <div class="hero-location">
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                Knoxville, TN
+            </div>
+            
+            <div class="hero-links">
+                <a href="mailto:HCWebLabs@heather-cooper.com" class="btn btn-primary">
+                    <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                    Get In Touch
+                </a>
+                <a href="https://heather-cooper.com" class="btn btn-secondary" target="_blank" rel="noopener">
+                    <i class="fa-solid fa-globe" aria-hidden="true"></i>
+                    Visit Portfolio
+                </a>
+            </div>
+            
+            <div class="scroll-indicator">
+                <span>Scroll to explore</span>
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>🚀 <span class="gradient-text">About Me</span></h2>
+            <div class="about-content">
+                <p>
+                    I'm the founder of <strong>HC Web Labs</strong>, a web development business serving small businesses, nonprofits, artists, and entrepreneurs in East Tennessee. With 5 years of experience, I specialize in hand-coded websites that are fast, accessible, and built to modern web standards.
+                </p>
+                <p>
+                    I wake up excited to code every day, working 8+ hours on projects I'm passionate about. I believe in creating affordable, quality web design for local businesses and organizations who need someone who understands their needs.
+                </p>
+                
+                <div class="code-block">
+                    <pre><span class="code-comment">// My developer DNA 🧬</span>
+<span class="code-key">const</span> heather = {
+    <span class="code-key">location</span>: <span class="code-string">"East Tennessee (Knoxville/LaFollette)"</span>,
+    <span class="code-key">business</span>: <span class="code-string">"HC Web Labs"</span>,
+    <span class="code-key">experience</span>: <span class="code-string">"5 years"</span>,
+    <span class="code-key">passion</span>: <span class="code-string">"Hand-coded, responsive websites"</span>,
+    <span class="code-key">approach</span>: <span class="code-string">"Mobile-first, accessibility-focused"</span>,
+    <span class="code-key">workStyle</span>: <span class="code-string">"8+ hours daily of pure coding joy ☕️"</span>
+};</pre>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>💎 <span class="gradient-text">Skills & Tech Stack</span></h2>
+            
+            <div class="skills-grid">
+                <div class="glass-card skill-category">
+                    <h3>
+                        <i class="fa-solid fa-code" aria-hidden="true"></i>
+                        Frontend Development
+                    </h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript ES6+</span>
+                        <span class="skill-tag">PHP</span>
+                    </div>
+                </div>
+                
+                <div class="glass-card skill-category">
+                    <h3>
+                        <i class="fa-brands fa-wordpress" aria-hidden="true"></i>
+                        CMS & Frameworks
+                    </h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">WordPress</span>
+                        <span class="skill-tag">Elementor</span>
+                        <span class="skill-tag">Custom Themes</span>
+                    </div>
+                </div>
+                
+                <div class="glass-card skill-category">
+                    <h3>
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
+                        Specialties
+                    </h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">📱 Mobile-First Design</span>
+                        <span class="skill-tag">♿ WCAG Compliance</span>
+                        <span class="skill-tag">⚡ Performance Optimization</span>
+                        <span class="skill-tag">🎨 Glassmorphism UI</span>
+                        <span class="skill-tag">🛒 E-Commerce</span>
+                        <span class="skill-tag">🧹 Code Audits</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Approach Section -->
+    <section id="approach">
+        <div class="container">
+            <h2>🌟 <span class="gradient-text">My Approach</span></h2>
+            <p style="text-align: center; color: var(--text-secondary); max-width: 800px; margin: 0 auto 2rem; font-size: clamp(1rem, 2.5vw, 1.125rem);">
+                I build websites the way they should be built - with clean, hand-coded HTML5, CSS3, and vanilla JavaScript. No bloated frameworks, no unnecessary dependencies. Just modern web standards that create fast, accessible, and beautiful websites.
+            </p>
+            
+            <div class="approach-grid">
+                <div class="approach-item">
+                    <div class="approach-icon">✨</div>
+                    <div class="approach-text">
+                        <h4>Hand-coded everything</h4>
+                        <p>Complete control, zero bloat</p>
+                    </div>
+                </div>
+                
+                <div class="approach-item">
+                    <div class="approach-icon">📱</div>
+                    <div class="approach-text">
+                        <h4>Mobile-first always</h4>
+                        <p>Scaling typography, responsive layouts</p>
+                    </div>
+                </div>
+                
+                <div class="approach-item">
+                    <div class="approach-icon">🎨</div>
+                    <div class="approach-text">
+                        <h4>Custom design</h4>
+                        <p>No templates, just unique solutions</p>
+                    </div>
+                </div>
+                
+                <div class="approach-item">
+                    <div class="approach-icon">🏆</div>
+                    <div class="approach-text">
+                        <h4>Modern standards</h4>
+                        <p>HTML5, CSS3, ES6+, WCAG compliance</p>
+                    </div>
+                </div>
+                
+                <div class="approach-item">
+                    <div class="approach-icon">💙</div>
+                    <div class="approach-text">
+                        <h4>Community-focused</h4>
+                        <p>Transparent pricing, budget-conscious</p>
+                    </div>
+                </div>
+                
+                <div class="approach-item">
+                    <div class="approach-icon">🚀</div>
+                    <div class="approach-text">
+                        <h4>Performance-driven</h4>
+                        <p>Fast loading, optimized parsing</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2>💼 <span class="gradient-text">Services I Offer</span></h2>
+            
+            <table class="services-table" role="table">
+                <tbody>
+                    <tr>
+                        <td>🌐 Custom Website Development</td>
+                        <td>Hand-coded websites built from scratch with modern web standards</td>
+                    </tr>
+                    <tr>
+                        <td>🎨 WordPress Integration</td>
+                        <td>Custom theme development and Elementor-compatible widgets</td>
+                    </tr>
+                    <tr>
+                        <td>🛒 E-Commerce Solutions</td>
+                        <td>Full shopping cart functionality and online store builds</td>
+                    </tr>
+                    <tr>
+                        <td>⚡ Website Optimization</td>
+                        <td>Code audits, performance improvements, and responsive updates</td>
+                    </tr>
+                    <tr>
+                        <td>♿ Accessibility Compliance</td>
+                        <td>WCAG standards implementation across all projects</td>
+                    </tr>
+                    <tr>
+                        <td>📱 Responsive Design</td>
+                        <td>Mobile-first approach with scaling typography and layouts</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    
+    <!-- Current Focus Section -->
+    <section id="focus">
+        <div class="container">
+            <h2>🎯 <span class="gradient-text">Current Focus</span></h2>
+            
+            <div class="code-block">
+                <pre><span class="code-comment">// What I'm working on right now 🔥</span>
+<span class="code-key">.current-priorities</span> {
+    <span class="code-key">client-projects</span>: <span class="code-string">"E-commerce & business websites"</span>;
+    <span class="code-key">learning</span>: <span class="code-string">"Advanced CSS techniques & animations"</span>;
+    <span class="code-key">optimization</span>: <span class="code-string">"Code cleanup & performance audits"</span>;
+    <span class="code-key">wordpress</span>: <span class="code-string">"Custom theme development & Elementor widgets"</span>;
+    <span class="code-key">design-aesthetic</span>: <span class="code-string">"Glassmorphism & neon gradients"</span>;
+}</pre>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Fun Facts Section -->
+    <section id="fun-facts">
+        <div class="container">
+            <h2>💖 <span class="gradient-text">Fun Facts</span></h2>
+            
+            <div class="approach-grid">
+                <div class="glass-card">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">☕</div>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem;">I code for 8+ hours daily and wake up excited to work on projects</p>
+                </div>
+                
+                <div class="glass-card">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎨</div>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem;">I love glassmorphism and neon gradient aesthetics</p>
+                </div>
+                
+                <div class="glass-card">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🏔️</div>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem;">Based in beautiful East Tennessee</p>
+                </div>
+                
+                <div class="glass-card">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">📚</div>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem;">Always learning new web development technologies</p>
+                </div>
+                
+                <div class="glass-card">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🤝</div>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem;">Community-first approach to business</p>
+                </div>
+                
+                <div class="glass-card">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">💻</div>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem;">5 years of serving local businesses and nonprofits</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h3 style="margin-bottom: 1.5rem;">💙 Supporting Small Businesses, One Website at a Time</h3>
+            
+            <div class="footer-socials">
+                <a href="mailto:HCWebLabs@heather-cooper.com" class="social-link" aria-label="Email">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+                <a href="https://github.com/HCWebLabs" class="social-link" aria-label="GitHub" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://codepen.io/HCWebLabs" class="social-link" aria-label="CodePen" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-codepen"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/heathercooper/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.instagram.com/hc_weblabs/" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+            
+            <p>
+                © 2025 <a href="https://heather-cooper.com">Heather Cooper</a> | HC Web Labs<br>
+                Built with 💖 in East Tennessee
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
