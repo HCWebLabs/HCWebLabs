@@ -1,0 +1,1530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tennessee tourism generated $31.7 billion in 2024 — and East Tennessee led the charge. If your business doesn't have a website or Google Business Profile, millions of visitors are searching for what you offer and can't find you.">
+  <meta name="author" content="HC Web Labs">
+
+  <title>East Tennessee Tourism Is Booming. Your Website Should Be Too. | HC Web Labs</title>
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <style>
+    /* ============================================================
+       HC Web Labs — Tourism Revenue Landing Page
+       All styles inline — base system + page-specific
+       ============================================================ */
+
+/* ============================================================
+   1. CUSTOM PROPERTIES
+   ============================================================ */
+:root {
+  --bg-darkest: #0a0a0f;
+  --bg-dark: #0f0f17;
+  --bg-dark-mid: #14141f;
+  --bg-lightest: #f5f6fa;
+
+  --neon-cyan: #00bfff;
+  --neon-cyan-muted: #009dd6;
+  --neon-purple: #bf00ff;
+  --neon-purple-bright: #d966ff;
+
+  --text-dark-bright: #f5f6fa;
+  --text-dark-mid: #d1d2d8;
+  --text-dark-dim: #a0a1a8;
+
+  --text-light-dark: #1a1a2e;
+  --text-light-mid: #4a4a5e;
+
+  --glass-dark-border: rgba(255, 255, 255, 0.08);
+
+  --space-xs: clamp(0.375rem, 0.3rem + 0.25vw, 0.5rem);
+  --space-sm: clamp(0.625rem, 0.5rem + 0.4vw, 0.875rem);
+  --space-md: clamp(1rem, 0.85rem + 0.5vw, 1.375rem);
+  --space-lg: clamp(1.5rem, 1.2rem + 1vw, 2.25rem);
+  --space-xl: clamp(2rem, 1.5rem + 1.5vw, 3.25rem);
+  --space-xxl: clamp(3rem, 2.2rem + 2.5vw, 5rem);
+  --space-xxxl: clamp(4rem, 3rem + 3vw, 6.5rem);
+
+  --font-display: 'Orbitron', sans-serif;
+  --font-body: 'Rajdhani', sans-serif;
+
+  --text-xs: clamp(0.85rem, 0.8rem + 0.15vw, 0.95rem);
+  --text-sm: clamp(0.95rem, 0.9rem + 0.2vw, 1.1rem);
+  --text-base: clamp(1.05rem, 0.975rem + 0.25vw, 1.25rem);
+  --text-lg: clamp(1.15rem, 1.05rem + 0.35vw, 1.4rem);
+  --text-xl: clamp(1.25rem, 1.1rem + 0.5vw, 1.55rem);
+  --text-2xl: clamp(1.5rem, 1.2rem + 1vw, 1.95rem);
+  --text-3xl: clamp(1.9rem, 1.5rem + 1.5vw, 2.9rem);
+
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.6s ease;
+}
+
+
+/* ============================================================
+   2. RESET & BASE
+   ============================================================ */
+.hcwl-page,
+.hcwl-page *,
+.hcwl-page *::before,
+.hcwl-page *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.hcwl-page {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  letter-spacing: 0.2px;
+  color: var(--text-dark-bright);
+  background: var(--bg-darkest);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+.hcwl-page a { color: inherit; text-decoration: none; }
+.hcwl-page img { max-width: 100%; height: auto; display: block; }
+
+
+/* ============================================================
+   3. LAYOUT UTILITIES
+   ============================================================ */
+.hcwl-container {
+  width: 100%;
+  max-width: 1150px;
+  margin-inline: auto;
+  padding-inline: var(--space-md);
+}
+
+.hcwl-sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; border: 0;
+}
+
+.hcwl-page :focus-visible {
+  outline: 2px solid var(--neon-cyan);
+  outline-offset: 2px;
+}
+
+
+/* ============================================================
+   4. BACKGROUND EFFECTS
+   ============================================================ */
+.hcwl-grid-bg {
+  position: fixed; inset: 0;
+  pointer-events: none; z-index: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.hcwl-glow-bg {
+  position: fixed; inset: 0;
+  pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(0, 191, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 60%, rgba(191, 0, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 50% at 20% 80%, rgba(0, 212, 168, 0.08) 0%, transparent 50%);
+}
+
+
+/* ============================================================
+   5. SKIP LINK
+   ============================================================ */
+.hcwl-skip-link {
+  position: absolute; top: -100px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--neon-cyan);
+  color: var(--bg-darkest);
+  padding: var(--space-sm) var(--space-md);
+  font-family: var(--font-display);
+  font-weight: 600; font-size: var(--text-sm);
+  text-decoration: none;
+  border-radius: 0 0 8px 8px;
+  z-index: 9999;
+  transition: top var(--transition-base);
+}
+.hcwl-skip-link:focus { top: 0; outline: none; }
+
+
+/* ============================================================
+   6. NAVIGATION HEADER
+   ============================================================ */
+.hcwl-nav-header {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: var(--space-sm) 0;
+  background: rgba(10, 10, 15, 0.95);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--glass-dark-border);
+}
+.hcwl-nav-header .hcwl-container {
+  display: flex; justify-content: space-between; align-items: center;
+}
+.hcwl-logo {
+  display: flex; align-items: center; gap: 6px; text-decoration: none;
+}
+.hcwl-logo-hc {
+  font-family: var(--font-display);
+  font-size: var(--text-xs); font-weight: 800;
+  color: var(--bg-darkest);
+  background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-purple-bright) 100%);
+  padding: 4px 8px; border-radius: 5px; letter-spacing: 1.5px;
+}
+.hcwl-logo-text {
+  font-family: var(--font-display);
+  font-size: var(--text-base); font-weight: 700;
+  color: var(--text-dark-bright);
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+.hcwl-back-link {
+  display: flex; align-items: center; gap: var(--space-xs);
+  color: var(--text-dark-mid); text-decoration: none;
+  font-family: var(--font-display);
+  font-size: var(--text-xs); font-weight: 500;
+  letter-spacing: 1px; text-transform: uppercase;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: 6px;
+  transition: color var(--transition-base), background var(--transition-base);
+}
+.hcwl-back-link:hover,
+.hcwl-back-link:focus-visible {
+  color: var(--neon-cyan);
+  background: rgba(0, 191, 255, 0.1);
+}
+
+
+/* ============================================================
+   7. HERO SECTION
+   ============================================================ */
+.hcwl-hero {
+  padding: calc(60px + var(--space-xxl)) var(--space-md) var(--space-xl);
+  background: transparent; text-align: center;
+  position: relative; z-index: 1;
+}
+.hcwl-section-label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--text-xs); font-weight: 600;
+  color: var(--neon-cyan);
+  text-transform: uppercase; letter-spacing: 5px;
+  text-align: center;
+  margin-bottom: var(--space-sm);
+}
+.hcwl-hero h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl); font-weight: 700;
+  color: var(--text-dark-bright);
+  margin-bottom: var(--space-lg); line-height: 1.15;
+  letter-spacing: 0.5px; max-width: 1000px; margin-inline: auto;
+}
+.hcwl-hero-intro {
+  font-size: var(--text-lg);
+  color: var(--text-dark-bright);
+  max-width: 825px; margin-inline: auto; line-height: 1.45;
+  letter-spacing: 0.2px;
+}
+@media (min-width: 48em) {
+  .hcwl-hero { padding-top: calc(80px + var(--space-xl)); }
+}
+
+
+/* ============================================================
+   8. SECTION CONTAINERS
+   ============================================================ */
+.hcwl-section-dark {
+  padding: var(--space-xxl) 0;
+  background: transparent;
+  position: relative; z-index: 1;
+}
+.hcwl-section-dark h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl); font-weight: 700;
+  color: var(--text-dark-bright);
+  text-align: center; line-height: 1.15; letter-spacing: 0.5px;
+  margin-bottom: var(--space-sm);
+}
+.hcwl-section-dark-intro {
+  text-align: center; font-size: var(--text-lg);
+  color: var(--text-dark-bright);
+  max-width: 850px; margin: 0 auto var(--space-md); line-height: 1.35;
+  letter-spacing: 0.2px;
+}
+
+.hcwl-section-light {
+  padding: var(--space-xxl) 0;
+  background: var(--bg-lightest);
+  position: relative; z-index: 1;
+}
+.hcwl-section-light h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl); font-weight: 700;
+  color: var(--text-light-dark);
+  text-align: center; line-height: 1.15; letter-spacing: 0.5px;
+  margin-bottom: var(--space-sm);
+}
+.hcwl-section-light-intro {
+  text-align: center; font-size: var(--text-lg);
+  color: var(--text-light-dark);
+  max-width: 850px; margin: 0 auto var(--space-md); line-height: 1.35;
+  letter-spacing: 0.2px;
+}
+
+.hcwl-section-dark-mid {
+  padding: var(--space-xxl) 0;
+  background: var(--bg-dark-mid);
+  position: relative; z-index: 1;
+}
+.hcwl-section-dark-mid h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl); font-weight: 700;
+  color: var(--text-dark-bright);
+  text-align: center; line-height: 1.15; letter-spacing: 0.5px;
+  margin-bottom: var(--space-sm);
+}
+.hcwl-section-dark-mid-intro {
+  text-align: center; font-size: var(--text-lg);
+  color: var(--text-dark-bright);
+  max-width: 850px; margin: 0 auto var(--space-md); line-height: 1.35;
+  letter-spacing: 0.2px;
+}
+
+
+/* ============================================================
+   9. BUTTONS
+   ============================================================ */
+.hcwl-btn {
+  display: inline-flex; align-items: center; gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-lg);
+  font-family: var(--font-display);
+  font-size: var(--text-sm); font-weight: 600;
+  text-decoration: none; border-radius: 8px;
+  transition: all var(--transition-base);
+  cursor: pointer; border: none; letter-spacing: 0.5px;
+}
+.hcwl-btn-primary {
+  background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-cyan-muted) 100%);
+  color: #000000;
+}
+.hcwl-btn-primary:hover,
+.hcwl-btn-primary:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 191, 255, 0.3);
+}
+.hcwl-btn-secondary {
+  background: transparent;
+  color: var(--neon-cyan);
+  border: 1px solid var(--neon-cyan);
+}
+.hcwl-btn-secondary:hover,
+.hcwl-btn-secondary:focus-visible {
+  background: rgba(0, 191, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 191, 255, 0.15);
+}
+@media (min-width: 48em) {
+  .hcwl-btn { font-size: var(--text-base); }
+}
+
+
+/* ============================================================
+   10. CONTEXT NOTES
+   ============================================================ */
+.hcwl-context-note {
+  text-align: center; font-size: var(--text-sm);
+  color: var(--text-dark-mid);
+  font-style: italic; max-width: 750px;
+  margin: var(--space-md) auto 0;
+  letter-spacing: 0.2px; line-height: 1.5;
+}
+
+
+/* ============================================================
+   11. FOOTER
+   ============================================================ */
+.hcwl-footer {
+  padding: var(--space-lg) 0;
+  background: var(--bg-darkest);
+  border-top: 1px solid var(--glass-dark-border);
+  text-align: center; position: relative; z-index: 1;
+}
+.hcwl-footer p { font-size: var(--text-sm); color: var(--text-dark-mid); }
+.hcwl-footer a { color: var(--neon-cyan); text-decoration: none; }
+.hcwl-footer a:hover { text-decoration: underline; }
+
+
+/* ============================================================
+   12. SCROLL-TO-TOP
+   ============================================================ */
+.hcwl-scroll-to-top {
+  position: fixed; bottom: var(--space-md); right: var(--space-md);
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: rgba(15, 15, 23, 0.9);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--neon-cyan);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden;
+  transform: translateY(20px);
+  transition:
+    opacity var(--transition-base),
+    visibility var(--transition-base),
+    transform var(--transition-base),
+    background var(--transition-base);
+  z-index: 999;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  color: var(--neon-cyan); font-size: 1.2rem; padding: 0;
+}
+.hcwl-scroll-to-top.hcwl-visible {
+  opacity: 1; visibility: visible; transform: translateY(0);
+}
+.hcwl-scroll-to-top:hover,
+.hcwl-scroll-to-top:focus-visible {
+  background: rgba(0, 191, 255, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 191, 255, 0.3);
+}
+@media (min-width: 48em) {
+  .hcwl-scroll-to-top { width: 48px; height: 48px; }
+}
+
+
+/* ============================================================
+   13. SCROLLBARS & REDUCED MOTION
+   ============================================================ */
+html::-webkit-scrollbar, .hcwl-page ::-webkit-scrollbar { width: 10px; }
+html::-webkit-scrollbar-track, .hcwl-page ::-webkit-scrollbar-track { background: var(--bg-darkest); }
+html::-webkit-scrollbar-thumb, .hcwl-page ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--neon-cyan-muted), var(--neon-purple)); border-radius: 5px; border: 2px solid var(--bg-darkest); }
+html::-webkit-scrollbar-thumb:hover, .hcwl-page ::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, var(--neon-purple), var(--neon-cyan-muted)); }
+html, .hcwl-page, .hcwl-page * {
+  scrollbar-width: thin;
+  scrollbar-color: var(--neon-cyan-muted) var(--bg-darkest);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hcwl-page, .hcwl-page *, .hcwl-page *::before, .hcwl-page *::after {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+    scroll-behavior: auto;
+  }
+}
+
+
+/* ============================================================
+   PAGE-SPECIFIC STYLES — Tourism Revenue
+   ============================================================ */
+
+
+/* ----------------------------------------------------------
+   SCROLL REVEAL
+---------------------------------------------------------- */
+[data-hcwl-reveal] {
+  opacity: 0; transform: translateY(1.5rem);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+[data-hcwl-reveal].hcwl-revealed { opacity: 1; transform: translateY(0); }
+[data-hcwl-reveal="delay-100"] { transition-delay: 0.1s; }
+[data-hcwl-reveal="delay-200"] { transition-delay: 0.2s; }
+[data-hcwl-reveal="delay-300"] { transition-delay: 0.3s; }
+[data-hcwl-reveal="delay-400"] { transition-delay: 0.4s; }
+[data-hcwl-reveal="delay-500"] { transition-delay: 0.5s; }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-hcwl-reveal] { opacity: 1; transform: none; transition: none; }
+}
+
+
+/* ----------------------------------------------------------
+   HERO EXTENSIONS
+---------------------------------------------------------- */
+.hcwl-hero-badge {
+  display: inline-block; padding: 0.35em 1em;
+  border: 1px solid var(--neon-cyan); border-radius: 2rem;
+  color: var(--neon-cyan);
+  font-family: var(--font-display);
+  font-size: var(--text-xs); font-weight: 600;
+  letter-spacing: 0.3rem; text-transform: uppercase;
+  margin-bottom: var(--space-lg);
+}
+.hcwl-hero h1 .hero-highlight {
+  color: var(--neon-cyan);
+}
+.hcwl-hero h1 .hero-purple {
+  color: var(--neon-purple-bright);
+}
+.hcwl-hero-sub {
+  max-width: 40em; margin-inline: auto;
+  color: var(--text-dark-mid);
+  font-size: var(--text-base); line-height: 1.45;
+  margin-top: var(--space-lg); letter-spacing: 0.2px;
+}
+.hcwl-hero-cta-group {
+  display: flex; flex-direction: column;
+  gap: var(--space-sm); margin-top: var(--space-lg);
+  align-items: center;
+}
+@media (min-width: 36em) {
+  .hcwl-hero-cta-group { flex-direction: row; justify-content: center; }
+}
+
+
+/* ----------------------------------------------------------
+   NEON DIVIDER
+---------------------------------------------------------- */
+.hcwl-neon-divider {
+  border: none; height: 3px; width: 60px;
+  margin: var(--space-lg) auto var(--space-lg);
+  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple));
+  border-radius: 2px;
+}
+
+
+/* ----------------------------------------------------------
+   BIG NUMBER CALLOUT
+---------------------------------------------------------- */
+.tour-big-callout {
+  max-width: 720px; margin: 0 auto var(--space-lg);
+  padding: var(--space-lg);
+  background: var(--bg-dark);
+  border: 1px solid rgba(0, 191, 255, 0.15);
+  border-radius: 14px; text-align: center;
+}
+.tour-big-callout-label {
+  font-family: var(--font-display);
+  font-size: var(--text-xs); font-weight: 600;
+  color: var(--neon-cyan);
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: var(--space-xs);
+}
+.tour-big-callout-number {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl); font-weight: 800;
+  color: var(--neon-cyan);
+  line-height: 1; margin-bottom: var(--space-xs);
+}
+.tour-big-callout-text {
+  font-size: var(--text-base); color: var(--text-dark-bright);
+  max-width: 500px; margin-inline: auto; line-height: 1.5;
+}
+
+
+/* ----------------------------------------------------------
+   REVENUE STAT CARDS (dark section)
+---------------------------------------------------------- */
+.tour-revenue-grid {
+  display: grid; grid-template-columns: 1fr; gap: var(--space-md);
+  max-width: 825px; margin-inline: auto;
+}
+@media (min-width: 36em) {
+  .tour-revenue-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.tour-revenue-card {
+  text-align: center;
+  padding: var(--space-lg);
+  background: var(--bg-dark);
+  border: 1px solid var(--glass-dark-border);
+  border-radius: 14px;
+  transition: border-color var(--transition-base);
+}
+.tour-revenue-card:hover { border-color: rgba(0, 191, 255, 0.2); }
+.tour-revenue-card-icon {
+  font-size: 1.5rem; color: var(--neon-purple-bright);
+  margin-bottom: var(--space-sm);
+}
+.tour-revenue-card-name {
+  font-family: var(--font-display);
+  font-size: var(--text-base); font-weight: 600;
+  color: var(--text-dark-mid);
+  letter-spacing: 0.5px; line-height: 1.15; margin-bottom: 4px;
+}
+.tour-revenue-card-stat {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl); font-weight: 800;
+  color: var(--neon-cyan);
+  line-height: 1; margin-bottom: var(--space-xs);
+}
+.tour-revenue-card-desc {
+  font-size: var(--text-base); color: var(--text-dark-mid); line-height: 1.45; letter-spacing: 0.2px;
+}
+
+
+/* ----------------------------------------------------------
+   SEARCH BEHAVIOR CARDS (light section)
+---------------------------------------------------------- */
+.tour-search-grid {
+  display: grid; grid-template-columns: 1fr; gap: var(--space-md);
+}
+@media (min-width: 36em) {
+  .tour-search-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 56.25em) {
+  .tour-search-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.tour-search-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-xs) var(--space-md);
+  align-items: center;
+  padding: var(--space-lg);
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+.tour-search-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+.tour-search-card .tour-search-icon { grid-row: 1; grid-column: 1; }
+.tour-search-card h3 { grid-row: 1; grid-column: 2; }
+.tour-search-card p { grid-column: 1 / -1; }
+.tour-search-icon {
+  flex-shrink: 0;
+  width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 12px; font-size: 1.1rem;
+  background: rgba(0, 212, 168, 0.1);
+  color: var(--neon-cyan-muted);
+}
+.tour-search-card h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-base); font-weight: 600;
+  color: var(--text-light-dark);
+  letter-spacing: 0.5px; margin-bottom: 4px;
+  line-height: 1.15;
+}
+.tour-search-card p {
+  font-size: var(--text-base); color: var(--text-light-mid); line-height: 1.45; letter-spacing: 0.2px;
+  font-weight: 600; text-align: center;
+}
+@media (min-width: 48em) {
+  .tour-search-icon { width: 52px; height: 52px; font-size: 1.3rem; }
+}
+
+
+/* ----------------------------------------------------------
+   GBP FEATURE BLOCK (dark-mid section)
+---------------------------------------------------------- */
+.tour-gbp-hero {
+  max-width: 720px; margin: 0 auto var(--space-lg);
+  padding: var(--space-lg);
+  background: var(--bg-dark);
+  border: 1px solid rgba(191, 0, 255, 0.2);
+  border-radius: 14px; text-align: center;
+}
+.tour-gbp-hero-label {
+  font-family: var(--font-display);
+  font-size: var(--text-xs); font-weight: 600;
+  color: var(--neon-purple-bright);
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: var(--space-xs);
+}
+.tour-gbp-hero h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-xl); font-weight: 700;
+  color: var(--text-dark-bright);
+  line-height: 1.15; letter-spacing: 0.5px;
+  margin-bottom: var(--space-sm);
+}
+.tour-gbp-hero p {
+  font-size: var(--text-base); color: var(--text-dark-mid); line-height: 1.5;
+  max-width: 500px; margin-inline: auto;
+}
+
+.tour-gbp-grid {
+  display: grid; grid-template-columns: 1fr; gap: var(--space-md);
+  max-width: 1000px; margin-inline: auto;
+}
+@media (min-width: 36em) {
+  .tour-gbp-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 56.25em) {
+  .tour-gbp-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.tour-gbp-card {
+  text-align: center;
+  padding: var(--space-lg);
+  background: var(--bg-dark);
+  border: 1px solid var(--glass-dark-border);
+  border-radius: 12px;
+  transition: border-color var(--transition-base);
+}
+.tour-gbp-card:hover { border-color: rgba(191, 0, 255, 0.3); }
+.tour-gbp-card-icon {
+  width: 44px; height: 44px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: rgba(191, 0, 255, 0.12);
+  color: var(--neon-purple-bright);
+  font-size: 1.1rem;
+  margin-bottom: var(--space-sm);
+}
+.tour-gbp-card-stat {
+  font-family: var(--font-display);
+  font-size: var(--text-xl); font-weight: 800;
+  color: var(--neon-cyan);
+  line-height: 1; margin-bottom: 4px;
+}
+.tour-gbp-card h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-base); font-weight: 600;
+  color: var(--text-dark-bright);
+  letter-spacing: 0.5px; line-height: 1.15; margin-bottom: 4px;
+}
+.tour-gbp-card p {
+  font-size: var(--text-base); color: var(--text-dark-mid); line-height: 1.45; letter-spacing: 0.2px;
+}
+
+
+/* ----------------------------------------------------------
+   WHAT VISITORS CAN'T FIND (dark section)
+   Scenario cards
+---------------------------------------------------------- */
+.tour-scenario-grid {
+  display: grid; grid-template-columns: 1fr; gap: var(--space-md);
+  max-width: 825px; margin-inline: auto;
+}
+@media (min-width: 36em) {
+  .tour-scenario-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.tour-scenario-card {
+  padding: var(--space-lg);
+  background: var(--bg-dark);
+  border: 1px solid var(--glass-dark-border);
+  border-radius: 14px;
+  border-left: 3px solid var(--neon-purple);
+  transition: border-color var(--transition-base);
+}
+.tour-scenario-card:hover { border-color: rgba(191, 0, 255, 0.4); }
+.tour-scenario-query {
+  font-family: var(--font-display);
+  font-size: var(--text-base); font-weight: 600;
+  color: var(--neon-cyan);
+  margin-bottom: var(--space-xs);
+  letter-spacing: 0.5px; line-height: 1.15;
+}
+.tour-scenario-card p {
+  font-size: var(--text-base); color: var(--text-dark-mid); line-height: 1.45; letter-spacing: 0.2px;
+}
+
+
+/* ----------------------------------------------------------
+   WHAT I BUILD CARDS (light section)
+---------------------------------------------------------- */
+.tour-build-grid {
+  display: grid; grid-template-columns: 1fr; gap: var(--space-md);
+}
+@media (min-width: 36em) {
+  .tour-build-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 56.25em) {
+  .tour-build-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.tour-build-card {
+  text-align: center;
+  padding: var(--space-lg);
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+.tour-build-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+.tour-build-icon {
+  width: 48px; height: 48px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(0, 212, 168, 0.12) 0%, rgba(191, 0, 255, 0.08) 100%);
+  color: var(--neon-cyan-muted);
+  font-size: 1.1rem;
+  margin-bottom: var(--space-sm);
+}
+.tour-build-card h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-base); font-weight: 600;
+  color: var(--text-light-dark);
+  letter-spacing: 0.5px; line-height: 1.15; margin-bottom: 6px;
+}
+.tour-build-card p {
+  font-size: var(--text-base); color: var(--text-light-mid); line-height: 1.45; letter-spacing: 0.2px;
+}
+
+
+
+/* ----------------------------------------------------------
+   CTA SECTION
+---------------------------------------------------------- */
+.tour-cta-section {
+  padding: var(--space-xxl) 0;
+  position: relative; z-index: 1; text-align: center;
+  overflow: hidden;
+  background-color: var(--bg-dark-mid);
+  background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.tour-cta-section h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl); font-weight: 700;
+  color: var(--text-dark-bright); line-height: 1.2; letter-spacing: 0.5px;
+  margin-bottom: var(--space-sm);
+}
+.tour-cta-intro {
+  font-size: var(--text-lg);
+  color: var(--text-dark-mid);
+  max-width: 700px; margin: 0 auto var(--space-lg); line-height: 1.35;
+  letter-spacing: 0.2px;
+}
+.tour-cta-tagline {
+  font-size: var(--text-sm); color: var(--text-dark-dim);
+  font-style: italic; margin-top: var(--space-xl);
+}
+
+
+/* ----------------------------------------------------------
+   SOURCE FOOTNOTES
+---------------------------------------------------------- */
+.tour-sources {
+  max-width: 700px; margin: var(--space-xl) auto 0;
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--glass-dark-border);
+}
+.tour-sources h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-sm); font-weight: 600;
+  color: var(--text-dark-dim);
+  text-transform: uppercase; letter-spacing: 0.08em;
+  margin-bottom: var(--space-sm); text-align: center;
+}
+.tour-sources ol {
+  list-style: none; counter-reset: source-counter;
+  padding: 0; margin: 0;
+}
+.tour-sources li {
+  counter-increment: source-counter;
+  display: flex; align-items: baseline; gap: var(--space-sm);
+  font-size: var(--text-xs); color: var(--text-dark-dim);
+  line-height: 1.5; margin-bottom: var(--space-xs);
+  word-break: break-all;
+}
+.tour-sources li::before {
+  content: counter(source-counter);
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  width: 20px; height: 20px;
+  background: rgba(0, 191, 255, 0.08); border-radius: 50%;
+  font-family: var(--font-display);
+  font-size: 0.65rem; font-weight: 600; color: var(--neon-cyan);
+}
+.tour-sources a {
+  color: var(--neon-cyan-muted);
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 212, 168, 0.3);
+}
+.tour-sources a:hover {
+  color: var(--neon-cyan);
+  text-decoration-color: var(--neon-cyan);
+}
+
+  </style>
+</head>
+
+<body class="hcwl-page">
+
+  <a class="hcwl-skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="hcwl-grid-bg" aria-hidden="true"></div>
+  <div class="hcwl-glow-bg" aria-hidden="true"></div>
+
+
+  <!-- ========== NAVIGATION ========== -->
+  <header class="hcwl-nav-header">
+    <div class="hcwl-container">
+      <a class="hcwl-logo" href="#" aria-label="HC Web Labs home">
+        <span class="hcwl-logo-hc">HC</span>
+        <span class="hcwl-logo-text">Web Labs</span>
+      </a>
+      <a class="hcwl-back-link" href="#">
+        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+        Back
+      </a>
+    </div>
+  </header>
+
+
+  <main id="main-content">
+
+    <!-- ========== HERO ========== -->
+    <section class="hcwl-hero" aria-labelledby="hero-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-hero-badge" data-hcwl-reveal>East Tennessee Tourism</span>
+        <h1 id="hero-heading" data-hcwl-reveal="delay-100">
+          East Tennessee Tourism Is <span class="hero-highlight">Booming.</span><br>
+          Your Website Should Be <span class="hero-purple">Too.</span>
+        </h1>
+        <p class="hcwl-hero-intro" data-hcwl-reveal="delay-200">
+          Tennessee welcomed 147 million visitors and $31.7 billion in
+          tourism spending in 2024 — and East Tennessee led the charge.
+          Those visitors are searching for restaurants, shops, guides,
+          and services on their phones <em>right now</em>.
+          Can they find your business?
+        </p>
+        <hr class="hcwl-neon-divider" data-hcwl-reveal="delay-200" aria-hidden="true">
+        <p class="hcwl-hero-sub" data-hcwl-reveal="delay-300">
+          If you don't have a website — or if your only online presence
+          is a Facebook page — millions of visitors are driving through
+          your area, Googling exactly what you offer, and finding your
+          competitor instead. Here's what you need to know.
+        </p>
+        <div class="hcwl-hero-cta-group" data-hcwl-reveal="delay-400">
+          <a class="hcwl-btn hcwl-btn-primary" href="#cta">
+            <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+            Get Found by Visitors
+          </a>
+          <a class="hcwl-btn hcwl-btn-secondary" href="#the-numbers">
+            See the Tourism Numbers
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========== THE MONEY FLOWING THROUGH ========== -->
+    <section class="hcwl-section-dark" id="the-numbers" aria-labelledby="revenue-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-section-label" data-hcwl-reveal>The Revenue Flowing Through</span>
+        <h2 id="revenue-heading" data-hcwl-reveal="delay-100">$87 Million Spent Per Day in Tennessee</h2>
+        <p class="hcwl-section-dark-intro" data-hcwl-reveal="delay-200">
+          Tourism is Tennessee's second-largest industry. In 2024, it broke
+          records for the fourth year in a row — and East Tennessee is
+          where the growth is happening.
+        </p>
+        <hr class="hcwl-neon-divider" data-hcwl-reveal="delay-200" aria-hidden="true">
+
+        <!-- Big Number -->
+        <div class="tour-big-callout" data-hcwl-reveal="delay-300">
+          <p class="tour-big-callout-label">Tennessee Statewide — 2024</p>
+          <p class="tour-big-callout-number">$31.7 Billion</p>
+          <p class="tour-big-callout-text">
+            In direct visitor spending — a 3.3% increase over 2023. This
+            generated $3.3 billion in state and local tax revenue, saving
+            each Tennessee household $1,170 per year. Tourism supports
+            194,820 jobs — one in every 24 across the state.
+          </p>
+        </div>
+
+        <!-- County Revenue Cards -->
+        <div class="tour-revenue-grid" data-hcwl-reveal="delay-400">
+
+          <div class="tour-revenue-card">
+            <p class="tour-revenue-card-icon"><i class="fa-solid fa-mountain-sun" aria-hidden="true"></i></p>
+            <p class="tour-revenue-card-name">Sevier County</p>
+            <p class="tour-revenue-card-stat">$3.9 Billion</p>
+            <p class="tour-revenue-card-desc">
+              Gatlinburg, Pigeon Forge, and Sevierville. Gateway to the
+              Great Smoky Mountains — the most visited national park in
+              America with 12.2 million visitors in 2024.
+            </p>
+          </div>
+
+          <div class="tour-revenue-card">
+            <p class="tour-revenue-card-icon"><i class="fa-solid fa-city" aria-hidden="true"></i></p>
+            <p class="tour-revenue-card-name">Knox County</p>
+            <p class="tour-revenue-card-stat">$2 Billion</p>
+            <p class="tour-revenue-card-desc">
+              Knoxville's sports, music, food scene, and UT football draw
+              visitors year-round. "Football season is like our gravy for
+              the whole year," said Visit Knoxville's Kim Bumpas.
+            </p>
+          </div>
+
+          <div class="tour-revenue-card">
+            <p class="tour-revenue-card-icon"><i class="fa-solid fa-water" aria-hidden="true"></i></p>
+            <p class="tour-revenue-card-name">Blount County</p>
+            <p class="tour-revenue-card-stat">$600+ Million</p>
+            <p class="tour-revenue-card-desc">
+              Maryville, Townsend, and the "peaceful side of the Smokies."
+              A 6% increase over 2023 — and growing faster than the
+              state average.
+            </p>
+          </div>
+
+          <div class="tour-revenue-card">
+            <p class="tour-revenue-card-icon"><i class="fa-solid fa-atom" aria-hidden="true"></i></p>
+            <p class="tour-revenue-card-name">Anderson County</p>
+            <p class="tour-revenue-card-stat">Growing</p>
+            <p class="tour-revenue-card-desc">
+              Oak Ridge, Clinton, Rocky Top, and Norris — home to
+              historic sites, Norris Dam, and a growing tourism strategy.
+              Every visitor is a potential customer for local businesses.
+            </p>
+          </div>
+
+        </div>
+
+        <p class="hcwl-context-note" data-hcwl-reveal="delay-500">
+          Data from TN Dept. of Tourist Development, Tourism Economics, and
+          National Park Service — 2024 reports. Tennessee is the
+          2nd fastest-growing state in visitor spending over the last 7 years.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ========== HOW TOURISTS FIND BUSINESSES ========== -->
+    <section class="hcwl-section-light" aria-labelledby="search-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-section-label" style="color: var(--neon-cyan-muted);" data-hcwl-reveal>How Visitors Actually Find You</span>
+        <h2 id="search-heading" data-hcwl-reveal="delay-100">They're Not Asking Locals. They're Asking Google.</h2>
+        <p class="hcwl-section-light-intro" data-hcwl-reveal="delay-200">
+          When 12 million visitors come through the Smokies, they don't
+          know which restaurant is good or which mechanic is nearby. They
+          pull out their phone and search. If your business doesn't show
+          up, you don't exist to them.
+        </p>
+        <hr class="hcwl-neon-divider" data-hcwl-reveal="delay-200" aria-hidden="true">
+
+        <div class="tour-search-grid" data-hcwl-reveal="delay-300">
+
+          <article class="tour-search-card">
+            <div class="tour-search-icon"><i class="fa-solid fa-utensils" aria-hidden="true"></i></div>
+            <h3>62% Use Google to Find Restaurants</h3>
+              <p>
+                Before choosing where to eat, most visitors search Google
+                first — not Yelp, not TripAdvisor, not social media.
+                "Food near me" searches are up 99% year-over-year.
+              </p>
+          </article>
+
+          <article class="tour-search-card">
+            <div class="tour-search-icon"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i></div>
+            <h3>85% Use Phones to Book Activities</h3>
+              <p>
+                From restaurant reservations to sightseeing tours, tourists
+                are booking on mobile. And 48% of experience bookings
+                happen <em>after</em> arriving at the destination.
+              </p>
+          </article>
+
+          <article class="tour-search-card">
+            <div class="tour-search-icon"><i class="fa-solid fa-location-crosshairs" aria-hidden="true"></i></div>
+            <h3>"Near Me" Searches Up 900%</h3>
+              <p>
+                Hyperlocal searches — "coffee near me," "things to do near
+                me" — have exploded. Mobile searches for activities
+                near me have seen a 6x increase in recent years.
+              </p>
+          </article>
+
+          <article class="tour-search-card">
+            <div class="tour-search-icon"><i class="fa-solid fa-store" aria-hidden="true"></i></div>
+            <h3>80% of Local Searches Lead to a Visit</h3>
+              <p>
+                When someone searches for a physical business with local
+                intent, 4 out of 5 actually go there. These aren't
+                casual browsers — they're ready to spend money.
+              </p>
+          </article>
+
+          <article class="tour-search-card">
+            <div class="tour-search-icon"><i class="fa-solid fa-route" aria-hidden="true"></i></div>
+            <h3>72% Visit Within 5 Miles</h3>
+              <p>
+                Local searchers tend to visit businesses close to where
+                they're searching from. For tourists driving through
+                East Tennessee, that means <em>your</em> town.
+              </p>
+          </article>
+
+          <article class="tour-search-card">
+            <div class="tour-search-icon"><i class="fa-solid fa-star" aria-hidden="true"></i></div>
+            <h3>83% Check Reviews Before Deciding</h3>
+              <p>
+                Visitors don't just search — they evaluate. Most consumers
+                read Google reviews before choosing a business. No
+                reviews or no listing means no trust.
+              </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========== GOOGLE BUSINESS PROFILE ========== -->
+    <section class="hcwl-section-dark-mid" aria-labelledby="gbp-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-section-label" data-hcwl-reveal>Your Free Secret Weapon</span>
+        <h2 id="gbp-heading" data-hcwl-reveal="delay-100">Google Business Profile: The Tool You Might Not Be Using</h2>
+        <p class="hcwl-section-dark-mid-intro" data-hcwl-reveal="delay-200">
+          Google Business Profile is free. It puts your business on Google
+          Maps and in local search results. And for tourism-area businesses,
+          it's one of the most powerful things you can do — yet many small
+          businesses either haven't claimed theirs or haven't filled it out.
+        </p>
+        <hr class="hcwl-neon-divider" data-hcwl-reveal="delay-200" aria-hidden="true">
+
+        <!-- GBP Hero Block -->
+        <div class="tour-gbp-hero" data-hcwl-reveal="delay-300">
+          <p class="tour-gbp-hero-label">Why This Matters</p>
+          <h3>Verified Profiles Are 2.7x More Likely to Be Trusted</h3>
+          <p>
+            A complete Google Business Profile with accurate info, photos,
+            and reviews signals to visitors that your business is real,
+            active, and worth their time. Without one, you're invisible
+            in the exact place tourists are looking.
+          </p>
+        </div>
+
+        <!-- GBP Stat Cards -->
+        <div class="tour-gbp-grid" data-hcwl-reveal="delay-400">
+
+          <div class="tour-gbp-card">
+            <div class="tour-gbp-card-icon">
+              <i class="fa-solid fa-eye" aria-hidden="true"></i>
+            </div>
+            <p class="tour-gbp-card-stat">21,643</p>
+            <h3>Average Annual Views</h3>
+            <p>
+              Verified businesses receive over 21,000 views per year
+              in Google searches — that's free visibility from people
+              actively looking for what you offer.
+            </p>
+          </div>
+
+          <div class="tour-gbp-card">
+            <div class="tour-gbp-card-icon">
+              <i class="fa-solid fa-arrow-pointer" aria-hidden="true"></i>
+            </div>
+            <p class="tour-gbp-card-stat">56%</p>
+            <h3>Click Through to Website</h3>
+            <p>
+              More than half of all interactions with Google Business
+              Profiles are website visits — if you have a website to
+              send them to.
+            </p>
+          </div>
+
+          <div class="tour-gbp-card">
+            <div class="tour-gbp-card-icon">
+              <i class="fa-solid fa-phone" aria-hidden="true"></i>
+            </div>
+            <p class="tour-gbp-card-stat">595</p>
+            <h3>Calls Per Year</h3>
+            <p>
+              Businesses receive about 50 calls a month from their
+              verified Google Business Profile alone — that's customers
+              reaching out without you spending a dime.
+            </p>
+          </div>
+
+          <div class="tour-gbp-card">
+            <div class="tour-gbp-card-icon">
+              <i class="fa-solid fa-diamond-turn-right" aria-hidden="true"></i>
+            </div>
+            <p class="tour-gbp-card-stat">34%</p>
+            <h3>Request Directions</h3>
+            <p>
+              A third of profile interactions are direction requests —
+              people who are ready to physically come to your location.
+              For tourism businesses, that's foot traffic.
+            </p>
+          </div>
+
+          <div class="tour-gbp-card">
+            <div class="tour-gbp-card-icon">
+              <i class="fa-solid fa-check-double" aria-hidden="true"></i>
+            </div>
+            <p class="tour-gbp-card-stat">80%</p>
+            <h3>More Likely to Appear</h3>
+            <p>
+              Verified profiles with complete data are 80% more likely
+              to show up in search results. Incomplete or unclaimed
+              profiles get buried.
+            </p>
+          </div>
+
+          <div class="tour-gbp-card">
+            <div class="tour-gbp-card-icon">
+              <i class="fa-solid fa-ban" aria-hidden="true"></i>
+            </div>
+            <p class="tour-gbp-card-stat">62%</p>
+            <h3>Avoid Wrong Info</h3>
+            <p>
+              Nearly two-thirds of consumers will skip a business entirely
+              if they find incorrect information online. Wrong hours,
+              wrong address, or no listing at all costs you customers.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========== WHAT THEY'RE SEARCHING FOR ========== -->
+    <section class="hcwl-section-dark" aria-labelledby="scenarios-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-section-label" data-hcwl-reveal>Right Now, In East Tennessee</span>
+        <h2 id="scenarios-heading" data-hcwl-reveal="delay-100">What Visitors Are Searching For — and Not Finding</h2>
+        <p class="hcwl-section-dark-intro" data-hcwl-reveal="delay-200">
+          Every day, tourists and travelers in East Tennessee are typing
+          searches like these into their phones. If your business doesn't
+          have a website or a Google Business Profile, you're not in the
+          results — and someone else is.
+        </p>
+        <hr class="hcwl-neon-divider" data-hcwl-reveal="delay-200" aria-hidden="true">
+
+        <div class="tour-scenario-grid" data-hcwl-reveal="delay-300">
+
+          <div class="tour-scenario-card">
+            <p class="tour-scenario-query">"best BBQ near Gatlinburg"</p>
+            <p>
+              A family coming back from a Smokies hike, starving and
+              ready to spend. They'll pick from the first three
+              results Google shows them. Is your restaurant there?
+            </p>
+          </div>
+
+          <div class="tour-scenario-card">
+            <p class="tour-scenario-query">"mechanic near me open now"</p>
+            <p>
+              A tourist's car breaks down on their way through Anderson
+              County. They need help fast and they're Googling it. If
+              you don't show up, they'll call whoever does.
+            </p>
+          </div>
+
+          <div class="tour-scenario-card">
+            <p class="tour-scenario-query">"things to do in Knoxville today"</p>
+            <p>
+              A couple with a free afternoon between events, looking
+              for shops, tours, or experiences. 48% of activity bookings
+              happen after visitors arrive at the destination.
+            </p>
+          </div>
+
+          <div class="tour-scenario-card">
+            <p class="tour-scenario-query">"cabin rental near Norris Lake"</p>
+            <p>
+              Someone planning a weekend getaway, comparing options
+              on their phone. Without a website, your listing is a dead
+              end — no photos, no details, no booking.
+            </p>
+          </div>
+
+          <div class="tour-scenario-card">
+            <p class="tour-scenario-query">"coffee shop Clinton TN"</p>
+            <p>
+              A visitor passing through, looking for a place to stop.
+              Google shows the businesses with complete profiles, good
+              reviews, and websites. Facebook pages rarely appear.
+            </p>
+          </div>
+
+          <div class="tour-scenario-card">
+            <p class="tour-scenario-query">"gift shop downtown Sevierville"</p>
+            <p>
+              A tourist looking for souvenirs with money to spend. Lodging
+              alone accounts for nearly $1 billion in Smokies gateway
+              spending — but restaurants, retail, and activities all
+              share the pie.
+            </p>
+          </div>
+
+        </div>
+
+        <p class="hcwl-context-note" data-hcwl-reveal="delay-400">
+          95.2% of visitor spending in the Smokies was from non-local
+          visitors. They don't know your business exists unless
+          Google tells them.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ========== HOW I HELP ========== -->
+    <section class="hcwl-section-light" aria-labelledby="build-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-section-label" style="color: var(--neon-cyan-muted);" data-hcwl-reveal>How I Help</span>
+        <h2 id="build-heading" data-hcwl-reveal="delay-100">I Build Websites That Tourists Can Find</h2>
+        <p class="hcwl-section-light-intro" data-hcwl-reveal="delay-200">
+          You don't need a massive website. You need a clean, fast, mobile-friendly
+          site that shows up when visitors search for what you do. Even a
+          well-built one-page site can put you on the map — literally.
+        </p>
+        <hr class="hcwl-neon-divider" data-hcwl-reveal="delay-200" aria-hidden="true">
+
+        <div class="tour-build-grid" data-hcwl-reveal="delay-300">
+
+          <article class="tour-build-card">
+            <div class="tour-build-icon">
+              <i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>
+            </div>
+            <h3>Mobile-First Design</h3>
+            <p>
+              Tourists search on their phones. Every site I build starts
+              on mobile and scales up — fast, thumb-friendly, and
+              optimized for the way visitors actually browse.
+            </p>
+          </article>
+
+          <article class="tour-build-card">
+            <div class="tour-build-icon">
+              <i class="fa-solid fa-magnifying-glass-location" aria-hidden="true"></i>
+            </div>
+            <h3>Local SEO Built In</h3>
+            <p>
+              Semantic HTML, proper meta tags, structured data, and
+              location-specific content so Google understands exactly
+              what you do and where you do it.
+            </p>
+          </article>
+
+          <article class="tour-build-card">
+            <div class="tour-build-icon">
+              <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+            </div>
+            <h3>Fast Load Times</h3>
+            <p>
+              Hand-coded means no bloat. Your site loads in under 2
+              seconds — critical when 53% of mobile visitors leave if a
+              page takes more than 3 seconds.
+            </p>
+          </article>
+
+          <article class="tour-build-card">
+            <div class="tour-build-icon">
+              <i class="fa-brands fa-google" aria-hidden="true"></i>
+            </div>
+            <h3>Google Business Profile Setup</h3>
+            <p>
+              I can walk you through claiming and optimizing your Google
+              Business Profile — the free tool that puts you on Maps,
+              shows your hours, and collects reviews.
+            </p>
+          </article>
+
+          <article class="tour-build-card">
+            <div class="tour-build-icon">
+              <i class="fa-solid fa-universal-access" aria-hidden="true"></i>
+            </div>
+            <h3>Accessible to Everyone</h3>
+            <p>
+              Tourists include people with disabilities, older visitors,
+              and those on slow connections. Accessibility isn't optional
+              — it's built into every page I create.
+            </p>
+          </article>
+
+          <article class="tour-build-card">
+            <div class="tour-build-icon">
+              <i class="fa-solid fa-hand-holding-dollar" aria-hidden="true"></i>
+            </div>
+            <h3>Priced for Small Business</h3>
+            <p>
+              I serve East Tennessee because I live here. My rates
+              reflect the real budgets of local businesses — not the
+              inflated prices of big-city agencies.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========== CTA ========== -->
+    <section class="tour-cta-section" id="cta" aria-labelledby="cta-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-section-label" data-hcwl-reveal>Claim Your Share</span>
+        <h2 id="cta-heading" data-hcwl-reveal="delay-100">$31.7 Billion Is Flowing Through Tennessee. Get Found.</h2>
+        <p class="tour-cta-intro" data-hcwl-reveal="delay-200">
+          Every day, visitors spend $87 million across Tennessee. East
+          Tennessee's share is growing faster than any other region in the
+          state. Those visitors are pulling out their phones and searching
+          for exactly what you offer — and right now, they can't find you.
+          A website changes that. I can help you build one.
+        </p>
+        <div class="hcwl-hero-cta-group" data-hcwl-reveal="delay-300">
+          <a class="hcwl-btn hcwl-btn-primary" href="mailto:HCWebLabs@heather-cooper.com">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            Let's Get You Found
+          </a>
+          <a class="hcwl-btn hcwl-btn-secondary" href="#">
+            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+            View My Work
+          </a>
+        </div>
+        <p class="tour-cta-tagline" data-hcwl-reveal="delay-400">
+          Hand-coded websites for East Tennessee — people over profit, always.
+        </p>
+
+        <!-- Sources -->
+        <nav class="tour-sources" aria-label="Data sources" data-hcwl-reveal="delay-500">
+          <h3>Sources</h3>
+          <ol>
+            <li>
+              Tennessee Dept. of Tourist Development — "TN Tourism Breaks Record Spending with $31.7B in 2024" (Jun 2025):
+              <a href="https://www.tn.gov/tourism/news/2025/6/26/tn-tourism-breaks-record-spending-for-fourth-consecutive-year-with-31-7b-in-2024.html" target="_blank" rel="noopener noreferrer">tn.gov</a>
+            </li>
+            <li>
+              National Park Service — "Tourism to Great Smoky Mountains NP Contributes $2B to Local Economy" (2024):
+              <a href="https://www.nps.gov/grsm/learn/news/tourism-to-great-smoky-mountains-national-park-contributes-$2-billion-to-local-economy.htm" target="_blank" rel="noopener noreferrer">nps.gov</a>
+            </li>
+            <li>
+              WBIR — "Tennessee tourism spending hits record $32B in 2024" (Sep 2025):
+              <a href="https://www.wbir.com/article/travel/tennessee-tourism-spending-record-32b-2024/51-6430cc5e-e0c4-497e-b2ab-c96af97f238a" target="_blank" rel="noopener noreferrer">wbir.com</a>
+            </li>
+            <li>
+              Restroworks — "Google Restaurant Search Statistics" (Jun 2025):
+              <a href="https://www.restroworks.com/blog/google-restaurant-search-statistics/" target="_blank" rel="noopener noreferrer">restroworks.com</a>
+            </li>
+            <li>
+              Birdeye — "State of Google Business Profile 2025" (Sep 2025):
+              <a href="https://birdeye.com/blog/state-of-google-business-profiles/" target="_blank" rel="noopener noreferrer">birdeye.com</a>
+            </li>
+            <li>
+              SeoProfy — "75 Local SEO Statistics for 2026" (Jan 2026):
+              <a href="https://seoprofy.com/blog/local-seo-statistics/" target="_blank" rel="noopener noreferrer">seoprofy.com</a>
+            </li>
+            <li>
+              BrightLocal — "Local Consumer Review Survey 2025":
+              <a href="https://www.brightlocal.com/research/local-consumer-review-survey/" target="_blank" rel="noopener noreferrer">brightlocal.com</a>
+            </li>
+            <li>
+              Think with Google — "Travel-Related Search Statistics &amp; Restaurant Search Data":
+              <a href="https://www.thinkwithgoogle.com/consumer-insights/consumer-trends/" target="_blank" rel="noopener noreferrer">thinkwithgoogle.com</a>
+            </li>
+          </ol>
+        </nav>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="hcwl-footer">
+    <div class="hcwl-container">
+      <p>
+        &copy; <span id="copyrightYear">2026</span>
+        <a href="#">HC Web Labs</a> — Rocky Top, Tennessee
+      </p>
+    </div>
+  </footer>
+
+
+  <button class="hcwl-scroll-to-top" id="scrollToTop"
+          aria-label="Scroll to top" type="button">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+
+  <script>
+(() => {
+  'use strict';
+
+  /* Scroll-to-top */
+  const scrollToTopBtn = document.getElementById('scrollToTop');
+  if (scrollToTopBtn) {
+    let ticking = false;
+    const SCROLL_THRESHOLD = 500;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          scrollToTopBtn.classList.toggle('hcwl-visible', window.scrollY > SCROLL_THRESHOLD);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    scrollToTopBtn.addEventListener('click', scrollToTop);
+    scrollToTopBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); scrollToTop(); }
+    });
+  }
+
+  /* Scroll reveal */
+  const revealElements = document.querySelectorAll('[data-hcwl-reveal]');
+  if (revealElements.length && 'IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('hcwl-revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { root: null, rootMargin: '0px 0px -60px 0px', threshold: 0.1 }
+    );
+    revealElements.forEach((el) => revealObserver.observe(el));
+  } else {
+    revealElements.forEach((el) => el.classList.add('hcwl-revealed'));
+  }
+
+  /* Smooth anchor scroll */
+  const anchorLinks = document.querySelectorAll('.hcwl-page a[href^="#"]');
+  if (anchorLinks.length) {
+    const navHeader = document.querySelector('.hcwl-nav-header');
+    anchorLinks.forEach((link) => {
+      link.addEventListener('click', (e) => {
+        const targetId = link.getAttribute('href');
+        if (!targetId || targetId === '#') return;
+        const target = document.querySelector(targetId);
+        if (!target) return;
+        e.preventDefault();
+        const headerOffset = navHeader?.offsetHeight ?? 0;
+        const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerOffset - 16;
+        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+        target.setAttribute('tabindex', '-1');
+        target.focus({ preventScroll: true });
+      });
+    });
+  }
+
+  const yearEl = document.getElementById('copyrightYear');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+})();
+  </script>
+</body>
+</html>

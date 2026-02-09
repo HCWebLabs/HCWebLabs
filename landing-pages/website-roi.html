@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Your website's ROI isn't just revenue — it's leads, phone calls, credibility, time saved, and visibility. Whether you need a new site or a better one, every dollar invested in good design returns up to $100.">
+  <meta name="author" content="HC Web Labs">
+  <title>Your Website Is an Investment — Here's What the Returns Look Like | HC Web Labs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <style>
+:root {
+  --bg-darkest: #0a0a0f;
+  --bg-dark: #0f0f17;
+  --bg-dark-mid: #14141f;
+  --bg-lightest: #f5f6fa;
+  --neon-cyan: #ff10f0;
+  --neon-cyan-muted: #d40ec8;
+  --neon-purple: #bf00ff;
+  --neon-purple-bright: #d966ff;
+  --accent: #ff10f0;
+  --accent-bright: #ff5cf5;
+  --accent-dim: #d40ec8;
+  --text-dark-bright: #f5f6fa;
+  --text-dark-mid: #d1d2d8;
+  --text-dark-dim: #a0a1a8;
+  --text-light-dark: #1a1a2e;
+  --text-light-mid: #4a4a5e;
+  --glass-dark-border: rgba(255, 255, 255, 0.08);
+  --space-xs: clamp(0.375rem, 0.3rem + 0.25vw, 0.5rem);
+  --space-sm: clamp(0.625rem, 0.5rem + 0.4vw, 0.875rem);
+  --space-md: clamp(1rem, 0.85rem + 0.5vw, 1.375rem);
+  --space-lg: clamp(1.5rem, 1.2rem + 1vw, 2.25rem);
+  --space-xl: clamp(2rem, 1.5rem + 1.5vw, 3.25rem);
+  --space-xxl: clamp(3rem, 2.2rem + 2.5vw, 5rem);
+  --space-xxxl: clamp(4rem, 3rem + 3vw, 6.5rem);
+  --font-display: 'Orbitron', sans-serif;
+  --font-body: 'Rajdhani', sans-serif;
+  --text-xs: clamp(0.85rem, 0.8rem + 0.15vw, 0.95rem);
+  --text-sm: clamp(0.95rem, 0.9rem + 0.2vw, 1.1rem);
+  --text-base: clamp(1.05rem, 0.975rem + 0.25vw, 1.25rem);
+  --text-lg: clamp(1.15rem, 1.05rem + 0.35vw, 1.4rem);
+  --text-xl: clamp(1.25rem, 1.1rem + 0.5vw, 1.55rem);
+  --text-2xl: clamp(1.5rem, 1.2rem + 1vw, 1.95rem);
+  --text-3xl: clamp(1.9rem, 1.5rem + 1.5vw, 2.9rem);
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.6s ease;
+}
+
+.hcwl-page, .hcwl-page *, .hcwl-page *::before, .hcwl-page *::after {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+.hcwl-page {
+  font-family: var(--font-body); font-weight: 500; line-height: 1.7; letter-spacing: 0.2px;
+  color: var(--text-dark-mid); background: var(--bg-darkest);
+  overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+}
+.hcwl-page img { max-width: 100%; height: auto; display: block; }
+.hcwl-page a { color: inherit; text-decoration: none; }
+
+.hcwl-container { width: 100%; max-width: 1150px; margin-inline: auto; padding-inline: var(--space-md); }
+.hcwl-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.hcwl-page :focus-visible { outline: 2px solid var(--neon-cyan); outline-offset: 2px; }
+
+.hcwl-grid-bg {
+  position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.hcwl-glow-bg {
+  position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(99,102,241,0.1) 0%, transparent 50%), radial-gradient(ellipse 60% 40% at 80% 60%, rgba(191,0,255,0.1) 0%, transparent 50%), radial-gradient(ellipse 50% 50% at 20% 80%, rgba(99,102,241,0.08) 0%, transparent 50%);
+}
+
+.hcwl-skip-link {
+  position: absolute; top: -100px; left: 50%; transform: translateX(-50%);
+  background: var(--neon-cyan); color: var(--bg-darkest);
+  padding: var(--space-sm) var(--space-md); font-family: var(--font-display);
+  font-weight: 600; font-size: var(--text-sm); text-decoration: none;
+  border-radius: 0 0 8px 8px; z-index: 9999; transition: top var(--transition-base);
+}
+.hcwl-skip-link:focus { top: 0; outline: none; }
+
+.hcwl-nav-header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: var(--space-sm) 0; background: rgba(10,10,15,0.95);
+  -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--glass-dark-border);
+}
+.hcwl-nav-header .hcwl-container { display: flex; justify-content: space-between; align-items: center; }
+.hcwl-logo { display: flex; align-items: center; gap: 6px; text-decoration: none; }
+.hcwl-logo-hc {
+  font-family: var(--font-display); font-size: var(--text-xs); font-weight: 800;
+  color: var(--bg-darkest); background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-purple-bright) 100%);
+  padding: 4px 8px; border-radius: 5px; letter-spacing: 1.5px;
+}
+.hcwl-logo-text { font-family: var(--font-display); font-size: var(--text-base); font-weight: 700; color: var(--text-dark-bright); letter-spacing: 1.5px; text-transform: uppercase; }
+.hcwl-back-link {
+  display: flex; align-items: center; gap: var(--space-xs); color: var(--text-dark-mid); text-decoration: none;
+  font-family: var(--font-display); font-size: var(--text-xs); font-weight: 500;
+  letter-spacing: 1px; text-transform: uppercase; padding: var(--space-xs) var(--space-sm);
+  border-radius: 6px; transition: color var(--transition-base), background var(--transition-base);
+}
+.hcwl-back-link:hover, .hcwl-back-link:focus-visible { color: var(--neon-cyan); background: rgba(255,16,240,0.1); }
+
+.hcwl-hero {
+  padding: calc(60px + var(--space-xxl)) var(--space-md) var(--space-xl);
+  background: transparent; text-align: center; position: relative; z-index: 1;
+}
+.hcwl-section-label {
+  display: block; font-family: var(--font-display); font-size: var(--text-xs); font-weight: 600;
+  color: var(--accent); text-transform: uppercase; letter-spacing: 5px; text-align: center; margin-bottom: var(--space-sm);
+}
+.hcwl-hero h1 { font-family: var(--font-display); font-size: var(--text-3xl); font-weight: 700; color: var(--text-dark-bright); margin-bottom: var(--space-lg); line-height: 1.15; letter-spacing: 0.5px; max-width: 1000px; margin-inline: auto; }
+.hcwl-hero-intro { font-size: var(--text-lg); color: var(--text-dark-bright); max-width: 825px; margin-inline: auto; line-height: 1.45; letter-spacing: 0.2px; }
+.hcwl-hero-sub { max-width: 40em; margin-inline: auto; color: var(--text-dark-mid); font-size: var(--text-base); line-height: 1.45; margin-top: var(--space-lg); letter-spacing: 0.2px; }
+.hcwl-hero-badge {
+  display: inline-block; padding: 0.35em 1em; border: 1px solid var(--accent); border-radius: 2rem;
+  color: var(--accent-bright); font-family: var(--font-display); font-size: var(--text-xs);
+  font-weight: 600; letter-spacing: 0.3rem; text-transform: uppercase; margin-bottom: var(--space-lg);
+}
+.hero-highlight { color: var(--accent-bright); }
+.hero-purple { color: var(--neon-purple-bright); }
+.hcwl-hero-cta-group { display: flex; flex-direction: column; gap: var(--space-sm); margin-top: var(--space-lg); align-items: center; }
+@media (min-width: 36em) { .hcwl-hero-cta-group { flex-direction: row; justify-content: center; } }
+@media (min-width: 48em) { .hcwl-hero { padding-top: calc(80px + var(--space-xl)); } }
+.roi-hero-stats { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-lg); margin-top: var(--space-xl); }
+.roi-hero-stat { text-align: center; }
+.roi-hero-stat-num { font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 800; color: var(--accent-bright); display: block; line-height: 1.1; }
+.roi-hero-stat-label { font-size: var(--text-sm); color: var(--text-dark-dim); display: block; margin-top: var(--space-xs); }
+
+.hcwl-section-dark { padding: var(--space-xxl) 0; background: transparent; position: relative; z-index: 1; }
+.hcwl-section-dark h2 { font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 700; color: var(--text-dark-bright); text-align: center; line-height: 1.15; letter-spacing: 0.5px; margin-bottom: var(--space-sm); }
+.hcwl-section-dark-intro { text-align: center; font-size: var(--text-lg); color: var(--text-dark-bright); max-width: 850px; margin: 0 auto var(--space-md); line-height: 1.35; letter-spacing: 0.2px; }
+.hcwl-section-light { padding: var(--space-xxl) 0; background: var(--bg-lightest); position: relative; z-index: 1; }
+.hcwl-section-light h2 { font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 700; color: var(--text-light-dark); text-align: center; line-height: 1.15; letter-spacing: 0.5px; margin-bottom: var(--space-sm); }
+.hcwl-section-light-intro { text-align: center; font-size: var(--text-lg); color: var(--text-light-dark); max-width: 850px; margin: 0 auto var(--space-md); line-height: 1.35; letter-spacing: 0.2px; }
+.hcwl-section-light .hcwl-section-label { color: var(--accent-dim); }
+.hcwl-section-dark-mid { padding: var(--space-xxl) 0; background: var(--bg-dark-mid); position: relative; z-index: 1; }
+.hcwl-section-dark-mid h2 { font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 700; color: var(--text-dark-bright); text-align: center; line-height: 1.15; letter-spacing: 0.5px; margin-bottom: var(--space-sm); }
+.hcwl-section-dark-mid-intro { text-align: center; font-size: var(--text-lg); color: var(--text-dark-bright); max-width: 850px; margin: 0 auto var(--space-md); line-height: 1.35; letter-spacing: 0.2px; }
+
+.hcwl-btn { display: inline-flex; align-items: center; gap: var(--space-xs); padding: var(--space-sm) var(--space-lg); font-family: var(--font-display); font-size: var(--text-sm); font-weight: 600; text-decoration: none; border-radius: 8px; transition: all var(--transition-base); cursor: pointer; border: none; letter-spacing: 0.5px; }
+.hcwl-btn-primary { background: linear-gradient(135deg, var(--accent) 0%, var(--neon-cyan) 100%); color: #000000; }
+.hcwl-btn-primary:hover, .hcwl-btn-primary:focus-visible { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(99,102,241,0.3); }
+.hcwl-btn-secondary { background: transparent; color: var(--accent-bright); border: 1px solid var(--accent); }
+.hcwl-btn-secondary:hover, .hcwl-btn-secondary:focus-visible { background: rgba(99,102,241,0.1); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(99,102,241,0.15); }
+@media (min-width: 48em) { .hcwl-btn { font-size: var(--text-base); } }
+
+.hcwl-neon-divider { border: none; height: 3px; width: 60px; margin: var(--space-lg) auto var(--space-lg); background: linear-gradient(90deg, var(--accent), var(--neon-cyan)); border-radius: 2px; }
+.hcwl-context-note { text-align: center; font-size: var(--text-sm); color: var(--text-dark-mid); font-style: italic; max-width: 750px; margin: var(--space-md) auto 0; letter-spacing: 0.2px; line-height: 1.5; }
+.hcwl-section-light .hcwl-context-note { color: var(--text-light-mid); }
+
+.hcwl-footer { padding: var(--space-lg) 0; background: var(--bg-darkest); border-top: 1px solid var(--glass-dark-border); text-align: center; position: relative; z-index: 1; }
+.hcwl-footer p { font-size: var(--text-sm); color: var(--text-dark-mid); }
+.hcwl-footer a { color: var(--neon-cyan); text-decoration: none; }
+.hcwl-footer a:hover { text-decoration: underline; }
+
+.hcwl-scroll-to-top {
+  position: fixed; bottom: var(--space-md); right: var(--space-md); width: 44px; height: 44px;
+  border-radius: 12px; background: rgba(15,15,23,0.9); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  border: 1px solid var(--accent); cursor: pointer; display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden; transform: translateY(20px);
+  transition: opacity var(--transition-base), visibility var(--transition-base), transform var(--transition-base), background var(--transition-base);
+  z-index: 999; box-shadow: 0 4px 20px rgba(0,0,0,0.3); color: var(--accent-bright); font-size: 1.2rem; padding: 0;
+}
+.hcwl-scroll-to-top.hcwl-visible { opacity: 1; visibility: visible; transform: translateY(0); }
+.hcwl-scroll-to-top:hover, .hcwl-scroll-to-top:focus-visible { background: rgba(99,102,241,0.2); transform: translateY(-3px); box-shadow: 0 8px 25px rgba(99,102,241,0.3); }
+@media (min-width: 48em) { .hcwl-scroll-to-top { width: 48px; height: 48px; } }
+
+html::-webkit-scrollbar, .hcwl-page ::-webkit-scrollbar { width: 10px; }
+html::-webkit-scrollbar-track, .hcwl-page ::-webkit-scrollbar-track { background: var(--bg-darkest); }
+html::-webkit-scrollbar-thumb, .hcwl-page ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--accent), var(--neon-purple)); border-radius: 5px; border: 2px solid var(--bg-darkest); }
+html::-webkit-scrollbar-thumb:hover, .hcwl-page ::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, var(--neon-purple), var(--accent)); }
+html, .hcwl-page, .hcwl-page * { scrollbar-width: thin; scrollbar-color: var(--accent) var(--bg-darkest); }
+
+@media (prefers-reduced-motion: reduce) {
+  .hcwl-page, .hcwl-page *, .hcwl-page *::before, .hcwl-page *::after { animation-duration: 0.01ms; animation-iteration-count: 1; transition-duration: 0.01ms; scroll-behavior: auto; }
+}
+
+[data-hcwl-reveal] { opacity: 0; transform: translateY(1.5rem); transition: opacity 0.6s ease, transform 0.6s ease; }
+[data-hcwl-reveal].hcwl-revealed { opacity: 1; transform: translateY(0); }
+[data-hcwl-reveal="delay-100"] { transition-delay: 0.1s; }
+[data-hcwl-reveal="delay-200"] { transition-delay: 0.2s; }
+[data-hcwl-reveal="delay-300"] { transition-delay: 0.3s; }
+[data-hcwl-reveal="delay-400"] { transition-delay: 0.4s; }
+[data-hcwl-reveal="delay-500"] { transition-delay: 0.5s; }
+@media (prefers-reduced-motion: reduce) { [data-hcwl-reveal] { opacity: 1; transform: none; transition: none; } }
+
+/* --- ROI Dimension Cards (6-up, dark) --- */
+.roi-dim-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-md); }
+@media (min-width: 36em) { .roi-dim-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 56.25em) { .roi-dim-grid { grid-template-columns: repeat(3, 1fr); } }
+.roi-dim-card { padding: var(--space-lg); background: var(--bg-dark); border: 1px solid var(--glass-dark-border); border-radius: 14px; transition: border-color var(--transition-base), transform var(--transition-base); text-align: center; display: flex; flex-direction: column; align-items: center; }
+.roi-dim-card:hover { border-color: rgba(99,102,241,0.25); transform: translateY(-3px); }
+.roi-dim-icon { width: 48px; height: 48px; display: inline-flex; align-items: center; justify-content: center; border-radius: 12px; background: rgba(99,102,241,0.1); color: var(--accent-bright); font-size: 1.2rem; margin-bottom: var(--space-sm); }
+.roi-dim-card h3 { font-family: var(--font-display); font-size: var(--text-base); font-weight: 600; color: var(--text-dark-bright); letter-spacing: 1px; line-height: 1.15; margin-bottom: var(--space-xs); }
+.roi-dim-card p { font-size: var(--text-base); color: var(--text-dark-mid); line-height: 1.45; letter-spacing: 0.2px; }
+
+/* --- Stat Rings (light) --- */
+.roi-ring-row { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-xl); margin: var(--space-xl) 0; }
+.roi-stat-ring { text-align: center; }
+.roi-stat-ring svg { width: 120px; height: 120px; transform: rotate(-90deg); }
+.roi-ring-bg { fill: none; stroke: rgba(79,70,229,0.1); stroke-width: 6; }
+.roi-ring-fill { fill: none; stroke: var(--accent-dim); stroke-width: 6; stroke-linecap: round; stroke-dasharray: 282.74; stroke-dashoffset: 282.74; transition: stroke-dashoffset 1.5s ease; }
+.roi-ring-value { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 700; color: var(--accent-dim); margin-top: var(--space-sm); display: block; }
+.roi-ring-label { font-size: var(--text-sm); color: var(--text-light-mid); margin-top: var(--space-xs); display: block; max-width: 140px; margin-inline: auto; }
+
+/* --- Big Callout (dark-mid) --- */
+.roi-big-callout { max-width: 720px; margin: 0 auto var(--space-lg); padding: var(--space-lg); background: var(--bg-dark); border: 1px solid rgba(99,102,241,0.2); border-radius: 14px; text-align: center; }
+.roi-big-callout-label { font-family: var(--font-display); font-size: var(--text-xs); font-weight: 600; color: var(--accent-bright); text-transform: uppercase; letter-spacing: 1px; margin-bottom: var(--space-xs); }
+.roi-big-callout-number { font-family: var(--font-display); font-size: var(--text-3xl); font-weight: 800; background: linear-gradient(135deg, var(--accent-bright), var(--neon-cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; margin-bottom: var(--space-xs); }
+.roi-big-callout-text { font-size: var(--text-base); color: var(--text-dark-bright); max-width: 500px; margin-inline: auto; line-height: 1.5; }
+
+/* --- Comparison (dark-mid) --- */
+.roi-compare { display: grid; grid-template-columns: 1fr; gap: var(--space-md); max-width: 900px; margin: var(--space-lg) auto 0; }
+@media (min-width: 40em) { .roi-compare { grid-template-columns: 1fr 1fr; } }
+.roi-compare-side { border-radius: 14px; padding: var(--space-lg); }
+.roi-compare-bad { background: rgba(239,68,68,0.05); border: 1px solid rgba(239,68,68,0.15); }
+.roi-compare-good { background: rgba(99,102,241,0.05); border: 1px solid rgba(99,102,241,0.2); }
+.roi-compare-side h3 { font-family: var(--font-display); font-size: var(--text-base); font-weight: 600; letter-spacing: 1px; line-height: 1.15; margin-bottom: var(--space-md); }
+.roi-compare-bad h3 { color: #f87171; }
+.roi-compare-good h3 { color: var(--accent-bright); }
+.roi-compare-list { list-style: none; padding: 0; }
+.roi-compare-list li { padding: var(--space-xs) 0; padding-left: 1.6em; position: relative; font-size: var(--text-base); color: var(--text-dark-mid); line-height: 1.25; letter-spacing: 0.2px; }
+.roi-compare-list li::before { position: absolute; left: 0; font-weight: 700; }
+.roi-compare-bad .roi-compare-list li::before { content: '\2715'; color: #f87171; }
+.roi-compare-good .roi-compare-list li::before { content: '\2713'; color: var(--accent-bright); }
+
+/* --- Scenario Cards (light) --- */
+.roi-scenario-card { background: #ffffff; border-left: 3px solid var(--accent-dim); border-radius: 0 12px 12px 0; padding: var(--space-lg); margin-bottom: var(--space-md); box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+.roi-scenario-query { font-family: var(--font-display); font-size: var(--text-base); color: var(--accent-dim); letter-spacing: 1px; line-height: 1.15; margin-bottom: var(--space-sm); }
+.roi-scenario-body { font-size: var(--text-base); color: var(--text-light-mid); line-height: 1.45; letter-spacing: 0.2px; }
+
+/* --- Path Cards (dark) --- */
+.roi-path-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-md); max-width: 1000px; margin-inline: auto; }
+@media (min-width: 40em) { .roi-path-grid { grid-template-columns: 1fr 1fr; } }
+.roi-path-card { padding: var(--space-lg); background: var(--bg-dark); border: 1px solid var(--glass-dark-border); border-radius: 14px; transition: border-color var(--transition-base); }
+.roi-path-card:hover { border-color: rgba(99,102,241,0.25); }
+.roi-path-icon { width: 48px; height: 48px; display: inline-flex; align-items: center; justify-content: center; border-radius: 12px; font-size: 1.2rem; margin-bottom: var(--space-sm); }
+.roi-path-icon-new { background: rgba(99,102,241,0.1); color: var(--accent-bright); }
+.roi-path-icon-improve { background: rgba(191,0,255,0.1); color: var(--neon-purple-bright); }
+.roi-path-card h3 { font-family: var(--font-display); font-size: var(--text-lg); font-weight: 600; color: var(--text-dark-bright); letter-spacing: 1px; line-height: 1.15; margin-bottom: var(--space-sm); }
+.roi-path-card p { font-size: var(--text-base); color: var(--text-dark-mid); line-height: 1.45; letter-spacing: 0.2px; }
+
+/* --- Build Cards (light) --- */
+.roi-build-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-md); }
+@media (min-width: 36em) { .roi-build-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 56.25em) { .roi-build-grid { grid-template-columns: repeat(3, 1fr); } }
+.roi-build-card { display: grid; grid-template-columns: auto 1fr; gap: var(--space-xs) var(--space-md); align-items: center; padding: var(--space-lg); background: #ffffff; border-radius: 12px; border: 1px solid rgba(0,0,0,0.08); box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: transform var(--transition-base), box-shadow var(--transition-base); }
+.roi-build-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
+.roi-build-icon { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 12px; font-size: 1.1rem; background: rgba(79,70,229,0.08); color: var(--accent-dim); }
+.roi-build-card .roi-build-icon { grid-row: 1; grid-column: 1; }
+.roi-build-card h3 { grid-row: 1; grid-column: 2; font-family: var(--font-display); font-size: var(--text-base); font-weight: 600; color: var(--text-light-dark); letter-spacing: 1px; line-height: 1.15; margin-bottom: 0; }
+.roi-build-card p { grid-column: 1 / -1; font-size: var(--text-base); color: var(--text-light-mid); line-height: 1.45; letter-spacing: 0.2px; text-align: center; font-weight: 600; }
+@media (min-width: 48em) { .roi-build-icon { width: 52px; height: 52px; font-size: 1.3rem; } }
+
+/* --- CTA --- */
+.roi-cta { padding: var(--space-xxl) 0; position: relative; z-index: 1; text-align: center; overflow: hidden; background-color: var(--bg-dark-mid); background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 40px 40px; }
+.roi-cta h2 { font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 700; color: var(--text-dark-bright); line-height: 1.2; letter-spacing: 0.5px; margin-bottom: var(--space-sm); }
+.roi-cta p { font-size: var(--text-lg); color: var(--text-dark-mid); max-width: 700px; margin: 0 auto var(--space-lg); line-height: 1.35; letter-spacing: 0.2px; }
+.roi-cta p.roi-cta-note { font-size: var(--text-sm); color: var(--text-dark-dim); margin: var(--space-xl) auto 0; }
+
+/* --- Sources --- */
+.roi-sources { position: relative; z-index: 1; padding: var(--space-lg) 0; background: transparent; border-top: 1px solid var(--glass-dark-border); }
+.roi-sources h2 { font-family: var(--font-display); font-size: var(--text-xs); font-weight: 600; color: var(--text-dark-dim); text-transform: uppercase; letter-spacing: 1px; margin-bottom: var(--space-md); text-align: left; }
+.roi-sources ol { list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--space-xs); counter-reset: src-counter; }
+.roi-sources li { font-size: var(--text-xs); color: var(--text-dark-dim); line-height: 1.5; counter-increment: src-counter; display: flex; align-items: baseline; gap: var(--space-sm); }
+.roi-sources li::before { content: counter(src-counter); flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; background: rgba(99,102,241,0.08); border-radius: 50%; font-family: var(--font-display); font-size: 0.65rem; font-weight: 600; color: var(--accent-bright); }
+.roi-sources a { color: var(--accent-bright); text-decoration: underline; text-decoration-color: rgba(99,102,241,0.3); }
+.roi-sources a:hover { color: var(--neon-cyan); text-decoration-color: var(--neon-cyan); }
+  </style>
+</head>
+
+<body class="hcwl-page">
+  <a class="hcwl-skip-link" href="#main-content">Skip to main content</a>
+  <div class="hcwl-grid-bg" aria-hidden="true"></div>
+  <div class="hcwl-glow-bg" aria-hidden="true"></div>
+
+  <header class="hcwl-nav-header">
+    <div class="hcwl-container">
+      <a class="hcwl-logo" href="#" aria-label="HC Web Labs home">
+        <span class="hcwl-logo-hc">HC</span>
+        <span class="hcwl-logo-text">Web Labs</span>
+      </a>
+      <a class="hcwl-back-link" href="#">
+        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back
+      </a>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hcwl-hero" aria-labelledby="hero-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-hero-badge" data-hcwl-reveal>Website ROI</span>
+        <h1 id="hero-heading" data-hcwl-reveal="delay-100">
+          Your Website Is an <span class="hero-highlight">Investment</span> —<br>
+          Here's What the <span class="hero-purple">Returns</span> Look Like
+        </h1>
+        <p class="hcwl-hero-intro" data-hcwl-reveal="delay-200">
+          ROI isn't just revenue. It's every phone call, every new customer,
+          every question your website answers at 2&nbsp;a.m. so you don't have to.
+        </p>
+        <p class="hcwl-hero-sub" data-hcwl-reveal="delay-300">
+          Whether you need a brand-new website or need to make your existing one
+          work harder, the numbers are clear: a well-built website is the highest-returning
+          investment most small businesses can make.
+        </p>
+        <div class="hcwl-hero-cta-group" data-hcwl-reveal="delay-400">
+          <a class="hcwl-btn hcwl-btn-primary" href="#cta">
+            <i class="fa-solid fa-chart-line" aria-hidden="true"></i> Let's Talk Returns
+          </a>
+          <a class="hcwl-btn hcwl-btn-secondary" href="#roi-dimensions">See the Data</a>
+        </div>
+        <div class="roi-hero-stats" data-hcwl-reveal="delay-500">
+          <div class="roi-hero-stat">
+            <span class="roi-hero-stat-num">$100</span>
+            <span class="roi-hero-stat-label">return for every $1<br>invested in UX</span>
+          </div>
+          <div class="roi-hero-stat">
+            <span class="roi-hero-stat-num">70%+</span>
+            <span class="roi-hero-stat-label">of SMBs report revenue<br>increase after launch</span>
+          </div>
+          <div class="roi-hero-stat">
+            <span class="roi-hero-stat-num">2x</span>
+            <span class="roi-hero-stat-label">more leads from<br>optimized websites</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="hcwl-neon-divider" data-hcwl-reveal>
+
+    <!-- S1: ROI DIMENSIONS -->
+    <section class="hcwl-section-dark" id="roi-dimensions" aria-labelledby="dim-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-section-label" data-hcwl-reveal>What Returns Actually Look Like</span>
+        <h2 id="dim-heading" data-hcwl-reveal="delay-100">ROI Means More Than Revenue</h2>
+        <p class="hcwl-section-dark-intro" data-hcwl-reveal="delay-200">
+          When business owners hear "return on investment," they think dollar signs. But for
+          a small business website, the returns show up in six different ways — and most of
+          them start working before a single sale is made.
+        </p>
+        <hr class="hcwl-neon-divider" data-hcwl-reveal="delay-200" aria-hidden="true">
+        <div class="roi-dim-grid">
+          <div class="roi-dim-card" data-hcwl-reveal>
+            <div class="roi-dim-icon"><i class="fa-solid fa-phone-volume" aria-hidden="true"></i></div>
+            <h3>Leads &amp; Phone Calls</h3>
+            <p>Businesses with SEO-optimized websites generate leads through search around the clock. Inbound phone calls convert 10–15× better than web-form leads — and your website puts your number in front of people actively looking for you.</p>
+          </div>
+          <div class="roi-dim-card" data-hcwl-reveal="delay-100">
+            <div class="roi-dim-icon"><i class="fa-solid fa-handshake" aria-hidden="true"></i></div>
+            <h3>Trust &amp; Credibility</h3>
+            <p>75% of consumers judge a company's credibility by its website design. First impressions form in under a second — and a professional website signals that you're legitimate, established, and worth their business.</p>
+          </div>
+          <div class="roi-dim-card" data-hcwl-reveal="delay-200">
+            <div class="roi-dim-icon"><i class="fa-solid fa-clock" aria-hidden="true"></i></div>
+            <h3>Time Saved</h3>
+            <p>Your hours, location, services, pricing, and FAQs — all answered without you picking up the phone. A website works 24/7 as your most reliable employee, fielding the same questions you answer ten times a week.</p>
+          </div>
+          <div class="roi-dim-card" data-hcwl-reveal="delay-300">
+            <div class="roi-dim-icon"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></div>
+            <h3>Search Visibility</h3>
+            <p>40% of small businesses with a website say SEO is their top source of leads. Without a website, you don't exist on Google — and 46% of all Google searches have local intent.</p>
+          </div>
+          <div class="roi-dim-card" data-hcwl-reveal="delay-400">
+            <div class="roi-dim-icon"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></div>
+            <h3>Revenue Growth</h3>
+            <p>Small businesses with modern websites report 15–50% revenue increases. Over 70% report increased revenue after launching a site — and that number climbs with optimization.</p>
+          </div>
+          <div class="roi-dim-card" data-hcwl-reveal="delay-500">
+            <div class="roi-dim-icon"><i class="fa-solid fa-store" aria-hidden="true"></i></div>
+            <h3>Foot Traffic</h3>
+            <p>76% of consumers search for a company online before visiting a physical location. 88% of mobile local searches lead to a call or visit within 24 hours. Your website sends real people through your door.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- S2: THE $100 RETURN -->
+    <section class="hcwl-section-light" aria-labelledby="ux-roi-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-section-label" data-hcwl-reveal>The Research</span>
+        <h2 id="ux-roi-heading" data-hcwl-reveal="delay-100">Every Dollar Invested in Good Design Returns Up to $100</h2>
+        <p class="hcwl-section-light-intro" data-hcwl-reveal="delay-200">
+          That's a 9,900% ROI, according to Forrester Research. It's not magic — it's because
+          good design reduces friction, builds trust, and makes it easy for people to do business with you.
+        </p>
+        <hr class="hcwl-neon-divider" data-hcwl-reveal="delay-200" aria-hidden="true">
+        <div class="roi-ring-row">
+          <div class="roi-stat-ring" data-hcwl-reveal>
+            <svg viewBox="0 0 100 100" aria-hidden="true"><circle class="roi-ring-bg" cx="50" cy="50" r="45"/><circle class="roi-ring-fill" cx="50" cy="50" r="45" data-percent="94"/></svg>
+            <span class="roi-ring-value">94%</span>
+            <span class="roi-ring-label">of first impressions are design-related</span>
+          </div>
+          <div class="roi-stat-ring" data-hcwl-reveal="delay-100">
+            <svg viewBox="0 0 100 100" aria-hidden="true"><circle class="roi-ring-bg" cx="50" cy="50" r="45"/><circle class="roi-ring-fill" cx="50" cy="50" r="45" data-percent="75"/></svg>
+            <span class="roi-ring-value">75%</span>
+            <span class="roi-ring-label">judge credibility by website design</span>
+          </div>
+          <div class="roi-stat-ring" data-hcwl-reveal="delay-200">
+            <svg viewBox="0 0 100 100" aria-hidden="true"><circle class="roi-ring-bg" cx="50" cy="50" r="45"/><circle class="roi-ring-fill" cx="50" cy="50" r="45" data-percent="88"/></svg>
+            <span class="roi-ring-value">88%</span>
+            <span class="roi-ring-label">won't return after a bad experience</span>
+          </div>
+          <div class="roi-stat-ring" data-hcwl-reveal="delay-300">
+            <svg viewBox="0 0 100 100" aria-hidden="true"><circle class="roi-ring-bg" cx="50" cy="50" r="45"/><circle class="roi-ring-fill" cx="50" cy="50" r="45" data-percent="62"/></svg>
+            <span class="roi-ring-value">62%</span>
+            <span class="roi-ring-label">ignore a business with no web presence</span>
+          </div>
+        </div>
+        <p class="hcwl-context-note" data-hcwl-reveal="delay-400">
+          A well-designed user interface can boost conversion rates by up to 200%. That means twice
+          as many visitors become customers — from the same traffic you're already getting. Better design isn't vanity. It's math.
+        </p>
+      </div>
+    </section>
+
+    <!-- S3: COST OF A BAD WEBSITE -->
+    <section class="hcwl-section-dark-mid" aria-labelledby="bad-site-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-section-label" data-hcwl-reveal>The Other Side</span>
+        <h2 id="bad-site-heading" data-hcwl-reveal="delay-100">A Bad Website Costs More Than No Website</h2>
+        <p class="hcwl-section-dark-mid-intro" data-hcwl-reveal="delay-200">
+          If your site is slow, outdated, or broken on mobile, it's not just failing to help —
+          it's actively driving customers to your competitors. The losses are invisible because
+          people don't call to complain. They just leave.
+        </p>
+        <hr class="hcwl-neon-divider" data-hcwl-reveal="delay-200" aria-hidden="true">
+        <div class="roi-big-callout" data-hcwl-reveal="delay-300">
+          <p class="roi-big-callout-label">Average Annual Revenue Lost</p>
+          <p class="roi-big-callout-number">$20,172</p>
+          <p class="roi-big-callout-text">Per Liquid Web's survey of 206 small businesses — lost to poor website performance, slow load times, and downtime alone.</p>
+        </div>
+        <div class="roi-compare" data-hcwl-reveal="delay-400">
+          <div class="roi-compare-side roi-compare-bad">
+            <h3><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> &nbsp;A Site That's Costing You</h3>
+            <ul class="roi-compare-list">
+              <li>Takes more than 3 seconds to load — 53% of visitors leave</li>
+              <li>Not mobile-friendly — 84% of visitors prefer mobile sites</li>
+              <li>Outdated design signals "out of business" to new customers</li>
+              <li>No clear contact info, hours, or services listed</li>
+              <li>No SSL certificate — browsers warn visitors away</li>
+              <li>Invisible on Google — no SEO means no search traffic</li>
+            </ul>
+          </div>
+          <div class="roi-compare-side roi-compare-good">
+            <h3><i class="fa-solid fa-circle-check" aria-hidden="true"></i> &nbsp;A Site That's Working for You</h3>
+            <ul class="roi-compare-list">
+              <li>Loads in under 2 seconds — visitors stay and explore</li>
+              <li>Mobile-first design — looks great on every screen size</li>
+              <li>Professional, current design that builds instant trust</li>
+              <li>Clear calls to action — call, visit, book, or buy</li>
+              <li>Secure and accessible to everyone</li>
+              <li>SEO-built structure — Google can find and rank you</li>
+            </ul>
+          </div>
+        </div>
+        <p class="hcwl-context-note" data-hcwl-reveal="delay-500">
+          Businesses with poor websites lose an average of 7.5% of their traffic to performance issues alone.
+          Over a third experienced slow load times in the past year, and two-thirds lost revenue because of it.
+          The cost of fixing your website is almost always less than the cost of leaving it broken.
+        </p>
+      </div>
+    </section>
+
+    <!-- S4: WHAT CONVERSION LOOKS LIKE -->
+    <section class="hcwl-section-light" aria-labelledby="conversion-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-section-label" data-hcwl-reveal>Real-World Returns</span>
+        <h2 id="conversion-heading" data-hcwl-reveal="delay-100">What "Conversion" Actually Looks Like for a Small Business</h2>
+        <p class="hcwl-section-light-intro" data-hcwl-reveal="delay-200">
+          Marketing people love the word "conversion." For a small business in East Tennessee,
+          it means something much simpler: someone found you, trusted you, and took action.
+        </p>
+        <hr class="hcwl-neon-divider" data-hcwl-reveal="delay-200" aria-hidden="true">
+        <div style="max-width: 720px; margin-inline: auto;">
+          <div class="roi-scenario-card" data-hcwl-reveal>
+            <p class="roi-scenario-query"><i class="fa-solid fa-phone" aria-hidden="true"></i> &nbsp;The Phone Call</p>
+            <p class="roi-scenario-body">Someone searches "plumber near Clinton TN," finds your website, sees your reviews and service area, and calls you directly. That one phone call — generated by a website that cost you a fraction of a single job — could be worth hundreds or thousands of dollars. Inbound calls convert 10–15× better than other lead types.</p>
+          </div>
+          <div class="roi-scenario-card" data-hcwl-reveal="delay-100">
+            <p class="roi-scenario-query"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> &nbsp;The Walk-In</p>
+            <p class="roi-scenario-body">A tourist checks Google for "best coffee near Norris Lake." Your business shows up because your website has local SEO built in. They visit, spend money, and leave a 5-star review — which brings in the next customer. 88% of mobile local searches result in a visit or call within 24 hours.</p>
+          </div>
+          <div class="roi-scenario-card" data-hcwl-reveal="delay-200">
+            <p class="roi-scenario-query"><i class="fa-solid fa-clock" aria-hidden="true"></i> &nbsp;The 2 A.M. Answer</p>
+            <p class="roi-scenario-body">A potential customer is planning their week and wants to know your hours, services, and pricing. It's 2 in the morning. Your website answers every question while you sleep — and when they're ready to book, they already trust you. That's a lead you never had to work for.</p>
+          </div>
+          <div class="roi-scenario-card" data-hcwl-reveal="delay-300">
+            <p class="roi-scenario-query"><i class="fa-solid fa-user-check" aria-hidden="true"></i> &nbsp;The Credibility Check</p>
+            <p class="roi-scenario-body">Someone gets your name from a friend. Before they call, they look you up. 91% of first-time visitors search a business online before going in person. If your website looks professional, they follow through. If it doesn't exist or looks outdated, 23% won't even visit.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- S5: TWO PATHS -->
+    <section class="hcwl-section-dark" aria-labelledby="paths-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-section-label" data-hcwl-reveal>Two Paths to Better Returns</span>
+        <h2 id="paths-heading" data-hcwl-reveal="delay-100">Whether You Need a New Website or a Better One</h2>
+        <p class="hcwl-section-dark-intro" data-hcwl-reveal="delay-200">
+          Some businesses don't have a website yet. Some have one that's not performing.
+          Both are leaving money on the table — and both have a clear path to better returns.
+        </p>
+        <hr class="hcwl-neon-divider" data-hcwl-reveal="delay-200" aria-hidden="true">
+        <div class="roi-path-grid">
+          <div class="roi-path-card" data-hcwl-reveal="delay-300">
+            <div class="roi-path-icon roi-path-icon-new"><i class="fa-solid fa-rocket" aria-hidden="true"></i></div>
+            <h3>Starting From Zero</h3>
+            <p>27% of small businesses still don't have a website — but 62% of customers will ignore a business without one. A new, professionally built website immediately unlocks search visibility, credibility, and 24/7 lead generation that social media alone can't provide. The average conversion rate for SEO traffic is 2.4% — meaning out of every 1,000 visitors, 24 become real leads. At zero visitors, your current ROI is zero.</p>
+          </div>
+          <div class="roi-path-card" data-hcwl-reveal="delay-400">
+            <div class="roi-path-icon roi-path-icon-improve"><i class="fa-solid fa-wrench" aria-hidden="true"></i></div>
+            <h3>Improving What You Have</h3>
+            <p>HubSpot found that brands who modernized their websites saw a 134% jump in traffic within a year. Every extra second of load time after two seconds costs you 4.42% in conversions. Improving mobile experience, page speed, calls to action, and SEO structure can double or triple your leads without spending a dime on ads. Sometimes the biggest ROI comes from fixing what's already there.</p>
+          </div>
+        </div>
+        <p class="hcwl-context-note" data-hcwl-reveal="delay-500">
+          The businesses seeing the strongest returns aren't necessarily spending the most — they're
+          spending intentionally. A clean, fast, mobile-first website with good SEO foundations will outperform
+          a bloated, expensive site that ignores the fundamentals every time.
+        </p>
+      </div>
+    </section>
+
+    <!-- S6: HOW I BUILD -->
+    <section class="hcwl-section-light" aria-labelledby="build-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-section-label" data-hcwl-reveal>How I Build</span>
+        <h2 id="build-heading" data-hcwl-reveal="delay-100">Every Website I Build Is Designed to Return More Than It Costs</h2>
+        <p class="hcwl-section-light-intro" data-hcwl-reveal="delay-200">
+          I don't build websites that just look good on launch day. I build websites that
+          perform — sites engineered for speed, search visibility, accessibility, and conversions from day one.
+        </p>
+        <hr class="hcwl-neon-divider" data-hcwl-reveal="delay-200" aria-hidden="true">
+        <div class="roi-build-grid">
+          <div class="roi-build-card" data-hcwl-reveal>
+            <div class="roi-build-icon"><i class="fa-solid fa-bolt" aria-hidden="true"></i></div>
+            <h3>Fast by Default</h3><p>Hand-coded HTML, CSS, and JavaScript — no bloated page builders, no unnecessary plugins. Every line of code serves a purpose. Fast load times keep visitors on your site and keep Google ranking you higher.</p>
+          </div>
+          <div class="roi-build-card" data-hcwl-reveal="delay-100">
+            <div class="roi-build-icon"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i></div>
+            <h3>Mobile-First</h3><p>Over 62% of all web traffic comes from mobile devices. I design for phones first and scale up — so your site looks and works perfectly on the device your customers actually use.</p>
+          </div>
+          <div class="roi-build-card" data-hcwl-reveal="delay-200">
+            <div class="roi-build-icon"><i class="fa-solid fa-magnifying-glass-chart" aria-hidden="true"></i></div>
+            <h3>SEO Built In</h3><p>Semantic HTML5, proper heading structure, meta descriptions, schema markup, and fast performance — the technical foundations that get you found on Google, not just the keywords.</p>
+          </div>
+          <div class="roi-build-card" data-hcwl-reveal="delay-300">
+            <div class="roi-build-icon"><i class="fa-solid fa-universal-access" aria-hidden="true"></i></div>
+            <h3>Accessible to Everyone</h3><p>Proper ARIA labels, keyboard navigation, color contrast, and screen reader compatibility. Accessibility isn't an add-on — it's how I build every site. More accessible means more customers.</p>
+          </div>
+          <div class="roi-build-card" data-hcwl-reveal="delay-400">
+            <div class="roi-build-icon"><i class="fa-solid fa-bullseye" aria-hidden="true"></i></div>
+            <h3>Clear Calls to Action</h3><p>Every page has a purpose. Whether it's "call now," "get directions," or "book online" — I design clear paths that make it easy for visitors to become customers.</p>
+          </div>
+          <div class="roi-build-card" data-hcwl-reveal="delay-500">
+            <div class="roi-build-icon"><i class="fa-solid fa-hand-holding-dollar" aria-hidden="true"></i></div>
+            <h3>Priced for Small Business</h3><p>I serve East Tennessee because I live here. My pricing reflects real small business budgets — not agency overhead. You get professional, hand-coded quality at rates that make the ROI obvious.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="roi-cta" id="cta" aria-labelledby="cta-heading">
+      <div class="hcwl-container">
+        <h2 id="cta-heading" data-hcwl-reveal>Your Website Should Be Your Best Employee</h2>
+        <p data-hcwl-reveal="delay-100">One that shows up every day, answers every question, and never stops bringing in business. Let's build one that earns its keep.</p>
+        <a class="hcwl-btn hcwl-btn-primary" href="mailto:HCWebLabs@heather-cooper.com" data-hcwl-reveal="delay-200">
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i> Let's Talk About Your Website
+        </a>
+        <p class="roi-cta-note" data-hcwl-reveal="delay-300">Free consultation · No pressure · Real answers about what your website can do for you</p>
+      </div>
+    </section>
+
+    <!-- SOURCES -->
+    <section class="roi-sources" aria-labelledby="sources-heading">
+      <div class="hcwl-container">
+        <h2 id="sources-heading">Sources</h2>
+        <nav aria-label="Research sources">
+          <ol>
+            <li>Forrester Research — "The Six Steps for Justifying Better UX" (ROI of UX design, 9,900% return). Referenced via Forbes, 2015.</li>
+            <li>Clutch.co — <a href="https://clutch.co/resources/state-of-small-business-websites-2025" target="_blank" rel="noopener noreferrer">"The State of Small Business Websites in 2025"</a> (83% have websites, 40% cite SEO as top lead source, 62% ignore businesses without web presence).</li>
+            <li>Network Solutions — <a href="https://www.networksolutions.com/blog/small-business-website-statistics/" target="_blank" rel="noopener noreferrer">"Top 50+ Small Business Website Statistics 2025"</a> (70%+ report revenue increase, 15–50% revenue gains, 2x leads from optimized sites).</li>
+            <li>Stanford Web Credibility Research — (75% judge credibility by design). Kinesis Inc summary at <a href="https://www.kinesisinc.com/the-truth-about-web-design/" target="_blank" rel="noopener noreferrer">kinesisinc.com</a>.</li>
+            <li>Liquid Web / IT Pro — <a href="https://www.itpro.com/software/web-browsers/slow-websites-cost-businesses-thousands-per-year" target="_blank" rel="noopener noreferrer">"Slow Websites Cost Businesses Thousands Per Year"</a> ($20,172 average annual loss, 7.5% traffic loss from poor performance).</li>
+            <li>Google / Think with Google — (53% of mobile visits abandoned if &gt;3s load, 88% of local mobile searches lead to visit/call within 24hrs, 46% of searches have local intent).</li>
+            <li>HubSpot 2024 ROI Report — (134% traffic jump from website modernization). Referenced via F22 Labs.</li>
+            <li>Conversion Sciences — <a href="https://conversionsciences.com/mobile-phone-calls-higher-conversion-rates/" target="_blank" rel="noopener noreferrer">"Mobile Phone Calls = Higher Conversion Rates"</a> (inbound calls convert 10–15× better than web leads).</li>
+            <li>Digital.com — <a href="https://digital.com/retail-shopping-behavior/" target="_blank" rel="noopener noreferrer">"1 in 4 Shoppers Won't Visit a Business They Can't Find Online"</a> (91% look up business online before first visit, 23% unlikely to visit without web presence).</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <footer class="hcwl-footer">
+    <div class="hcwl-container">
+      <p>&copy; <span id="copyrightYear">2026</span> <a href="#">HC Web Labs</a> — Rocky Top, Tennessee</p>
+    </div>
+  </footer>
+
+  <button class="hcwl-scroll-to-top" id="scrollToTop" aria-label="Scroll to top" type="button">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <script>
+(() => {
+  'use strict';
+  const scrollToTopBtn = document.getElementById('scrollToTop');
+  if (scrollToTopBtn) {
+    let ticking = false;
+    const handleScroll = () => { if (!ticking) { window.requestAnimationFrame(() => { scrollToTopBtn.classList.toggle('hcwl-visible', window.scrollY > 500); ticking = false; }); ticking = true; } };
+    const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    scrollToTopBtn.addEventListener('click', scrollToTop);
+    scrollToTopBtn.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); scrollToTop(); } });
+  }
+  const revealElements = document.querySelectorAll('[data-hcwl-reveal]');
+  if (revealElements.length && 'IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => { entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add('hcwl-revealed'); observer.unobserve(entry.target); } }); }, { root: null, rootMargin: '0px 0px -60px 0px', threshold: 0.1 });
+    revealElements.forEach((el) => revealObserver.observe(el));
+  } else { revealElements.forEach((el) => el.classList.add('hcwl-revealed')); }
+  const anchorLinks = document.querySelectorAll('.hcwl-page a[href^="#"]');
+  if (anchorLinks.length) {
+    const navHeader = document.querySelector('.hcwl-nav-header');
+    anchorLinks.forEach((link) => { link.addEventListener('click', (e) => { const targetId = link.getAttribute('href'); if (!targetId || targetId === '#') return; const target = document.querySelector(targetId); if (!target) return; e.preventDefault(); const headerOffset = navHeader?.offsetHeight ?? 0; const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerOffset - 16; window.scrollTo({ top: targetPosition, behavior: 'smooth' }); target.setAttribute('tabindex', '-1'); target.focus({ preventScroll: true }); }); });
+  }
+  const rings = document.querySelectorAll('.roi-ring-fill');
+  const circumference = 2 * Math.PI * 45;
+  if (rings.length && 'IntersectionObserver' in window) {
+    const ringObserver = new IntersectionObserver((entries) => { entries.forEach((entry) => { if (entry.isIntersecting) { const percent = parseInt(entry.target.getAttribute('data-percent'), 10) || 0; entry.target.style.strokeDashoffset = circumference - (percent / 100) * circumference; ringObserver.unobserve(entry.target); } }); }, { threshold: 0.3 });
+    rings.forEach((ring) => ringObserver.observe(ring));
+  } else { rings.forEach((ring) => { const percent = parseInt(ring.getAttribute('data-percent'), 10) || 0; ring.style.strokeDashoffset = circumference - (percent / 100) * circumference; }); }
+  const yearEl = document.getElementById('copyrightYear');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+})();
+  </script>
+</body>
+</html>

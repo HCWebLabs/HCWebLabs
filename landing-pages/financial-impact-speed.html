@@ -1,0 +1,2831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Website speed directly impacts revenue. Research from Amazon, Google, Walmart, Akamai, and Deloitte proves that milliseconds cost millions — here are the numbers.">
+  <meta name="author" content="HC Web Labs">
+
+  <title>The Financial Impact of Website Speed | HC Web Labs</title>
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <!-- All Styles Inline -->
+  <style>
+    /* ============================================================
+       HC Web Labs — Financial Impact of Speed Landing Page
+       All styles inline — base system + page-specific
+       ============================================================ */
+
+/* ============================================================
+   HC Web Labs — Base Landing Page Stylesheet
+   Namespace: hcwl-
+   Version: 2.0
+   Author: Heather Cooper | HC Web Labs
+   
+   Description:
+   Reusable, mobile-first base styles for HC Web Labs landing
+   pages. All spacing and typography scale fluidly. Media
+   queries use min-width only (mobile-first). No !important
+   overrides.
+
+   Breakpoints:
+     sm  → 36em  (576px)
+     md  → 48em  (768px)
+     lg  → 56.25em (900px)
+     xl  → 75em  (1200px)
+
+   External Dependencies:
+     - Google Fonts: Orbitron (400–800), Rajdhani (400–700)
+     - Font Awesome 6.5+ (icons)
+   ============================================================ */
+
+
+/* ============================================================
+   1. CUSTOM PROPERTIES
+   ============================================================ */
+:root {
+  /* ---- Backgrounds ---- */
+  --bg-darkest: #0a0a0f;
+  --bg-dark: #0f0f17;
+  --bg-dark-mid: #14141f;
+  --bg-lightest: #f5f6fa;
+
+  /* ---- Neon Accents ---- */
+  --neon-cyan: #ff1744;
+  --neon-cyan-muted: #e01540;
+  --neon-purple: #bf00ff;
+  --neon-purple-bright: #d966ff;
+
+  /* ---- Text — Dark Sections ---- */
+  --text-dark-bright: #f5f6fa;
+  --text-dark-mid: #d1d2d8;
+  --text-dark-dim: #a0a1a8;
+
+  /* ---- Text — Light Sections ---- */
+  --text-light-dark: #1a1a2e;
+  --text-light-mid: #4a4a5e;
+
+  /* ---- Glass / Borders ---- */
+  --glass-dark-border: rgba(255, 255, 255, 0.08);
+
+  /* ---- Fluid Spacing Scale ----
+     Each step scales fluidly between viewport widths.
+     320px (20rem) → 1200px (75rem) viewport range.
+  */
+  --space-xs: clamp(0.375rem, 0.3rem + 0.25vw, 0.5rem);
+  --space-sm: clamp(0.625rem, 0.5rem + 0.4vw, 0.875rem);
+  --space-md: clamp(1rem, 0.85rem + 0.5vw, 1.375rem);
+  --space-lg: clamp(1.5rem, 1.2rem + 1vw, 2.25rem);
+  --space-xl: clamp(2rem, 1.5rem + 1.5vw, 3.25rem);
+  --space-xxl: clamp(3rem, 2.2rem + 2.5vw, 5rem);
+  --space-xxxl: clamp(4rem, 3rem + 3vw, 6.5rem);
+
+  /* ---- Typography ---- */
+  --font-display: 'Orbitron', sans-serif;
+  --font-body: 'Rajdhani', sans-serif;
+
+  /* ---- Fluid Type Scale ---- */
+  --text-xs: clamp(0.75rem, 0.7rem + 0.15vw, 0.85rem);
+  --text-sm: clamp(0.85rem, 0.8rem + 0.2vw, 0.95rem);
+  --text-base: clamp(1rem, 0.925rem + 0.25vw, 1.2rem);
+  --text-lg: clamp(1.05rem, 0.975rem + 0.35vw, 1.35rem);
+  --text-xl: clamp(1.15rem, 1rem + 0.5vw, 1.5rem);
+  --text-2xl: clamp(1.4rem, 1.1rem + 1vw, 1.85rem);
+  --text-3xl: clamp(1.8rem, 1.4rem + 1.5vw, 2.8rem);
+
+  /* ---- Transitions ---- */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.6s ease;
+}
+
+/* ---- Styled Scrollbar ---- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-darkest);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--neon-cyan), var(--neon-purple));
+  border-radius: 5px;
+  border: 2px solid var(--bg-darkest);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--neon-purple), var(--neon-cyan));
+}
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--neon-cyan) var(--bg-darkest);
+}
+
+
+/* ============================================================
+   2. RESET & BASE
+   ============================================================ */
+.hcwl-page,
+.hcwl-page *,
+.hcwl-page *::before,
+.hcwl-page *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.hcwl-page {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  color: var(--text-dark-bright);
+  background: var(--bg-darkest);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+.hcwl-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hcwl-page img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* ============================================================
+   3. LAYOUT UTILITIES
+   ============================================================ */
+.hcwl-container {
+  width: 100%;
+  max-width: 1150px;
+  margin-inline: auto;
+  padding-inline: var(--space-md);
+}
+
+.hcwl-container--narrow {
+  max-width: 700px;
+}
+
+.hcwl-container--wide {
+  max-width: 1400px;
+}
+
+.hcwl-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.hcwl-page :focus-visible {
+  outline: 2px solid var(--neon-cyan);
+  outline-offset: 2px;
+}
+
+
+/* ============================================================
+   4. BACKGROUND EFFECTS (Grid + Glow)
+   ============================================================ */
+.hcwl-grid-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.hcwl-glow-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(255, 23, 68, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 60%, rgba(191, 0, 255, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 50% at 20% 80%, rgba(0, 212, 168, 0.1) 0%, transparent 50%);
+}
+
+
+/* ============================================================
+   5. SKIP LINK (Accessibility)
+   ============================================================ */
+.hcwl-skip-link {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--neon-cyan);
+  color: var(--bg-darkest);
+  padding: var(--space-sm) var(--space-md);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  text-decoration: none;
+  border-radius: 0 0 8px 8px;
+  z-index: 9999;
+  transition: top var(--transition-base);
+}
+
+.hcwl-skip-link:focus {
+  top: 0;
+  outline: none;
+}
+
+
+/* ============================================================
+   6. NAVIGATION HEADER
+   ============================================================ */
+.hcwl-nav-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: var(--space-sm) 0;
+  background: rgba(10, 10, 15, 0.95);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--glass-dark-border);
+}
+
+.hcwl-nav-header .hcwl-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hcwl-logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+}
+
+.hcwl-logo-hc {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 800;
+  color: var(--bg-darkest);
+  background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-purple-bright) 100%);
+  padding: 4px 8px;
+  border-radius: 5px;
+  letter-spacing: 1.5px;
+}
+
+.hcwl-logo-text {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--text-dark-bright);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.hcwl-back-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--text-dark-mid);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: 6px;
+  transition: color var(--transition-base), background var(--transition-base);
+}
+
+.hcwl-back-link:hover,
+.hcwl-back-link:focus-visible {
+  color: var(--neon-cyan);
+  background: rgba(255, 23, 68, 0.1);
+}
+
+
+/* ============================================================
+   7. HERO SECTION
+   ============================================================ */
+.hcwl-hero {
+  padding: calc(60px + var(--space-xl)) var(--space-md) var(--space-xl);
+  background: transparent;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hcwl-section-label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--neon-cyan);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  text-align: center;
+  margin-bottom: var(--space-sm);
+}
+
+.hcwl-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 1.8rem + 2vw, 3.6rem);
+  font-weight: 700;
+  color: var(--text-dark-bright);
+  margin-bottom: var(--space-lg);
+  line-height: 1.2;
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.hcwl-hero-intro {
+  font-size: var(--text-xl);
+  color: var(--text-dark-bright);
+  max-width: 800px;
+  margin-inline: auto;
+  margin-bottom: var(--space-md);
+  line-height: 1.35;
+}
+
+@media (min-width: 48em) {
+  .hcwl-hero {
+    padding-top: calc(80px + var(--space-xl));
+  }
+}
+
+
+/* ============================================================
+   8. SECTION CONTAINERS — DARK / LIGHT / MID
+   ============================================================ */
+
+/* --- Dark (transparent over dark bg) --- */
+.hcwl-section-dark {
+  padding: var(--space-xxl) 0;
+  background: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.hcwl-section-dark h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--text-dark-bright);
+  text-align: center;
+  line-height: 1.15;
+  margin-bottom: var(--space-sm);
+}
+
+.hcwl-section-dark-intro {
+  text-align: center;
+  font-size: var(--text-xl);
+  color: var(--text-dark-bright);
+  max-width: 850px;
+  margin: 0 auto var(--space-md);
+  line-height: 1.2;
+}
+
+/* --- Light --- */
+.hcwl-section-light {
+  padding: var(--space-xxl) 0;
+  background: var(--bg-lightest);
+  position: relative;
+  z-index: 1;
+}
+
+.hcwl-section-light h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--text-light-dark);
+  text-align: center;
+  line-height: 1.15;
+  margin-bottom: var(--space-sm);
+}
+
+.hcwl-section-light-intro {
+  text-align: center;
+  font-size: var(--text-xl);
+  color: var(--text-light-dark);
+  max-width: 850px;
+  margin: 0 auto var(--space-md);
+  line-height: 1.2;
+}
+
+/* --- Dark Mid (Alternate dark bg) --- */
+.hcwl-section-dark-mid {
+  padding: var(--space-xxl) 0;
+  background: var(--bg-dark-mid);
+  position: relative;
+  z-index: 1;
+}
+
+.hcwl-section-dark-mid h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--text-dark-bright);
+  text-align: center;
+  line-height: 1.15;
+  margin-bottom: var(--space-sm);
+}
+
+.hcwl-section-dark-mid-intro {
+  text-align: center;
+  font-size: var(--text-xl);
+  color: var(--text-dark-bright);
+  max-width: 850px;
+  margin: 0 auto var(--space-md);
+  line-height: 1.2;
+}
+
+/* --- Extra-tall section padding modifier --- */
+.hcwl-section-dark--tall,
+.hcwl-section-light--tall,
+.hcwl-section-dark-mid--tall {
+  padding: var(--space-xxxl) 0;
+}
+
+
+/* ============================================================
+   9. CARD COMPONENTS — DARK THEME
+   ============================================================ */
+.hcwl-card-dark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-sm);
+  padding: var(--space-lg);
+  background: var(--bg-dark);
+  border: 1px solid var(--glass-dark-border);
+  border-radius: 12px;
+  transition: border-color var(--transition-base);
+}
+
+.hcwl-card-dark:hover {
+  border-color: rgba(255, 23, 68, 0.3);
+}
+
+.hcwl-card-dark h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--text-dark-bright);
+  margin-bottom: var(--space-sm);
+  line-height: 1.2;
+}
+
+.hcwl-card-dark p {
+  font-size: var(--text-base);
+  color: var(--text-dark-mid);
+  line-height: 1.4;
+}
+
+
+
+/* ============================================================
+   10. CARD COMPONENTS — LIGHT THEME
+   ============================================================ */
+.hcwl-card-light {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.hcwl-card-light h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--text-light-dark);
+  margin-bottom: var(--space-sm);
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+.hcwl-card-light p {
+  font-size: var(--text-sm);
+  color: var(--text-light-dark);
+  line-height: 1.4;
+}
+
+@media (min-width: 48em) {
+  .hcwl-card-light h3 {
+    font-size: var(--text-lg);
+  }
+
+  .hcwl-card-light p {
+    font-size: var(--text-base);
+  }
+}
+
+
+/* ============================================================
+   11. ICON BOXES
+   ============================================================ */
+.hcwl-icon-box {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(0, 212, 168, 0.15) 0%, rgba(191, 0, 255, 0.1) 100%);
+  border-radius: 12px;
+  font-size: 1.1rem;
+}
+
+.hcwl-icon-box--cyan {
+  color: var(--neon-cyan);
+}
+
+.hcwl-icon-box--purple {
+  color: var(--neon-purple);
+}
+
+.hcwl-icon-box--small {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+}
+
+@media (min-width: 48em) {
+  .hcwl-icon-box {
+    width: 52px;
+    height: 52px;
+    font-size: 1.3rem;
+  }
+}
+
+
+/* ============================================================
+   12. GRID SYSTEM (Mobile-First)
+   All grids start as single-column and expand upward.
+   ============================================================ */
+.hcwl-grid-1,
+.hcwl-grid-2,
+.hcwl-grid-3,
+.hcwl-grid-4 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+@media (min-width: 36em) {
+  .hcwl-grid-2,
+  .hcwl-grid-3,
+  .hcwl-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 56.25em) {
+  .hcwl-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .hcwl-grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .hcwl-card-light--vertical {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+
+/* ============================================================
+   13. FLIP CARDS
+   ============================================================ */
+.hcwl-flip-card {
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  height: 300px;
+}
+
+.hcwl-flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform var(--transition-slow);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.hcwl-flip-card:hover .hcwl-flip-card-inner,
+.hcwl-flip-card.hcwl-flipped .hcwl-flip-card-inner {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.hcwl-flip-card-front,
+.hcwl-flip-card-back {
+  position: absolute;
+  inset: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  overflow: visible;
+  -webkit-transform: translateZ(0);
+}
+
+.hcwl-flip-card-front {
+  background: var(--bg-dark);
+  border: 1px solid var(--glass-dark-border);
+  padding: var(--space-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  transition: border-color var(--transition-base);
+}
+
+.hcwl-flip-card-front:hover {
+  border-color: rgba(255, 23, 68, 0.3);
+}
+
+.hcwl-flip-card-back {
+  background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-dark-mid) 100%);
+  border: 1px solid var(--neon-cyan);
+  padding: var(--space-sm);
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hcwl-flip-card-back h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--neon-cyan);
+  margin-bottom: var(--space-sm);
+  letter-spacing: 1.5px;
+  line-height: 1.2;
+}
+
+.hcwl-flip-back-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hcwl-flip-back-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: var(--text-sm);
+  color: var(--text-dark-bright);
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+
+.hcwl-flip-back-list li i {
+  color: var(--neon-cyan);
+  font-size: 0.75rem;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.hcwl-flip-hint {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  color: var(--text-dark-dim);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-top: auto;
+}
+
+.hcwl-flip-hint i {
+  margin-right: 4px;
+}
+
+.hcwl-flip-card.hcwl-featured .hcwl-flip-card-front {
+  border-color: var(--neon-cyan);
+}
+
+.hcwl-flip-card-front .hcwl-pricing-badge {
+  position: absolute;
+  top: -14px;
+  right: var(--space-md);
+  z-index: 2;
+}
+
+@media (min-width: 48em) {
+  .hcwl-flip-card {
+    height: 280px;
+  }
+
+  .hcwl-flip-card-front,
+  .hcwl-flip-card-back {
+    padding: var(--space-md);
+  }
+
+  .hcwl-flip-back-list li {
+    margin-bottom: 11px;
+  }
+}
+
+
+/* ============================================================
+   14. PRICING COMPONENTS
+   ============================================================ */
+.hcwl-pricing-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+  margin-bottom: var(--space-sm);
+}
+
+.hcwl-pricing-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.hcwl-pricing-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(0, 212, 168, 0.15) 0%, rgba(191, 0, 255, 0.1) 100%);
+  border-radius: 10px;
+  color: var(--neon-cyan);
+  font-size: 0.9rem;
+}
+
+.hcwl-pricing-card h2,
+.hcwl-flip-card-front h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--text-dark-bright);
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+.hcwl-pricing-price {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: var(--neon-cyan);
+  line-height: 1;
+  margin-bottom: var(--space-sm);
+}
+
+.hcwl-pricing-price span {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--neon-cyan);
+  opacity: 0.7;
+}
+
+.hcwl-pricing-desc {
+  font-size: var(--text-base);
+  color: var(--text-dark-bright);
+  line-height: 1.5;
+  letter-spacing: 0.3px;
+}
+
+.hcwl-pricing-badge {
+  position: absolute;
+  top: -14px;
+  right: var(--space-md);
+  background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-cyan-muted) 100%);
+  color: var(--bg-darkest);
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 20px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+
+/* ============================================================
+   15. FREE / HIGHLIGHT BANNER
+   ============================================================ */
+.hcwl-free-banner {
+  background: linear-gradient(135deg, rgba(191, 0, 255, 0.15) 0%, rgba(0, 212, 168, 0.08) 100%);
+  border: 1px dashed var(--neon-purple);
+  border-radius: 12px;
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.hcwl-free-banner-content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.hcwl-free-banner-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(191, 0, 255, 0.2);
+  border-radius: 50%;
+  color: var(--neon-purple-bright);
+  font-size: 1.1rem;
+}
+
+.hcwl-free-banner h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--text-dark-bright);
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+.hcwl-free-banner p {
+  font-size: var(--text-base);
+  color: var(--text-dark-bright);
+  margin-top: 2px;
+}
+
+.hcwl-free-tag {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 800;
+  color: var(--neon-purple-bright);
+  letter-spacing: 2px;
+}
+
+
+/* ============================================================
+   16. NUMBERED STEPS / PROCESS
+   ============================================================ */
+.hcwl-process-steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  max-width: 700px;
+  margin-inline: auto;
+}
+
+.hcwl-process-step {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  padding-bottom: var(--space-md);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.12);
+}
+
+.hcwl-process-step:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.hcwl-step-number {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-cyan-muted) 100%);
+  border-radius: 50%;
+  color: var(--bg-darkest);
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 700;
+}
+
+.hcwl-step-content h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--text-dark-bright);
+  margin-bottom: 6px;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+.hcwl-step-content p {
+  font-size: var(--text-sm);
+  color: var(--text-dark-bright);
+  line-height: 1.4;
+}
+
+@media (min-width: 48em) {
+  .hcwl-step-content h3 {
+    font-size: var(--text-lg);
+  }
+
+  .hcwl-step-content p {
+    font-size: var(--text-base);
+  }
+}
+
+
+/* ============================================================
+   17. COMPARISON TABLE
+   ============================================================ */
+.hcwl-table-scroll-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: var(--space-sm) 0;
+  margin-bottom: var(--space-sm);
+}
+
+.hcwl-compare-table {
+  width: 100%;
+  min-width: 520px;
+  max-width: 900px;
+  margin-inline: auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: visible;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.hcwl-compare-table th,
+.hcwl-compare-table td {
+  padding: var(--space-xs) var(--space-sm);
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  white-space: nowrap;
+  font-size: var(--text-sm);
+}
+
+.hcwl-compare-table th {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-light-dark);
+  background: rgba(0, 0, 0, 0.03);
+  letter-spacing: 1px;
+}
+
+.hcwl-compare-table th:first-child,
+.hcwl-compare-table td:first-child {
+  text-align: left;
+  white-space: normal;
+  min-width: 100px;
+}
+
+.hcwl-compare-table td:first-child {
+  font-weight: 500;
+  color: var(--text-light-dark);
+}
+
+.hcwl-compare-table td {
+  color: var(--text-light-dark);
+}
+
+.hcwl-compare-table tr:last-child td {
+  border-bottom: none;
+  padding-bottom: var(--space-md);
+}
+
+.hcwl-compare-table .hcwl-highlight-col {
+  background: rgba(0, 212, 168, 0.08);
+}
+
+.hcwl-compare-table th.hcwl-highlight-col {
+  background: rgba(0, 212, 168, 0.15);
+  color: var(--neon-cyan-muted);
+}
+
+.hcwl-compare-check {
+  color: #00896e;
+  font-size: 1.4rem;
+}
+
+.hcwl-compare-x {
+  color: #c0392b;
+  font-size: 1.3rem;
+}
+
+.hcwl-compare-maybe {
+  color: #b06d08;
+  font-size: var(--text-base);
+}
+
+.hcwl-compare-note {
+  text-align: center;
+  font-size: var(--text-xs);
+  color: var(--text-light-mid);
+  font-style: italic;
+  max-width: 700px;
+  margin: var(--space-xs) auto 0;
+  line-height: 1.4;
+}
+
+@media (min-width: 36em) {
+  .hcwl-compare-table {
+    min-width: 0;
+  }
+
+  .hcwl-compare-table th,
+  .hcwl-compare-table td {
+    padding: var(--space-sm) var(--space-lg);
+    white-space: normal;
+    font-size: var(--text-base);
+  }
+
+  .hcwl-compare-table th {
+    font-size: var(--text-base);
+  }
+}
+
+
+/* ============================================================
+   18. BREAKDOWN / INVOICE-STYLE COMPONENT
+   ============================================================ */
+.hcwl-breakdown-example {
+  max-width: 600px;
+  margin-inline: auto;
+  background: var(--bg-dark);
+  border: 1px solid var(--glass-dark-border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.hcwl-breakdown-header {
+  background: linear-gradient(135deg, rgba(0, 212, 168, 0.15) 0%, rgba(191, 0, 255, 0.1) 100%);
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--glass-dark-border);
+}
+
+.hcwl-breakdown-title {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: var(--text-dark-bright);
+}
+
+.hcwl-breakdown-price {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: var(--neon-cyan);
+}
+
+.hcwl-breakdown-list {
+  list-style: none;
+  padding: var(--space-md) var(--space-lg);
+}
+
+.hcwl-breakdown-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-xs) 0;
+  border-bottom: 1px solid var(--glass-dark-border);
+}
+
+.hcwl-breakdown-item:last-child {
+  border-bottom: none;
+}
+
+.hcwl-breakdown-task {
+  font-size: var(--text-sm);
+  letter-spacing: 0.5px;
+  color: var(--text-dark-bright);
+}
+
+.hcwl-tilde {
+  font-size: 1.4em;
+  margin-right: 3px;
+  vertical-align: middle;
+}
+
+.hcwl-breakdown-hours {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--neon-cyan);
+}
+
+.hcwl-breakdown-footer {
+  background: var(--bg-dark-mid);
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hcwl-breakdown-total-label {
+  font-size: var(--text-sm);
+  letter-spacing: 0.5px;
+  color: var(--text-dark-bright);
+}
+
+.hcwl-breakdown-total {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--text-dark-bright);
+}
+
+.hcwl-breakdown-note {
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--text-dark-mid);
+  margin-top: var(--space-md);
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+@media (min-width: 48em) {
+  .hcwl-breakdown-task,
+  .hcwl-breakdown-hours,
+  .hcwl-breakdown-total-label {
+    font-size: var(--text-base);
+  }
+}
+
+
+/* ============================================================
+   19. SALARY / STAT PILLS
+   ============================================================ */
+.hcwl-salary-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  justify-content: center;
+}
+
+.hcwl-salary-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-md) var(--space-lg);
+  background: var(--bg-dark);
+  border: 1px solid var(--glass-dark-border);
+  border-radius: 12px;
+  min-width: 120px;
+}
+
+.hcwl-salary-pill-label {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--text-dark-mid);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.hcwl-salary-pill-value {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--neon-cyan);
+}
+
+.hcwl-salary-pill-sub {
+  font-size: var(--text-xs);
+  color: var(--text-dark-mid);
+}
+
+
+/* ============================================================
+   20. NOT-INCLUDED ITEMS (Purple Border Style)
+   ============================================================ */
+.hcwl-not-included-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.hcwl-not-included-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  background: transparent;
+  border-radius: 10px;
+  border: 1px solid var(--neon-purple);
+  transition:
+    background var(--transition-base),
+    border-color var(--transition-base),
+    transform var(--transition-base);
+}
+
+.hcwl-not-included-item:hover {
+  background: rgba(191, 0, 255, 0.1);
+  border-color: var(--neon-purple-bright);
+  transform: translateY(-2px);
+}
+
+.hcwl-not-included-item i {
+  color: var(--neon-purple-bright);
+  font-size: 0.9rem;
+}
+
+.hcwl-not-included-item span {
+  font-size: var(--text-sm);
+  line-height: 1.3;
+  color: var(--text-dark-bright);
+}
+
+.hcwl-not-included-note {
+  text-align: center;
+  font-size: var(--text-base);
+  color: var(--text-dark-mid);
+  margin-top: var(--space-lg);
+  font-style: italic;
+}
+
+@media (min-width: 36em) {
+  .hcwl-not-included-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md) var(--space-lg);
+  }
+
+  .hcwl-not-included-item span {
+    font-size: var(--text-base);
+  }
+}
+
+
+/* ============================================================
+   21. BUTTONS / CTA
+   ============================================================ */
+.hcwl-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-lg);
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all var(--transition-base);
+  cursor: pointer;
+  border: none;
+  letter-spacing: 0.5px;
+}
+
+.hcwl-btn-primary {
+  background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-cyan-muted) 100%);
+  color: var(--bg-darkest);
+}
+
+.hcwl-btn-primary:hover,
+.hcwl-btn-primary:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 23, 68, 0.3);
+}
+
+.hcwl-btn-secondary {
+  background: transparent;
+  color: var(--neon-cyan);
+  border: 1px solid var(--neon-cyan);
+}
+
+.hcwl-btn-secondary:hover,
+.hcwl-btn-secondary:focus-visible {
+  background: rgba(255, 23, 68, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 23, 68, 0.15);
+}
+
+@media (min-width: 48em) {
+  .hcwl-btn {
+    font-size: var(--text-base);
+  }
+}
+
+
+/* ============================================================
+   22. CONTEXT NOTES & SUBTEXT
+   ============================================================ */
+.hcwl-context-note {
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--text-dark-mid);
+  font-style: italic;
+  max-width: 650px;
+  margin: var(--space-md) auto 0;
+}
+
+.hcwl-context-note a {
+  color: var(--neon-cyan);
+  text-decoration: underline;
+}
+
+.hcwl-context-note a:hover {
+  color: var(--text-dark-bright);
+}
+
+.hcwl-context-subtext {
+  text-align: center;
+  font-size: var(--text-xs);
+  color: var(--text-dark-mid);
+  max-width: 600px;
+  margin: var(--space-md) auto 0;
+}
+
+
+/* ============================================================
+   23. FOOTER
+   ============================================================ */
+.hcwl-footer {
+  padding: var(--space-lg) 0;
+  background: var(--bg-darkest);
+  border-top: 1px solid var(--glass-dark-border);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hcwl-footer p {
+  font-size: var(--text-sm);
+  color: var(--text-dark-mid);
+}
+
+.hcwl-footer a {
+  color: var(--neon-cyan);
+  text-decoration: none;
+}
+
+.hcwl-footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* ============================================================
+   24. SCROLL-TO-TOP BUTTON
+   ============================================================ */
+.hcwl-scroll-to-top {
+  position: fixed;
+  bottom: var(--space-md);
+  right: var(--space-md);
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(15, 15, 23, 0.9);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--neon-cyan);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition:
+    opacity var(--transition-base),
+    visibility var(--transition-base),
+    transform var(--transition-base),
+    background var(--transition-base),
+    border-color var(--transition-base);
+  z-index: 999;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  color: var(--neon-cyan);
+  font-size: 1.2rem;
+  padding: 0;
+}
+
+.hcwl-scroll-to-top.hcwl-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.hcwl-scroll-to-top:hover,
+.hcwl-scroll-to-top:focus-visible {
+  background: rgba(255, 23, 68, 0.2);
+  border-color: var(--neon-cyan);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 23, 68, 0.3);
+}
+
+@media (min-width: 48em) {
+  .hcwl-scroll-to-top {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+
+/* ============================================================
+   25. CUSTOM SCROLLBARS
+   ============================================================ */
+
+/* WebKit (Chrome, Safari, Edge) */
+.hcwl-page ::-webkit-scrollbar {
+  width: 8px;
+  height: 6px;
+}
+
+.hcwl-page ::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+.hcwl-page ::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--neon-cyan-muted), var(--neon-purple));
+  border-radius: 10px;
+}
+
+.hcwl-page ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple-bright));
+}
+
+/* Firefox */
+.hcwl-page,
+.hcwl-page * {
+  scrollbar-width: thin;
+  scrollbar-color: var(--neon-cyan-muted) rgba(0, 0, 0, 0.05);
+}
+
+/* Table horizontal scrollbar */
+.hcwl-table-scroll-wrap::-webkit-scrollbar {
+  height: 6px;
+}
+
+.hcwl-table-scroll-wrap::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  margin: 0 var(--space-md);
+}
+
+
+/* ============================================================
+   26. REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .hcwl-page,
+  .hcwl-page *,
+  .hcwl-page *::before,
+  .hcwl-page *::after {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+    scroll-behavior: auto;
+  }
+}
+
+
+
+/* ============================================================
+   Financial Impact of Speed — Page-Specific Styles
+   Extends hcwl-base.css v2.0
+   ============================================================ */
+
+
+/* ----------------------------------------------------------
+   SCROLL REVEAL (shared across topic pages)
+---------------------------------------------------------- */
+[data-hcwl-reveal] {
+  opacity: 0;
+  transform: translateY(1.5rem);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+[data-hcwl-reveal].hcwl-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+[data-hcwl-reveal="delay-100"] { transition-delay: 0.1s; }
+[data-hcwl-reveal="delay-200"] { transition-delay: 0.2s; }
+[data-hcwl-reveal="delay-300"] { transition-delay: 0.3s; }
+[data-hcwl-reveal="delay-400"] { transition-delay: 0.4s; }
+[data-hcwl-reveal="delay-500"] { transition-delay: 0.5s; }
+[data-hcwl-reveal="delay-600"] { transition-delay: 0.6s; }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-hcwl-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+
+/* ----------------------------------------------------------
+   HERO EXTENSIONS
+---------------------------------------------------------- */
+.hcwl-hero-badge {
+  display: inline-block;
+  padding: 0.35em 1em;
+  border: 1px solid var(--neon-cyan);
+  border-radius: 2rem;
+  color: var(--neon-cyan);
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  margin-bottom: var(--space-lg);
+}
+.hcwl-hero-sub {
+  max-width: 700px;
+  margin-inline: auto;
+  color: var(--text-dark-mid);
+  font-size: var(--text-base);
+  line-height: 1.45;
+}
+.hcwl-hero-cta-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+}
+@media (min-width: 36em) {
+  .hcwl-hero-cta-group {
+    flex-direction: row;
+  }
+}
+
+
+/* ----------------------------------------------------------
+   NEON DIVIDER
+---------------------------------------------------------- */
+.hcwl-cta-section .hcwl-container {
+  text-align: center;
+}
+.hcwl-cta-section p {
+  max-width: 700px;
+  margin-inline: auto;
+}
+
+.hcwl-neon-divider {
+  border: none;
+  height: 3px;
+  width: 60px;
+  margin: var(--space-lg) auto var(--space-lg);
+  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple));
+  border-radius: 2px;
+}
+
+
+/* ----------------------------------------------------------
+   STAT RING CARDS (animated SVG circles + counters)
+---------------------------------------------------------- */
+.hcwl-stat-ring-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+@media (min-width: 36em) {
+  .hcwl-stat-ring-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 56.25em) {
+  .hcwl-stat-ring-grid { grid-template-columns: repeat(4, 1fr); }
+}
+.hcwl-stat-ring-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-sm);
+}
+.hcwl-stat-ring-wrap {
+  position: relative;
+  width: clamp(8rem, 16vw, 10rem);
+  height: clamp(8rem, 16vw, 10rem);
+}
+.hcwl-stat-ring-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+.hcwl-stat-ring-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.08);
+  stroke-width: 6;
+}
+.hcwl-stat-ring-fill {
+  fill: none;
+  stroke: var(--neon-cyan);
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-dasharray: 283;
+  stroke-dashoffset: 283;
+  transition: stroke-dashoffset 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.hcwl-stat-ring-fill--purple { stroke: var(--neon-purple); }
+.hcwl-stat-ring-fill--red    { stroke: #ff4d6a; }
+.hcwl-stat-ring-fill--amber  { stroke: #fbbf24; }
+.hcwl-stat-ring-value {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--text-dark-bright);
+}
+.hcwl-stat-suffix {
+  font-size: 0.8em;
+  color: var(--neon-cyan);
+  padding-left: 0.15em;
+}
+.hcwl-stat-prefix {
+  font-size: 0.75em;
+  color: var(--neon-cyan);
+  margin-right: 0.05em;
+}
+.hcwl-stat-ring-label {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--text-dark-mid);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.4;
+}
+.hcwl-stat-ring-source {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+
+/* ----------------------------------------------------------
+   COST CALCULATOR VISUAL (animated revenue bars)
+---------------------------------------------------------- */
+.hcwl-calc-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+@media (min-width: 48em) {
+  .hcwl-calc-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.hcwl-calc-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  text-align: center;
+}
+.hcwl-calc-card-icon {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-xs);
+}
+.hcwl-calc-card-icon--green { color: var(--neon-cyan); }
+.hcwl-calc-card-icon--red   { color: #ff4d6a; }
+.hcwl-calc-card-label {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: var(--space-xs);
+}
+.hcwl-calc-card-amount {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.hcwl-calc-card-amount--loss { color: #ff4d6a; }
+.hcwl-calc-card-detail {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  margin-top: var(--space-xs);
+  line-height: 1.5;
+}
+.hcwl-calc-formula {
+  text-align: center;
+  margin-top: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  background: linear-gradient(135deg, rgba(255,23,68,0.05), rgba(191,0,255,0.05));
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+.hcwl-calc-formula strong {
+  color: #ff4d6a;
+}
+
+
+/* ----------------------------------------------------------
+   SPEED BARS (bounce/conversion escalation)
+---------------------------------------------------------- */
+.hcwl-speed-bars {
+  margin-top: var(--space-lg);
+}
+.hcwl-speed-bar-item {
+  margin-bottom: var(--space-md);
+}
+.hcwl-speed-bar-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: var(--space-xs);
+}
+.hcwl-speed-bar-label {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--text-dark-mid);
+  letter-spacing: 0.5px;
+}
+.hcwl-speed-bar-value {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--neon-cyan);
+  letter-spacing: 0.5px;
+}
+.hcwl-speed-bar-value--warn { color: #fbbf24; }
+.hcwl-speed-bar-value--danger { color: #ff4d6a; }
+.hcwl-speed-bar-track {
+  height: 0.6rem;
+  background: var(--bg-card);
+  border-radius: 0.3rem;
+  overflow: hidden;
+}
+.hcwl-speed-bar-fill {
+  height: 100%;
+  width: 0;
+  border-radius: 0.3rem;
+  transition: width 1.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.hcwl-speed-bar-fill--green  { background: linear-gradient(90deg, #00ffc8, #00e6b5); }
+.hcwl-speed-bar-fill--amber  { background: linear-gradient(90deg, #fbbf24, #f59e0b); }
+.hcwl-speed-bar-fill--red    { background: linear-gradient(90deg, #ff4d6a, #ef4444); }
+.hcwl-speed-bar-fill--deep   { background: linear-gradient(90deg, #dc2626, #991b1b); }
+
+
+/* ----------------------------------------------------------
+   CALLOUT / BLOCKQUOTE
+---------------------------------------------------------- */
+.hcwl-callout {
+  background: linear-gradient(135deg, rgba(255,23,68,0.06), rgba(191,0,255,0.06));
+  border-left: 3px solid var(--neon-cyan);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: var(--space-md) var(--space-lg);
+  margin: var(--space-lg) 0 0;
+  font-style: italic;
+  font-size: var(--text-lg);
+  color: var(--text-dark-mid);
+  line-height: 1.4;
+}
+.hcwl-callout cite {
+  display: block;
+  margin-top: var(--space-sm);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  font-style: normal;
+}
+
+
+/* ----------------------------------------------------------
+   CASE STUDY CARDS
+---------------------------------------------------------- */
+.hcwl-case-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+@media (min-width: 48em) {
+  .hcwl-case-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.hcwl-case-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  text-align: center;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+.hcwl-case-card:hover {
+  border-color: var(--neon-cyan);
+  transform: translateY(-2px);
+}
+.hcwl-case-card-logo {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--text-dark-bright);
+  margin-bottom: var(--space-sm);
+}
+.hcwl-case-card-stat {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--neon-cyan);
+  line-height: 1.2;
+  margin-bottom: var(--space-md);
+}
+.hcwl-case-card-detail {
+  font-size: var(--text-lg);
+  color: var(--text-dark-bright);
+  line-height: 1.4;
+}
+
+
+/* ----------------------------------------------------------
+   CONVERSION COMPARISON (1s vs 5s vs 10s visual)
+---------------------------------------------------------- */
+.hcwl-conversion-bars {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+@media (min-width: 36em) {
+  .hcwl-conversion-bars { grid-template-columns: repeat(3, 1fr); }
+}
+.hcwl-conversion-bar-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-md);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+}
+.hcwl-conversion-bar-tower {
+  position: relative;
+  width: 3.5rem;
+  height: 10rem;
+  background: var(--bg-darkest);
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  overflow: hidden;
+  margin-bottom: var(--space-sm);
+}
+.hcwl-conversion-bar-fill {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  transition: height 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  height: 0;
+}
+.hcwl-conversion-bar-fill--fast {
+  background: linear-gradient(0deg, #00c853, #00e676);
+}
+.hcwl-conversion-bar-fill--mid {
+  background: linear-gradient(0deg, #fbbf24, #f59e0b);
+}
+.hcwl-conversion-bar-fill--slow {
+  background: linear-gradient(0deg, #ff4d6a, #ef4444);
+}
+.hcwl-conversion-bar-speed {
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.hcwl-conversion-bar-rate {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: var(--space-xs);
+}
+.hcwl-conversion-bar-multiplier {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  margin-top: var(--space-xs);
+}
+.hcwl-conversion-bar-multiplier--fast { color: var(--neon-cyan); }
+.hcwl-conversion-bar-multiplier--mid  { color: #fbbf24; }
+.hcwl-conversion-bar-multiplier--slow { color: #ff4d6a; }
+
+
+/* ----------------------------------------------------------
+   GOOGLE BADGE
+---------------------------------------------------------- */
+.hcwl-google-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.5em 1.2em;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  background: rgba(255,255,255,0.02);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  font-style: italic;
+  line-height: 1.5;
+}
+.hcwl-google-badge i {
+  color: var(--neon-purple);
+  font-size: 0.85em;
+}
+
+
+/* ----------------------------------------------------------
+   SOURCE FOOTNOTES (matches page 1 style)
+---------------------------------------------------------- */
+.hcwl-sources {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: var(--space-md);
+  text-align: center;
+}
+.hcwl-sources-title {
+  font-size: var(--text-base);
+  margin-bottom: var(--space-sm);
+}
+.hcwl-sources ol {
+  list-style: none;
+  counter-reset: source-counter;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  text-align: left;
+}
+.hcwl-sources li {
+  counter-increment: source-counter;
+  display: flex;
+  gap: var(--space-xs);
+  align-items: baseline;
+  margin-bottom: var(--space-xs);
+  font-size: var(--text-sm);
+  color: var(--text-dark-dim);
+  line-height: 1.6;
+}
+.hcwl-sources li::before {
+  content: counter(source-counter);
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6em;
+  height: 1.6em;
+  border-radius: 50%;
+  border: 1px solid var(--border-subtle);
+  font-family: var(--font-display);
+  font-size: 0.75em;
+  font-weight: 600;
+  color: var(--neon-cyan);
+}
+.hcwl-sources a {
+  color: var(--neon-cyan);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.hcwl-sources a:hover {
+  color: var(--neon-purple);
+}
+
+
+/* ----------------------------------------------------------
+   CTA SUBTEXT
+---------------------------------------------------------- */
+.hcwl-context-subtext {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+  </style>
+</head>
+
+<body class="hcwl-page">
+
+  <!-- Skip Link (Accessibility) -->
+  <a href="#main-content" class="hcwl-skip-link">Skip to main content</a>
+
+  <!-- Background Effects -->
+  <div class="hcwl-grid-bg" aria-hidden="true"></div>
+  <div class="hcwl-glow-bg" aria-hidden="true"></div>
+
+
+  <!-- ============================================================
+       HEADER / NAV
+       ============================================================ -->
+  <header class="hcwl-nav-header" role="banner">
+    <div class="hcwl-container">
+      <a href="/" class="hcwl-logo" aria-label="HC Web Labs — Home">
+        <span class="hcwl-logo-hc" aria-hidden="true">HC</span>
+        <span class="hcwl-logo-text">Web Labs</span>
+      </a>
+      <a href="/" class="hcwl-back-link">
+        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Home
+      </a>
+    </div>
+  </header>
+
+
+  <!-- ============================================================
+       MAIN CONTENT
+       ============================================================ -->
+  <main id="main-content">
+
+    <!-- ========== HERO ========== -->
+    <section class="hcwl-hero" aria-labelledby="hero-heading">
+      <div class="hcwl-container" data-hcwl-reveal>
+        <span class="hcwl-hero-badge">
+          <i class="fa-solid fa-bolt" aria-hidden="true"></i> Speed = Customers
+        </span>
+        <h1 id="hero-heading">A Slow Website Is <span class="hcwl-hero-highlight">Costing You Money</span></h1>
+        <p class="hcwl-hero-intro">
+          If your website takes more than 3 seconds to load, half your
+          visitors are already gone — and they're not coming back.
+        </p>
+        <p class="hcwl-hero-sub">
+          It doesn't matter how great your business is if people never
+          see your site. Speed isn't a tech detail — it's the difference
+          between a new customer and a lost one.
+        </p>
+        <div class="hcwl-hero-cta-group">
+          <a href="#real-cost" class="hcwl-btn hcwl-btn-primary">
+            See What Slow Costs <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+          </a>
+          <a href="#cta-section" class="hcwl-btn hcwl-btn-secondary">
+            Get a Free Speed Check <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+        <hr class="hcwl-neon-divider" style="margin-top: var(--space-lg);" aria-hidden="true">
+      </div>
+    </section>
+
+
+    <!-- ========== THE NUMBERS ========== -->
+    <section class="hcwl-section-dark" aria-labelledby="stats-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-section-label" data-hcwl-reveal>The Numbers</span>
+        <h2 id="stats-heading" data-hcwl-reveal="delay-100">Speed Directly Affects Your Revenue</h2>
+        <hr class="hcwl-neon-divider" data-hcwl-reveal="delay-200" aria-hidden="true">
+
+        <div class="hcwl-stat-ring-grid" role="list" aria-label="Key website speed statistics">
+
+          <!-- Ring 1: 7% conversion loss -->
+          <article class="hcwl-stat-ring-card" role="listitem" data-hcwl-reveal="delay-200">
+            <div class="hcwl-stat-ring-wrap">
+              <svg class="hcwl-stat-ring-svg" viewBox="0 0 100 100" aria-hidden="true">
+                <circle class="hcwl-stat-ring-bg" cx="50" cy="50" r="45"></circle>
+                <circle class="hcwl-stat-ring-fill hcwl-stat-ring-fill--red" cx="50" cy="50" r="45"
+                        data-max="100"></circle>
+              </svg>
+              <span class="hcwl-stat-ring-value" aria-live="polite">
+                <span data-count-to="7">0</span><span class="hcwl-stat-suffix">%</span>
+              </span>
+            </div>
+            <span class="hcwl-stat-ring-label">Fewer Customers<br>per 0.1s Delay</span>
+          </article>
+
+          <!-- Ring 2: 8.4% retail conversion gain -->
+          <article class="hcwl-stat-ring-card" role="listitem" data-hcwl-reveal="delay-300">
+            <div class="hcwl-stat-ring-wrap">
+              <svg class="hcwl-stat-ring-svg" viewBox="0 0 100 100" aria-hidden="true">
+                <circle class="hcwl-stat-ring-bg" cx="50" cy="50" r="45"></circle>
+                <circle class="hcwl-stat-ring-fill" cx="50" cy="50" r="45"
+                        data-max="100"></circle>
+              </svg>
+              <span class="hcwl-stat-ring-value" aria-live="polite">
+                <span data-count-to="8.4">0</span><span class="hcwl-stat-suffix">%</span>
+              </span>
+            </div>
+            <span class="hcwl-stat-ring-label">More Sales<br>per 0.1s Faster</span>
+          </article>
+
+          <!-- Ring 3: 5× conversion rate -->
+          <article class="hcwl-stat-ring-card" role="listitem" data-hcwl-reveal="delay-400">
+            <div class="hcwl-stat-ring-wrap">
+              <svg class="hcwl-stat-ring-svg" viewBox="0 0 100 100" aria-hidden="true">
+                <circle class="hcwl-stat-ring-bg" cx="50" cy="50" r="45"></circle>
+                <circle class="hcwl-stat-ring-fill hcwl-stat-ring-fill--purple" cx="50" cy="50" r="45"
+                        data-max="10"></circle>
+              </svg>
+              <span class="hcwl-stat-ring-value" aria-live="polite">
+                <span data-count-to="5">0</span><span class="hcwl-stat-suffix">×</span>
+              </span>
+            </div>
+            <span class="hcwl-stat-ring-label">More Conversions<br>Fast vs Slow Sites</span>
+          </article>
+
+          <!-- Ring 4: 53% abandon -->
+          <article class="hcwl-stat-ring-card" role="listitem" data-hcwl-reveal="delay-500">
+            <div class="hcwl-stat-ring-wrap">
+              <svg class="hcwl-stat-ring-svg" viewBox="0 0 100 100" aria-hidden="true">
+                <circle class="hcwl-stat-ring-bg" cx="50" cy="50" r="45"></circle>
+                <circle class="hcwl-stat-ring-fill hcwl-stat-ring-fill--amber" cx="50" cy="50" r="45"
+                        data-max="100"></circle>
+              </svg>
+              <span class="hcwl-stat-ring-value" aria-live="polite">
+                <span data-count-to="53">0</span><span class="hcwl-stat-suffix">%</span>
+              </span>
+            </div>
+            <span class="hcwl-stat-ring-label">Leave After<br>3 Seconds</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========== THE REAL COST ========== -->
+    <section class="hcwl-section-dark-mid" id="real-cost" aria-labelledby="cost-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-section-label" data-hcwl-reveal>The Real Cost</span>
+        <h2 id="cost-heading" data-hcwl-reveal="delay-100">Every Second Costs You Customers</h2>
+        <p class="hcwl-section-dark-mid-intro" data-hcwl-reveal="delay-200">
+          Researchers studied billions of real website visits and found the
+          same thing every time — the longer your site takes to load, the
+          more people leave without ever seeing what you offer.
+        </p>
+        <hr class="hcwl-neon-divider" data-hcwl-reveal="delay-200" aria-hidden="true">
+
+        <div class="hcwl-speed-bars" data-hcwl-reveal="delay-300">
+          <p class="hcwl-speed-bar-label" style="margin-bottom: var(--space-md); color: var(--text-muted);">
+            <i class="fa-solid fa-chart-bar" aria-hidden="true"></i>
+            What happens as your site gets slower:
+          </p>
+
+          <div class="hcwl-speed-bar-item">
+            <div class="hcwl-speed-bar-meta">
+              <span class="hcwl-speed-bar-label">Just 0.1 seconds slower</span>
+              <span class="hcwl-speed-bar-value hcwl-speed-bar-value--warn">7% fewer customers</span>
+            </div>
+            <div class="hcwl-speed-bar-track">
+              <div class="hcwl-speed-bar-fill hcwl-speed-bar-fill--amber" data-bar-width="20"></div>
+            </div>
+          </div>
+
+          <div class="hcwl-speed-bar-item">
+            <div class="hcwl-speed-bar-meta">
+              <span class="hcwl-speed-bar-label">1 second slower</span>
+              <span class="hcwl-speed-bar-value hcwl-speed-bar-value--warn">22% fewer customers</span>
+            </div>
+            <div class="hcwl-speed-bar-track">
+              <div class="hcwl-speed-bar-fill hcwl-speed-bar-fill--amber" data-bar-width="45"></div>
+            </div>
+          </div>
+
+          <div class="hcwl-speed-bar-item">
+            <div class="hcwl-speed-bar-meta">
+              <span class="hcwl-speed-bar-label">2 seconds slower</span>
+              <span class="hcwl-speed-bar-value hcwl-speed-bar-value--danger">37% fewer customers</span>
+            </div>
+            <div class="hcwl-speed-bar-track">
+              <div class="hcwl-speed-bar-fill hcwl-speed-bar-fill--red" data-bar-width="70"></div>
+            </div>
+          </div>
+
+          <div class="hcwl-speed-bar-item">
+            <div class="hcwl-speed-bar-meta">
+              <span class="hcwl-speed-bar-label">3+ seconds</span>
+              <span class="hcwl-speed-bar-value hcwl-speed-bar-value--danger">Over half leave immediately</span>
+            </div>
+            <div class="hcwl-speed-bar-track">
+              <div class="hcwl-speed-bar-fill hcwl-speed-bar-fill--deep" data-bar-width="95"></div>
+            </div>
+          </div>
+        </div>
+
+        <blockquote class="hcwl-callout" data-hcwl-reveal="delay-400">
+          <p>
+            Think about what that means for your business. If 10 people
+            a day find your site but leave because it's slow, that's 3,650
+            potential customers a year who never saw your hours, your
+            services, or your phone number.
+          </p>
+        </blockquote>
+      </div>
+    </section>
+
+
+    <!-- ========== WHAT SLOW LOOKS LIKE ========== -->
+    <section class="hcwl-section-dark" aria-labelledby="cases-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-section-label" data-hcwl-reveal>What Slow Looks Like</span>
+        <h2 id="cases-heading" data-hcwl-reveal="delay-100">This Is Happening to Real Businesses</h2>
+        <p class="hcwl-section-dark-intro" data-hcwl-reveal="delay-200">
+          If the biggest companies on earth lose money from slow websites,
+          imagine what it's doing to a local business that can't afford to
+          lose a single customer.
+        </p>
+        <hr class="hcwl-neon-divider" data-hcwl-reveal="delay-200" aria-hidden="true">
+
+        <div class="hcwl-case-grid" data-hcwl-reveal="delay-300">
+
+          <article class="hcwl-case-card">
+            <div class="hcwl-case-card-logo">
+              <i class="fa-solid fa-store" aria-hidden="true"></i> Local Shops
+            </div>
+            <div class="hcwl-case-card-stat">A 3-second site loses half its visitors</div>
+            <p class="hcwl-case-card-detail">
+              Someone searches "plumber near me" and clicks your site. If it
+              doesn't load fast, they hit the back button and call your
+              competitor. You never even knew they were there.
+            </p>
+          </article>
+
+          <article class="hcwl-case-card">
+            <div class="hcwl-case-card-logo">
+              <i class="fa-solid fa-mobile-screen" aria-hidden="true"></i> Mobile Users
+            </div>
+            <div class="hcwl-case-card-stat">60%+ of your traffic is on a phone</div>
+            <p class="hcwl-case-card-detail">
+              Mobile connections are slower than desktop. If your site isn't
+              built for speed on a phone, you're losing the majority of
+              your audience before they even see your homepage.
+            </p>
+          </article>
+
+          <article class="hcwl-case-card">
+            <div class="hcwl-case-card-logo">
+              <i class="fa-brands fa-google" aria-hidden="true"></i> Google Rankings
+            </div>
+            <div class="hcwl-case-card-stat">Slow sites get buried in search results</div>
+            <p class="hcwl-case-card-detail">
+              Google uses page speed as a ranking factor. A slow site doesn't
+              just lose impatient visitors — it also shows up lower in search
+              results, meaning fewer people find you in the first place.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========== FAST vs SLOW ========== -->
+    <section class="hcwl-section-dark-mid" aria-labelledby="conversion-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-section-label" data-hcwl-reveal>Fast vs. Slow</span>
+        <h2 id="conversion-heading" data-hcwl-reveal="delay-100">The Difference Is Dramatic</h2>
+        <p class="hcwl-section-dark-mid-intro" data-hcwl-reveal="delay-200">
+          A study of over 100 million page views found that sites loading
+          in 1 second convert at 5 times the rate of sites loading in 10.
+          The gap isn't small — it's massive.
+        </p>
+        <hr class="hcwl-neon-divider" data-hcwl-reveal="delay-200" aria-hidden="true">
+
+        <div class="hcwl-conversion-bars" data-hcwl-reveal="delay-300">
+
+          <div class="hcwl-conversion-bar-card">
+            <div class="hcwl-conversion-bar-tower">
+              <div class="hcwl-conversion-bar-fill hcwl-conversion-bar-fill--fast"
+                   data-fill-height="100"></div>
+            </div>
+            <span class="hcwl-conversion-bar-speed">1 Second</span>
+            <span class="hcwl-conversion-bar-rate">Highest conversions</span>
+            <span class="hcwl-conversion-bar-multiplier hcwl-conversion-bar-multiplier--fast">
+              The sweet spot
+            </span>
+          </div>
+
+          <div class="hcwl-conversion-bar-card">
+            <div class="hcwl-conversion-bar-tower">
+              <div class="hcwl-conversion-bar-fill hcwl-conversion-bar-fill--mid"
+                   data-fill-height="33"></div>
+            </div>
+            <span class="hcwl-conversion-bar-speed">5 Seconds</span>
+            <span class="hcwl-conversion-bar-rate">3× fewer conversions</span>
+            <span class="hcwl-conversion-bar-multiplier hcwl-conversion-bar-multiplier--mid">
+              Most visitors gone
+            </span>
+          </div>
+
+          <div class="hcwl-conversion-bar-card">
+            <div class="hcwl-conversion-bar-tower">
+              <div class="hcwl-conversion-bar-fill hcwl-conversion-bar-fill--slow"
+                   data-fill-height="20"></div>
+            </div>
+            <span class="hcwl-conversion-bar-speed">10 Seconds</span>
+            <span class="hcwl-conversion-bar-rate">5× fewer conversions</span>
+            <span class="hcwl-conversion-bar-multiplier hcwl-conversion-bar-multiplier--slow">
+              Virtually no one stays
+            </span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========== HOW WE BUILD FAST ========== -->
+    <section class="hcwl-section-dark" aria-labelledby="approach-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-section-label" data-hcwl-reveal>How We Fix It</span>
+        <h2 id="approach-heading" data-hcwl-reveal="delay-100">Every Site We Build Is Built for Speed</h2>
+        <p class="hcwl-section-dark-intro" data-hcwl-reveal="delay-200">
+          Most website builders and templates are loaded with code your site
+          doesn't need. We hand-write every line, so your site loads fast,
+          ranks higher, and keeps visitors around long enough to become customers.
+        </p>
+        <hr class="hcwl-neon-divider" data-hcwl-reveal="delay-200" aria-hidden="true">
+
+        <div class="hcwl-grid-3" data-hcwl-reveal="delay-300">
+
+          <article class="hcwl-card-dark">
+            <div class="hcwl-icon-box hcwl-icon-box--cyan">
+              <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+            </div>
+            <div>
+              <h3>No Bloated Frameworks</h3>
+              <p>
+                Every line of code is hand-written and purpose-built. No
+                WordPress bloat, no page builders, no unnecessary plugins
+                slowing things down.
+              </p>
+            </div>
+          </article>
+
+          <article class="hcwl-card-dark">
+            <div class="hcwl-icon-box hcwl-icon-box--purple">
+              <i class="fa-solid fa-image" aria-hidden="true"></i>
+            </div>
+            <div>
+              <h3>Optimized Images &amp; Assets</h3>
+              <p>
+                Compressed images, modern file formats, and lazy loading
+                so your pages load the important stuff first and the rest
+                as people scroll.
+              </p>
+            </div>
+          </article>
+
+          <article class="hcwl-card-dark">
+            <div class="hcwl-icon-box hcwl-icon-box--cyan">
+              <i class="fa-solid fa-gauge-high" aria-hidden="true"></i>
+            </div>
+            <div>
+              <h3>Google-Ready Performance</h3>
+              <p>
+                We target the exact speed metrics Google uses to rank your
+                site. Faster load times mean higher search results and
+                more people finding your business.
+              </p>
+            </div>
+          </article>
+
+          <article class="hcwl-card-dark">
+            <div class="hcwl-icon-box hcwl-icon-box--purple">
+              <i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>
+            </div>
+            <div>
+              <h3>Mobile-First Design</h3>
+              <p>
+                Your site is built for phones first, then scales up
+                beautifully to tablets and desktops. Fast and
+                functional on every screen.
+              </p>
+            </div>
+          </article>
+
+          <article class="hcwl-card-dark">
+            <div class="hcwl-icon-box hcwl-icon-box--cyan">
+              <i class="fa-solid fa-server" aria-hidden="true"></i>
+            </div>
+            <div>
+              <h3>Lean &amp; Efficient Code</h3>
+              <p>
+                Fewer files, smaller downloads, smarter loading. Your
+                visitors get a fast experience and your site doesn't
+                waste their time or data.
+              </p>
+            </div>
+          </article>
+
+          <article class="hcwl-card-dark">
+            <div class="hcwl-icon-box hcwl-icon-box--purple">
+              <i class="fa-solid fa-universal-access" aria-hidden="true"></i>
+            </div>
+            <div>
+              <h3>Accessible to Everyone</h3>
+              <p>
+                Clean code that works for screen readers, keyboard
+                users, and every browser. A fast site that everyone
+                in your community can use.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========== CTA ========== -->
+    <section class="hcwl-section-dark-mid hcwl-cta-section" id="cta-section" aria-labelledby="cta-heading">
+      <div class="hcwl-container" data-hcwl-reveal>
+        <span class="hcwl-section-label">What's Slow Costing You?</span>
+        <h2 id="cta-heading">Find Out How Fast Your Site Really Is</h2>
+        <hr class="hcwl-neon-divider" aria-hidden="true">
+        <p>
+          We'll check your real-world load times and show you exactly
+          where your site is losing visitors. Free, no strings attached.
+        </p>
+        <a href="mailto:HCWebLabs@heather-cooper.com" class="hcwl-btn hcwl-btn-primary">
+          Request Your Free Speed Check <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+        <p class="hcwl-context-subtext" style="margin-top: var(--space-md);">
+          Serving small businesses, nonprofits, and entrepreneurs across East Tennessee.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ========== SOURCES ========== -->
+    <section class="hcwl-section-dark" aria-labelledby="sources-heading">
+      <div class="hcwl-container">
+        <div class="hcwl-sources" data-hcwl-reveal>
+          <h2 class="hcwl-sources-title" id="sources-heading">Sources &amp; References</h2>
+          <ol>
+            <li>
+              Akamai / SOASTA, "The State of Online Retail Performance," 2017.
+              <a href="https://blogs.akamai.com/2017/04/new-findings-the-state-of-online-retail-performance-spring-2017.html" target="_blank" rel="noopener noreferrer">akamai.com</a>
+            </li>
+            <li>
+              Portent, "Site Speed is (Still) Impacting Your Conversion Rate," 2022.
+              <a href="https://portent.com/blog/analytics/research-site-speed-hurting-everyones-revenue.htm" target="_blank" rel="noopener noreferrer">portent.com</a>
+            </li>
+            <li>
+              Google / Deloitte, "Milliseconds Make Millions," 2020.
+              <a href="https://www.thinkwithgoogle.com/intl/en-ssa/marketing-strategies/app-and-mobile/mobile-page-speed-data/" target="_blank" rel="noopener noreferrer">thinkwithgoogle.com</a>
+            </li>
+            <li>
+              Google / SOASTA, "Mobile Page Speed Benchmarks," 2017.
+              <a href="https://www.thinkwithgoogle.com/marketing-strategies/app-and-mobile/mobile-page-speed-new-industry-benchmarks/" target="_blank" rel="noopener noreferrer">thinkwithgoogle.com</a>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="hcwl-footer" role="contentinfo">
+    <div class="hcwl-container">
+      <p>
+        &copy; <span id="copyrightYear">2026</span>
+        <a href="/">HC Web Labs</a> — Rocky Top, Tennessee.
+        Hand-coded with care.
+      </p>
+    </div>
+  </footer>
+
+
+  <!-- Scroll-to-Top Button -->
+  <button type="button"
+          class="hcwl-scroll-to-top"
+          id="scrollToTop"
+          aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+
+  <!-- All Scripts Inline -->
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+/* ============================================================
+   HC Web Labs — Base Landing Page JavaScript
+   Version: 2.0
+   Author: Heather Cooper | HC Web Labs
+
+   Description:
+   ES6+ companion module for hcwl-base.css. Handles scroll-to-
+   top button, flip card touch/keyboard interaction, and an
+   optional IntersectionObserver-based scroll reveal system.
+
+   Usage:
+   Include at the end of <body> or load with defer attribute.
+   All functionality is scoped within an IIFE — no globals.
+   ============================================================ */
+
+(() => {
+  'use strict';
+
+  /* ----------------------------------------------------------
+     1. SCROLL-TO-TOP BUTTON
+     Reveals a fixed button after scrolling past a threshold.
+     Uses requestAnimationFrame for scroll performance.
+  ---------------------------------------------------------- */
+  const scrollToTopBtn = document.getElementById('scrollToTop');
+
+  if (scrollToTopBtn) {
+    let ticking = false;
+    const SCROLL_THRESHOLD = 500;
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          scrollToTopBtn.classList.toggle('hcwl-visible', window.scrollY > SCROLL_THRESHOLD);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    const scrollToTop = () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    scrollToTopBtn.addEventListener('click', scrollToTop);
+
+    scrollToTopBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        scrollToTop();
+      }
+    });
+  }
+
+
+  /* ----------------------------------------------------------
+     2. FLIP CARDS — Touch & Keyboard Support
+     Toggles a flipped state on tap (touch devices) and
+     keyboard Enter/Space. Hover-based flip handled via CSS.
+  ---------------------------------------------------------- */
+  const flipCards = document.querySelectorAll('.hcwl-flip-card');
+
+  if (flipCards.length) {
+    const isTouchDevice = () => 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+    flipCards.forEach((card) => {
+      // Set ARIA attributes for accessibility
+      const heading = card.querySelector('h2, h3');
+      const label = heading?.textContent?.trim() ?? 'Card';
+
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('role', 'button');
+      card.setAttribute('aria-label', `${label} — tap or press Enter for details`);
+
+      // Touch: toggle flipped class
+      card.addEventListener('click', () => {
+        if (isTouchDevice()) {
+          card.classList.toggle('hcwl-flipped');
+        }
+      });
+
+      // Keyboard: Enter or Space toggles flip
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          card.classList.toggle('hcwl-flipped');
+        }
+      });
+    });
+  }
+
+
+  /* ----------------------------------------------------------
+     3. SCROLL REVEAL (Optional)
+     Adds a fade-in-up animation to elements with the
+     [data-hcwl-reveal] attribute using IntersectionObserver.
+
+     HTML usage:
+       <div data-hcwl-reveal>Content to reveal</div>
+       <div data-hcwl-reveal="delay-200">Delayed reveal</div>
+
+     CSS required (add to page-specific stylesheet):
+       [data-hcwl-reveal] {
+         opacity: 0;
+         transform: translateY(20px);
+         transition: opacity 0.6s ease, transform 0.6s ease;
+       }
+       [data-hcwl-reveal].hcwl-revealed {
+         opacity: 1;
+         transform: translateY(0);
+       }
+       [data-hcwl-reveal="delay-200"] {
+         transition-delay: 0.2s;
+       }
+       [data-hcwl-reveal="delay-400"] {
+         transition-delay: 0.4s;
+       }
+
+     Falls back gracefully — elements without the Observer
+     will simply appear without animation.
+  ---------------------------------------------------------- */
+  const revealElements = document.querySelectorAll('[data-hcwl-reveal]');
+
+  if (revealElements.length && 'IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('hcwl-revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: '0px 0px -60px 0px',
+        threshold: 0.1,
+      }
+    );
+
+    revealElements.forEach((el) => revealObserver.observe(el));
+  } else {
+    // Fallback: just show everything immediately
+    revealElements.forEach((el) => el.classList.add('hcwl-revealed'));
+  }
+
+
+  /* ----------------------------------------------------------
+     4. SMOOTH SCROLL FOR ANCHOR LINKS
+     Intercepts same-page anchor clicks and scrolls smoothly,
+     accounting for the fixed navigation header height.
+  ---------------------------------------------------------- */
+  const anchorLinks = document.querySelectorAll('.hcwl-page a[href^="#"]');
+
+  if (anchorLinks.length) {
+    const navHeader = document.querySelector('.hcwl-nav-header');
+
+    anchorLinks.forEach((link) => {
+      link.addEventListener('click', (e) => {
+        const targetId = link.getAttribute('href');
+        if (!targetId || targetId === '#') return;
+
+        const target = document.querySelector(targetId);
+        if (!target) return;
+
+        e.preventDefault();
+
+        const headerOffset = navHeader?.offsetHeight ?? 0;
+        const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerOffset - 16;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth',
+        });
+
+        // Move focus to the target for accessibility
+        target.setAttribute('tabindex', '-1');
+        target.focus({ preventScroll: true });
+      });
+    });
+  }
+})();
+
+
+
+    /* ============================================================
+       Financial Impact of Speed — Page-Specific JS
+       ============================================================ */
+    (() => {
+      'use strict';
+
+      /* ----------------------------------------------------------
+         STAT RING COUNTERS
+         Animates SVG stroke-dashoffset + numeric counters
+      ---------------------------------------------------------- */
+      const statCards = document.querySelectorAll('.hcwl-stat-ring-card');
+      if (statCards.length) {
+        const animateRings = () => {
+          statCards.forEach(card => {
+            const fill = card.querySelector('.hcwl-stat-ring-fill');
+            const countEl = card.querySelector('[data-count-to]');
+            if (!fill || !countEl) return;
+
+            const target = parseFloat(countEl.dataset.countTo);
+            const max = parseFloat(fill.dataset.max || '100');
+            const circumference = 283; // 2 * π * 45
+            const offset = circumference - (target / max) * circumference;
+            fill.style.strokeDashoffset = offset;
+
+            // Numeric counter
+            const duration = 1800;
+            const start = performance.now();
+            const isDecimal = target % 1 !== 0;
+            const step = (now) => {
+              const elapsed = now - start;
+              const progress = Math.min(elapsed / duration, 1);
+              const ease = 1 - Math.pow(1 - progress, 3); // cubic ease-out
+              const current = ease * target;
+              countEl.textContent = isDecimal ? current.toFixed(1) : Math.round(current);
+              if (progress < 1) requestAnimationFrame(step);
+            };
+            requestAnimationFrame(step);
+          });
+        };
+
+        const ringObserver = new IntersectionObserver(
+          (entries) => {
+            if (entries[0].isIntersecting) {
+              animateRings();
+              ringObserver.disconnect();
+            }
+          },
+          { threshold: 0.3 }
+        );
+        ringObserver.observe(statCards[0]);
+      }
+
+      /* ----------------------------------------------------------
+         SPEED BARS (bounce rate escalation)
+      ---------------------------------------------------------- */
+      const speedBarsEl = document.querySelector('.hcwl-speed-bars');
+      if (speedBarsEl) {
+        const barObserver = new IntersectionObserver(
+          (entries) => {
+            if (entries[0].isIntersecting) {
+              const fills = speedBarsEl.querySelectorAll('.hcwl-speed-bar-fill');
+              fills.forEach((fill, i) => {
+                setTimeout(() => {
+                  fill.style.width = fill.dataset.barWidth + '%';
+                }, i * 200);
+              });
+              barObserver.disconnect();
+            }
+          },
+          { threshold: 0.2 }
+        );
+        barObserver.observe(speedBarsEl);
+      }
+
+      /* ----------------------------------------------------------
+         CONVERSION TOWERS (vertical fill animation)
+      ---------------------------------------------------------- */
+      const conversionSection = document.querySelector('.hcwl-conversion-bars');
+      if (conversionSection) {
+        const towerObserver = new IntersectionObserver(
+          (entries) => {
+            if (entries[0].isIntersecting) {
+              const fills = conversionSection.querySelectorAll('.hcwl-conversion-bar-fill');
+              fills.forEach((fill, i) => {
+                setTimeout(() => {
+                  fill.style.height = fill.dataset.fillHeight + '%';
+                }, i * 250);
+              });
+              towerObserver.disconnect();
+            }
+          },
+          { threshold: 0.25 }
+        );
+        towerObserver.observe(conversionSection);
+      }
+
+      /* ----------------------------------------------------------
+         DYNAMIC COPYRIGHT YEAR
+      ---------------------------------------------------------- */
+      const yearEl = document.getElementById('copyrightYear');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    })();
+  </script>
+</body>
+</html>

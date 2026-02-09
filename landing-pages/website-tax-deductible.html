@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Your business website is a tax-deductible investment. Design, hosting, domains, maintenance — it all counts. Here's what the IRS says and how much you could save.">
+  <meta name="author" content="HC Web Labs">
+
+  <title>Did You Know? Your Website is Tax Deductible! | HC Web Labs</title>
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <style>
+    /* ============================================================
+       HC Web Labs — Website Tax Deduction Landing Page
+       All styles inline — base system + page-specific
+       ============================================================ */
+
+/* ============================================================
+   1. CUSTOM PROPERTIES
+   ============================================================ */
+:root {
+  --bg-darkest: #0a0a0f;
+  --bg-dark: #0f0f17;
+  --bg-dark-mid: #14141f;
+  --bg-lightest: #f5f6fa;
+
+  --neon-cyan: #39ff14;
+  --neon-cyan-muted: #2ecc0e;
+  --neon-purple: #bf00ff;
+  --neon-purple-bright: #d966ff;
+
+  --text-dark-bright: #f5f6fa;
+  --text-dark-mid: #d1d2d8;
+  --text-dark-dim: #a0a1a8;
+
+  --text-light-dark: #1a1a2e;
+  --text-light-mid: #4a4a5e;
+
+  --glass-dark-border: rgba(255, 255, 255, 0.08);
+
+  --space-xs: clamp(0.375rem, 0.3rem + 0.25vw, 0.5rem);
+  --space-sm: clamp(0.625rem, 0.5rem + 0.4vw, 0.875rem);
+  --space-md: clamp(1rem, 0.85rem + 0.5vw, 1.375rem);
+  --space-lg: clamp(1.5rem, 1.2rem + 1vw, 2.25rem);
+  --space-xl: clamp(2rem, 1.5rem + 1.5vw, 3.25rem);
+  --space-xxl: clamp(3rem, 2.2rem + 2.5vw, 5rem);
+  --space-xxxl: clamp(4rem, 3rem + 3vw, 6.5rem);
+
+  --font-display: 'Orbitron', sans-serif;
+  --font-body: 'Rajdhani', sans-serif;
+
+  --text-xs: clamp(0.75rem, 0.7rem + 0.15vw, 0.85rem);
+  --text-sm: clamp(0.85rem, 0.8rem + 0.2vw, 0.95rem);
+  --text-base: clamp(1rem, 0.925rem + 0.25vw, 1.2rem);
+  --text-lg: clamp(1.05rem, 0.975rem + 0.35vw, 1.35rem);
+  --text-xl: clamp(1.15rem, 1rem + 0.5vw, 1.5rem);
+  --text-2xl: clamp(1.4rem, 1.1rem + 1vw, 1.85rem);
+  --text-3xl: clamp(1.8rem, 1.4rem + 1.5vw, 2.8rem);
+
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.6s ease;
+
+  /* Page-specific: money green accent */
+  --money-green: #39ff14;
+  --money-green-dim: #2ecc0e;
+}
+
+
+/* ============================================================
+   2. RESET & BASE
+   ============================================================ */
+.hcwl-page,
+.hcwl-page *,
+.hcwl-page *::before,
+.hcwl-page *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.hcwl-page {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  color: var(--text-dark-bright);
+  background: var(--bg-darkest);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+.hcwl-page a { color: inherit; text-decoration: none; }
+.hcwl-page img { max-width: 100%; height: auto; display: block; }
+
+
+/* ============================================================
+   3. LAYOUT UTILITIES
+   ============================================================ */
+.hcwl-container {
+  width: 100%;
+  max-width: 1150px;
+  margin-inline: auto;
+  padding-inline: var(--space-md);
+}
+
+.hcwl-sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; border: 0;
+}
+
+.hcwl-page :focus-visible {
+  outline: 2px solid var(--neon-cyan);
+  outline-offset: 2px;
+}
+
+
+/* ============================================================
+   4. BACKGROUND EFFECTS
+   ============================================================ */
+.hcwl-grid-bg {
+  position: fixed; inset: 0;
+  pointer-events: none; z-index: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.hcwl-glow-bg {
+  position: fixed; inset: 0;
+  pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(57, 255, 20, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 60%, rgba(191, 0, 255, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 50% at 20% 80%, rgba(0, 212, 168, 0.1) 0%, transparent 50%);
+}
+
+
+/* ============================================================
+   5. SKIP LINK
+   ============================================================ */
+.hcwl-skip-link {
+  position: absolute; top: -100px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--neon-cyan);
+  color: var(--bg-darkest);
+  padding: var(--space-sm) var(--space-md);
+  font-family: var(--font-display);
+  font-weight: 600; font-size: var(--text-sm);
+  text-decoration: none;
+  border-radius: 0 0 8px 8px;
+  z-index: 9999;
+  transition: top var(--transition-base);
+}
+.hcwl-skip-link:focus { top: 0; outline: none; }
+
+
+/* ============================================================
+   6. NAVIGATION HEADER
+   ============================================================ */
+.hcwl-nav-header {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: var(--space-sm) 0;
+  background: rgba(10, 10, 15, 0.95);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--glass-dark-border);
+}
+.hcwl-nav-header .hcwl-container {
+  display: flex; justify-content: space-between; align-items: center;
+}
+.hcwl-logo {
+  display: flex; align-items: center; gap: 6px; text-decoration: none;
+}
+.hcwl-logo-hc {
+  font-family: var(--font-display);
+  font-size: var(--text-xs); font-weight: 800;
+  color: var(--bg-darkest);
+  background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-purple-bright) 100%);
+  padding: 4px 8px; border-radius: 5px; letter-spacing: 1.5px;
+}
+.hcwl-logo-text {
+  font-family: var(--font-display);
+  font-size: var(--text-base); font-weight: 700;
+  color: var(--text-dark-bright);
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+.hcwl-back-link {
+  display: flex; align-items: center; gap: var(--space-xs);
+  color: var(--text-dark-mid); text-decoration: none;
+  font-family: var(--font-display);
+  font-size: var(--text-xs); font-weight: 500;
+  letter-spacing: 1px; text-transform: uppercase;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: 6px;
+  transition: color var(--transition-base), background var(--transition-base);
+}
+.hcwl-back-link:hover,
+.hcwl-back-link:focus-visible {
+  color: var(--neon-cyan);
+  background: rgba(57, 255, 20, 0.1);
+}
+
+
+/* ============================================================
+   7. HERO SECTION
+   ============================================================ */
+.hcwl-hero {
+  padding: calc(60px + var(--space-xl)) var(--space-md) var(--space-xl);
+  background: transparent; text-align: center;
+  position: relative; z-index: 1;
+}
+.hcwl-section-label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--text-xs); font-weight: 600;
+  color: var(--neon-cyan);
+  text-transform: uppercase; letter-spacing: 5px;
+  margin-bottom: var(--space-sm);
+  text-align: center;
+}
+.hcwl-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 1.8rem + 2vw, 3.6rem); font-weight: 700;
+  color: var(--text-dark-bright);
+  max-width: 900px; margin-inline: auto;
+  margin-bottom: var(--space-lg); line-height: 1.2;
+}
+.hcwl-hero-intro {
+  font-size: var(--text-xl);
+  color: var(--text-dark-bright);
+  max-width: 800px; margin-inline: auto; line-height: 1.35;
+}
+@media (min-width: 48em) {
+  .hcwl-hero { padding-top: calc(80px + var(--space-xl)); }
+}
+
+
+/* ============================================================
+   8. SECTION CONTAINERS
+   ============================================================ */
+.hcwl-section-dark {
+  padding: var(--space-xxl) 0;
+  background: transparent;
+  position: relative; z-index: 1;
+}
+.hcwl-section-dark h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl); font-weight: 700;
+  color: var(--text-dark-bright);
+  text-align: center; margin-bottom: var(--space-sm);
+  line-height: 1.15;
+}
+.hcwl-section-dark-intro {
+  text-align: center; font-size: var(--text-xl);
+  color: var(--text-dark-bright);
+  max-width: 800px; margin: 0 auto var(--space-md); line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.hcwl-section-light {
+  padding: var(--space-xxl) 0;
+  background: var(--bg-lightest);
+  position: relative; z-index: 1;
+}
+.hcwl-section-light h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl); font-weight: 700;
+  color: var(--text-light-dark);
+  text-align: center; margin-bottom: var(--space-sm);
+  line-height: 1.15; max-width: 900px; margin-inline: auto;
+}
+.hcwl-section-light-intro {
+  text-align: center; font-size: var(--text-xl);
+  color: var(--text-light-dark);
+  max-width: 900px; margin: 0 auto var(--space-md); line-height: 1.2;
+}
+
+.hcwl-section-dark-mid {
+  padding: var(--space-xxl) 0;
+  background: var(--bg-dark-mid);
+  position: relative; z-index: 1;
+}
+.hcwl-section-dark-mid h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl); font-weight: 700;
+  color: var(--text-dark-bright);
+  text-align: center; margin-bottom: var(--space-sm);
+  line-height: 1.15;
+}
+.hcwl-section-dark-mid-intro {
+  text-align: center; font-size: var(--text-xl);
+  color: var(--text-dark-bright);
+  max-width: 800px; margin: 0 auto var(--space-md); line-height: 1.2;
+}
+
+
+/* ============================================================
+   9. BUTTONS
+   ============================================================ */
+.hcwl-btn {
+  display: inline-flex; align-items: center; gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-lg);
+  font-family: var(--font-display);
+  font-size: var(--text-sm); font-weight: 600;
+  text-decoration: none; border-radius: 8px;
+  transition: all var(--transition-base);
+  cursor: pointer; border: none; letter-spacing: 0.5px;
+}
+.hcwl-page a.hcwl-btn-primary,
+.hcwl-page a.hcwl-btn-primary i {
+  background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-cyan-muted) 100%);
+  color: #000000;
+}
+.hcwl-btn-primary:hover,
+.hcwl-btn-primary:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(57, 255, 20, 0.3);
+}
+.hcwl-btn-secondary {
+  background: transparent;
+  color: var(--neon-cyan);
+  border: 1px solid var(--neon-cyan);
+}
+.hcwl-btn-secondary:hover,
+.hcwl-btn-secondary:focus-visible {
+  background: rgba(57, 255, 20, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(57, 255, 20, 0.15);
+}
+@media (min-width: 48em) {
+  .hcwl-btn { font-size: var(--text-base); }
+}
+
+
+/* ============================================================
+   10. CONTEXT NOTES
+   ============================================================ */
+.hcwl-context-note {
+  text-align: center; font-size: var(--text-sm);
+  color: var(--text-dark-mid);
+  font-style: italic; max-width: 650px;
+  margin: var(--space-md) auto 0;
+}
+
+
+/* ============================================================
+   11. FOOTER
+   ============================================================ */
+.hcwl-footer {
+  padding: var(--space-lg) 0;
+  background: var(--bg-darkest);
+  border-top: 1px solid var(--glass-dark-border);
+  text-align: center; position: relative; z-index: 1;
+}
+.hcwl-footer p { font-size: var(--text-sm); color: var(--text-dark-mid); }
+.hcwl-footer a { color: var(--neon-cyan); text-decoration: none; }
+.hcwl-footer a:hover { text-decoration: underline; }
+
+
+/* ============================================================
+   12. SCROLL-TO-TOP
+   ============================================================ */
+.hcwl-scroll-to-top {
+  position: fixed; bottom: var(--space-md); right: var(--space-md);
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: rgba(15, 15, 23, 0.9);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--neon-cyan);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden;
+  transform: translateY(20px);
+  transition:
+    opacity var(--transition-base),
+    visibility var(--transition-base),
+    transform var(--transition-base),
+    background var(--transition-base);
+  z-index: 999;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  color: var(--neon-cyan); font-size: 1.2rem; padding: 0;
+}
+.hcwl-scroll-to-top.hcwl-visible {
+  opacity: 1; visibility: visible; transform: translateY(0);
+}
+.hcwl-scroll-to-top:hover,
+.hcwl-scroll-to-top:focus-visible {
+  background: rgba(57, 255, 20, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(57, 255, 20, 0.3);
+}
+@media (min-width: 48em) {
+  .hcwl-scroll-to-top { width: 48px; height: 48px; }
+}
+
+
+/* ============================================================
+   13. SCROLLBARS & REDUCED MOTION
+   ============================================================ */
+::-webkit-scrollbar { width: 10px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-darkest); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--neon-cyan-muted), var(--neon-purple));
+  border-radius: 10px;
+  border: 2px solid var(--bg-darkest);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--neon-cyan), var(--neon-purple-bright));
+}
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--neon-purple) var(--bg-darkest);
+}
+
+.hcwl-page ::-webkit-scrollbar { width: 8px; height: 6px; }
+.hcwl-page ::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.05); border-radius: 10px; }
+.hcwl-page ::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--neon-cyan-muted), var(--neon-purple));
+  border-radius: 10px;
+}
+.hcwl-page,
+.hcwl-page * {
+  scrollbar-width: thin;
+  scrollbar-color: var(--neon-cyan-muted) rgba(0, 0, 0, 0.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hcwl-page, .hcwl-page *, .hcwl-page *::before, .hcwl-page *::after {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+    scroll-behavior: auto;
+  }
+}
+
+
+
+/* ============================================================
+   PAGE-SPECIFIC STYLES — Tax Deduction Landing
+   ============================================================ */
+
+
+/* ----------------------------------------------------------
+   SCROLL REVEAL
+---------------------------------------------------------- */
+[data-hcwl-reveal] {
+  opacity: 0; transform: translateY(1.5rem);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+[data-hcwl-reveal].hcwl-revealed { opacity: 1; transform: translateY(0); }
+[data-hcwl-reveal="delay-100"] { transition-delay: 0.1s; }
+[data-hcwl-reveal="delay-200"] { transition-delay: 0.2s; }
+[data-hcwl-reveal="delay-300"] { transition-delay: 0.3s; }
+[data-hcwl-reveal="delay-400"] { transition-delay: 0.4s; }
+[data-hcwl-reveal="delay-500"] { transition-delay: 0.5s; }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-hcwl-reveal] { opacity: 1; transform: none; transition: none; }
+}
+
+
+/* ----------------------------------------------------------
+   HERO EXTENSIONS
+---------------------------------------------------------- */
+.hcwl-hero-badge {
+  display: inline-block; padding: 0.35em 1em;
+  border: 1px solid var(--money-green); border-radius: 2rem;
+  color: var(--money-green);
+  font-family: var(--font-display);
+  font-size: var(--text-xs); font-weight: 600;
+  letter-spacing: 0.3rem; text-transform: uppercase;
+  margin-bottom: var(--space-lg);
+}
+.hcwl-hero-sub {
+  max-width: 36em; margin-inline: auto;
+  color: var(--text-dark-mid);
+  font-size: var(--text-base); line-height: 1.45;
+  margin-top: var(--space-md);
+}
+.hcwl-hero-cta-group {
+  display: flex; flex-direction: column;
+  gap: var(--space-sm); margin-top: var(--space-lg);
+  align-items: center;
+}
+@media (min-width: 36em) {
+  .hcwl-hero-cta-group { flex-direction: row; justify-content: center; }
+}
+
+
+/* ----------------------------------------------------------
+   NEON DIVIDER
+---------------------------------------------------------- */
+.hcwl-neon-divider {
+  border: none; height: 3px; width: 60px;
+  margin: var(--space-lg) auto;
+  background: linear-gradient(90deg, var(--money-green), var(--neon-cyan));
+  border-radius: 2px;
+}
+.hcwl-section-light .hcwl-neon-divider {
+  background: linear-gradient(90deg, var(--text-light-dark), var(--neon-purple));
+}
+
+
+/* ----------------------------------------------------------
+   DEDUCTIBLE CHECKLIST (light section)
+---------------------------------------------------------- */
+.tax-checklist-grid {
+  display: grid; grid-template-columns: 1fr; gap: var(--space-md);
+}
+@media (min-width: 36em) {
+  .tax-checklist-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 56.25em) {
+  .tax-checklist-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.tax-check-card {
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  padding: var(--space-lg);
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+.tax-check-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+.tax-check-icon {
+  width: 48px; height: 48px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: rgba(34, 197, 94, 0.12);
+  color: var(--money-green-dim);
+  font-size: 1.1rem;
+  margin-bottom: var(--space-md);
+}
+.tax-check-card h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-base); font-weight: 600;
+  color: var(--text-light-dark);
+  letter-spacing: 0.5px; line-height: 1.2;
+  margin-bottom: var(--space-sm);
+}
+.tax-check-card p {
+  font-size: var(--text-base); color: var(--text-light-mid); line-height: 1.4;
+}
+@media (min-width: 48em) {
+  .tax-check-card h3 { font-size: var(--text-base); }
+}
+
+
+/* ----------------------------------------------------------
+   SAVINGS EXAMPLE (dark section)
+   Big number display with breakdown
+---------------------------------------------------------- */
+.tax-savings-block {
+  max-width: 720px; margin-inline: auto;
+  border-radius: 16px; overflow: hidden;
+  background: var(--bg-dark);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+.tax-savings-header {
+  padding: var(--space-md) var(--space-lg);
+  background: rgba(34, 197, 94, 0.08);
+  border-bottom: 1px solid rgba(34, 197, 94, 0.15);
+  text-align: center;
+}
+.tax-savings-header h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-base); font-weight: 600;
+  color: var(--money-green);
+  letter-spacing: 1px;
+}
+.tax-savings-body {
+  padding: var(--space-lg);
+}
+.tax-savings-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--glass-dark-border);
+  font-size: var(--text-base); color: var(--text-dark-mid);
+}
+.tax-savings-row:last-child { border-bottom: none; }
+.tax-savings-label { flex: 1; }
+.tax-savings-value {
+  font-family: var(--font-display);
+  font-size: var(--text-base); font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.tax-savings-row--highlight {
+  border-bottom: none; padding-top: var(--space-md);
+  margin-top: var(--space-sm);
+  border-top: 2px solid rgba(34, 197, 94, 0.3);
+}
+.tax-savings-row--highlight .tax-savings-label {
+  font-weight: 600; color: var(--text-dark-bright);
+}
+.tax-savings-row--highlight .tax-savings-value {
+  font-size: var(--text-xl); color: var(--money-green);
+}
+
+.tax-savings-big-number {
+  text-align: center; padding: var(--space-lg);
+  border-top: 1px solid var(--glass-dark-border);
+}
+.tax-savings-effective-label {
+  font-size: var(--text-sm); color: var(--text-dark-dim);
+  text-transform: uppercase; letter-spacing: 1px;
+  font-family: var(--font-display); font-weight: 500;
+  margin-bottom: var(--space-xs);
+}
+.tax-savings-effective-number {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl); font-weight: 800;
+  color: var(--money-green);
+  line-height: 1;
+}
+.tax-savings-effective-sub {
+  font-size: var(--text-sm); color: var(--text-dark-mid);
+  margin-top: var(--space-xs);
+}
+
+
+/* ----------------------------------------------------------
+   WHAT COUNTS TABLE (light section)
+   Three-column breakdown: expense, how IRS treats it, where
+---------------------------------------------------------- */
+.tax-treatment-grid {
+  display: grid; grid-template-columns: 1fr; gap: var(--space-md);
+}
+@media (min-width: 36em) {
+  .tax-treatment-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.tax-treatment-card {
+  padding: var(--space-lg);
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.tax-treatment-card h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-base); font-weight: 600;
+  color: var(--text-light-dark);
+  letter-spacing: 0.5px; margin-bottom: var(--space-xs);
+}
+.tax-treatment-tag {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: var(--text-xs); font-weight: 600;
+  padding: 3px 10px; border-radius: 20px;
+  letter-spacing: 0.5px; margin-bottom: var(--space-sm);
+}
+.tax-treatment-tag--expense {
+  background: rgba(34, 197, 94, 0.12); color: var(--money-green-dim);
+}
+.tax-treatment-tag--deduct {
+  background: rgba(0, 212, 168, 0.12); color: var(--neon-cyan-muted);
+}
+.tax-treatment-tag--179 {
+  background: rgba(191, 0, 255, 0.12); color: var(--neon-purple);
+}
+.tax-treatment-card p {
+  font-size: var(--text-base); color: var(--text-light-mid); line-height: 1.4;
+}
+
+
+/* ----------------------------------------------------------
+   BEYOND TAXES (dark-mid section)
+   ROI cards
+---------------------------------------------------------- */
+.tax-roi-grid {
+  display: grid; grid-template-columns: 1fr; gap: var(--space-md);
+}
+@media (min-width: 36em) {
+  .tax-roi-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 56.25em) {
+  .tax-roi-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.tax-roi-card {
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  padding: var(--space-lg);
+  background: var(--bg-dark);
+  border: 1px solid var(--glass-dark-border);
+  border-radius: 12px;
+  transition: border-color var(--transition-base);
+}
+.tax-roi-card:hover { border-color: rgba(57, 255, 20, 0.3); }
+.tax-roi-icon {
+  width: 48px; height: 48px;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, rgba(0, 212, 168, 0.15) 0%, rgba(191, 0, 255, 0.1) 100%);
+  border-radius: 12px; font-size: 1.1rem;
+  color: var(--neon-cyan);
+  margin-bottom: var(--space-md);
+}
+.tax-roi-card h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-base); font-weight: 600;
+  color: var(--text-dark-bright);
+  margin-bottom: var(--space-sm);
+  letter-spacing: 0.5px; line-height: 1.2;
+}
+.tax-roi-card p {
+  font-size: var(--text-base); color: var(--text-dark-mid); line-height: 1.4;
+}
+@media (min-width: 48em) {
+  .tax-roi-icon { width: 52px; height: 52px; font-size: 1.3rem; }
+  .tax-roi-card h3 { font-size: var(--text-lg); }
+  .tax-roi-card p { font-size: var(--text-base); }
+}
+
+
+/* ----------------------------------------------------------
+   CTA SECTION
+---------------------------------------------------------- */
+.tax-cta-section {
+  padding: var(--space-xxl) 0;
+  background: transparent;
+  position: relative; z-index: 1; text-align: center;
+}
+.tax-cta-section h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl); font-weight: 700;
+  color: var(--text-dark-bright); margin-bottom: var(--space-sm);
+}
+.tax-cta-intro {
+  font-size: var(--text-xl);
+  color: var(--text-dark-bright);
+  max-width: 800px; margin: 0 auto var(--space-lg); line-height: 1.3;
+}
+.tax-cta-tagline {
+  font-size: var(--text-sm); color: var(--text-dark-dim);
+  font-style: italic; margin-top: var(--space-lg);
+}
+
+
+/* ----------------------------------------------------------
+   DISCLAIMER
+---------------------------------------------------------- */
+.tax-disclaimer {
+  max-width: 650px; margin: var(--space-lg) auto 0;
+  padding: var(--space-md) var(--space-lg);
+  background: rgba(251, 191, 36, 0.06);
+  border: 1px solid rgba(251, 191, 36, 0.2);
+  border-radius: 10px; text-align: center;
+}
+.tax-disclaimer p {
+  font-size: var(--text-xs); color: var(--text-dark-dim);
+  line-height: 1.6;
+}
+.tax-disclaimer strong {
+  color: #fbbf24; font-weight: 600;
+}
+
+
+/* ----------------------------------------------------------
+   SOURCE FOOTNOTES
+---------------------------------------------------------- */
+.tax-sources {
+  max-width: 700px; margin: var(--space-xl) auto 0;
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--glass-dark-border);
+}
+.tax-sources h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-sm); font-weight: 600;
+  color: var(--text-dark-dim);
+  text-transform: uppercase; letter-spacing: 0.08em;
+  margin-bottom: var(--space-sm); text-align: center;
+}
+.tax-sources ol {
+  list-style: none; counter-reset: source-counter;
+  padding: 0; margin: 0;
+}
+.tax-sources li {
+  counter-increment: source-counter;
+  display: flex; align-items: baseline; gap: var(--space-sm);
+  font-size: var(--text-xs); color: var(--text-dark-dim);
+  line-height: 1.5; margin-bottom: var(--space-xs);
+  word-break: break-all;
+}
+.tax-sources li::before {
+  content: counter(source-counter);
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  width: 20px; height: 20px;
+  background: rgba(34, 197, 94, 0.1); border-radius: 50%;
+  font-family: var(--font-display);
+  font-size: 0.65rem; font-weight: 600; color: var(--money-green);
+}
+.tax-sources a {
+  color: var(--neon-cyan-muted);
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 212, 168, 0.3);
+}
+.tax-sources a:hover {
+  color: var(--neon-cyan);
+  text-decoration-color: var(--neon-cyan);
+}
+
+  </style>
+</head>
+
+<body class="hcwl-page">
+
+  <a class="hcwl-skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="hcwl-grid-bg" aria-hidden="true"></div>
+  <div class="hcwl-glow-bg" aria-hidden="true"></div>
+
+
+  <!-- ========== NAVIGATION ========== -->
+  <header class="hcwl-nav-header">
+    <div class="hcwl-container">
+      <a class="hcwl-logo" href="#" aria-label="HC Web Labs home">
+        <span class="hcwl-logo-hc">HC</span>
+        <span class="hcwl-logo-text">Web Labs</span>
+      </a>
+      <a class="hcwl-back-link" href="#">
+        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+        Back
+      </a>
+    </div>
+  </header>
+
+
+  <main id="main-content">
+
+    <!-- ========== HERO ========== -->
+    <section class="hcwl-hero" aria-labelledby="hero-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-hero-badge" data-hcwl-reveal>Smart Business Move</span>
+        <h1 id="hero-heading" data-hcwl-reveal="delay-100">
+          Did You Know?<br>Your Website Is Tax Deductible
+        </h1>
+        <p class="hcwl-hero-intro" data-hcwl-reveal="delay-200">
+          That $3,000 website doesn't actually cost you $3,000. The IRS
+          treats your business website as a legitimate expense — which means
+          a chunk of that investment comes right back to you at tax time.
+        </p>
+        <p class="hcwl-hero-sub" data-hcwl-reveal="delay-300">
+          Design, development, hosting, your domain, ongoing maintenance —
+          it's all deductible. Here's how it works, what counts, and how
+          much you could actually save.
+        </p>
+        <div class="hcwl-hero-cta-group" data-hcwl-reveal="delay-400">
+          <a class="hcwl-btn hcwl-btn-primary" href="#cta">
+            <i class="fa-solid fa-comments" aria-hidden="true"></i>
+            Let's Talk About Your Site
+          </a>
+          <a class="hcwl-btn hcwl-btn-secondary" href="#what-counts">
+            See What's Deductible
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <hr class="hcwl-neon-divider" data-hcwl-reveal>
+
+
+    <!-- ========== WHAT'S DEDUCTIBLE ========== -->
+    <section class="hcwl-section-light" id="what-counts" aria-labelledby="deductible-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-section-label" style="color: var(--money-green-dim);" data-hcwl-reveal>The Short Answer: Almost Everything</span>
+        <h2 id="deductible-heading" data-hcwl-reveal="delay-100">What You Can Write Off</h2>
+        <p class="hcwl-section-light-intro" data-hcwl-reveal="delay-200">
+          If an expense is "ordinary and necessary" for running your business
+          online, the IRS generally considers it deductible. Here's what that
+          includes for your website:
+        </p>
+        <hr class="hcwl-neon-divider" data-hcwl-reveal="delay-250">
+
+        <div class="tax-checklist-grid" data-hcwl-reveal="delay-300">
+
+          <article class="tax-check-card">
+            <div class="tax-check-icon">
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+            </div>
+            <h3>Website Design &amp; Development</h3>
+            <p>
+              The cost of hiring a professional to build your site. Payments to
+              third-party developers are generally deductible as ordinary business
+              expenses in the year they're made.
+            </p>
+          </article>
+
+          <article class="tax-check-card">
+            <div class="tax-check-icon">
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+            </div>
+            <h3>Web Hosting</h3>
+            <p>
+              Monthly or annual hosting fees are deductible as a business
+              operating expense — reported on Schedule C under advertising,
+              utilities, or other expenses.
+            </p>
+          </article>
+
+          <article class="tax-check-card">
+            <div class="tax-check-icon">
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+            </div>
+            <h3>Domain Registration</h3>
+            <p>
+              Your annual domain renewal fees (typically $10–$20/year) are
+              deductible. Initial registration can be expensed or treated
+              as a startup cost.
+            </p>
+          </article>
+
+          <article class="tax-check-card">
+            <div class="tax-check-icon">
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+            </div>
+            <h3>Maintenance &amp; Updates</h3>
+            <p>
+              Ongoing costs to keep your site running — content updates,
+              security patches, bug fixes — are deductible in the year
+              they're incurred.
+            </p>
+          </article>
+
+          <article class="tax-check-card">
+            <div class="tax-check-icon">
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+            </div>
+            <h3>SEO &amp; Marketing</h3>
+            <p>
+              Search engine optimization, content creation, online advertising,
+              and digital marketing costs are all deductible as advertising
+              expenses on Line 8 of Schedule C.
+            </p>
+          </article>
+
+          <article class="tax-check-card">
+            <div class="tax-check-icon">
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+            </div>
+            <h3>Software &amp; Tools</h3>
+            <p>
+              Stock images, SSL certificates, analytics tools, email services,
+              and any business-use software (at least 50% business use) are
+              deductible expenses.
+            </p>
+          </article>
+
+        </div>
+
+        <p class="hcwl-context-note" style="color: var(--text-light-mid);" data-hcwl-reveal="delay-400">
+          The IRS hasn't issued formal guidance specific to websites, but
+          established rules for business expenses and software costs apply.
+          Multiple CPA firms confirm this treatment. Always consult your
+          tax professional for your specific situation.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ========== THE MATH ========== -->
+    <section class="hcwl-section-dark" aria-labelledby="math-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-section-label" data-hcwl-reveal>Let's Do the Math</span>
+        <h2 id="math-heading" data-hcwl-reveal="delay-100">What a $3,000 Website Actually Costs You</h2>
+        <p class="hcwl-section-dark-intro" data-hcwl-reveal="delay-200">
+          As a sole proprietor or small business owner, every dollar you deduct
+          reduces both your income tax and your self-employment tax. Here's
+          what that looks like with real numbers:
+        </p>
+        <hr class="hcwl-neon-divider" data-hcwl-reveal="delay-250">
+
+        <div class="tax-savings-block" data-hcwl-reveal="delay-300">
+          <div class="tax-savings-header">
+            <h3>Example: Sole Proprietor in the 22% Tax Bracket</h3>
+          </div>
+          <div class="tax-savings-body">
+            <div class="tax-savings-row">
+              <span class="tax-savings-label">Website investment</span>
+              <span class="tax-savings-value" style="color: var(--text-dark-bright);">$3,000</span>
+            </div>
+            <div class="tax-savings-row">
+              <span class="tax-savings-label">Federal income tax savings (22%)</span>
+              <span class="tax-savings-value" style="color: var(--money-green);">−$660</span>
+            </div>
+            <div class="tax-savings-row">
+              <span class="tax-savings-label">Self-employment tax savings (~14.1%)</span>
+              <span class="tax-savings-value" style="color: var(--money-green);">−$424</span>
+            </div>
+            <div class="tax-savings-row">
+              <span class="tax-savings-label">Possible QBI deduction savings (20% × 22%)</span>
+              <span class="tax-savings-value" style="color: var(--money-green);">−$132</span>
+            </div>
+            <div class="tax-savings-row tax-savings-row--highlight">
+              <span class="tax-savings-label">Total estimated tax savings</span>
+              <span class="tax-savings-value">$1,216</span>
+            </div>
+          </div>
+          <div class="tax-savings-big-number">
+            <p class="tax-savings-effective-label">Your Effective Cost</p>
+            <p class="tax-savings-effective-number">~$1,784</p>
+            <p class="tax-savings-effective-sub">
+              That's roughly 40% back in tax savings on a $3,000 website
+            </p>
+          </div>
+        </div>
+
+        <p class="hcwl-context-note" data-hcwl-reveal="delay-400">
+          This example assumes a sole proprietor in the 22% federal bracket
+          ($50,650–$102,050 taxable income for single filers, 2026 rates),
+          eligible for the QBI deduction. Your actual savings depend on your
+          tax bracket, business structure, and filing status. Higher brackets
+          save even more.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ========== HOW THE IRS TREATS IT ========== -->
+    <section class="hcwl-section-light" aria-labelledby="treatment-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-section-label" style="color: var(--neon-purple);" data-hcwl-reveal>The Tax Details (In Plain English)</span>
+        <h2 id="treatment-heading" data-hcwl-reveal="delay-100">How the IRS Treats Website Costs</h2>
+        <p class="hcwl-section-light-intro" data-hcwl-reveal="delay-200">
+          Not all website costs are deducted the same way. Here's a simple
+          breakdown of how different expenses are typically handled:
+        </p>
+        <hr class="hcwl-neon-divider" data-hcwl-reveal="delay-250">
+
+        <div class="tax-treatment-grid" data-hcwl-reveal="delay-300">
+
+          <article class="tax-treatment-card">
+            <h3>Third-Party Development</h3>
+            <span class="tax-treatment-tag tax-treatment-tag--expense">Current Expense</span>
+            <p>
+              Payments to a web developer (like me) are generally deductible
+              as ordinary and necessary business expenses in the year they're
+              paid. If your website primarily serves advertising purposes,
+              internal development costs can also be fully deducted.
+            </p>
+          </article>
+
+          <article class="tax-treatment-card">
+            <h3>Hosting, Domain &amp; Subscriptions</h3>
+            <span class="tax-treatment-tag tax-treatment-tag--expense">Current Expense</span>
+            <p>
+              Recurring annual costs — hosting fees, domain renewals, SSL
+              certificates, email services, analytics tools — are deductible
+              operating expenses in the year they apply. Report them on
+              Schedule C under the appropriate category.
+            </p>
+          </article>
+
+          <article class="tax-treatment-card">
+            <h3>Software &amp; Hardware</h3>
+            <span class="tax-treatment-tag tax-treatment-tag--179">Section 179 Eligible</span>
+            <p>
+              Business computers, servers, and purchased software can often
+              be fully deducted in the first year under Section 179 (up to
+              $1.22 million for 2024). This means you don't have to spread
+              the cost over multiple years.
+            </p>
+          </article>
+
+          <article class="tax-treatment-card">
+            <h3>Startup Website Costs</h3>
+            <span class="tax-treatment-tag tax-treatment-tag--deduct">Up to $5,000 First Year</span>
+            <p>
+              If you build your website before your business officially
+              launches, up to $5,000 in startup expenses can be deducted
+              in your first year of operation. Amounts over $50,000 begin
+              to phase out, with the remainder amortized over 60 months.
+            </p>
+          </article>
+
+        </div>
+
+        <p class="hcwl-context-note" style="color: var(--text-light-mid);" data-hcwl-reveal="delay-400">
+          Sole proprietors report these on Schedule C (Form 1040). LLCs,
+          partnerships, and S-corps have different forms but the same
+          underlying deduction principles apply.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ========== BEYOND THE TAX BREAK ========== -->
+    <section class="hcwl-section-dark-mid" aria-labelledby="roi-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-section-label" data-hcwl-reveal>It's Not Just a Write-Off</span>
+        <h2 id="roi-heading" data-hcwl-reveal="delay-100">It's an Investment That Keeps Paying</h2>
+        <p class="hcwl-section-dark-mid-intro" data-hcwl-reveal="delay-200">
+          The tax deduction is a nice bonus — but the real return on a
+          professional website goes way beyond April 15th.
+        </p>
+        <hr class="hcwl-neon-divider" data-hcwl-reveal="delay-250">
+
+        <div class="tax-roi-grid" data-hcwl-reveal="delay-300">
+
+          <article class="tax-roi-card">
+            <div class="tax-roi-icon">
+              <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            </div>
+            <h3>Customers Find You</h3>
+            <p>
+              81% of consumers research online before buying. A professional
+              website optimized for search engines means people in your area
+              can actually find your business.
+            </p>
+          </article>
+
+          <article class="tax-roi-card">
+            <div class="tax-roi-icon">
+              <i class="fa-solid fa-handshake" aria-hidden="true"></i>
+            </div>
+            <h3>Credibility from Day One</h3>
+            <p>
+              75% of consumers judge a business's credibility by its website.
+              A polished, professional site tells customers you're
+              established, trustworthy, and serious about what you do.
+            </p>
+          </article>
+
+          <article class="tax-roi-card">
+            <div class="tax-roi-icon">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+            </div>
+            <h3>Open 24/7</h3>
+            <p>
+              Your website works while you sleep. Customers can browse your
+              services, check your hours, read reviews, and reach out
+              anytime — not just during business hours.
+            </p>
+          </article>
+
+          <article class="tax-roi-card">
+            <div class="tax-roi-icon">
+              <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+            </div>
+            <h3>Businesses with Websites Grow Faster</h3>
+            <p>
+              Small businesses with websites grow at twice the rate of
+              those without one. And 31% of shoppers have chosen not to
+              buy from a business specifically because it didn't have a site.
+            </p>
+          </article>
+
+          <article class="tax-roi-card">
+            <div class="tax-roi-icon">
+              <i class="fa-solid fa-universal-access" aria-hidden="true"></i>
+            </div>
+            <h3>Reach More People</h3>
+            <p>
+              An accessible, mobile-friendly website serves everyone in
+              your community — including the 1 in 4 adults with a
+              disability and the 60%+ browsing on their phones.
+            </p>
+          </article>
+
+          <article class="tax-roi-card">
+            <div class="tax-roi-icon">
+              <i class="fa-solid fa-piggy-bank" aria-hidden="true"></i>
+            </div>
+            <h3>Deductible Year After Year</h3>
+            <p>
+              It's not just the initial build. Your hosting, domain renewals,
+              maintenance, and marketing costs are deductible every single
+              year — the savings compound over time.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========== CTA ========== -->
+    <section class="tax-cta-section" id="cta" aria-labelledby="cta-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-section-label" data-hcwl-reveal>Ready to Invest in Your Business?</span>
+        <h2 id="cta-heading" data-hcwl-reveal="delay-100">Your Website Pays for Itself</h2>
+        <p class="tax-cta-intro" data-hcwl-reveal="delay-200">
+          Between the tax deduction and the customers it brings in, a
+          professional website is one of the best investments a small
+          business can make. I'd love to help you figure out what yours
+          should look like — and what it would actually cost after the write-off.
+        </p>
+        <div class="hcwl-hero-cta-group" data-hcwl-reveal="delay-300">
+          <a class="hcwl-btn hcwl-btn-primary" href="/cdn-cgi/l/email-protection#2c44494040436c444f5b494e404d4e5f024f4341135f594e46494f58117b494e5f455849091e1c65425a495f5841494258">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            Let's Talk Numbers
+          </a>
+          <a class="hcwl-btn hcwl-btn-secondary" href="#">
+            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+            View My Work
+          </a>
+        </div>
+        <p class="tax-cta-tagline" data-hcwl-reveal="delay-400">
+          Hand-coded websites for East Tennessee — people over profit, always.
+        </p>
+
+        <!-- Tax Disclaimer -->
+        <div class="tax-disclaimer" data-hcwl-reveal="delay-500">
+          <p>
+            <strong>Important:</strong> I'm a web developer, not a tax
+            professional. The information on this page is based on IRS
+            guidelines and guidance from licensed CPAs, but your specific
+            tax situation may vary. Please consult a qualified tax
+            advisor for advice specific to your business.
+          </p>
+        </div>
+
+        <!-- Sources -->
+        <nav class="tax-sources" aria-label="Data sources" data-hcwl-reveal="delay-500">
+          <h3>Sources</h3>
+          <ol>
+            <li>
+              IRS — Self-Employment Tax (Social Security and Medicare):
+              <a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes" target="_blank" rel="noopener noreferrer">irs.gov</a>
+            </li>
+            <li>
+              Tax Foundation — 2026 Tax Brackets and Federal Income Tax Rates (Jan 2026):
+              <a href="https://taxfoundation.org/data/all/federal/2026-tax-brackets/" target="_blank" rel="noopener noreferrer">taxfoundation.org</a>
+            </li>
+            <li>
+              Lumsden McCormick CPA — Tax Treatment of Business Website Expenses:
+              <a href="https://lumsdencpa.com/blog/view/tax-treatment-of-business-website-expenses" target="_blank" rel="noopener noreferrer">lumsdencpa.com</a>
+            </li>
+            <li>
+              Smolin CPA — Tax Treatment of Business Website Expenses (Aug 2024):
+              <a href="https://www.smolin.com/tax-treatment-of-business-website-expenses/" target="_blank" rel="noopener noreferrer">smolin.com</a>
+            </li>
+            <li>
+              SDO CPA — Sole Proprietor Tax Rates 2026 (Jan 2026):
+              <a href="https://www.sdocpa.com/sole-proprietor-tax-rates/" target="_blank" rel="noopener noreferrer">sdocpa.com</a>
+            </li>
+            <li>
+              Digital Silk — Top 50 Small Business Website Statistics (Jun 2025):
+              <a href="https://www.digitalsilk.com/digital-trends/small-business-website-statistics/" target="_blank" rel="noopener noreferrer">digitalsilk.com</a>
+            </li>
+          </ol>
+        </nav>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="hcwl-footer">
+    <div class="hcwl-container">
+      <p>
+        &copy; <span id="copyrightYear">2026</span>
+        <a href="#">HC Web Labs</a> — Rocky Top, Tennessee
+      </p>
+    </div>
+  </footer>
+
+
+  <button class="hcwl-scroll-to-top" id="scrollToTop"
+          aria-label="Scroll to top" type="button">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+(() => {
+  'use strict';
+
+  /* Scroll-to-top */
+  const scrollToTopBtn = document.getElementById('scrollToTop');
+  if (scrollToTopBtn) {
+    let ticking = false;
+    const SCROLL_THRESHOLD = 500;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          scrollToTopBtn.classList.toggle('hcwl-visible', window.scrollY > SCROLL_THRESHOLD);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    scrollToTopBtn.addEventListener('click', scrollToTop);
+    scrollToTopBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); scrollToTop(); }
+    });
+  }
+
+  /* Scroll reveal */
+  const revealElements = document.querySelectorAll('[data-hcwl-reveal]');
+  if (revealElements.length && 'IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('hcwl-revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { root: null, rootMargin: '0px 0px -60px 0px', threshold: 0.1 }
+    );
+    revealElements.forEach((el) => revealObserver.observe(el));
+  } else {
+    revealElements.forEach((el) => el.classList.add('hcwl-revealed'));
+  }
+
+  /* Smooth anchor scroll */
+  const anchorLinks = document.querySelectorAll('.hcwl-page a[href^="#"]');
+  if (anchorLinks.length) {
+    const navHeader = document.querySelector('.hcwl-nav-header');
+    anchorLinks.forEach((link) => {
+      link.addEventListener('click', (e) => {
+        const targetId = link.getAttribute('href');
+        if (!targetId || targetId === '#') return;
+        const target = document.querySelector(targetId);
+        if (!target) return;
+        e.preventDefault();
+        const headerOffset = navHeader?.offsetHeight ?? 0;
+        const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerOffset - 16;
+        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+        target.setAttribute('tabindex', '-1');
+        target.focus({ preventScroll: true });
+      });
+    });
+  }
+
+  const yearEl = document.getElementById('copyrightYear');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+})();
+  </script>
+</body>
+</html>

@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="35% of small businesses think they're too small for a website. Half of all US small businesses are home-based. Here's why even a one-person operation deserves a real website — and what it actually does for you.">
+  <meta name="author" content="HC Web Labs">
+  <title>There's No Such Thing as "Too Small" for a Website | HC Web Labs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <style>
+:root {
+  --bg-darkest: #0a0a0f;
+  --bg-dark: #0f0f17;
+  --bg-dark-mid: #14141f;
+  --bg-lightest: #f5f6fa;
+  --neon-cyan: #39ff14;
+  --neon-cyan-muted: #2ecc0e;
+  --neon-purple: #bf00ff;
+  --neon-purple-bright: #d966ff;
+  --accent: #39ff14;
+  --accent-bright: #6fff54;
+  --accent-dim: #2ecc0e;
+  --text-dark-bright: #f5f6fa;
+  --text-dark-mid: #d1d2d8;
+  --text-dark-dim: #a0a1a8;
+  --text-light-dark: #1a1a2e;
+  --text-light-mid: #4a4a5e;
+  --glass-dark-border: rgba(255, 255, 255, 0.08);
+  --space-xs: clamp(0.375rem, 0.3rem + 0.25vw, 0.5rem);
+  --space-sm: clamp(0.625rem, 0.5rem + 0.4vw, 0.875rem);
+  --space-md: clamp(1rem, 0.85rem + 0.5vw, 1.375rem);
+  --space-lg: clamp(1.5rem, 1.2rem + 1vw, 2.25rem);
+  --space-xl: clamp(2rem, 1.5rem + 1.5vw, 3.25rem);
+  --space-xxl: clamp(3rem, 2.2rem + 2.5vw, 5rem);
+  --space-xxxl: clamp(4rem, 3rem + 3vw, 6.5rem);
+  --font-display: 'Orbitron', sans-serif;
+  --font-body: 'Rajdhani', sans-serif;
+  --text-xs: clamp(0.85rem, 0.8rem + 0.15vw, 0.95rem);
+  --text-sm: clamp(0.95rem, 0.9rem + 0.2vw, 1.1rem);
+  --text-base: clamp(1.05rem, 0.975rem + 0.25vw, 1.25rem);
+  --text-lg: clamp(1.15rem, 1.05rem + 0.35vw, 1.4rem);
+  --text-xl: clamp(1.25rem, 1.1rem + 0.5vw, 1.55rem);
+  --text-2xl: clamp(1.5rem, 1.2rem + 1vw, 1.95rem);
+  --text-3xl: clamp(1.9rem, 1.5rem + 1.5vw, 2.9rem);
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.6s ease;
+}
+.hcwl-page, .hcwl-page *, .hcwl-page *::before, .hcwl-page *::after { margin: 0; padding: 0; box-sizing: border-box; }
+.hcwl-page { font-family: var(--font-body); font-weight: 500; line-height: 1.7; letter-spacing: 0.2px; color: var(--text-dark-mid); background: var(--bg-darkest); overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.hcwl-page img { max-width: 100%; height: auto; display: block; }
+.hcwl-page a { color: inherit; text-decoration: none; }
+.hcwl-container { width: 100%; max-width: 1150px; margin-inline: auto; padding-inline: var(--space-md); }
+.hcwl-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.hcwl-page :focus-visible { outline: 2px solid var(--neon-cyan); outline-offset: 2px; }
+.hcwl-grid-bg { position: fixed; inset: 0; pointer-events: none; z-index: 0; background-image: linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 40px 40px; }
+.hcwl-glow-bg { position: fixed; inset: 0; pointer-events: none; z-index: 0; background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(245,158,11,0.08) 0%, transparent 50%), radial-gradient(ellipse 60% 40% at 80% 60%, rgba(191,0,255,0.08) 0%, transparent 50%), radial-gradient(ellipse 50% 50% at 20% 80%, rgba(245,158,11,0.06) 0%, transparent 50%); }
+.hcwl-skip-link { position: absolute; top: -100px; left: 50%; transform: translateX(-50%); background: var(--neon-cyan); color: var(--bg-darkest); padding: var(--space-sm) var(--space-md); font-family: var(--font-display); font-weight: 600; font-size: var(--text-sm); text-decoration: none; border-radius: 0 0 8px 8px; z-index: 9999; transition: top var(--transition-base); }
+.hcwl-skip-link:focus { top: 0; outline: none; }
+.hcwl-nav-header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: var(--space-sm) 0; background: rgba(10,10,15,0.95); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); border-bottom: 1px solid var(--glass-dark-border); }
+.hcwl-nav-header .hcwl-container { display: flex; justify-content: space-between; align-items: center; }
+.hcwl-logo { display: flex; align-items: center; gap: 6px; text-decoration: none; }
+.hcwl-logo-hc { font-family: var(--font-display); font-size: var(--text-xs); font-weight: 800; color: var(--bg-darkest); background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-purple-bright) 100%); padding: 4px 8px; border-radius: 5px; letter-spacing: 1.5px; }
+.hcwl-logo-text { font-family: var(--font-display); font-size: var(--text-base); font-weight: 700; color: var(--text-dark-bright); letter-spacing: 1.5px; text-transform: uppercase; }
+.hcwl-back-link { display: flex; align-items: center; gap: var(--space-xs); color: var(--text-dark-mid); text-decoration: none; font-family: var(--font-display); font-size: var(--text-xs); font-weight: 500; letter-spacing: 1px; text-transform: uppercase; padding: var(--space-xs) var(--space-sm); border-radius: 6px; transition: color var(--transition-base), background var(--transition-base); }
+.hcwl-back-link:hover, .hcwl-back-link:focus-visible { color: var(--neon-cyan); background: rgba(57,255,20,0.1); }
+.hcwl-hero { padding: calc(60px + var(--space-xxl)) var(--space-md) var(--space-xl); background: transparent; text-align: center; position: relative; z-index: 1; }
+.hcwl-section-label { display: block; font-family: var(--font-display); font-size: var(--text-xs); font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 5px; text-align: center; margin-bottom: var(--space-sm); }
+.hcwl-hero h1 { font-family: var(--font-display); font-size: var(--text-3xl); font-weight: 700; color: var(--text-dark-bright); margin-bottom: var(--space-lg); line-height: 1.15; letter-spacing: 0.5px; max-width: 1000px; margin-inline: auto; }
+.hcwl-hero-intro { font-size: var(--text-lg); color: var(--text-dark-bright); max-width: 825px; margin-inline: auto; margin-bottom: var(--space-md); line-height: 1.45; letter-spacing: 0.2px; }
+.hcwl-hero-sub { max-width: 40em; margin-inline: auto; color: var(--text-dark-mid); font-size: var(--text-base); line-height: 1.45; margin-top: var(--space-lg); letter-spacing: 0.2px; }
+.hcwl-hero-badge { display: inline-block; padding: 0.35em 1em; border: 1px solid var(--accent); border-radius: 2rem; color: var(--accent-bright); font-family: var(--font-display); font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.3rem; text-transform: uppercase; margin-bottom: var(--space-lg); }
+.hero-highlight { color: var(--accent-bright); }
+.hero-purple { color: var(--neon-purple-bright); }
+.hcwl-hero-cta-group { display: flex; flex-direction: column; gap: var(--space-sm); margin-top: var(--space-lg); align-items: center; }
+@media (min-width: 36em) { .hcwl-hero-cta-group { flex-direction: row; justify-content: center; } }
+@media (min-width: 48em) { .hcwl-hero { padding-top: calc(80px + var(--space-xl)); } }
+.hcwl-section-dark { padding: var(--space-xxl) 0; background: transparent; position: relative; z-index: 1; }
+.hcwl-section-dark h2 { font-family: var(--font-display); font-size: var(--text-3xl); font-weight: 700; color: var(--text-dark-bright); text-align: center; line-height: 1.15; letter-spacing: 0.5px; margin-bottom: var(--space-sm); }
+.hcwl-section-dark-intro { text-align: center; font-size: var(--text-lg); color: var(--text-dark-bright); max-width: 850px; margin: 0 auto var(--space-md); line-height: 1.35; letter-spacing: 0.2px; }
+.hcwl-section-light { padding: var(--space-xxl) 0; background: var(--bg-lightest); position: relative; z-index: 1; }
+.hcwl-section-light h2 { font-family: var(--font-display); font-size: var(--text-3xl); font-weight: 700; color: var(--text-light-dark); text-align: center; line-height: 1.15; letter-spacing: 0.5px; margin-bottom: var(--space-sm); }
+.hcwl-section-light-intro { text-align: center; font-size: var(--text-lg); color: var(--text-light-dark); max-width: 850px; margin: 0 auto var(--space-md); line-height: 1.35; letter-spacing: 0.2px; }
+.hcwl-section-light .hcwl-section-label { color: var(--accent-dim); }
+.hcwl-section-dark-mid { padding: var(--space-xxl) 0; background: var(--bg-dark-mid); position: relative; z-index: 1; }
+.hcwl-section-dark-mid h2 { font-family: var(--font-display); font-size: var(--text-3xl); font-weight: 700; color: var(--text-dark-bright); text-align: center; line-height: 1.15; letter-spacing: 0.5px; margin-bottom: var(--space-sm); }
+.hcwl-section-dark-mid-intro { text-align: center; font-size: var(--text-lg); color: var(--text-dark-bright); max-width: 850px; margin: 0 auto var(--space-md); line-height: 1.35; letter-spacing: 0.2px; }
+.hcwl-btn { display: inline-flex; align-items: center; gap: var(--space-xs); padding: var(--space-sm) var(--space-lg); font-family: var(--font-display); font-size: var(--text-sm); font-weight: 600; text-decoration: none; border-radius: 8px; transition: all var(--transition-base); cursor: pointer; border: none; letter-spacing: 0.5px; }
+.hcwl-page a.hcwl-btn-primary { background: linear-gradient(135deg, var(--accent) 0%, var(--accent-bright) 100%); color: #000000; }
+.hcwl-btn-primary:hover, .hcwl-btn-primary:focus-visible { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(245,158,11,0.3); }
+.hcwl-btn-secondary { background: transparent; color: var(--accent-bright); border: 1px solid var(--accent); }
+.hcwl-btn-secondary:hover, .hcwl-btn-secondary:focus-visible { background: rgba(245,158,11,0.1); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(245,158,11,0.15); }
+@media (min-width: 48em) { .hcwl-btn { font-size: var(--text-base); } }
+.hcwl-neon-divider { border: none; height: 3px; width: 60px; margin: var(--space-lg) auto var(--space-lg); background: linear-gradient(90deg, var(--accent), var(--neon-cyan)); border-radius: 2px; }
+.hcwl-context-note { text-align: center; font-size: var(--text-sm); color: var(--text-dark-mid); font-style: italic; max-width: 750px; margin: var(--space-md) auto 0; letter-spacing: 0.2px; line-height: 1.5; }
+.hcwl-section-light .hcwl-context-note { color: var(--text-light-mid); }
+.hcwl-footer { padding: var(--space-lg) 0; background: var(--bg-darkest); border-top: 1px solid var(--glass-dark-border); text-align: center; position: relative; z-index: 1; }
+.hcwl-footer p { font-size: var(--text-sm); color: var(--text-dark-mid); }
+.hcwl-footer a { color: var(--neon-cyan); text-decoration: none; }
+.hcwl-footer a:hover { text-decoration: underline; }
+.hcwl-scroll-to-top { position: fixed; bottom: var(--space-md); right: var(--space-md); width: 44px; height: 44px; border-radius: 12px; background: rgba(15,15,23,0.9); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border: 1px solid var(--accent); cursor: pointer; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transform: translateY(20px); transition: opacity var(--transition-base), visibility var(--transition-base), transform var(--transition-base), background var(--transition-base); z-index: 999; box-shadow: 0 4px 20px rgba(0,0,0,0.3); color: var(--accent-bright); font-size: 1.2rem; padding: 0; }
+.hcwl-scroll-to-top.hcwl-visible { opacity: 1; visibility: visible; transform: translateY(0); }
+.hcwl-scroll-to-top:hover, .hcwl-scroll-to-top:focus-visible { background: rgba(245,158,11,0.2); transform: translateY(-3px); box-shadow: 0 8px 25px rgba(245,158,11,0.3); }
+@media (min-width: 48em) { .hcwl-scroll-to-top { width: 48px; height: 48px; } }
+html::-webkit-scrollbar, .hcwl-page ::-webkit-scrollbar { width: 10px; }
+html::-webkit-scrollbar-track, .hcwl-page ::-webkit-scrollbar-track { background: var(--bg-darkest); }
+html::-webkit-scrollbar-thumb, .hcwl-page ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--accent), var(--neon-purple)); border-radius: 5px; border: 2px solid var(--bg-darkest); }
+html::-webkit-scrollbar-thumb:hover, .hcwl-page ::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, var(--neon-purple), var(--accent)); }
+html, .hcwl-page, .hcwl-page * { scrollbar-width: thin; scrollbar-color: var(--accent) var(--bg-darkest); }
+@media (prefers-reduced-motion: reduce) { .hcwl-page, .hcwl-page *, .hcwl-page *::before, .hcwl-page *::after { animation-duration: 0.01ms; animation-iteration-count: 1; transition-duration: 0.01ms; scroll-behavior: auto; } }
+[data-hcwl-reveal] { opacity: 0; transform: translateY(1.5rem); transition: opacity 0.6s ease, transform 0.6s ease; }
+[data-hcwl-reveal].hcwl-revealed { opacity: 1; transform: translateY(0); }
+[data-hcwl-reveal="delay-100"] { transition-delay: 0.1s; }
+[data-hcwl-reveal="delay-200"] { transition-delay: 0.2s; }
+[data-hcwl-reveal="delay-300"] { transition-delay: 0.3s; }
+[data-hcwl-reveal="delay-400"] { transition-delay: 0.4s; }
+[data-hcwl-reveal="delay-500"] { transition-delay: 0.5s; }
+@media (prefers-reduced-motion: reduce) { [data-hcwl-reveal] { opacity: 1; transform: none; transition: none; } }
+
+/* --- Hero stats --- */
+.ts-hero-stats { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-lg); margin-top: var(--space-xl); }
+.ts-hero-stat { text-align: center; }
+.ts-hero-stat-num { font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 800; color: var(--accent-bright); display: block; line-height: 1.1; }
+.ts-hero-stat-label { font-size: var(--text-sm); color: var(--text-dark-dim); display: block; margin-top: var(--space-xs); }
+
+/* --- Myth/Reality cards (dark) --- */
+.ts-myth-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-md); max-width: 825px; margin-inline: auto; }
+.ts-myth-card { padding: var(--space-lg); background: var(--bg-dark); border: 1px solid var(--glass-dark-border); border-radius: 14px; transition: border-color var(--transition-base); }
+.ts-myth-card:hover { border-color: rgba(245,158,11,0.2); }
+.ts-myth-tag { display: inline-block; padding: 0.2em 0.6em; border-radius: 4px; font-family: var(--font-display); font-size: var(--text-xs); font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: var(--space-sm); }
+.ts-myth-tag-myth { background: rgba(239,68,68,0.12); color: #f87171; }
+.ts-myth-tag-reality { background: rgba(245,158,11,0.12); color: var(--accent-bright); }
+.ts-myth-card h3 { font-family: var(--font-display); font-size: var(--text-lg); font-weight: 600; color: var(--text-dark-bright); letter-spacing: 0.2px; line-height: 1.2; margin-bottom: var(--space-xs); }
+.ts-myth-card p { font-size: var(--text-base); color: var(--text-dark-mid); line-height: 1.45; letter-spacing: 0.2px; }
+
+/* --- Stat rings (light) --- */
+.ts-ring-row { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-xl); margin: var(--space-xl) 0; }
+.ts-stat-ring { text-align: center; }
+.ts-stat-ring svg { width: 120px; height: 120px; transform: rotate(-90deg); }
+.ts-ring-bg { fill: none; stroke: rgba(217,119,6,0.1); stroke-width: 6; }
+.ts-ring-fill { fill: none; stroke: var(--accent-dim); stroke-width: 6; stroke-linecap: round; stroke-dasharray: 282.74; stroke-dashoffset: 282.74; transition: stroke-dashoffset 1.5s ease; }
+.ts-ring-value { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 700; color: var(--accent-dim); margin-top: var(--space-sm); display: block; }
+.ts-ring-label { font-size: var(--text-sm); color: var(--text-light-mid); margin-top: var(--space-xs); display: block; max-width: 140px; margin-inline: auto; }
+
+/* --- Who this is for cards (dark-mid) --- */
+.ts-who-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-md); }
+@media (min-width: 36em) { .ts-who-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 56.25em) { .ts-who-grid { grid-template-columns: repeat(3, 1fr); } }
+.ts-who-card { text-align: center; padding: var(--space-lg); background: var(--bg-dark); display: flex; flex-direction: column; align-items: center; border: 1px solid var(--glass-dark-border); border-radius: 14px; transition: border-color var(--transition-base), transform var(--transition-base); }
+.ts-who-card:hover { border-color: rgba(245,158,11,0.25); transform: translateY(-3px); }
+.ts-who-icon { width: 52px; height: 52px; display: inline-flex; align-items: center; justify-content: center; border-radius: 14px; background: rgba(245,158,11,0.1); color: var(--accent-bright); font-size: 1.3rem; margin-bottom: var(--space-sm); }
+.ts-who-card h3 { font-family: var(--font-display); font-size: var(--text-lg); font-weight: 600; color: var(--text-dark-bright); letter-spacing: 0.2px; line-height: 1.2; margin-bottom: var(--space-xs); }
+.ts-who-card p { font-size: var(--text-base); color: var(--text-dark-mid); line-height: 1.45; letter-spacing: 0.2px; }
+
+/* --- What it does for you (light, left-border cards) --- */
+.ts-benefit-card { background: #ffffff; border-left: 3px solid var(--accent-dim); border-radius: 0 12px 12px 0; padding: var(--space-lg); margin-bottom: var(--space-md); box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+.ts-benefit-label { font-family: var(--font-display); font-size: var(--text-base); color: var(--accent-dim); letter-spacing: 0.2px; margin-bottom: var(--space-sm); }
+.ts-benefit-body { font-size: var(--text-base); color: var(--text-light-mid); line-height: 1.45; letter-spacing: 0.2px; }
+
+/* --- Social media comparison (dark) --- */
+.ts-compare { display: grid; grid-template-columns: 1fr; gap: var(--space-md); max-width: 900px; margin: var(--space-lg) auto 0; }
+@media (min-width: 40em) { .ts-compare { grid-template-columns: 1fr 1fr; } }
+.ts-compare-side { border-radius: 14px; padding: var(--space-lg); }
+.ts-compare-social { background: rgba(239,68,68,0.04); border: 1px solid rgba(239,68,68,0.12); }
+.ts-compare-website { background: rgba(245,158,11,0.04); border: 1px solid rgba(245,158,11,0.15); }
+.ts-compare-side h3 { font-family: var(--font-display); font-size: var(--text-base); font-weight: 600; margin-bottom: var(--space-md); }
+.ts-compare-social h3 { color: #f87171; }
+.ts-compare-website h3 { color: var(--accent-bright); }
+.ts-compare-list { list-style: none; padding: 0; }
+.ts-compare-list li { padding: var(--space-xs) 0; padding-left: 1.6em; position: relative; font-size: var(--text-base); color: var(--text-dark-mid); line-height: 1.45; letter-spacing: 0.2px; }
+.ts-compare-list li::before { position: absolute; left: 0; font-weight: 700; }
+.ts-compare-social .ts-compare-list li::before { content: '\2715'; color: #f87171; }
+.ts-compare-website .ts-compare-list li::before { content: '\2713'; color: var(--accent-bright); }
+
+/* --- Build cards (light) --- */
+.ts-build-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-md); }
+@media (min-width: 36em) { .ts-build-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 56.25em) { .ts-build-grid { grid-template-columns: repeat(3, 1fr); } }
+.ts-build-card { display: flex; align-items: flex-start; gap: var(--space-md); padding: var(--space-lg); background: #ffffff; border-radius: 12px; border: 1px solid rgba(0,0,0,0.08); box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: transform var(--transition-base), box-shadow var(--transition-base); }
+.ts-build-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
+.ts-build-icon { flex-shrink: 0; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 12px; font-size: 1.1rem; background: rgba(217,119,6,0.08); color: var(--accent-dim); }
+.ts-build-card h3 { font-family: var(--font-display); font-size: var(--text-base); font-weight: 600; color: var(--text-light-dark); letter-spacing: 0.2px; margin-bottom: 4px; }
+.ts-build-card p { font-size: var(--text-base); color: var(--text-light-mid); line-height: 1.45; letter-spacing: 0.2px; }
+@media (min-width: 48em) { .ts-build-icon { width: 52px; height: 52px; font-size: 1.3rem; } }
+
+/* --- CTA --- */
+.ts-cta { padding: var(--space-xxl) 0; position: relative; z-index: 1; text-align: center; overflow: hidden; background-color: var(--bg-dark-mid); background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 40px 40px; }
+.ts-cta h2 { font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 700; color: var(--text-dark-bright); line-height: 1.2; letter-spacing: 0.5px; margin-bottom: var(--space-sm); }
+.ts-cta p { font-size: var(--text-lg); color: var(--text-dark-mid); max-width: 700px; margin: 0 auto var(--space-lg); line-height: 1.35; letter-spacing: 0.2px; }
+.ts-cta p.ts-cta-note { font-size: var(--text-sm); color: var(--text-dark-dim); margin: var(--space-xl) auto 0; }
+
+/* --- Sources --- */
+.ts-sources { position: relative; z-index: 1; padding: var(--space-lg) 0; background: transparent; border-top: 1px solid var(--glass-dark-border); }
+.ts-sources h2 { font-family: var(--font-display); font-size: var(--text-xs); font-weight: 600; color: var(--text-dark-dim); text-transform: uppercase; letter-spacing: 1px; margin-bottom: var(--space-md); text-align: left; }
+.ts-sources ol { list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--space-xs); counter-reset: src-counter; }
+.ts-sources li { font-size: var(--text-xs); color: var(--text-dark-dim); line-height: 1.5; counter-increment: src-counter; display: flex; align-items: baseline; gap: var(--space-sm); }
+.ts-sources li::before { content: counter(src-counter); flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; background: rgba(245,158,11,0.08); border-radius: 50%; font-family: var(--font-display); font-size: 0.65rem; font-weight: 600; color: var(--accent-bright); }
+.ts-sources a { color: var(--accent-bright); text-decoration: underline; text-decoration-color: rgba(245,158,11,0.3); }
+.ts-sources a:hover { color: var(--neon-cyan); text-decoration-color: var(--neon-cyan); }
+  </style>
+</head>
+
+<body class="hcwl-page">
+  <a class="hcwl-skip-link" href="#main-content">Skip to main content</a>
+  <div class="hcwl-grid-bg" aria-hidden="true"></div>
+  <div class="hcwl-glow-bg" aria-hidden="true"></div>
+
+  <header class="hcwl-nav-header">
+    <div class="hcwl-container">
+      <a class="hcwl-logo" href="#" aria-label="HC Web Labs home">
+        <span class="hcwl-logo-hc">HC</span>
+        <span class="hcwl-logo-text">Web Labs</span>
+      </a>
+      <a class="hcwl-back-link" href="#">
+        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back
+      </a>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- HERO -->
+    <section class="hcwl-hero" aria-labelledby="hero-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-hero-badge" data-hcwl-reveal>Small Business, Big Opportunity</span>
+        <h1 id="hero-heading" data-hcwl-reveal="delay-100">
+          There's No Such Thing as<br>
+          "<span class="hero-highlight">Too Small</span>" for a <span class="hero-purple">Website</span>
+        </h1>
+        <p class="hcwl-hero-intro" data-hcwl-reveal="delay-200">
+          If you run a business — any business, from any location, at any size — a
+          website isn't a luxury reserved for "bigger" companies. It's the single most effective
+          tool for turning invisible work into visible credibility.
+        </p>
+        <hr class="hcwl-neon-divider" data-hcwl-reveal="delay-200" aria-hidden="true">
+        <p class="hcwl-hero-sub" data-hcwl-reveal="delay-300">
+          Half of all U.S. small businesses are home-based. 82% operate without a single employee.
+          These aren't businesses that are "too small" — they're businesses that are exactly the right
+          size to benefit most from a professional web presence.
+        </p>
+        <div class="hcwl-hero-cta-group" data-hcwl-reveal="delay-400">
+          <a class="hcwl-btn hcwl-btn-primary" href="#cta">
+            <i class="fa-solid fa-seedling" aria-hidden="true"></i> Let's Build Yours
+          </a>
+          <a class="hcwl-btn hcwl-btn-secondary" href="#the-myth">See the Numbers</a>
+        </div>
+        <div class="ts-hero-stats" data-hcwl-reveal="delay-500">
+          <div class="ts-hero-stat">
+            <span class="ts-hero-stat-num">35%</span>
+            <span class="ts-hero-stat-label">of small businesses feel<br>"too small" for a website</span>
+          </div>
+          <div class="ts-hero-stat">
+            <span class="ts-hero-stat-num">50%</span>
+            <span class="ts-hero-stat-label">of U.S. small businesses<br>are home-based</span>
+          </div>
+          <div class="ts-hero-stat">
+            <span class="ts-hero-stat-num">2x</span>
+            <span class="ts-hero-stat-label">faster growth for<br>businesses with websites</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- S1: THE MYTH -->
+    <section class="hcwl-section-dark" id="the-myth" aria-labelledby="myth-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-section-label" data-hcwl-reveal>The Myths vs. The Reality</span>
+        <h2 id="myth-heading" data-hcwl-reveal="delay-100">What Business Owners Tell Themselves — and What the Data Says</h2>
+        <p class="hcwl-section-dark-intro" data-hcwl-reveal="delay-200">
+          The reasons small business owners give for not having a website? Every single one has
+          a data-backed answer. Let's walk through them.
+        </p>
+        <hr class="hcwl-neon-divider" data-hcwl-reveal="delay-200" aria-hidden="true">
+        <div class="ts-myth-grid">
+          <div class="ts-myth-card" data-hcwl-reveal>
+            <span class="ts-myth-tag ts-myth-tag-myth">Myth</span>
+            <h3>"My business is too small to need a website."</h3>
+            <span class="ts-myth-tag ts-myth-tag-reality" style="margin-top: var(--space-sm);">Reality</span>
+            <p>82% of small businesses operate without employees. Half start from home. These are exactly the businesses that benefit most — because a website makes a one-person operation look established, professional, and available 24/7. Small businesses with websites grow twice as fast as those without.</p>
+          </div>
+          <div class="ts-myth-card" data-hcwl-reveal="delay-100">
+            <span class="ts-myth-tag ts-myth-tag-myth">Myth</span>
+            <h3>"I can just use social media instead."</h3>
+            <span class="ts-myth-tag ts-myth-tag-reality" style="margin-top: var(--space-sm);">Reality</span>
+            <p>21% of small businesses rely solely on social media — but 84% of consumers say a website makes a business more credible than a social media page alone. 92% prefer getting information from a website over social media. You don't own your Facebook page. The algorithm decides who sees your content. A website is yours.</p>
+          </div>
+          <div class="ts-myth-card" data-hcwl-reveal="delay-200">
+            <span class="ts-myth-tag ts-myth-tag-myth">Myth</span>
+            <h3>"A website is too expensive for what I do."</h3>
+            <span class="ts-myth-tag ts-myth-tag-reality" style="margin-top: var(--space-sm);">Reality</span>
+            <p>26% cite cost as the reason they skip a website. But businesses without websites lose more in missed customers than a site costs to build. 62% of consumers will ignore a business with no web presence. 31% have decided against buying from a business specifically because it lacked a website. A professional site pays for itself.</p>
+          </div>
+          <div class="ts-myth-card" data-hcwl-reveal="delay-300">
+            <span class="ts-myth-tag ts-myth-tag-myth">Myth</span>
+            <h3>"A website isn't relevant to my industry."</h3>
+            <span class="ts-myth-tag ts-myth-tag-reality" style="margin-top: var(--space-sm);">Reality</span>
+            <p>27% believe this — but 81% of consumers research businesses online before making a purchase. 85% use the internet to find local businesses. Whether you're a carpenter, a baker, a tutor, or an accountant, your customers are already searching. The question is whether they're finding you or your competitor.</p>
+          </div>
+          <div class="ts-myth-card" data-hcwl-reveal="delay-400">
+            <span class="ts-myth-tag ts-myth-tag-myth">Myth</span>
+            <h3>"I don't have the technical skills."</h3>
+            <span class="ts-myth-tag ts-myth-tag-reality" style="margin-top: var(--space-sm);">Reality</span>
+            <p>15% say they don't know how to build or maintain a website. That's exactly what a professional web developer is for. You don't need to know how to build it — you just need to know it matters. And 97% of small business owners who have a website would recommend it to others.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- S2: CREDIBILITY (light) -->
+    <section class="hcwl-section-light" aria-labelledby="credibility-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-section-label" data-hcwl-reveal>Size Doesn't Build Trust — Presence Does</span>
+        <h2 id="credibility-heading" data-hcwl-reveal="delay-100">Your Customers Don't Care How Big You Are. They Care That You Show Up.</h2>
+        <p class="hcwl-section-light-intro" data-hcwl-reveal="delay-200">
+          Nobody googles a business hoping to find out how many employees they have.
+          They want to know: Can I trust you? What do you offer? How do I reach you?
+          A website answers all three before they ever pick up the phone.
+        </p>
+        <hr class="hcwl-neon-divider" data-hcwl-reveal="delay-200" aria-hidden="true">
+        <div class="ts-ring-row">
+          <div class="ts-stat-ring" data-hcwl-reveal>
+            <svg viewBox="0 0 100 100" aria-hidden="true"><circle class="ts-ring-bg" cx="50" cy="50" r="45"/><circle class="ts-ring-fill" cx="50" cy="50" r="45" data-percent="84"/></svg>
+            <span class="ts-ring-value">84%</span>
+            <span class="ts-ring-label">say a website is more credible than social media</span>
+          </div>
+          <div class="ts-stat-ring" data-hcwl-reveal="delay-100">
+            <svg viewBox="0 0 100 100" aria-hidden="true"><circle class="ts-ring-bg" cx="50" cy="50" r="45"/><circle class="ts-ring-fill" cx="50" cy="50" r="45" data-percent="81"/></svg>
+            <span class="ts-ring-value">81%</span>
+            <span class="ts-ring-label">research online before buying</span>
+          </div>
+          <div class="ts-stat-ring" data-hcwl-reveal="delay-200">
+            <svg viewBox="0 0 100 100" aria-hidden="true"><circle class="ts-ring-bg" cx="50" cy="50" r="45"/><circle class="ts-ring-fill" cx="50" cy="50" r="45" data-percent="75"/></svg>
+            <span class="ts-ring-value">75%</span>
+            <span class="ts-ring-label">judge credibility by website design</span>
+          </div>
+          <div class="ts-stat-ring" data-hcwl-reveal="delay-300">
+            <svg viewBox="0 0 100 100" aria-hidden="true"><circle class="ts-ring-bg" cx="50" cy="50" r="45"/><circle class="ts-ring-fill" cx="50" cy="50" r="45" data-percent="79"/></svg>
+            <span class="ts-ring-value">79%</span>
+            <span class="ts-ring-label">with websites expect 25%+ growth</span>
+          </div>
+        </div>
+        <p class="hcwl-context-note" data-hcwl-reveal="delay-400">
+          A one-person home-based business with a clean, professional website looks
+          exactly as legitimate as a ten-person office downtown. On the internet,
+          nobody knows you're working from your kitchen table — and that's a superpower.
+        </p>
+      </div>
+    </section>
+
+    <!-- S3: WHO THIS IS FOR (dark-mid) -->
+    <section class="hcwl-section-dark-mid" aria-labelledby="who-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-section-label" data-hcwl-reveal>This Is for You</span>
+        <h2 id="who-heading" data-hcwl-reveal="delay-100">Especially If You Think It Isn't</h2>
+        <p class="hcwl-section-dark-mid-intro" data-hcwl-reveal="delay-200">
+          If any of these sound like you, a website isn't overkill — it's the missing piece
+          that turns word-of-mouth into something searchable, shareable, and always available.
+        </p>
+        <hr class="hcwl-neon-divider" data-hcwl-reveal="delay-200" aria-hidden="true">
+        <div class="ts-who-grid">
+          <div class="ts-who-card" data-hcwl-reveal>
+            <div class="ts-who-icon"><i class="fa-solid fa-house-laptop" aria-hidden="true"></i></div>
+            <h3>Home-Based Businesses</h3>
+            <p>You work from your living room, spare bedroom, or garage — but your customers don't need to know that. A website gives you a professional storefront without the rent.</p>
+          </div>
+          <div class="ts-who-card" data-hcwl-reveal="delay-100">
+            <div class="ts-who-icon"><i class="fa-solid fa-user" aria-hidden="true"></i></div>
+            <h3>Solo Operators</h3>
+            <p>Freelancers, consultants, independent contractors. You're the entire company. A website makes you look like a real business — because you are one.</p>
+          </div>
+          <div class="ts-who-card" data-hcwl-reveal="delay-200">
+            <div class="ts-who-icon"><i class="fa-solid fa-scissors" aria-hidden="true"></i></div>
+            <h3>Service Providers</h3>
+            <p>Hairdressers, cleaners, landscapers, tutors, photographers. You rely on referrals and local reputation. A website converts "I heard about you" into "I booked you."</p>
+          </div>
+          <div class="ts-who-card" data-hcwl-reveal="delay-300">
+            <div class="ts-who-icon"><i class="fa-solid fa-paintbrush" aria-hidden="true"></i></div>
+            <h3>Makers &amp; Creatives</h3>
+            <p>Artists, crafters, bakers, woodworkers. Your work is beautiful. Let people see it somewhere other than a social media feed that's algorithmically buried.</p>
+          </div>
+          <div class="ts-who-card" data-hcwl-reveal="delay-400">
+            <div class="ts-who-icon"><i class="fa-solid fa-truck-fast" aria-hidden="true"></i></div>
+            <h3>Side Businesses</h3>
+            <p>You have a day job and a side hustle. A website works while you're at your other job — answering questions, showing your work, and generating leads at 2 a.m.</p>
+          </div>
+          <div class="ts-who-card" data-hcwl-reveal="delay-500">
+            <div class="ts-who-icon"><i class="fa-solid fa-store" aria-hidden="true"></i></div>
+            <h3>Brand-New Businesses</h3>
+            <p>Just started? That's exactly when a website matters most. 50% of new businesses start from home. A website signals "I'm serious" before you've built a reputation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- S4: WHAT A WEBSITE ACTUALLY DOES (light) -->
+    <section class="hcwl-section-light" aria-labelledby="benefits-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-section-label" data-hcwl-reveal>What It Actually Does for You</span>
+        <h2 id="benefits-heading" data-hcwl-reveal="delay-100">A Website Doesn't Just Exist. It Works.</h2>
+        <p class="hcwl-section-light-intro" data-hcwl-reveal="delay-200">
+          For a small or home-based business, a website isn't about looking fancy.
+          It's about doing the things you don't have time to do yourself — around the clock,
+          every single day.
+        </p>
+        <hr class="hcwl-neon-divider" data-hcwl-reveal="delay-200" aria-hidden="true">
+        <div style="max-width: 720px; margin-inline: auto;">
+          <div class="ts-benefit-card" data-hcwl-reveal>
+            <p class="ts-benefit-label"><i class="fa-solid fa-clock" aria-hidden="true"></i> &nbsp;It Answers Questions While You Sleep</p>
+            <p class="ts-benefit-body">Your hours, your services, your pricing, your location or service area, your contact info — all available at 2 a.m. on a Tuesday. No phone calls, no DMs, no "let me get back to you." A website is your most patient employee.</p>
+          </div>
+          <div class="ts-benefit-card" data-hcwl-reveal="delay-100">
+            <p class="ts-benefit-label"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> &nbsp;It Makes You Findable</p>
+            <p class="ts-benefit-body">85% of consumers use the internet to find local businesses. If you don't have a website, you're invisible to the largest search engine on earth. Social media pages rank poorly in Google compared to a dedicated website with proper SEO.</p>
+          </div>
+          <div class="ts-benefit-card" data-hcwl-reveal="delay-200">
+            <p class="ts-benefit-label"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> &nbsp;It Builds Instant Credibility</p>
+            <p class="ts-benefit-body">A professional website with your own domain and business email (you@yourbusiness.com, not a Gmail address) instantly signals that you're serious, established, and worth doing business with. 75% of consumers judge your credibility by your site's design.</p>
+          </div>
+          <div class="ts-benefit-card" data-hcwl-reveal="delay-300">
+            <p class="ts-benefit-label"><i class="fa-solid fa-hand-pointer" aria-hidden="true"></i> &nbsp;It Converts Referrals into Customers</p>
+            <p class="ts-benefit-body">Someone hears about you from a friend. What do they do next? They Google you. If they find a professional website, they call. If they find nothing — or just a sparse Facebook page — 30% won't even consider buying from you.</p>
+          </div>
+          <div class="ts-benefit-card" data-hcwl-reveal="delay-400">
+            <p class="ts-benefit-label"><i class="fa-solid fa-bullhorn" aria-hidden="true"></i> &nbsp;It Gives You Control</p>
+            <p class="ts-benefit-body">Social media platforms change their rules constantly. Algorithms shift. Accounts get flagged. A website is your digital property — you control the message, the design, the data, and the experience. Nobody can change the algorithm on your website.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- S5: SOCIAL MEDIA VS WEBSITE (dark) -->
+    <section class="hcwl-section-dark" aria-labelledby="compare-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-section-label" data-hcwl-reveal>Social Media Alone Isn't Enough</span>
+        <h2 id="compare-heading" data-hcwl-reveal="delay-100">A Facebook Page Is Not a Website</h2>
+        <p class="hcwl-section-dark-intro" data-hcwl-reveal="delay-200">
+          Social media is great for engagement. But it was never designed to replace a website.
+          21% of small businesses rely on it exclusively — and they're leaving credibility,
+          search visibility, and customers on the table.
+        </p>
+        <hr class="hcwl-neon-divider" data-hcwl-reveal="delay-200" aria-hidden="true">
+        <div class="ts-compare" data-hcwl-reveal="delay-300">
+          <div class="ts-compare-side ts-compare-social">
+            <h3><i class="fa-solid fa-thumbs-down" aria-hidden="true"></i> &nbsp;Social Media Only</h3>
+            <ul class="ts-compare-list">
+              <li>You don't own it — the platform does</li>
+              <li>Algorithms decide who sees your posts</li>
+              <li>Limited design and branding control</li>
+              <li>No professional email domain</li>
+              <li>Poor Google search ranking</li>
+              <li>Limited to platform's structure and rules</li>
+              <li>Can be shut down or shadowbanned overnight</li>
+            </ul>
+          </div>
+          <div class="ts-compare-side ts-compare-website">
+            <h3><i class="fa-solid fa-thumbs-up" aria-hidden="true"></i> &nbsp;Your Own Website</h3>
+            <ul class="ts-compare-list">
+              <li>You own it — it's your digital property</li>
+              <li>Available to everyone who searches for you</li>
+              <li>Full control over brand and design</li>
+              <li>Professional you@yourbusiness.com email</li>
+              <li>Built for Google — SEO brings free traffic</li>
+              <li>Unlimited pages, content, and features</li>
+              <li>No algorithm, no shadowban, no surprises</li>
+            </ul>
+          </div>
+        </div>
+        <p class="hcwl-context-note" data-hcwl-reveal="delay-400">
+          The best strategy isn't either/or — it's both. Use social media to engage and connect.
+          Use your website as your home base: the place every post, every referral, and every
+          Google search leads back to. 92% of consumers prefer getting their information from a
+          website over a social media page.
+        </p>
+      </div>
+    </section>
+
+    <!-- S6: WHAT I BUILD (light) -->
+    <section class="hcwl-section-light" aria-labelledby="build-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-section-label" data-hcwl-reveal>Built for Small Businesses</span>
+        <h2 id="build-heading" data-hcwl-reveal="delay-100">I Build Websites for Businesses Exactly Your Size</h2>
+        <p class="hcwl-section-light-intro" data-hcwl-reveal="delay-200">
+          I don't build enterprise software or corporate portals. I build professional,
+          hand-coded websites for real people running real businesses in East Tennessee —
+          and I price them accordingly.
+        </p>
+        <hr class="hcwl-neon-divider" data-hcwl-reveal="delay-200" aria-hidden="true">
+        <div class="ts-build-grid">
+          <div class="ts-build-card" data-hcwl-reveal>
+            <div class="ts-build-icon"><i class="fa-solid fa-code" aria-hidden="true"></i></div>
+            <div><h3>Hand-Coded, Not Template</h3><p>No bloated page builders or cookie-cutter templates. Every site is hand-coded in HTML, CSS, and JavaScript for maximum speed and zero unnecessary overhead.</p></div>
+          </div>
+          <div class="ts-build-card" data-hcwl-reveal="delay-100">
+            <div class="ts-build-icon"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i></div>
+            <div><h3>Mobile-First</h3><p>Your customers are searching on their phones. Every site I build starts with mobile and scales up — so it looks perfect on any device, any screen size.</p></div>
+          </div>
+          <div class="ts-build-card" data-hcwl-reveal="delay-200">
+            <div class="ts-build-icon"><i class="fa-solid fa-magnifying-glass-chart" aria-hidden="true"></i></div>
+            <div><h3>SEO Foundations</h3><p>Semantic HTML5, proper structure, fast performance, and local SEO awareness built in from day one. Your site won't just exist — it'll be findable.</p></div>
+          </div>
+          <div class="ts-build-card" data-hcwl-reveal="delay-300">
+            <div class="ts-build-icon"><i class="fa-solid fa-universal-access" aria-hidden="true"></i></div>
+            <div><h3>Accessible to Everyone</h3><p>Keyboard navigation, screen reader support, proper contrast, and ARIA labels. Your website should work for every potential customer, not just most of them.</p></div>
+          </div>
+          <div class="ts-build-card" data-hcwl-reveal="delay-400">
+            <div class="ts-build-icon"><i class="fa-solid fa-hand-holding-dollar" aria-hidden="true"></i></div>
+            <div><h3>Small Business Pricing</h3><p>I live in East Tennessee and I serve East Tennessee. My rates are built for real small business budgets — because the businesses that need websites most shouldn't be priced out of having one.</p></div>
+          </div>
+          <div class="ts-build-card" data-hcwl-reveal="delay-500">
+            <div class="ts-build-icon"><i class="fa-solid fa-heart" aria-hidden="true"></i></div>
+            <div><h3>People Over Profit</h3><p>I'm not an agency trying to upsell you on things you don't need. I'm one developer who believes every small business deserves a professional web presence.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="ts-cta" id="cta" aria-labelledby="cta-heading">
+      <div class="hcwl-container">
+        <h2 id="cta-heading" data-hcwl-reveal>Your Business Isn't Too Small. It's Just Getting Started.</h2>
+        <p data-hcwl-reveal="delay-100">Every big business was a small one first. Let's give yours the professional foundation it deserves — at a price that makes sense for where you are right now.</p>
+        <a class="hcwl-btn hcwl-btn-primary" href="mailto:HCWebLabs@heather-cooper.com" data-hcwl-reveal="delay-200">
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i> Let's Talk About Your Website
+        </a>
+        <p class="ts-cta-note" data-hcwl-reveal="delay-300">Free consultation · No pressure · Honest answers about what you need (and don't)</p>
+      </div>
+    </section>
+
+    <!-- SOURCES -->
+    <section class="ts-sources" aria-labelledby="sources-heading">
+      <div class="hcwl-container">
+        <h2 id="sources-heading">Sources</h2>
+        <nav aria-label="Research sources">
+          <ol>
+            <li>Zippia — <a href="https://www.zippia.com/advice/small-business-website-statistics/" target="_blank" rel="noopener noreferrer">"Small Business Website Statistics"</a> (35% feel too small, 27% say not relevant, 26% cite cost, 15% cite lack of skills, 21% rely solely on social media).</li>
+            <li>U.S. Small Business Administration — (50% of businesses are home-based, ~19 million home-based businesses). Referenced via NAWBO Expert Reviews.</li>
+            <li>U.S. Census Bureau — Statistics of U.S. Businesses (82% of small businesses operate without employees).</li>
+            <li>Verisign 2015 Online Survey — <a href="https://blog.verisign.com/getting-online/verisign-2015-online-survey-97-percent-of-smbs-would-recommend-having-a-website-to-other-smbs/" target="_blank" rel="noopener noreferrer">"97% of SMBs Would Recommend a Website"</a> (84% say website more credible than social media, 92% prefer website for info, 81% say website helped grow business).</li>
+            <li>Business Dasher — <a href="https://www.businessdasher.com/statistics-about-website/" target="_blank" rel="noopener noreferrer">"42+ Statistics About Websites"</a> (84% view website as more credible, businesses with websites grow 2× as fast, 81% research online before buying).</li>
+            <li>Network Solutions — <a href="https://www.networksolutions.com/blog/small-business-website-statistics/" target="_blank" rel="noopener noreferrer">"Top 50+ Small Business Website Statistics 2025"</a> (62% ignore businesses without web presence, 31% decided against shopping at business without website).</li>
+            <li>Stanford Web Credibility Research — (75% judge credibility by website design, 94% of first impressions design-related). Kinesis Inc summary.</li>
+            <li>Pixolabo — <a href="https://pixolabo.com/2022-small-business-website-statistics/" target="_blank" rel="noopener noreferrer">"255 Revealing Small Business Website Statistics"</a> (79% with website expect 25%+ growth vs 64% without, 85% use internet to find local businesses).</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <footer class="hcwl-footer">
+    <div class="hcwl-container">
+      <p>&copy; <span id="copyrightYear">2026</span> <a href="#">HC Web Labs</a> — Rocky Top, Tennessee</p>
+    </div>
+  </footer>
+
+  <button class="hcwl-scroll-to-top" id="scrollToTop" aria-label="Scroll to top" type="button">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <script>
+(() => {
+  'use strict';
+  const scrollToTopBtn = document.getElementById('scrollToTop');
+  if (scrollToTopBtn) {
+    let ticking = false;
+    const handleScroll = () => { if (!ticking) { window.requestAnimationFrame(() => { scrollToTopBtn.classList.toggle('hcwl-visible', window.scrollY > 500); ticking = false; }); ticking = true; } };
+    const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    scrollToTopBtn.addEventListener('click', scrollToTop);
+    scrollToTopBtn.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); scrollToTop(); } });
+  }
+  const revealEls = document.querySelectorAll('[data-hcwl-reveal]');
+  if (revealEls.length && 'IntersectionObserver' in window) {
+    const obs = new IntersectionObserver((entries, o) => { entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add('hcwl-revealed'); o.unobserve(entry.target); } }); }, { root: null, rootMargin: '0px 0px -60px 0px', threshold: 0.1 });
+    revealEls.forEach((el) => obs.observe(el));
+  } else { revealEls.forEach((el) => el.classList.add('hcwl-revealed')); }
+  const anchorLinks = document.querySelectorAll('.hcwl-page a[href^="#"]');
+  if (anchorLinks.length) {
+    const navHeader = document.querySelector('.hcwl-nav-header');
+    anchorLinks.forEach((link) => { link.addEventListener('click', (e) => { const targetId = link.getAttribute('href'); if (!targetId || targetId === '#') return; const target = document.querySelector(targetId); if (!target) return; e.preventDefault(); const headerOffset = navHeader?.offsetHeight ?? 0; const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerOffset - 16; window.scrollTo({ top: targetPosition, behavior: 'smooth' }); target.setAttribute('tabindex', '-1'); target.focus({ preventScroll: true }); }); });
+  }
+  const rings = document.querySelectorAll('.ts-ring-fill');
+  const circumference = 2 * Math.PI * 45;
+  if (rings.length && 'IntersectionObserver' in window) {
+    const ringObs = new IntersectionObserver((entries) => { entries.forEach((entry) => { if (entry.isIntersecting) { const pct = parseInt(entry.target.getAttribute('data-percent'), 10) || 0; entry.target.style.strokeDashoffset = circumference - (pct / 100) * circumference; ringObs.unobserve(entry.target); } }); }, { threshold: 0.3 });
+    rings.forEach((ring) => ringObs.observe(ring));
+  } else { rings.forEach((ring) => { const pct = parseInt(ring.getAttribute('data-percent'), 10) || 0; ring.style.strokeDashoffset = circumference - (pct / 100) * circumference; }); }
+  const yearEl = document.getElementById('copyrightYear');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+})();
+  </script>
+</body>
+</html>

@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="If you're only marketing on social media, 98% of your followers never see your posts. A website puts your business on the map for everyone — not just the people an algorithm chooses. Here's why East Tennessee businesses need both.">
+  <meta name="author" content="HC Web Labs">
+
+  <title>A Website Reaches Everyone — Social Media Reaches 2% | HC Web Labs</title>
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <style>
+    /* ============================================================
+       HC Web Labs — Social Media Reach Landing Page
+       All styles inline — base system + page-specific
+       ============================================================ */
+
+/* ============================================================
+   1. CUSTOM PROPERTIES
+   ============================================================ */
+:root {
+  --bg-darkest: #0a0a0f;
+  --bg-dark: #0f0f17;
+  --bg-dark-mid: #14141f;
+  --bg-lightest: #f5f6fa;
+
+  --neon-cyan: #00bfff;
+  --neon-cyan-muted: #009dd6;
+  --neon-purple: #bf00ff;
+  --neon-purple-bright: #d966ff;
+
+  --text-dark-bright: #f5f6fa;
+  --text-dark-mid: #d1d2d8;
+  --text-dark-dim: #a0a1a8;
+
+  --text-light-dark: #1a1a2e;
+  --text-light-mid: #4a4a5e;
+
+  --glass-dark-border: rgba(255, 255, 255, 0.08);
+
+  --space-xs: clamp(0.375rem, 0.3rem + 0.25vw, 0.5rem);
+  --space-sm: clamp(0.625rem, 0.5rem + 0.4vw, 0.875rem);
+  --space-md: clamp(1rem, 0.85rem + 0.5vw, 1.375rem);
+  --space-lg: clamp(1.5rem, 1.2rem + 1vw, 2.25rem);
+  --space-xl: clamp(2rem, 1.5rem + 1.5vw, 3.25rem);
+  --space-xxl: clamp(3rem, 2.2rem + 2.5vw, 5rem);
+  --space-xxxl: clamp(4rem, 3rem + 3vw, 6.5rem);
+
+  --font-display: 'Orbitron', sans-serif;
+  --font-body: 'Rajdhani', sans-serif;
+
+  --text-xs: clamp(0.75rem, 0.7rem + 0.15vw, 0.85rem);
+  --text-sm: clamp(0.85rem, 0.8rem + 0.2vw, 0.95rem);
+  --text-base: clamp(1rem, 0.925rem + 0.25vw, 1.2rem);
+  --text-lg: clamp(1.05rem, 0.975rem + 0.35vw, 1.35rem);
+  --text-xl: clamp(1.15rem, 1rem + 0.5vw, 1.5rem);
+  --text-2xl: clamp(1.4rem, 1.1rem + 1vw, 1.85rem);
+  --text-3xl: clamp(1.8rem, 1.4rem + 1.5vw, 2.8rem);
+
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.6s ease;
+
+  /* Page-specific: social media blue accent */
+  --social-blue: #00bfff;
+  --social-blue-dim: #009dd6;
+  --social-blue-glow: rgba(0, 191, 255, 0.15);
+  --alert-red: #ff1744;
+  --alert-red-dim: #e01540;
+}
+
+
+/* ============================================================
+   2. RESET & BASE
+   ============================================================ */
+.hcwl-page,
+.hcwl-page *,
+.hcwl-page *::before,
+.hcwl-page *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.hcwl-page {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  color: var(--text-dark-bright);
+  background: var(--bg-darkest);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+.hcwl-page a { color: inherit; text-decoration: none; }
+.hcwl-page img { max-width: 100%; height: auto; display: block; }
+
+
+/* ============================================================
+   3. LAYOUT UTILITIES
+   ============================================================ */
+.hcwl-container {
+  width: 100%;
+  max-width: 1150px;
+  margin-inline: auto;
+  padding-inline: var(--space-md);
+}
+
+.hcwl-sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; border: 0;
+}
+
+.hcwl-page :focus-visible {
+  outline: 2px solid var(--neon-cyan);
+  outline-offset: 2px;
+}
+
+
+/* ============================================================
+   4. BACKGROUND EFFECTS
+   ============================================================ */
+.hcwl-grid-bg {
+  position: fixed; inset: 0;
+  pointer-events: none; z-index: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.hcwl-glow-bg {
+  position: fixed; inset: 0;
+  pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(59, 130, 246, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 60%, rgba(191, 0, 255, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 50% at 20% 80%, rgba(0, 212, 168, 0.1) 0%, transparent 50%);
+}
+
+
+/* ============================================================
+   5. SKIP LINK
+   ============================================================ */
+.hcwl-skip-link {
+  position: absolute; top: -100px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--neon-cyan);
+  color: var(--bg-darkest);
+  padding: var(--space-sm) var(--space-md);
+  font-family: var(--font-display);
+  font-weight: 600; font-size: var(--text-sm);
+  text-decoration: none;
+  border-radius: 0 0 8px 8px;
+  z-index: 9999;
+  transition: top var(--transition-base);
+}
+.hcwl-skip-link:focus { top: 0; outline: none; }
+
+
+/* ============================================================
+   6. NAVIGATION HEADER
+   ============================================================ */
+.hcwl-nav-header {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: var(--space-sm) 0;
+  background: rgba(10, 10, 15, 0.95);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--glass-dark-border);
+}
+.hcwl-nav-header .hcwl-container {
+  display: flex; justify-content: space-between; align-items: center;
+}
+.hcwl-logo {
+  display: flex; align-items: center; gap: 6px; text-decoration: none;
+}
+.hcwl-logo-hc {
+  font-family: var(--font-display);
+  font-size: var(--text-xs); font-weight: 800;
+  color: var(--bg-darkest);
+  background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-purple-bright) 100%);
+  padding: 4px 8px; border-radius: 5px; letter-spacing: 1.5px;
+}
+.hcwl-logo-text {
+  font-family: var(--font-display);
+  font-size: var(--text-base); font-weight: 700;
+  color: var(--text-dark-bright);
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+.hcwl-back-link {
+  display: flex; align-items: center; gap: var(--space-xs);
+  color: var(--text-dark-mid); text-decoration: none;
+  font-family: var(--font-display);
+  font-size: var(--text-xs); font-weight: 500;
+  letter-spacing: 1px; text-transform: uppercase;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: 6px;
+  transition: color var(--transition-base), background var(--transition-base);
+}
+.hcwl-back-link:hover,
+.hcwl-back-link:focus-visible {
+  color: var(--neon-cyan);
+  background: rgba(0, 191, 255, 0.1);
+}
+
+
+/* ============================================================
+   7. HERO SECTION
+   ============================================================ */
+.hcwl-hero {
+  padding: calc(60px + var(--space-xl)) var(--space-md) var(--space-xl);
+  background: transparent; text-align: center;
+  position: relative; z-index: 1;
+}
+.hcwl-section-label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--text-xs); font-weight: 600;
+  color: var(--neon-cyan);
+  text-transform: uppercase; letter-spacing: 5px;
+  margin-bottom: var(--space-sm);
+  text-align: center;
+}
+.hcwl-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 1.8rem + 2vw, 3.6rem); font-weight: 700;
+  color: var(--text-dark-bright);
+  max-width: 900px; margin-inline: auto;
+  margin-bottom: var(--space-lg); line-height: 1.2;
+}
+.hcwl-hero-intro {
+  font-size: var(--text-xl);
+  color: var(--text-dark-bright);
+  max-width: 800px; margin-inline: auto; line-height: 1.35;
+}
+@media (min-width: 48em) {
+  .hcwl-hero { padding-top: calc(80px + var(--space-xl)); }
+}
+
+
+/* ============================================================
+   8. SECTION CONTAINERS
+   ============================================================ */
+.hcwl-section-dark {
+  padding: var(--space-xxl) 0;
+  background: transparent;
+  position: relative; z-index: 1;
+}
+.hcwl-section-dark h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl); font-weight: 700;
+  color: var(--text-dark-bright);
+  text-align: center; margin-bottom: var(--space-sm);
+  line-height: 1.15;
+}
+.hcwl-section-dark-intro {
+  text-align: center; font-size: var(--text-xl);
+  color: var(--text-dark-bright);
+  max-width: 800px; margin: 0 auto var(--space-md); line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.hcwl-section-light {
+  padding: var(--space-xxl) 0;
+  background: var(--bg-lightest);
+  position: relative; z-index: 1;
+}
+.hcwl-section-light h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl); font-weight: 700;
+  color: var(--text-light-dark);
+  text-align: center; margin-bottom: var(--space-sm);
+  line-height: 1.15; max-width: 900px; margin-inline: auto;
+}
+.hcwl-section-light-intro {
+  text-align: center; font-size: var(--text-xl);
+  color: var(--text-light-dark);
+  max-width: 900px; margin: 0 auto var(--space-md); line-height: 1.2;
+}
+
+.hcwl-section-dark-mid {
+  padding: var(--space-xxl) 0;
+  background: var(--bg-dark-mid);
+  position: relative; z-index: 1;
+}
+.hcwl-section-dark-mid h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl); font-weight: 700;
+  color: var(--text-dark-bright);
+  text-align: center; margin-bottom: var(--space-sm);
+  line-height: 1.15;
+}
+.hcwl-section-dark-mid-intro {
+  text-align: center; font-size: var(--text-xl);
+  color: var(--text-dark-bright);
+  max-width: 800px; margin: 0 auto var(--space-md); line-height: 1.2;
+}
+
+
+/* ============================================================
+   9. BUTTONS
+   ============================================================ */
+.hcwl-btn {
+  display: inline-flex; align-items: center; gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-lg);
+  font-family: var(--font-display);
+  font-size: var(--text-sm); font-weight: 600;
+  text-decoration: none; border-radius: 8px;
+  transition: all var(--transition-base);
+  cursor: pointer; border: none; letter-spacing: 0.5px;
+}
+.hcwl-page a.hcwl-btn-primary,
+.hcwl-page a.hcwl-btn-primary i {
+  background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-cyan-muted) 100%);
+  color: #000000;
+}
+.hcwl-btn-primary:hover,
+.hcwl-btn-primary:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 191, 255, 0.3);
+}
+.hcwl-btn-secondary {
+  background: transparent;
+  color: var(--neon-cyan);
+  border: 1px solid var(--neon-cyan);
+}
+.hcwl-btn-secondary:hover,
+.hcwl-btn-secondary:focus-visible {
+  background: rgba(0, 191, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 191, 255, 0.15);
+}
+@media (min-width: 48em) {
+  .hcwl-btn { font-size: var(--text-base); }
+}
+
+
+/* ============================================================
+   10. CONTEXT NOTES
+   ============================================================ */
+.hcwl-context-note {
+  text-align: center; font-size: var(--text-sm);
+  color: var(--text-dark-mid);
+  font-style: italic; max-width: 650px;
+  margin: var(--space-md) auto 0;
+}
+
+
+/* ============================================================
+   11. FOOTER
+   ============================================================ */
+.hcwl-footer {
+  padding: var(--space-lg) 0;
+  background: var(--bg-darkest);
+  border-top: 1px solid var(--glass-dark-border);
+  text-align: center; position: relative; z-index: 1;
+}
+.hcwl-footer p { font-size: var(--text-sm); color: var(--text-dark-mid); }
+.hcwl-footer a { color: var(--neon-cyan); text-decoration: none; }
+.hcwl-footer a:hover { text-decoration: underline; }
+
+
+/* ============================================================
+   12. SCROLL-TO-TOP
+   ============================================================ */
+.hcwl-scroll-to-top {
+  position: fixed; bottom: var(--space-md); right: var(--space-md);
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: rgba(15, 15, 23, 0.9);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--neon-cyan);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden;
+  transform: translateY(20px);
+  transition:
+    opacity var(--transition-base),
+    visibility var(--transition-base),
+    transform var(--transition-base),
+    background var(--transition-base);
+  z-index: 999;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  color: var(--neon-cyan); font-size: 1.2rem; padding: 0;
+}
+.hcwl-scroll-to-top.hcwl-visible {
+  opacity: 1; visibility: visible; transform: translateY(0);
+}
+.hcwl-scroll-to-top:hover,
+.hcwl-scroll-to-top:focus-visible {
+  background: rgba(0, 191, 255, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 191, 255, 0.3);
+}
+@media (min-width: 48em) {
+  .hcwl-scroll-to-top { width: 48px; height: 48px; }
+}
+
+
+/* ============================================================
+   13. SCROLLBARS & REDUCED MOTION
+   ============================================================ */
+::-webkit-scrollbar { width: 10px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-darkest); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--neon-cyan-muted), var(--neon-purple));
+  border-radius: 10px;
+  border: 2px solid var(--bg-darkest);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--neon-cyan), var(--neon-purple-bright));
+}
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--neon-purple) var(--bg-darkest);
+}
+
+.hcwl-page ::-webkit-scrollbar { width: 8px; height: 6px; }
+.hcwl-page ::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.05); border-radius: 10px; }
+.hcwl-page ::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--neon-cyan-muted), var(--neon-purple));
+  border-radius: 10px;
+}
+.hcwl-page,
+.hcwl-page * {
+  scrollbar-width: thin;
+  scrollbar-color: var(--neon-cyan-muted) rgba(0, 0, 0, 0.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hcwl-page, .hcwl-page *, .hcwl-page *::before, .hcwl-page *::after {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+    scroll-behavior: auto;
+  }
+}
+
+
+
+/* ============================================================
+   PAGE-SPECIFIC STYLES — Social Media Reach
+   ============================================================ */
+
+
+/* ----------------------------------------------------------
+   SCROLL REVEAL
+---------------------------------------------------------- */
+[data-hcwl-reveal] {
+  opacity: 0; transform: translateY(1.5rem);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+[data-hcwl-reveal].hcwl-revealed { opacity: 1; transform: translateY(0); }
+[data-hcwl-reveal="delay-100"] { transition-delay: 0.1s; }
+[data-hcwl-reveal="delay-200"] { transition-delay: 0.2s; }
+[data-hcwl-reveal="delay-300"] { transition-delay: 0.3s; }
+[data-hcwl-reveal="delay-400"] { transition-delay: 0.4s; }
+[data-hcwl-reveal="delay-500"] { transition-delay: 0.5s; }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-hcwl-reveal] { opacity: 1; transform: none; transition: none; }
+}
+
+
+/* ----------------------------------------------------------
+   HERO EXTENSIONS
+---------------------------------------------------------- */
+.hcwl-hero-badge {
+  display: inline-block; padding: 0.35em 1em;
+  border: 1px solid var(--social-blue); border-radius: 2rem;
+  color: var(--social-blue);
+  font-family: var(--font-display);
+  font-size: var(--text-xs); font-weight: 600;
+  letter-spacing: 0.3rem; text-transform: uppercase;
+  margin-bottom: var(--space-lg);
+}
+.hcwl-hero h1 .hero-highlight {
+  color: var(--neon-cyan);
+}
+.hcwl-hero h1 .hero-dim {
+  color: var(--text-dark-dim);
+}
+.hcwl-hero-sub {
+  max-width: 36em; margin-inline: auto;
+  color: var(--text-dark-mid);
+  font-size: var(--text-base); line-height: 1.45;
+  margin-top: var(--space-md);
+}
+.hcwl-hero-cta-group {
+  display: flex; flex-direction: column;
+  gap: var(--space-sm); margin-top: var(--space-lg);
+  align-items: center;
+}
+@media (min-width: 36em) {
+  .hcwl-hero-cta-group { flex-direction: row; justify-content: center; }
+}
+
+
+/* ----------------------------------------------------------
+   NEON DIVIDER
+---------------------------------------------------------- */
+.hcwl-neon-divider {
+  border: none; height: 3px; width: 60px;
+  margin: var(--space-lg) auto;
+  background: linear-gradient(90deg, var(--social-blue), var(--neon-cyan));
+  border-radius: 2px;
+}
+.hcwl-section-light .hcwl-neon-divider {
+  background: linear-gradient(90deg, var(--text-light-dark), var(--neon-purple));
+}
+
+
+/* ----------------------------------------------------------
+   REACH REALITY BLOCK (dark section)
+   Big number + breakdown scenario
+---------------------------------------------------------- */
+.reach-scenario {
+  max-width: 720px; margin: 0 auto var(--space-lg);
+  padding: var(--space-lg);
+  background: var(--bg-dark);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 14px; text-align: center;
+}
+.reach-scenario-label {
+  font-family: var(--font-display);
+  font-size: var(--text-xs); font-weight: 600;
+  color: var(--social-blue);
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: var(--space-xs);
+}
+.reach-scenario-number {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl); font-weight: 800;
+  line-height: 1; margin-bottom: var(--space-xs);
+}
+.reach-scenario-number--bad { color: var(--alert-red); }
+.reach-scenario-number--good { color: var(--neon-cyan); }
+.reach-scenario-text {
+  font-size: var(--text-base); color: var(--text-dark-bright);
+  max-width: 500px; margin-inline: auto; line-height: 1.5;
+}
+
+.reach-platform-grid {
+  display: grid; grid-template-columns: 1fr; gap: var(--space-md);
+  max-width: 800px; margin-inline: auto;
+}
+@media (min-width: 36em) {
+  .reach-platform-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.reach-platform-card {
+  text-align: center;
+  padding: var(--space-lg);
+  background: var(--bg-dark);
+  border: 1px solid var(--glass-dark-border);
+  border-radius: 14px;
+  transition: border-color var(--transition-base);
+}
+.reach-platform-card:hover { border-color: rgba(59, 130, 246, 0.3); }
+.reach-platform-icon {
+  font-size: 1.5rem; color: var(--social-blue);
+  margin-bottom: var(--space-sm);
+}
+.reach-platform-name {
+  font-family: var(--font-display);
+  font-size: var(--text-base); font-weight: 600;
+  color: var(--text-dark-bright);
+  letter-spacing: 0.5px; margin-bottom: var(--space-sm);
+}
+.reach-platform-stat {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl); font-weight: 800;
+  color: var(--alert-red);
+  line-height: 1; margin-bottom: var(--space-xs);
+}
+.reach-platform-desc {
+  font-size: var(--text-base); color: var(--text-dark-mid); line-height: 1.4;
+}
+
+
+/* ----------------------------------------------------------
+   WHAT THIS MEANS CARDS (light section)
+---------------------------------------------------------- */
+.reach-meaning-grid {
+  display: grid; grid-template-columns: 1fr; gap: var(--space-md);
+}
+@media (min-width: 36em) {
+  .reach-meaning-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 56.25em) {
+  .reach-meaning-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.reach-meaning-card {
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  padding: var(--space-lg);
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+.reach-meaning-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+.reach-meaning-icon {
+  width: 48px; height: 48px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 12px; font-size: 1.1rem;
+  margin-bottom: var(--space-md);
+}
+.reach-meaning-icon--risk {
+  background: rgba(239, 68, 68, 0.08);
+  color: var(--alert-red-dim);
+}
+.reach-meaning-icon--benefit {
+  background: rgba(0, 212, 168, 0.1);
+  color: var(--neon-cyan-muted);
+}
+.reach-meaning-card h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-base); font-weight: 600;
+  color: var(--text-light-dark);
+  letter-spacing: 0.5px; line-height: 1.2;
+  margin-bottom: var(--space-sm);
+}
+.reach-meaning-card p {
+  font-size: var(--text-base); color: var(--text-light-mid); line-height: 1.4;
+}
+@media (min-width: 48em) {
+  .reach-meaning-icon { width: 52px; height: 52px; font-size: 1.3rem; }
+  .reach-meaning-card h3 { font-size: var(--text-base); }
+}
+
+
+/* ----------------------------------------------------------
+   OUTAGE EVENTS (dark-mid section)
+   Simple stacked cards — no timeline decoration.
+---------------------------------------------------------- */
+.outage-timeline {
+  max-width: 700px; margin-inline: auto;
+  list-style: none; padding: 0;
+  display: flex; flex-direction: column; gap: var(--space-lg);
+}
+.outage-content {
+  padding: var(--space-lg);
+  background: var(--bg-dark);
+  border: 1px solid var(--glass-dark-border);
+  border-radius: 12px;
+  border-left: 3px solid var(--alert-red);
+  transition: border-color var(--transition-base);
+}
+.outage-content:hover {
+  border-color: rgba(239, 68, 68, 0.35);
+  border-left-color: var(--alert-red);
+}
+.outage-content .outage-event-date {
+  font-family: var(--font-display);
+  font-size: var(--text-xs); font-weight: 600;
+  color: var(--alert-red);
+  text-transform: uppercase; letter-spacing: 1.5px;
+  margin-bottom: var(--space-xs);
+}
+.outage-content h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-base); font-weight: 600;
+  color: var(--text-dark-bright);
+  line-height: 1.2; margin-bottom: var(--space-sm);
+}
+.outage-content p {
+  font-size: var(--text-base); color: var(--text-dark-mid); line-height: 1.4;
+}
+
+
+/* ----------------------------------------------------------
+   COMPARISON BLOCK (dark section)
+   Website vs Social side-by-side
+---------------------------------------------------------- */
+.reach-compare-block {
+  max-width: 960px; margin-inline: auto;
+  display: grid; grid-template-columns: 1fr; gap: var(--space-lg);
+}
+@media (min-width: 36em) {
+  .reach-compare-block { grid-template-columns: repeat(2, 1fr); }
+}
+
+.reach-compare-col {
+  padding: var(--space-lg) var(--space-xl);
+  border-radius: 14px;
+  border: 1px solid var(--glass-dark-border);
+  background: var(--bg-dark);
+}
+.reach-compare-col--website {
+  border-color: rgba(0, 191, 255, 0.2);
+}
+.reach-compare-col--social {
+  border-color: rgba(191, 0, 255, 0.2);
+}
+.reach-compare-header {
+  text-align: center;
+  padding-bottom: var(--space-sm);
+  margin-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--glass-dark-border);
+}
+.reach-compare-tag {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: var(--text-xs); font-weight: 600;
+  padding: 5px 14px; border-radius: 20px;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--space-sm);
+}
+.reach-compare-col--website .reach-compare-tag {
+  background: rgba(0, 191, 255, 0.1); color: var(--neon-cyan);
+}
+.reach-compare-col--social .reach-compare-tag {
+  background: rgba(191, 0, 255, 0.1); color: var(--neon-purple-bright);
+}
+.reach-compare-col h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-lg); font-weight: 600;
+  color: var(--text-dark-bright);
+  line-height: 1.2;
+}
+
+.reach-compare-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: var(--text-base);
+}
+.reach-compare-row:last-child { border-bottom: none; }
+.reach-compare-row-label { color: rgba(160, 161, 168, 0.7); line-height: 1.2; }
+.reach-compare-row-value {
+  font-family: var(--font-display);
+  font-size: var(--text-lg); font-weight: 600;
+  line-height: 1.2;
+}
+.reach-compare-col--website .reach-compare-row-value { color: var(--neon-cyan); }
+.reach-compare-col--social .reach-compare-row-value { color: var(--neon-purple-bright); }
+
+
+/* ----------------------------------------------------------
+   BOTH TOGETHER CARDS (light section)
+---------------------------------------------------------- */
+.reach-together-grid {
+  display: grid; grid-template-columns: 1fr; gap: var(--space-md);
+}
+@media (min-width: 36em) {
+  .reach-together-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 56.25em) {
+  .reach-together-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.reach-together-card {
+  text-align: center;
+  padding: var(--space-lg);
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+.reach-together-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+.reach-together-icon {
+  width: 48px; height: 48px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(0, 212, 168, 0.12) 0%, rgba(59, 130, 246, 0.08) 100%);
+  color: var(--neon-cyan-muted);
+  font-size: 1.1rem;
+  margin-bottom: var(--space-sm);
+}
+.reach-together-card h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-base); font-weight: 600;
+  color: var(--text-light-dark);
+  letter-spacing: 0.5px; line-height: 1.2;
+  margin-bottom: var(--space-sm);
+}
+.reach-together-card p {
+  font-size: var(--text-base); color: var(--text-light-mid); line-height: 1.4;
+}
+@media (min-width: 48em) {
+  .reach-together-card h3 { font-size: var(--text-base); }
+}
+
+
+/* ----------------------------------------------------------
+   CTA SECTION
+---------------------------------------------------------- */
+.reach-cta-section {
+  padding: var(--space-xxl) 0;
+  background: transparent;
+  position: relative; z-index: 1; text-align: center;
+}
+.reach-cta-section h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl); font-weight: 700;
+  color: var(--text-dark-bright); margin-bottom: var(--space-sm);
+}
+.reach-cta-intro {
+  font-size: var(--text-xl);
+  color: var(--text-dark-bright);
+  max-width: 800px; margin: 0 auto var(--space-lg); line-height: 1.3;
+}
+.reach-cta-tagline {
+  font-size: var(--text-sm); color: var(--text-dark-dim);
+  font-style: italic; margin-top: var(--space-lg);
+}
+
+
+/* ----------------------------------------------------------
+   SOURCE FOOTNOTES
+---------------------------------------------------------- */
+.reach-sources {
+  max-width: 700px; margin: var(--space-xl) auto 0;
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--glass-dark-border);
+}
+.reach-sources h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-sm); font-weight: 600;
+  color: var(--text-dark-dim);
+  text-transform: uppercase; letter-spacing: 0.08em;
+  margin-bottom: var(--space-sm); text-align: center;
+}
+.reach-sources ol {
+  list-style: none; counter-reset: source-counter;
+  padding: 0; margin: 0;
+}
+.reach-sources li {
+  counter-increment: source-counter;
+  display: flex; align-items: baseline; gap: var(--space-sm);
+  font-size: var(--text-xs); color: var(--text-dark-dim);
+  line-height: 1.5; margin-bottom: var(--space-xs);
+  word-break: break-all;
+}
+.reach-sources li::before {
+  content: counter(source-counter);
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  width: 20px; height: 20px;
+  background: var(--social-blue-glow); border-radius: 50%;
+  font-family: var(--font-display);
+  font-size: 0.65rem; font-weight: 600; color: var(--social-blue);
+}
+.reach-sources a {
+  color: var(--neon-cyan-muted);
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 212, 168, 0.3);
+}
+.reach-sources a:hover {
+  color: var(--neon-cyan);
+  text-decoration-color: var(--neon-cyan);
+}
+
+  </style>
+</head>
+
+<body class="hcwl-page">
+
+  <a class="hcwl-skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="hcwl-grid-bg" aria-hidden="true"></div>
+  <div class="hcwl-glow-bg" aria-hidden="true"></div>
+
+
+  <!-- ========== NAVIGATION ========== -->
+  <header class="hcwl-nav-header">
+    <div class="hcwl-container">
+      <a class="hcwl-logo" href="#" aria-label="HC Web Labs home">
+        <span class="hcwl-logo-hc">HC</span>
+        <span class="hcwl-logo-text">Web Labs</span>
+      </a>
+      <a class="hcwl-back-link" href="#">
+        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+        Back
+      </a>
+    </div>
+  </header>
+
+
+  <main id="main-content">
+
+    <!-- ========== HERO ========== -->
+    <section class="hcwl-hero" aria-labelledby="hero-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-hero-badge" data-hcwl-reveal>Your Reach Matters</span>
+        <h1 id="hero-heading" data-hcwl-reveal="delay-100">
+          A Website Reaches <span class="hero-highlight">Everyone</span><br>
+          Social Media Reaches <span class="hero-highlight" style="color: var(--alert-red);">2%</span>
+        </h1>
+        <p class="hcwl-hero-intro" data-hcwl-reveal="delay-200">
+          If your business only exists on Facebook or Instagram, you're
+          invisible to 98% of the people you're trying to reach.
+          The algorithm decides who sees you — and it's not choosing
+          your customers.
+        </p>
+        <p class="hcwl-hero-sub" data-hcwl-reveal="delay-300">
+          Social media is a powerful tool — but it's not a website. It's
+          not something you own, it's not searchable on Google, and it can
+          disappear overnight. Even a simple one-page website puts your
+          business on the map for the entire internet. Here's why that matters.
+        </p>
+        <div class="hcwl-hero-cta-group" data-hcwl-reveal="delay-400">
+          <a class="hcwl-btn hcwl-btn-primary" href="#cta">
+            <i class="fa-solid fa-globe" aria-hidden="true"></i>
+            Get on the Map
+          </a>
+          <a class="hcwl-btn hcwl-btn-secondary" href="#the-numbers">
+            See the Real Numbers
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <hr class="hcwl-neon-divider" data-hcwl-reveal>
+
+
+    <!-- ========== THE REAL NUMBERS ========== -->
+    <section class="hcwl-section-dark" id="the-numbers" aria-labelledby="numbers-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-section-label" data-hcwl-reveal>The Reach Reality</span>
+        <h2 id="numbers-heading" data-hcwl-reveal="delay-100">How Many People Actually See Your Posts?</h2>
+        <p class="hcwl-section-dark-intro" data-hcwl-reveal="delay-200">
+          Social media platforms make their money from advertising. They have
+          every reason to limit your free reach so you'll pay to be seen.
+          Here's what that looks like for your business:
+        </p>
+        <hr class="hcwl-neon-divider" data-hcwl-reveal="delay-250">
+
+        <!-- Scenario Block -->
+        <div class="reach-scenario" data-hcwl-reveal="delay-300">
+          <p class="reach-scenario-label">Let's Say You Have 1,000 Facebook Followers</p>
+          <p class="reach-scenario-number reach-scenario-number--bad">~16 people</p>
+          <p class="reach-scenario-text">
+            That's how many will see your average post. Not 1,000.
+            Not 500. Not even 100. About 16 people — and that's
+            <em>before</em> anyone actually clicks, comments, or buys.
+          </p>
+        </div>
+
+        <!-- Platform Cards -->
+        <div class="reach-platform-grid" data-hcwl-reveal="delay-400">
+
+          <div class="reach-platform-card">
+            <p class="reach-platform-icon"><i class="fa-brands fa-facebook" aria-hidden="true"></i></p>
+            <p class="reach-platform-name">Facebook</p>
+            <p class="reach-platform-stat">1.65%</p>
+            <p class="reach-platform-desc">
+              Average organic reach for business pages in 2025.
+              Down from 16% in 2012 and 5.2% in 2020.
+              Pages with 100K+ followers? Just 0.7%.
+            </p>
+          </div>
+
+          <div class="reach-platform-card">
+            <p class="reach-platform-icon"><i class="fa-brands fa-instagram" aria-hidden="true"></i></p>
+            <p class="reach-platform-name">Instagram</p>
+            <p class="reach-platform-stat">3.5%</p>
+            <p class="reach-platform-desc">
+              Down 18% year-over-year. Even with a healthy following,
+              fewer than 1 in 25 of your followers will see a given
+              post in their feed.
+            </p>
+          </div>
+
+          <div class="reach-platform-card">
+            <p class="reach-platform-icon"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></p>
+            <p class="reach-platform-name">X (Twitter)</p>
+            <p class="reach-platform-stat">~3%</p>
+            <p class="reach-platform-desc">
+              The algorithmic timeline dramatically reduced visibility.
+              Engagement has dropped significantly since the
+              platform's ownership change.
+            </p>
+          </div>
+
+          <div class="reach-platform-card">
+            <p class="reach-platform-icon"><i class="fa-solid fa-globe" aria-hidden="true"></i></p>
+            <p class="reach-platform-name">Your Website</p>
+            <p class="reach-scenario-number reach-scenario-number--good" style="font-size: var(--text-2xl); margin-bottom: var(--space-xs);">100%</p>
+            <p class="reach-platform-desc">
+              Anyone who searches Google, types your URL, scans
+              your QR code, or clicks a link — they see everything.
+              No algorithm deciding who gets in.
+            </p>
+          </div>
+
+        </div>
+
+        <p class="hcwl-context-note" data-hcwl-reveal="delay-500">
+          Data from Socialinsider, Hootsuite, Social Status, and Swydo.
+          Facebook organic reach has declined 90% since 2012.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ========== WHAT SOCIAL-ONLY COSTS YOU ========== -->
+    <section class="hcwl-section-light" aria-labelledby="risks-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-section-label" style="color: var(--alert-red);" data-hcwl-reveal>The Hidden Costs</span>
+        <h2 id="risks-heading" data-hcwl-reveal="delay-100">What You're Missing Without a Website</h2>
+        <p class="hcwl-section-light-intro" data-hcwl-reveal="delay-200">
+          Social media is great for engagement and community. But when it's
+          your <em>only</em> online presence, you're giving up more than
+          you realize.
+        </p>
+        <hr class="hcwl-neon-divider" data-hcwl-reveal="delay-250">
+
+        <div class="reach-meaning-grid" data-hcwl-reveal="delay-300">
+
+          <article class="reach-meaning-card">
+            <div class="reach-meaning-icon reach-meaning-icon--risk">
+              <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            </div>
+            <h3>You Don't Show Up on Google</h3>
+              <p>
+                46% of all Google searches are local. When someone searches
+                "plumber in Oak Ridge" or "bakery near me," your Facebook
+                page is almost never what appears. A website is.
+              </p>
+          </article>
+
+          <article class="reach-meaning-card">
+            <div class="reach-meaning-icon reach-meaning-icon--risk">
+              <i class="fa-solid fa-house-crack" aria-hidden="true"></i>
+            </div>
+            <h3>You're Building on Rented Land</h3>
+              <p>
+                You don't own your Facebook page — Meta does. They control
+                who sees your posts, what features you have, and whether
+                your account stays active. A website is yours.
+              </p>
+          </article>
+
+          <article class="reach-meaning-card">
+            <div class="reach-meaning-icon reach-meaning-icon--risk">
+              <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+            </div>
+            <h3>You Look Less Credible</h3>
+              <p>
+                75% of consumers judge a business's credibility by its website.
+                A social-media-only business can appear less established or
+                trustworthy to potential customers.
+              </p>
+          </article>
+
+          <article class="reach-meaning-card">
+            <div class="reach-meaning-icon reach-meaning-icon--risk">
+              <i class="fa-solid fa-filter-circle-dollar" aria-hidden="true"></i>
+            </div>
+            <h3>You're Paying to Be Seen</h3>
+              <p>
+                99% of Meta's revenue comes from advertising. The low organic
+                reach isn't a bug — it's the business model. They want you
+                to pay for every set of eyeballs.
+              </p>
+          </article>
+
+          <article class="reach-meaning-card">
+            <div class="reach-meaning-icon reach-meaning-icon--risk">
+              <i class="fa-solid fa-user-slash" aria-hidden="true"></i>
+            </div>
+            <h3>You Don't Own Your Audience</h3>
+              <p>
+                Your followers aren't yours. If your account gets hacked,
+                suspended, or if the platform shuts down a feature, you
+                could lose your entire customer base overnight.
+              </p>
+          </article>
+
+          <article class="reach-meaning-card">
+            <div class="reach-meaning-icon reach-meaning-icon--risk">
+              <i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i>
+            </div>
+            <h3>Your Content Disappears</h3>
+              <p>
+                A Facebook post has a lifespan of hours. A blog post
+                on your website can drive traffic for years. Social media
+                is a feed — a website is a foundation.
+              </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========== WHEN THE PLATFORM GOES DOWN ========== -->
+    <section class="hcwl-section-dark-mid" aria-labelledby="outage-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-section-label" data-hcwl-reveal>When the Platform Goes Dark</span>
+        <h2 id="outage-heading" data-hcwl-reveal="delay-100">What Happens When Facebook Goes Down?</h2>
+        <p class="hcwl-section-dark-mid-intro" data-hcwl-reveal="delay-200">
+          If your only online presence is social media, a platform outage
+          means your business effectively ceases to exist online. This isn't
+          hypothetical — it's happened multiple times in the last few years.
+        </p>
+        <hr class="hcwl-neon-divider" data-hcwl-reveal="delay-250">
+
+        <ol class="outage-timeline" aria-label="Social media platform outage history" data-hcwl-reveal="delay-300">
+
+          <li class="outage-event">
+            <div class="outage-content">
+              <p class="outage-event-date">October 2021</p>
+              <h3>Facebook, Instagram &amp; WhatsApp Down for 6 Hours</h3>
+              <p>
+                A configuration error took all Meta services offline globally.
+                Small businesses reported losing hundreds to thousands of dollars
+                in sales. One company saw revenue drop 70% in a single day.
+                Meta itself lost an estimated $60–100 million in ad revenue.
+              </p>
+            </div>
+          </li>
+
+          <li class="outage-event">
+            <div class="outage-content">
+              <p class="outage-event-date">March 2024</p>
+              <h3>Meta Apps Down for 2+ Hours on Super Tuesday</h3>
+              <p>
+                Facebook, Instagram, Threads, WhatsApp, and Messenger all went
+                offline. Over 100,000 users reported issues within the first
+                10 minutes. Businesses couldn't respond to customers, run ads,
+                or process orders.
+              </p>
+            </div>
+          </li>
+
+          <li class="outage-event">
+            <div class="outage-content">
+              <p class="outage-event-date">December 2024</p>
+              <h3>Another Major Meta Outage — Hours of Downtime</h3>
+              <p>
+                A "technical issue" during routine maintenance knocked
+                services offline for several hours. 40% of small business
+                owners reported a decline in sales. Over 100,000 outage reports
+                on Downdetector at peak.
+              </p>
+            </div>
+          </li>
+
+        </ol>
+
+        <!-- Callout -->
+        <div class="reach-scenario" style="margin-top: var(--space-lg); border-color: rgba(239, 68, 68, 0.2);" data-hcwl-reveal="delay-400">
+          <p class="reach-scenario-label" style="color: var(--alert-red);">Meanwhile, during every one of these outages</p>
+          <p class="reach-scenario-number reach-scenario-number--good">Your website stays online.</p>
+          <p class="reach-scenario-text">
+            Your website doesn't depend on Meta's servers, algorithms, or
+            maintenance schedules. When social media goes dark, your website
+            keeps working — showing up on Google, answering customer
+            questions, and keeping your business open.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========== WEBSITE vs SOCIAL COMPARISON ========== -->
+    <section class="hcwl-section-dark" aria-labelledby="compare-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-section-label" data-hcwl-reveal>Owned vs. Rented</span>
+        <h2 id="compare-heading" data-hcwl-reveal="delay-100">Your Website vs. Social Media</h2>
+        <p class="hcwl-section-dark-intro" data-hcwl-reveal="delay-200">
+          This isn't about quitting social media — it's about understanding
+          what each tool is actually good for, and making sure you have a
+          foundation that doesn't depend on someone else's platform.
+        </p>
+        <hr class="hcwl-neon-divider" data-hcwl-reveal="delay-250">
+
+        <div class="reach-compare-block" data-hcwl-reveal="delay-300">
+
+          <div class="reach-compare-col reach-compare-col--website">
+            <div class="reach-compare-header">
+              <span class="reach-compare-tag">Your Website</span>
+              <h3>You Own It</h3>
+            </div>
+            <div class="reach-compare-row">
+              <span class="reach-compare-row-label">Who sees it</span>
+              <span class="reach-compare-row-value">Anyone searching</span>
+            </div>
+            <div class="reach-compare-row">
+              <span class="reach-compare-row-label">Shows on Google</span>
+              <span class="reach-compare-row-value">Yes</span>
+            </div>
+            <div class="reach-compare-row">
+              <span class="reach-compare-row-label">You control design</span>
+              <span class="reach-compare-row-value">100%</span>
+            </div>
+            <div class="reach-compare-row">
+              <span class="reach-compare-row-label">Lead close rate</span>
+              <span class="reach-compare-row-value">14.6%</span>
+            </div>
+            <div class="reach-compare-row">
+              <span class="reach-compare-row-label">Content lifespan</span>
+              <span class="reach-compare-row-value">Years</span>
+            </div>
+            <div class="reach-compare-row">
+              <span class="reach-compare-row-label">If platform goes down</span>
+              <span class="reach-compare-row-value">Still online</span>
+            </div>
+          </div>
+
+          <div class="reach-compare-col reach-compare-col--social">
+            <div class="reach-compare-header">
+              <span class="reach-compare-tag">Social Media</span>
+              <h3>You Rent It</h3>
+            </div>
+            <div class="reach-compare-row">
+              <span class="reach-compare-row-label">Who sees it</span>
+              <span class="reach-compare-row-value">1.6–3.5% of followers</span>
+            </div>
+            <div class="reach-compare-row">
+              <span class="reach-compare-row-label">Shows on Google</span>
+              <span class="reach-compare-row-value">Rarely</span>
+            </div>
+            <div class="reach-compare-row">
+              <span class="reach-compare-row-label">You control design</span>
+              <span class="reach-compare-row-value">Their template</span>
+            </div>
+            <div class="reach-compare-row">
+              <span class="reach-compare-row-label">Lead close rate</span>
+              <span class="reach-compare-row-value">1.7%</span>
+            </div>
+            <div class="reach-compare-row">
+              <span class="reach-compare-row-label">Content lifespan</span>
+              <span class="reach-compare-row-value">Hours</span>
+            </div>
+            <div class="reach-compare-row">
+              <span class="reach-compare-row-label">If platform goes down</span>
+              <span class="reach-compare-row-value">You disappear</span>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="hcwl-context-note" data-hcwl-reveal="delay-400">
+          Social media is a great <em>tool</em> — but a terrible
+          <em>foundation</em>. Your website is home base. Social
+          media is the megaphone that drives people there.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ========== BETTER TOGETHER ========== -->
+    <section class="hcwl-section-light" aria-labelledby="together-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-section-label" style="color: var(--neon-purple);" data-hcwl-reveal>Better Together</span>
+        <h2 id="together-heading" data-hcwl-reveal="delay-100">Use Both — But Build on Ground You Own</h2>
+        <p class="hcwl-section-light-intro" data-hcwl-reveal="delay-200">
+          I'm not saying ditch social media. I'm saying don't build your
+          entire business on it. When you have a website <em>and</em>
+          social media working together, each one makes the other stronger.
+        </p>
+        <hr class="hcwl-neon-divider" data-hcwl-reveal="delay-250">
+
+        <div class="reach-together-grid" data-hcwl-reveal="delay-300">
+
+          <article class="reach-together-card">
+            <div class="reach-together-icon">
+              <i class="fa-solid fa-house-chimney" aria-hidden="true"></i>
+            </div>
+            <h3>Website = Home Base</h3>
+            <p>
+              Your website is the central hub where customers find your
+              hours, services, location, and contact info. It's there 24/7,
+              indexed by Google, and owned by you.
+            </p>
+          </article>
+
+          <article class="reach-together-card">
+            <div class="reach-together-icon">
+              <i class="fa-solid fa-bullhorn" aria-hidden="true"></i>
+            </div>
+            <h3>Social = The Megaphone</h3>
+            <p>
+              Social media is how you share personality, connect with your
+              community, and drive traffic back to your website — where
+              visitors can actually become customers.
+            </p>
+          </article>
+
+          <article class="reach-together-card">
+            <div class="reach-together-icon">
+              <i class="fa-solid fa-magnifying-glass-location" aria-hidden="true"></i>
+            </div>
+            <h3>Google Finds Your Website</h3>
+            <p>
+              When someone searches for what you offer, Google shows websites —
+              not Facebook posts. 40% of small businesses with websites
+              say SEO is their number one source of leads.
+            </p>
+          </article>
+
+          <article class="reach-together-card">
+            <div class="reach-together-icon">
+              <i class="fa-solid fa-handshake" aria-hidden="true"></i>
+            </div>
+            <h3>Credibility from Day One</h3>
+            <p>
+              Having your own domain — yourbusiness.com — signals that
+              you're professional and here to stay. Customers are 2.7x more
+              likely to trust a business with a complete online profile.
+            </p>
+          </article>
+
+          <article class="reach-together-card">
+            <div class="reach-together-icon">
+              <i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i>
+            </div>
+            <h3>Collect Leads You Own</h3>
+            <p>
+              With a website, you can build an email list — an audience
+              you own and can contact directly, without paying an algorithm
+              for permission to reach them.
+            </p>
+          </article>
+
+          <article class="reach-together-card">
+            <div class="reach-together-icon">
+              <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+            </div>
+            <h3>Even a One-Pager Works</h3>
+            <p>
+              You don't need a massive website. A clean, well-built
+              single page with your info, services, and contact details
+              is enough to put you on the map and start showing up in search.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========== CTA ========== -->
+    <section class="reach-cta-section" id="cta" aria-labelledby="cta-heading">
+      <div class="hcwl-container">
+        <span class="hcwl-section-label" data-hcwl-reveal>Ready to Reach More People?</span>
+        <h2 id="cta-heading" data-hcwl-reveal="delay-100">Put Your Business on the Map</h2>
+        <p class="reach-cta-intro" data-hcwl-reveal="delay-200">
+          You've been putting in the work on social media — and that's great.
+          But right now, 98% of your followers aren't seeing it, and the
+          people searching Google for exactly what you do can't find you at all.
+          A website changes that. Even a simple one-page site opens your
+          business to the entire internet, and I can help you build one.
+        </p>
+        <div class="hcwl-hero-cta-group" data-hcwl-reveal="delay-300">
+          <a class="hcwl-btn hcwl-btn-primary" href="/cdn-cgi/l/email-protection#81e9e4ededeec1e9e2f6e4e3ede0e3f2afe2eeecbef2f4e3ebe4e2f5bcd6e4e3f2e8f5e4a4b3b1a4b3b7a4b3b1d2eee2e8e0eda4b3b1cce4e5e8e0a4b3b1d2f5f3e0f5e4e6f8">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            Let's Expand Your Reach
+          </a>
+          <a class="hcwl-btn hcwl-btn-secondary" href="#">
+            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+            View My Work
+          </a>
+        </div>
+        <p class="reach-cta-tagline" data-hcwl-reveal="delay-400">
+          Hand-coded websites for East Tennessee — people over profit, always.
+        </p>
+
+        <!-- Sources -->
+        <nav class="reach-sources" aria-label="Data sources" data-hcwl-reveal="delay-500">
+          <h3>Sources</h3>
+          <ol>
+            <li>
+              Socialinsider — Instagram &amp; Facebook Organic Reach Benchmarks (2025):
+              <a href="https://www.socialinsider.io/" target="_blank" rel="noopener noreferrer">socialinsider.io</a>
+            </li>
+            <li>
+              Holland Adhaus — "Organic vs. Paid Social" (Oct 2025):
+              <a href="https://hollandadhaus.com/organic-vs-paid-social-why-you-need-both-and-how-to-make-the-mix-work/" target="_blank" rel="noopener noreferrer">hollandadhaus.com</a>
+            </li>
+            <li>
+              Keefomatic — "The State of Organic Reach in 2025" (Jun 2025):
+              <a href="https://keefomatic.com/the-state-of-organic-reach-in-2024-social-media-and-google/" target="_blank" rel="noopener noreferrer">keefomatic.com</a>
+            </li>
+            <li>
+              NPR — "After massive outage, small businesses reconsider dependence on Facebook" (Oct 2021):
+              <a href="https://www.npr.org/2021/10/05/1043211171/facebook-instagram-whatsapp-outage-business-impact" target="_blank" rel="noopener noreferrer">npr.org</a>
+            </li>
+            <li>
+              CNN Business — "Facebook and Instagram Down: Dec 2024 Outage" (Dec 2024):
+              <a href="https://www.cnn.com/2024/12/11/business/facebook-and-instagram-outage" target="_blank" rel="noopener noreferrer">cnn.com</a>
+            </li>
+            <li>
+              Clutch.co — "The State of Small Business Websites in 2025" (Aug 2025):
+              <a href="https://clutch.co/resources/state-of-small-business-websites-2025" target="_blank" rel="noopener noreferrer">clutch.co</a>
+            </li>
+            <li>
+              SeoProfy — "SEO ROI Statistics 2025–2026" (Jan 2026):
+              <a href="https://seoprofy.com/blog/seo-roi-statistics/" target="_blank" rel="noopener noreferrer">seoprofy.com</a>
+            </li>
+          </ol>
+        </nav>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="hcwl-footer">
+    <div class="hcwl-container">
+      <p>
+        &copy; <span id="copyrightYear">2026</span>
+        <a href="#">HC Web Labs</a> — Rocky Top, Tennessee
+      </p>
+    </div>
+  </footer>
+
+
+  <button class="hcwl-scroll-to-top" id="scrollToTop"
+          aria-label="Scroll to top" type="button">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+(() => {
+  'use strict';
+
+  /* Scroll-to-top */
+  const scrollToTopBtn = document.getElementById('scrollToTop');
+  if (scrollToTopBtn) {
+    let ticking = false;
+    const SCROLL_THRESHOLD = 500;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          scrollToTopBtn.classList.toggle('hcwl-visible', window.scrollY > SCROLL_THRESHOLD);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    scrollToTopBtn.addEventListener('click', scrollToTop);
+    scrollToTopBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); scrollToTop(); }
+    });
+  }
+
+  /* Scroll reveal */
+  const revealElements = document.querySelectorAll('[data-hcwl-reveal]');
+  if (revealElements.length && 'IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('hcwl-revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { root: null, rootMargin: '0px 0px -60px 0px', threshold: 0.1 }
+    );
+    revealElements.forEach((el) => revealObserver.observe(el));
+  } else {
+    revealElements.forEach((el) => el.classList.add('hcwl-revealed'));
+  }
+
+  /* Smooth anchor scroll */
+  const anchorLinks = document.querySelectorAll('.hcwl-page a[href^="#"]');
+  if (anchorLinks.length) {
+    const navHeader = document.querySelector('.hcwl-nav-header');
+    anchorLinks.forEach((link) => {
+      link.addEventListener('click', (e) => {
+        const targetId = link.getAttribute('href');
+        if (!targetId || targetId === '#') return;
+        const target = document.querySelector(targetId);
+        if (!target) return;
+        e.preventDefault();
+        const headerOffset = navHeader?.offsetHeight ?? 0;
+        const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerOffset - 16;
+        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+        target.setAttribute('tabindex', '-1');
+        target.focus({ preventScroll: true });
+ 
+      });
+    });
+  }
+
+  const yearEl = document.getElementById('copyrightYear');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+})();
+  </script>
+</body>
+</html>
