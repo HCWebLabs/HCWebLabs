@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SiteName — A modern, hand-crafted website built for your business. Fast, accessible, and made to grow with you." />
+  <meta name="theme-color" content="#2563eb" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="Home | SiteName" />
+  <meta property="og:description" content="A modern, hand-crafted website built for your business." />
+  <meta property="og:url"         content="https://example.com/" />
+
+  <title>Home | SiteName</title>
+
+  <!-- Preconnect for Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- Skip link (A11y) -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- ── Site Header ──────────────────────────────────────── -->
+  <header class="site-header" role="banner">
+    <div class="container">
+
+      <a href="multisite.html" class="site-logo" aria-label="SiteName — Home">
+        Site<span>Name</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <ul class="primary-nav__list" role="list">
+          <li><a href="multisite.html"    class="primary-nav__link" aria-current="page">Home</a></li>
+          <li><a href="about.html"    class="primary-nav__link">About</a></li>
+          <li><a href="services.html" class="primary-nav__link">Services</a></li>
+          <li><a href="contact.html"  class="primary-nav__link">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn--primary btn--sm nav-cta">Get in Touch</a>
+      </nav>
+
+      <!-- Mobile hamburger -->
+      <button
+        id="nav-toggle"
+        class="nav-toggle"
+        aria-controls="mobile-nav"
+        aria-expanded="false"
+        aria-label="Open navigation menu"
+      >
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- Mobile nav drawer -->
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation">
+    <ul class="mobile-nav__list" role="list">
+      <li><a href="multisite.html"    class="mobile-nav__link" aria-current="page">Home</a></li>
+      <li><a href="about.html"    class="mobile-nav__link">About</a></li>
+      <li><a href="services.html" class="mobile-nav__link">Services</a></li>
+      <li><a href="contact.html"  class="mobile-nav__link">Contact</a></li>
+    </ul>
+    <div class="mobile-nav__cta">
+      <a href="contact.html" class="btn btn--primary" style="width:100%;justify-content:center;">Get in Touch</a>
+    </div>
+  </nav>
+
+  <!-- ── Main Content ─────────────────────────────────────── -->
+  <main id="main-content">
+
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <p class="hero__label animate-in">Welcome</p>
+        <h1 class="hero__heading animate-in delay-1" id="hero-heading">
+          Your business,<br /><em>online and ready.</em>
+        </h1>
+        <p class="hero__sub animate-in delay-2">
+          A clean, fast, professionally built website that works on every device.
+          No page builders. No bloated themes. Just solid, hand-crafted code made for you.
+        </p>
+        <div class="hero__actions animate-in delay-3">
+          <a href="services.html" class="btn btn--primary btn--lg">See What's Included</a>
+          <a href="about.html"    class="btn btn--ghost btn--lg">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section" aria-labelledby="features-heading">
+      <div class="container">
+
+        <header class="section-header section-header--center">
+          <span class="section-label">What You Get</span>
+          <h2 class="section-heading" id="features-heading">Built right, from the start</h2>
+          <p class="section-sub">
+            Every site includes the essentials your business needs — nothing stripped out, nothing overcharged.
+          </p>
+        </header>
+
+        <div class="feature-grid">
+
+          <article class="card reveal" aria-label="Mobile-First Design">
+            <div class="card__icon" aria-hidden="true">📱</div>
+            <h3 class="card__title">Mobile-First Design</h3>
+            <p class="card__body">
+              Your site looks and works great on phones, tablets, and desktops.
+              Designed for small screens first, then scaled up beautifully.
+            </p>
+          </article>
+
+          <article class="card reveal delay-1" aria-label="Fast Performance">
+            <div class="card__icon" aria-hidden="true">⚡</div>
+            <h3 class="card__title">Fast Performance</h3>
+            <p class="card__body">
+              Hand-coded HTML, CSS, and JavaScript — no unnecessary bloat.
+              Pages load quickly and score well on speed tests.
+            </p>
+          </article>
+
+          <article class="card reveal delay-2" aria-label="Accessible to All">
+            <div class="card__icon" aria-hidden="true">♿</div>
+            <h3 class="card__title">Accessible to All</h3>
+            <p class="card__body">
+              Built with web accessibility best practices so every visitor — regardless of ability — can use your site comfortably.
+            </p>
+          </article>
+
+          <article class="card reveal delay-3" aria-label="SEO Ready">
+            <div class="card__icon" aria-hidden="true">🔍</div>
+            <h3 class="card__title">SEO Ready</h3>
+            <p class="card__body">
+              Semantic HTML, proper heading structure, meta tags, and clean markup give your site the best foundation for search engines.
+            </p>
+          </article>
+
+          <article class="card reveal delay-4" aria-label="Contact Form">
+            <div class="card__icon" aria-hidden="true">✉️</div>
+            <h3 class="card__title">Contact Form</h3>
+            <p class="card__body">
+              A working, validated contact form so visitors can reach you directly from your site — no third-party services required.
+            </p>
+          </article>
+
+          <article class="card reveal" aria-label="Fully Yours">
+            <div class="card__icon" aria-hidden="true">🔑</div>
+            <h3 class="card__title">Fully Yours</h3>
+            <p class="card__body">
+              You own everything — files, hosting, domain. No lock-in, no subscriptions, no surprises. Your site, your way.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar" role="region" aria-label="At a glance">
+      <div class="container">
+        <dl class="stats-grid">
+          <div class="stat">
+            <dt class="stat__label">Pages Included</dt>
+            <dd class="stat__number">4+</dd>
+          </div>
+          <div class="stat">
+            <dt class="stat__label">Starting At</dt>
+            <dd class="stat__number">$500</dd>
+          </div>
+          <div class="stat">
+            <dt class="stat__label">Turnaround</dt>
+            <dd class="stat__number">2 wks</dd>
+          </div>
+          <div class="stat">
+            <dt class="stat__label">Revisions</dt>
+            <dd class="stat__number">3</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner" aria-labelledby="cta-heading">
+      <div class="container">
+        <h2 class="cta-banner__heading" id="cta-heading">Ready to get online?</h2>
+        <p class="cta-banner__sub">
+          Let's talk about what your business needs. No pressure, no jargon — just an honest conversation about your goals.
+        </p>
+        <a href="contact.html" class="btn btn--primary btn--lg">Start the Conversation</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Site Footer ──────────────────────────────────────── -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="multisite.html" class="footer-brand__logo">Site<span>Name</span></a>
+          <p>A clean, modern website built for your business — hand-coded with care and built to last.</p>
+        </div>
+
+        <nav aria-label="Pages">
+          <h3 class="footer-nav__heading">Pages</h3>
+          <ul class="footer-nav__list" role="list">
+            <li><a href="multisite.html"    class="footer-nav__link">Home</a></li>
+            <li><a href="about.html"    class="footer-nav__link">About</a></li>
+            <li><a href="services.html" class="footer-nav__link">Services</a></li>
+            <li><a href="contact.html"  class="footer-nav__link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Services">
+          <h3 class="footer-nav__heading">Services</h3>
+          <ul class="footer-nav__list" role="list">
+            <li><a href="services.html" class="footer-nav__link">Web Design</a></li>
+            <li><a href="services.html" class="footer-nav__link">Development</a></li>
+            <li><a href="services.html" class="footer-nav__link">Hosting Setup</a></li>
+            <li><a href="services.html" class="footer-nav__link">Maintenance</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <h3 class="footer-nav__heading">Contact</h3>
+          <ul class="footer-nav__list" role="list">
+            <li><a href="contact.html"        class="footer-nav__link">Get a Quote</a></li>
+            <li><a href="/cdn-cgi/l/email-protection#224a474e4e4d62475a434f524e470c414d4f" class="footer-nav__link"><span class="__cf_email__" data-cfemail="91f9f4fdfdfed1f4e9f0fce1fdf4bff2fefc">[email&#160;protected]</span></a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="footer-year">2025</span> SiteName. All rights reserved.</p>
+        <p>Built with care by <a href="https://heather-cooper.com" target="_blank" rel="noopener noreferrer">HC Web Labs</a>.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button
+    id="back-to-top"
+    class="back-to-top"
